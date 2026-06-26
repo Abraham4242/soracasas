@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cost &amp; Budget Model · Sora Casas · Internal</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#1d3a2c">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog/blog.css">
+<style>
+  .bp-wrap{max-width:1040px;margin:0 auto;padding:30px 22px 80px}
+  .bp-back{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--forest);text-decoration:none}
+  .bp-h1{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4vw,40px);margin:14px 0 6px;color:var(--forest-deep)}
+  .bp-meta{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--ink-faint);margin-bottom:8px}
+  .bp-nav{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+  .bp-nav a{font-size:12px;color:var(--forest);text-decoration:none;background:var(--paper-2);border:.5px solid var(--line);border-radius:99px;padding:5px 12px}
+  .bp-wrap p{font-size:15px;line-height:1.65;color:var(--ink-soft);margin:9px 0;max-width:84ch}
+  .bp-h2{font-family:var(--serif);font-size:22px;font-weight:500;margin:34px 0 6px;color:var(--forest-deep);border-bottom:1px solid var(--line);padding-bottom:7px}
+  .bp-wrap li{font-size:14px;line-height:1.6;color:var(--ink-soft);margin:4px 0}
+  .bp-wrap b{color:var(--ink-2)}
+  .note{background:var(--forest-deep);color:#eee7d6;border-radius:14px;padding:16px 20px;margin:16px 0;font-size:14px;line-height:1.6}
+  .note b{color:var(--mango)}
+  .warn{background:var(--paper-2);border:.5px solid var(--line);border-left:3px solid var(--gold-deep);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;font-size:13px;color:var(--ink-2);line-height:1.55}
+  table.t{width:100%;border-collapse:collapse;margin:12px 0;font-size:12.5px}
+  table.t th,table.t td{border:.5px solid var(--line-2);padding:7px 9px;text-align:left;vertical-align:top}
+  table.t th{background:var(--paper-3);font-family:var(--mono);font-size:9px;letter-spacing:.05em;text-transform:uppercase}
+  table.t td.n{font-variant-numeric:tabular-nums;text-align:right}
+  .tier{font-family:var(--mono);font-size:9.5px;font-weight:700;padding:1px 6px;border-radius:5px}
+  .e{background:rgba(46,138,150,.16);color:#246b76}.s{background:rgba(224,122,95,.16);color:var(--coral-deep)}.f{background:rgba(20,17,12,.1);color:var(--ink)}
+  .stack{background:var(--paper-2);border:.5px solid var(--line);border-radius:14px;padding:16px 20px;margin:12px 0}
+  .stack .row{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;border-bottom:1px dotted var(--line-2);font-size:14px;color:var(--ink-soft)}
+  .stack .row:last-child{border-bottom:none}
+  .stack .row b{color:var(--ink-2)}
+  .stack .tot{border-top:2px solid var(--forest);margin-top:6px;padding-top:10px;font-family:var(--serif);font-size:17px;color:var(--forest-deep)}
+</style>
+</head>
+<body>
+<div class="bp-wrap">
+  <a class="bp-back" href="sorainternalresources.html">← Recursos internos · Construcción</a>
+  <h1 class="bp-h1">Cost &amp; budget model</h1>
+  <div class="bp-meta">Updated 2026-06-24 · Owner: Abraham · INTERNAL build playbook</div>
+  <div class="bp-nav"><a href="build-playbook.html">↖ Playbook overview</a><a href="build-process.html">→ Process</a><a href="build-materials.html">→ Materials</a><a href="build-architecture.html">→ Architecture</a><a href="build-team.html">→ Contractor</a></div>
+
+  <div class="note"><b>How to read this:</b> these are planning estimates to scope a fixed price, not quotes. <b>Structure is predictable; finishes and region drive the variance.</b> Sora locks a single turnkey price at contract and owns the contingency, so the buyer never sees an overrun. Land is always separate. Validate every line with local <i>cotizaciones</i> before it goes into a real contract.</div>
+
+  <h2 class="bp-h2">The turnkey price build-up</h2>
+  <p>Every Sora fixed price is the same stack. Land sits outside it; the buyer buys (or already owns) titled land, and we build on it.</p>
+  <div class="stack">
+    <div class="row"><span><b>Construction</b> (tier $/m² × area × region)</span><span>base</span></div>
+    <div class="row"><span><b>Soft costs</b> — design + engineering (5–12%), permits (~1–2%), project management</span><span>~12% of construction</span></div>
+    <div class="row"><span><b>Extras</b> — pool, solar/off-grid, outdoor kitchen, extra bedroom, furnishing</span><span>per option</span></div>
+    <div class="row"><span><b>Contingency</b> (Sora carries this inside the fixed price)</span><span>~10–15%</span></div>
+    <div class="row tot"><span>= Turnkey price (locked at contract)</span><span>fixed</span></div>
+    <div class="row" style="border:none;font-family:var(--mono);font-size:11px;color:var(--ink-faint)"><span>+ Land (separate)</span><span>see land table</span></div>
+  </div>
+
+  <h2 class="bp-h2">Construction cost, $/m² by tier × region</h2>
+  <p>Tier sets the base; region adjusts it. Boquete is the baseline (David supplies it, ~1 hr). Volcán is a touch cheaper but remote; Pedasí adds trucking from Chitré/PTY; <b>Bocas adds ~25–30% for barge logistics</b>.</p>
+  <table class="t"><thead><tr><th>Region (mult)</th><th><span class="tier e">ESENCIAL</span> ~$1,200</th><th><span class="tier s">SORA</span> ~$1,500</th><th><span class="tier f">FIRMA</span> ~$1,900</th></tr></thead>
+  <tbody>
+    <tr><td>Boquete (×1.00)</td><td class="n">$1,200</td><td class="n">$1,500</td><td class="n">$1,900</td></tr>
+    <tr><td>Volcán (×0.97)</td><td class="n">$1,165</td><td class="n">$1,455</td><td class="n">$1,845</td></tr>
+    <tr><td>Pedasí (×1.05)</td><td class="n">$1,260</td><td class="n">$1,575</td><td class="n">$1,995</td></tr>
+    <tr><td>Bocas (×1.28)</td><td class="n">$1,535</td><td class="n">$1,920</td><td class="n">$2,430</td></tr>
+  </tbody></table>
+  <p style="font-family:var(--mono);font-size:11px;color:var(--ink-faint)">$/m² ≈ $/sq ft × 10.76. So Boquete Sora ~$1,500/m² ≈ ~$139/sq ft. These are construction only (soft costs + extras + contingency sit on top). National sanity range from the field research: ~$700–2,200/m².</p>
+
+  <h2 class="bp-h2">Soft costs (on top of construction)</h2>
+  <table class="t"><thead><tr><th>Item</th><th>Typical</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>Architect</td><td>5–12%</td><td>+ ~$1,500 min to adapt/stamp a foreign design</td></tr>
+    <tr><td>Structural engineering</td><td>~0.5%+</td><td>never &lt; ~$750</td></tr>
+    <tr><td>Soil study</td><td>~$2,590 flat</td><td>can downgrade foundations &amp; save more than it costs</td></tr>
+    <tr><td>Municipal permit</td><td>~1% of declared value</td><td>+ small fixed add-ons (cartón, per-sheet, timbres)</td></tr>
+    <tr><td>Project management</td><td>built into Sora margin</td><td>weekly video, inspections, milestone sign-offs</td></tr>
+  </tbody></table>
+
+  <h2 class="bp-h2">Extras (price adders, not in base)</h2>
+  <table class="t"><thead><tr><th>Extra</th><th>Indicative</th></tr></thead>
+  <tbody>
+    <tr><td>Pool (concrete, salt-chlorinated)</td><td class="n">~$28,000</td></tr>
+    <tr><td>Solar + LiFePO4 off-grid pack (5–12 kW)</td><td class="n">~$10k–22k</td></tr>
+    <tr><td>Outdoor kitchen</td><td class="n">~$8k–15k</td></tr>
+    <tr><td>Extra bedroom / wing</td><td class="n">~$35,000</td></tr>
+    <tr><td>Premium furnishing package</td><td class="n">~$24,000</td></tr>
+  </tbody></table>
+  <p style="font-family:var(--mono);font-size:11px;color:var(--ink-faint)">Extras are illustrative planning figures; confirm per project. Solar is duty/VAT-exempt under Law 417.</p>
+
+  <h2 class="bp-h2">Land (always separate from turnkey)</h2>
+  <table class="t"><thead><tr><th>Market</th><th>$/m²</th></tr></thead>
+  <tbody>
+    <tr><td>Pedasí</td><td class="n">$20–80</td></tr>
+    <tr><td>Boquete</td><td class="n">$25–100</td></tr>
+    <tr><td>Volcán</td><td class="n">$15–60</td></tr>
+    <tr><td>Bocas</td><td class="n">$30–150 (titled scarce; much is ROP)</td></tr>
+  </tbody></table>
+  <p>Titled land only. ROP/concession land is cheaper but is not ownership and can't be mortgaged or insured (see Architecture &amp; permits, and the Listing Acquisition page).</p>
+
+  <h2 class="bp-h2">What a Sora turnkey price includes / excludes</h2>
+  <table class="t"><thead><tr><th>Included</th><th>Excluded</th></tr></thead>
+  <tbody>
+    <tr><td>Design, engineering, stamped plans</td><td>Land</td></tr>
+    <tr><td>All permits + occupancy</td><td>Furniture (unless furnishing pack)</td></tr>
+    <tr><td>Full construction to the contracted spec/tier</td><td>Owner-requested changes after sign-off (change orders)</td></tr>
+    <tr><td>Standard utility connections + septic/water/solar per spec</td><td>Exotic site work beyond the feasibility assumption</td></tr>
+    <tr><td>All-risk insurance during construction</td><td>Annual property tax (IBI) after handover</td></tr>
+    <tr><td>Listed extras (pool/solar/etc. if selected)</td><td>Long-haul access roads / unusual ANATI titling work</td></tr>
+  </tbody></table>
+
+  <h2 class="bp-h2">Worked examples (build, not land)</h2>
+  <p>The four Sora models, built at their typical tier and region. Construction = $/m² × area; soft + contingency are folded into the turnkey figure.</p>
+  <table class="t"><thead><tr><th>Model</th><th>Tier · region</th><th>Area</th><th>Turnkey (ex-land)</th></tr></thead>
+  <tbody>
+    <tr><td>Casa Refugio</td><td><span class="tier e">Esencial</span> · Bocas, off-grid</td><td>80 m² (~860 sq ft)</td><td class="n">~$155,000</td></tr>
+    <tr><td>Casa Bahía</td><td><span class="tier s">Sora</span> · Pedasí, pool</td><td>180 m² (~1,940 sq ft)</td><td class="n">~$385,000</td></tr>
+    <tr><td>Casa Montaña</td><td>upmarket · Boquete, 2-story</td><td>220 m² (~2,370 sq ft)</td><td class="n">~$485,000</td></tr>
+    <tr><td>Casa Punta</td><td><span class="tier f">Firma</span> · Pedasí, pool + solar</td><td>320 m² (~3,445 sq ft)</td><td class="n">~$815,000</td></tr>
+  </tbody></table>
+  <p style="font-family:var(--mono);font-size:11px;color:var(--ink-faint)">Per-m² all-in runs higher than the construction-only matrix because small/off-grid/coastal builds (Refugio, Punta) carry solar, water, and barge/trucking costs spread over fewer m². These are the published fixed prices; the configurator computes live estimates from the same logic.</p>
+
+  <div class="warn"><b>Caveat:</b> region multipliers and extra prices are planning estimates synthesized from the materials/permits research and Sora's published model prices, not live quotes. Finishes are the dominant swing (imported up to ~5× US). Re-derive the matrix annually and validate any contract line with local <i>cotizaciones</i>. Never present these as a quote, and never imply a home has already been built. Sources: <code>sora-real-estate/22-build-materials-sourcing.md</code>, <code>20-build-architecture-permits.md</code>.</div>
+</div>
+</body>
+</html>

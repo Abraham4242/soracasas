@@ -1,0 +1,2935 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SORA Casas · Compra · Vende · Construye</title>
+<meta name="description" content="Sora Casas. Compra una casa verificada, construye una de cuatro casas llave en mano, o vende la tuya en Panamá y Latinoamérica. Configurador 3D incluido.">
+<meta name="theme-color" content="#1d3a2c">
+<link rel="canonical" href="https://soracasas.com/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="keywords" content="construir casa en Panamá, custom home builder Panama, casas en venta Pedasí, Boquete real estate, Volcán Panama real estate, build a house in Panama, Friendly Nations Visa real estate">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SORA Casas">
+<meta property="og:locale" content="es_PA">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://soracasas.com/">
+<meta property="og:title" content="SORA Casas · Compra · Vende · Construye en Panamá">
+<meta property="og:description" content="Casas personalizadas con configurador 3D, precio fijo y entrega garantizada en Pedasí, Boquete, Volcán y Bocas del Toro. Compra · vende · construye con Sora.">
+<meta property="og:image" content="https://soracasas.com/og-image.svg">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SORA Casas · Compra · Vende · Construye en Panamá">
+<meta name="twitter:description" content="Casas personalizadas con configurador 3D, precio fijo y entrega garantizada en Panamá. Compra · vende · construye con Sora.">
+<meta name="twitter:image" content="https://soracasas.com/og-image.svg">
+<!-- Structured data: RealEstateAgent + WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RealEstateAgent",
+      "@id": "https://soracasas.com/#org",
+      "name": "SORA Casas",
+      "url": "https://soracasas.com/",
+      "description": "Constructor y mercado de casas personalizadas en Panamá: compra, vende y construye con precio fijo, configurador 3D y entrega garantizada.",
+      "areaServed": [
+        { "@type": "Place", "name": "Pedasí, Panamá" },
+        { "@type": "Place", "name": "Boquete, Panamá" },
+        { "@type": "Place", "name": "Volcán, Panamá" },
+        { "@type": "Place", "name": "Bocas del Toro, Panamá" }
+      ],
+      "address": { "@type": "PostalAddress", "addressCountry": "PA" },
+      "priceRange": "$$$",
+      "knowsLanguage": ["es", "en"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://soracasas.com/#website",
+      "url": "https://soracasas.com/",
+      "name": "SORA Casas",
+      "inLanguage": "es",
+      "publisher": { "@id": "https://soracasas.com/#org" }
+    }
+  ]
+}
+</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23f7f0df'/%3E%3Cpath d='M6 18 L16 9 L26 18 L26 25 L6 25 Z' fill='%231d3a2c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f0df;
+    --paper-2:#fcf6e6;
+    --paper-3:#ede4ca;
+    --paper-deep:#e3d9c2;
+    --ink:#14110c;
+    --ink-2:#2a251d;
+    --ink-soft:#4a4337;
+    --ink-faint:#807761;
+    --ink-ghost:#b0a78e;
+    --line:rgba(20,17,12,0.10);
+    --line-2:rgba(20,17,12,0.18);
+    --line-strong:rgba(20,17,12,0.40);
+    --forest:#1d3a2c;
+    --forest-2:#2a5440;
+    --forest-deep:#0f2218;
+    --coral:#e07a5f;
+    --coral-deep:#b85439;
+    --mango:#f4b942;
+    --teal:#2e8a96;
+    --gold:#d4b87a;
+    --gold-deep:#b39656;
+    --rose:#c64a5e;
+    --serif:"Fraunces",Georgia,serif;
+    --display:"Instrument Serif",Georgia,serif;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+    --mono:"JetBrains Mono",Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:15px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(ellipse at 10% 0%, rgba(160,123,62,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 100%, rgba(31,58,44,0.06) 0%, transparent 60%);
+    overflow-x:hidden;
+  }
+  html[lang="en"] [lang="es"]{display:none !important}
+  html[lang="es"] [lang="en"]{display:none !important}
+  ::selection{background:var(--ink);color:var(--paper)}
+  button,input,select,textarea{font:inherit;color:inherit}
+  button{cursor:pointer;border:none;background:none}
+  a{color:inherit;text-decoration:none}
+
+  /* ============ TOP BAR ============ */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(247,240,223,0.94);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{
+    max-width:1240px;margin:0 auto;
+    padding:14px 22px;
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+  }
+  .brand{display:flex;align-items:center;gap:11px;cursor:pointer}
+  .brand-mark{
+    width:30px;height:30px;border-radius:7px;
+    background:var(--forest);color:var(--paper);
+    display:grid;place-items:center;
+    font-family:var(--display);font-size:18px;
+  }
+  .brand-word{font-family:var(--display);font-size:24px;letter-spacing:0.04em;font-weight:400;color:var(--ink)}
+  .brand-sub{
+    font-family:var(--mono);font-size:9.5px;
+    color:var(--coral-deep);
+    background:rgba(224,122,95,0.10);
+    border:1px solid rgba(224,122,95,0.30);
+    padding:3px 8px;border-radius:5px;
+    letter-spacing:1.4px;font-weight:700;
+    text-transform:uppercase;
+  }
+  .topnav{display:flex;align-items:center;gap:6px}
+  .topnav button{
+    font-family:var(--mono);font-size:10.5px;
+    letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--ink-soft);padding:8px 13px;
+    border-radius:7px;font-weight:600;
+    transition:all .15s;
+  }
+  .topnav button:hover{color:var(--ink);background:rgba(20,17,12,0.05)}
+  .topnav button.active{color:var(--forest);background:rgba(29,58,44,0.10)}
+  .lang-toggle{display:flex;border:1px solid var(--line-2);border-radius:7px;overflow:hidden}
+  .lang-toggle button{
+    font-family:var(--mono);font-size:10.5px;font-weight:600;
+    padding:7px 11px;color:var(--ink-faint);background:transparent;
+    letter-spacing:1.2px;
+  }
+  .lang-toggle button.active{background:var(--forest);color:var(--paper)}
+  .menu-btn{display:none;font-size:22px;padding:6px 10px;color:var(--ink)}
+
+  @media (max-width:780px){
+    .topnav{display:none;gap:4px}
+    .topnav.open{
+      display:flex;flex-direction:column;align-items:stretch;
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--paper-2);border-bottom:1px solid var(--line);
+      padding:8px 12px;
+    }
+    .menu-btn{display:block}
+    .brand-sub{display:none}
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    padding:80px 22px 70px;
+    text-align:center;
+    position:relative;
+    max-width:1100px;margin:0 auto;
+  }
+  .hero::before{
+    content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+    width:90%;max-width:1000px;height:340px;
+    background:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;background-position:center 60%;
+    border-radius:24px;opacity:0.18;z-index:-1;
+    -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.8) 30%,transparent 100%);
+    mask-image:linear-gradient(180deg,rgba(0,0,0,0.8) 30%,transparent 100%);
+  }
+  .hero-eyebrow{
+    font-family:var(--mono);font-size:11px;
+    letter-spacing:2.2px;text-transform:uppercase;
+    color:var(--coral-deep);
+    margin-bottom:24px;
+  }
+  .hero h1{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:clamp(48px,8vw,96px);
+    line-height:1;
+    letter-spacing:-0.02em;
+    color:var(--ink);
+    margin-bottom:24px;
+  }
+  .hero h1 em{font-style:italic;color:var(--forest)}
+  .hero-sub{
+    font-family:var(--serif);
+    font-size:clamp(18px,2.2vw,22px);
+    line-height:1.4;
+    color:var(--ink-soft);
+    max-width:640px;margin:0 auto 36px;
+    font-weight:300;
+  }
+  .hero-pills{
+    display:flex;justify-content:center;gap:10px;
+    flex-wrap:wrap;margin-bottom:40px;
+  }
+  .hero-pill{
+    font-family:var(--mono);font-size:10.5px;
+    letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--ink-soft);font-weight:600;
+    padding:8px 14px;border:1px solid var(--line-2);
+    border-radius:99px;background:var(--paper-2);
+  }
+  .hero-cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+  .btn{
+    font-family:var(--mono);font-size:11px;
+    letter-spacing:1.8px;text-transform:uppercase;
+    padding:14px 24px;border-radius:10px;
+    font-weight:700;transition:all .18s;
+    border:1px solid transparent;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn-primary{background:var(--forest);color:var(--paper)}
+  .btn-primary:hover{background:var(--forest-deep);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .btn-coral{background:var(--coral);color:#fff}
+  .btn-coral:hover{background:var(--coral-deep)}
+
+  /* ============ SECTION SHELL ============ */
+  .section{padding:60px 22px;max-width:1240px;margin:0 auto}
+  .section-head{margin-bottom:36px}
+  .section-eyebrow{
+    font-family:var(--mono);font-size:10.5px;
+    letter-spacing:2px;text-transform:uppercase;
+    color:var(--coral-deep);font-weight:700;
+    margin-bottom:12px;
+  }
+  .section-title{
+    font-family:var(--display);font-size:clamp(36px,5vw,56px);
+    line-height:1.05;letter-spacing:-0.015em;
+    color:var(--ink);font-weight:400;
+    margin-bottom:14px;
+  }
+  .section-title em{font-style:italic;color:var(--forest)}
+  .section-sub{
+    font-family:var(--serif);font-size:17px;color:var(--ink-soft);
+    max-width:640px;font-weight:300;
+  }
+
+  /* ============ TABS NAV (3 modes) ============ */
+  .modeline{
+    display:flex;justify-content:center;gap:0;
+    margin:0 auto 48px;max-width:560px;
+    border:1px solid var(--line-2);border-radius:14px;
+    padding:5px;background:var(--paper-2);
+  }
+  .modeline button{
+    flex:1;font-family:var(--mono);font-size:11px;
+    letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:700;
+    padding:13px 14px;border-radius:10px;
+    transition:all .2s;
+  }
+  .modeline button.active{
+    background:var(--forest);color:var(--paper);
+    box-shadow:0 4px 14px rgba(29,58,44,0.18);
+  }
+
+  /* ============ MARKETPLACE (BUY) ============ */
+  .market-filters{
+    display:flex;gap:10px;flex-wrap:wrap;
+    margin-bottom:28px;padding:14px 16px;
+    background:var(--paper-2);border:1px solid var(--line);
+    border-radius:12px;align-items:center;
+  }
+  .filter-group{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .filter-label{
+    font-family:var(--mono);font-size:9.5px;
+    letter-spacing:1.4px;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:600;
+  }
+  .chip{
+    font-family:var(--sans);font-size:12.5px;
+    padding:6px 13px;border-radius:99px;
+    border:1px solid var(--line-2);background:var(--paper);
+    color:var(--ink-soft);font-weight:500;
+    transition:all .15s;
+  }
+  .chip:hover{border-color:var(--ink-soft);color:var(--ink)}
+  .chip.active{background:var(--forest);color:var(--paper);border-color:var(--forest)}
+  .market-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+    gap:22px;
+  }
+  .listing{
+    background:var(--paper-2);border:1px solid var(--line);
+    border-radius:16px;overflow:hidden;
+    transition:transform .25s,box-shadow .25s,border-color .25s;
+    cursor:pointer;display:flex;flex-direction:column;
+  }
+  .listing:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 40px rgba(20,17,12,0.10);
+    border-color:var(--line-2);
+  }
+  .listing-img{
+    aspect-ratio:16/10;
+    background-size:cover;background-position:center;
+    position:relative;
+  }
+  .listing-badge{
+    position:absolute;top:12px;left:12px;
+    font-family:var(--mono);font-size:9.5px;
+    letter-spacing:1.4px;text-transform:uppercase;
+    padding:5px 10px;border-radius:5px;
+    font-weight:700;
+    background:rgba(247,240,223,0.94);color:var(--forest);
+    backdrop-filter:blur(8px);
+  }
+  .listing-badge.sold{background:rgba(20,17,12,0.84);color:var(--paper);}
+  .listing-badge.new{background:var(--coral);color:#fff}
+  .listing-flag{
+    position:absolute;top:12px;right:12px;
+    font-size:22px;
+    background:rgba(247,240,223,0.94);
+    backdrop-filter:blur(8px);
+    width:38px;height:38px;border-radius:50%;
+    display:grid;place-items:center;
+  }
+  .listing-body{padding:18px 18px 20px}
+  .listing-title{
+    font-family:var(--serif);font-size:19px;font-weight:500;
+    line-height:1.2;color:var(--ink);margin-bottom:5px;
+  }
+  .listing-loc{
+    font-family:var(--mono);font-size:10.5px;
+    letter-spacing:1.2px;text-transform:uppercase;
+    color:var(--ink-faint);margin-bottom:13px;font-weight:600;
+  }
+  .listing-meta{
+    display:flex;gap:12px;font-size:12.5px;color:var(--ink-soft);
+    padding-bottom:13px;border-bottom:1px dashed var(--line-2);
+    margin-bottom:13px;
+  }
+  .listing-meta span{display:flex;align-items:center;gap:5px}
+  .listing-price{
+    display:flex;justify-content:space-between;align-items:flex-end;
+  }
+  .listing-price-val{
+    font-family:var(--display);font-size:26px;
+    color:var(--forest);letter-spacing:-0.01em;
+  }
+  .listing-price-cta{
+    font-family:var(--mono);font-size:10px;
+    letter-spacing:1.4px;text-transform:uppercase;
+    color:var(--coral-deep);font-weight:700;
+  }
+
+  /* ---- listing card carousel ---- */
+  .listing-img{overflow:hidden}
+  .lc-track{position:absolute;inset:0}
+  .lc-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .45s ease}
+  .lc-slide.on{opacity:1}
+  .lc-arrow{
+    position:absolute;top:50%;transform:translateY(-50%);
+    width:30px;height:30px;border-radius:50%;
+    background:rgba(247,240,223,0.92);color:var(--ink);
+    display:grid;place-items:center;font-size:16px;line-height:1;
+    opacity:0;transition:opacity .2s,background .2s;z-index:4;
+    backdrop-filter:blur(6px);
+  }
+  .listing:hover .lc-arrow{opacity:.95}
+  .lc-arrow:hover{background:#fff}
+  .lc-prev{left:9px}.lc-next{right:9px}
+  .lc-dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:4}
+  .lc-dot{width:6px;height:6px;border-radius:50%;background:rgba(247,240,223,0.5);transition:all .25s}
+  .lc-dot.on{background:#fff;width:15px;border-radius:3px}
+  @media (hover:none){.lc-arrow{opacity:.9}}
+
+  /* ============ PROPERTY DETAIL PAGE ============ */
+  .casa-page{position:fixed;inset:0;z-index:200;background:var(--paper);overflow-y:auto;overflow-x:hidden;display:none}
+  .casa-page.open{display:block}
+  .casa-top{position:sticky;top:0;z-index:30;background:rgba(247,240,223,0.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+  .casa-top-inner{max-width:1180px;margin:0 auto;padding:11px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .casa-back{font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-soft);display:inline-flex;align-items:center;gap:8px;font-weight:600;padding:8px 12px;border-radius:8px}
+  .casa-back:hover{background:rgba(20,17,12,0.05);color:var(--ink)}
+  .casa-top-brand{font-family:var(--display);font-size:21px;letter-spacing:.04em;color:var(--ink)}
+  .casa-wrap{max-width:1180px;margin:0 auto;padding:0 22px 110px}
+  /* cinematic hero */
+  .casa-hero{position:relative;width:100vw;margin-left:calc(-50vw + 50%);height:clamp(420px,66vh,680px);overflow:hidden;background:#16130d;cursor:zoom-in}
+  .ch-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .8s ease}
+  .ch-slide.on{opacity:1;animation:chZoom 11s ease-out forwards}
+  @keyframes chZoom{from{transform:scale(1.07)}to{transform:scale(1.0)}}
+  .ch-scrim{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(20,17,12,.32) 0%,rgba(20,17,12,0) 26%,rgba(20,17,12,0) 48%,rgba(20,17,12,.74) 100%)}
+  .ch-inner{position:absolute;left:0;right:0;bottom:0;z-index:3;max-width:1180px;margin:0 auto;padding:34px 22px;color:var(--paper)}
+  .ch-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(247,240,223,.82);margin-bottom:12px}
+  .ch-title{font-family:var(--display);font-size:clamp(36px,6vw,68px);line-height:1.0;letter-spacing:-.02em;color:#fdfaf0;max-width:14ch;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+  .ch-meta{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-top:14px}
+  .ch-price{font-family:var(--display);font-size:clamp(26px,3.4vw,38px);color:#fff;letter-spacing:-.01em}
+  .ch-pm2{font-family:var(--mono);font-size:12px;color:rgba(247,240,223,.72);letter-spacing:.3px}
+  .ch-loc{font-family:var(--mono);font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(247,240,223,.8);font-weight:600}
+  .ch-badge{position:absolute;top:0;left:50%;transform:translateX(-50%);max-width:1180px;width:100%;padding:18px 22px;z-index:4;pointer-events:none}
+  .ch-badge .listing-badge{position:static}
+  .ch-arrow{position:absolute;top:45%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(20,17,12,.32);border:1px solid rgba(255,255,255,.3);color:#fff;display:grid;place-items:center;font-size:22px;z-index:4;backdrop-filter:blur(4px);transition:background .2s}
+  .ch-arrow:hover{background:rgba(20,17,12,.6)}
+  .ch-prev{left:18px}.ch-next{right:18px}
+  .ch-viewall{position:absolute;bottom:20px;right:22px;z-index:4;font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:600;color:#fff;background:rgba(20,17,12,.42);border:1px solid rgba(255,255,255,.28);padding:8px 13px;border-radius:30px;display:inline-flex;gap:7px;align-items:center;backdrop-filter:blur(4px)}
+  .ch-viewall:hover{background:rgba(20,17,12,.66)}
+  .ch-viewall svg{width:13px;height:13px}
+  .ch-count{position:absolute;bottom:24px;left:22px;z-index:4;font-family:var(--mono);font-size:11px;letter-spacing:1px;color:rgba(247,240,223,.85)}
+  /* thumbnail rail */
+  .casa-thumbs{display:flex;gap:9px;margin-top:14px;overflow-x:auto;padding-bottom:4px}
+  .casa-thumb{width:96px;height:64px;flex:none;border-radius:9px;background-size:cover;background-position:center;cursor:pointer;opacity:.5;border:2px solid transparent;transition:opacity .2s,border-color .2s}
+  .casa-thumb:hover{opacity:.85}
+  .casa-thumb.on{opacity:1;border-color:var(--forest)}
+  /* essence */
+  .casa-essence{display:flex;align-items:center;gap:18px;margin:42px auto 6px;max-width:780px}
+  .casa-essence .rule{flex:1;height:1px;background:var(--line)}
+  .casa-essence p{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.6vw,27px);line-height:1.35;color:var(--forest);text-align:center}
+  /* grid */
+  .casa-grid{display:grid;grid-template-columns:1fr;gap:36px;margin-top:42px}
+  @media (min-width:900px){.casa-grid{grid-template-columns:1.55fr 1fr;gap:56px;align-items:start}}
+  .casa-kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--coral-deep);font-weight:600;margin-bottom:13px}
+  .casa-body p{color:var(--ink-soft);font-size:15.5px;line-height:1.74;margin-bottom:16px}
+  .casa-body p.casa-lead{font-family:var(--serif);font-size:19px;line-height:1.55;color:var(--ink);font-weight:300;margin-bottom:18px}
+  .casa-h2{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ink);margin:38px 0 16px;display:flex;align-items:center;gap:10px}
+  .casa-h2 svg{width:17px;height:17px;color:var(--forest)}
+  .casa-feats{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 26px}
+  .casa-feats li{display:flex;gap:9px;align-items:flex-start;font-size:14.5px;color:var(--ink-soft);line-height:1.45}
+  .casa-feats li svg{width:15px;height:15px;color:var(--forest);flex:none;margin-top:2px}
+  @media (max-width:560px){.casa-feats{grid-template-columns:1fr}}
+  .casa-nearby{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 26px;margin-top:8px}
+  .casa-nearby li{display:flex;gap:9px;align-items:center;font-size:13.5px;color:var(--ink-soft)}
+  .casa-nearby li svg{width:14px;height:14px;color:var(--coral-deep);flex:none}
+  .casa-nearby b{font-family:var(--mono);font-weight:600;color:var(--ink);font-size:12.5px}
+  @media (max-width:560px){.casa-nearby{grid-template-columns:1fr}}
+  /* sticky card */
+  .casa-card{background:var(--paper-2);border:1px solid var(--line);border-radius:18px;padding:24px}
+  @media (min-width:900px){.casa-card{position:sticky;top:80px}}
+  .casa-price{font-family:var(--display);font-size:40px;color:var(--forest);letter-spacing:-.01em;line-height:1;display:flex;align-items:baseline;gap:10px}
+  .casa-price .pm2{font-family:var(--mono);font-size:12px;color:var(--ink-faint);letter-spacing:.2px}
+  .casa-price-note{font-family:var(--mono);font-size:10px;letter-spacing:1.1px;text-transform:uppercase;color:var(--ink-faint);margin-top:8px;margin-bottom:20px;display:flex;align-items:center;gap:7px}
+  .casa-price-note svg{width:13px;height:13px;color:var(--forest)}
+  .casa-specs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:20px}
+  .casa-spec{background:var(--paper-2);padding:13px 14px;display:flex;gap:10px;align-items:center}
+  .casa-spec svg{width:17px;height:17px;color:var(--ink-faint);flex:none}
+  .casa-spec .k{font-family:var(--mono);font-size:8.5px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint)}
+  .casa-spec .v{font-family:var(--serif);font-size:16px;color:var(--ink);line-height:1.1}
+  .casa-cta{width:100%;margin-bottom:9px}
+  .casa-mini{font-family:var(--mono);font-size:10px;letter-spacing:.2px;color:var(--ink-faint);text-align:center;margin-top:12px;line-height:1.6}
+  /* process band */
+  .casa-process{margin-top:62px;background:var(--paper-2);border:1px solid var(--line);border-radius:20px;padding:34px 32px}
+  .casa-process h3{font-family:var(--serif);font-size:21px;font-weight:500;margin-bottom:22px}
+  .casa-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  @media (max-width:760px){.casa-steps{grid-template-columns:1fr 1fr;gap:22px}}
+  .casa-step .n{font-family:var(--display);font-size:30px;color:var(--coral-deep);line-height:1}
+  .casa-step .t{font-family:var(--serif);font-size:15px;font-weight:500;margin:8px 0 5px;color:var(--ink)}
+  .casa-step p{font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin:0}
+  /* closing CTA band */
+  .casa-ctaband{position:relative;width:100vw;margin-left:calc(-50vw + 50%);margin-top:66px;background:var(--forest-deep);color:var(--paper);overflow:hidden}
+  .casa-ctaband::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 82% 130%,rgba(224,122,95,.2),transparent 58%);pointer-events:none}
+  .ctaband-in{max-width:1180px;margin:0 auto;padding:54px 22px;position:relative;z-index:2;text-align:center}
+  .ctaband-in .eye{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .ctaband-in h3{font-family:var(--display);font-size:clamp(28px,4vw,44px);line-height:1.05;color:#fdfaf0;margin-bottom:12px}
+  .ctaband-in p{color:rgba(247,240,223,.74);font-size:15px;max-width:540px;margin:0 auto 24px;line-height:1.55}
+  .ctaband-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  /* similar */
+  .casa-similar{margin-top:60px}
+  .casa-similar h3{font-family:var(--serif);font-size:23px;font-weight:500;color:var(--ink);margin-bottom:3px}
+  .casa-similar .ssub{font-family:var(--mono);font-size:11px;letter-spacing:.4px;color:var(--ink-faint);text-transform:uppercase;margin-bottom:20px}
+  .casa-similar-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:22px}
+  /* mobile sticky CTA */
+  .casa-mcta{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;align-items:center;gap:12px;background:rgba(247,240,223,.97);backdrop-filter:blur(12px);border-top:1px solid var(--line-2);padding:11px 16px}
+  .casa-mcta .mp{font-family:var(--display);font-size:24px;color:var(--forest);line-height:1}
+  .casa-mcta .btn{flex:1;margin:0}
+  @media (max-width:899px){.casa-mcta{display:flex}}
+  /* lightbox */
+  .casa-lightbox{position:fixed;inset:0;z-index:300;background:rgba(16,13,9,.95);display:none;flex-direction:column;align-items:center;justify-content:center}
+  .casa-lightbox.open{display:flex}
+  .clb-img{width:92vw;height:80vh;max-width:1400px;background-size:contain;background-repeat:no-repeat;background-position:center;border-radius:4px}
+  .clb-cap{font-family:var(--mono);font-size:12px;letter-spacing:1px;text-transform:uppercase;color:rgba(247,240,223,.72);margin-top:16px}
+  .clb-count{font-family:var(--mono);font-size:11px;color:rgba(247,240,223,.5);margin-top:6px}
+  .clb-close{position:absolute;top:20px;right:24px;color:#fff;font-size:24px;line-height:1;width:40px;height:40px;border-radius:50%;display:grid;place-items:center}
+  .clb-close:hover{background:rgba(255,255,255,.12)}
+  .clb-arrow{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;display:grid;place-items:center;font-size:24px}
+  .clb-arrow:hover{background:rgba(255,255,255,.22)}
+  .clb-prev{left:20px}.clb-next{right:20px}
+  /* scroll reveal */
+  .reveal-up{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+  .reveal-up.in{opacity:1;transform:none}
+  /* finance + actions + map */
+  .casa-fin{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin:-6px 0 18px;line-height:1.5}
+  .casa-fin b{color:var(--forest);font-weight:600}.casa-fin span{color:var(--ink-faint)}
+  .casa-actions{display:flex;gap:7px;margin-top:12px}
+  .casa-act{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-family:var(--mono);font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;font-weight:600;color:var(--ink-soft);border:1px solid var(--line-2);border-radius:9px;padding:9px 5px;background:none;cursor:pointer;transition:all .15s}
+  .casa-act:hover{border-color:var(--ink-faint);color:var(--ink)}
+  .casa-act.on{color:var(--coral-deep);border-color:var(--coral-deep);background:rgba(184,84,57,.07)}
+  .casa-act svg{width:13px;height:13px}
+  .casa-mapsec{margin-top:46px}
+  .casa-map{border-radius:14px;overflow:hidden;border:1px solid var(--line);height:340px;background:var(--paper-2);margin-top:4px}
+  .casa-map iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.92) contrast(.98)}
+  .map-note{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);margin-top:9px;letter-spacing:.2px}
+  @media print{
+    body>*{display:none!important}
+    .casa-page{display:block!important;position:static!important;overflow:visible!important;height:auto!important;background:#fff!important}
+    .casa-top,.ch-arrow,.ch-viewall,.ch-count,.casa-thumbs,.casa-mcta,.casa-lightbox,.casa-actions,.casa-ctaband,.casa-process,.casa-similar,.casa-mapsec{display:none!important}
+    .casa-hero{height:280px!important;width:100%!important;margin:0 0 16px!important;page-break-inside:avoid}
+    .casa-grid{display:block!important}
+    .casa-grid aside{margin-top:20px}
+    .casa-card{position:static!important;page-break-inside:avoid;border:1px solid #ccc}
+    .reveal-up{opacity:1!important;transform:none!important;transition:none!important}
+    @page{margin:14mm}
+  }
+
+  /* ============ MODELS (BUILD) ============ */
+  .models-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+    margin-bottom:36px;
+  }
+  @media (min-width:1000px){
+    .models-row{grid-template-columns:repeat(4,1fr)}
+  }
+  .model-card{
+    background:var(--paper-2);border:1px solid var(--line);
+    border-radius:14px;padding:0;
+    transition:all .2s;
+    cursor:pointer;text-align:left;
+    overflow:hidden;display:flex;flex-direction:column;
+  }
+  .model-card:hover{border-color:var(--line-strong);transform:translateY(-2px)}
+  .model-card.active{
+    border-color:var(--forest);
+    box-shadow:0 14px 32px rgba(29,58,44,0.18);
+  }
+  .model-card.active .model-img::after{
+    content:'';position:absolute;inset:0;
+    border:2px solid var(--forest);border-radius:0;
+    box-shadow:inset 0 0 0 4px rgba(29,58,44,0.10);pointer-events:none;
+  }
+  .model-img{
+    aspect-ratio:16/10;
+    background-size:cover;background-position:center;
+    position:relative;
+  }
+  .model-img::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,17,12,0.0) 55%,rgba(20,17,12,0.45) 100%);
+  }
+  .model-img-label{
+    position:absolute;top:10px;left:10px;
+    font-family:var(--mono);font-size:9.5px;
+    letter-spacing:1.4px;text-transform:uppercase;
+    padding:5px 9px;border-radius:5px;
+    font-weight:700;
+    background:rgba(247,240,223,0.94);color:var(--forest);
+    backdrop-filter:blur(8px);
+  }
+  .model-card-body{padding:14px 16px 16px}
+  .model-card .name{
+    font-family:var(--display);font-size:23px;
+    color:var(--ink);margin-bottom:3px;
+  }
+  .model-card.active .name{color:var(--forest)}
+  .model-card .name em{font-style:italic}
+  .model-card .specs{
+    font-family:var(--mono);font-size:10px;
+    letter-spacing:1.2px;text-transform:uppercase;
+    color:var(--ink-faint);margin-bottom:11px;font-weight:600;
+  }
+  .model-card .desc{
+    font-size:13px;color:var(--ink-soft);
+    line-height:1.45;margin-bottom:12px;min-height:54px;
+  }
+  .pack-card-price{
+    display:flex;align-items:baseline;gap:6px;
+    margin-top:10px;padding-top:10px;
+    border-top:1px solid var(--line-2);
+  }
+  .pack-card-price-val{
+    font-family:var(--display);font-size:22px;color:var(--forest);
+    letter-spacing:-0.01em;
+  }
+  .pack-card-price-lbl{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:1.4px;
+    color:var(--ink-faint);font-weight:700;text-transform:uppercase;
+  }
+  .model-img-label.tier-entry{background:rgba(46,138,150,0.92);color:#fff}
+  .model-img-label.tier-hero{background:rgba(224,122,95,0.96);color:#fff}
+  .model-img-label.tier-upmarket{background:rgba(29,58,44,0.92);color:var(--paper)}
+  .model-img-label.tier-flagship{background:rgba(20,17,12,0.96);color:var(--mango)}
+
+  /* ============ CONFIGURATOR ============ */
+  .configurator{
+    display:grid;
+    grid-template-columns:1fr 360px;
+    gap:24px;
+    background:var(--paper-2);
+    border:1px solid var(--line);
+    border-radius:18px;
+    overflow:hidden;
+    margin-bottom:30px;
+  }
+  @media (max-width:960px){
+    .configurator{grid-template-columns:1fr}
+  }
+  .viewer{
+    position:relative;
+    aspect-ratio:16/11;
+    background:linear-gradient(180deg,#a8c4d4 0%,#cdd9d8 50%,#d4c9a8 100%);
+    overflow:hidden;
+  }
+  @media (max-width:960px){
+    .viewer{aspect-ratio:4/3}
+  }
+  #three-canvas{width:100%;height:100%;display:block;cursor:grab}
+  #three-canvas:active{cursor:grabbing}
+  .viewer-fs{position:absolute;top:12px;right:12px;z-index:5;width:36px;height:36px;border:none;border-radius:9px;background:rgba(15,34,24,.72);color:#f1ece0;font-size:15px;display:grid;place-items:center;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background .15s}
+  .viewer-fs:hover{background:#1d3a2c}
+  .viewer:fullscreen{aspect-ratio:auto;width:100vw;height:100vh;border-radius:0}
+  .viewer:-webkit-full-screen{aspect-ratio:auto;width:100vw;height:100vh;border-radius:0}
+  .viewer-overlay{
+    position:absolute;top:0;left:0;right:0;
+    padding:18px;
+    display:flex;justify-content:space-between;align-items:flex-start;
+    pointer-events:none;
+  }
+  .viewer-name{
+    font-family:var(--display);font-size:30px;color:#fff;
+    text-shadow:0 1px 12px rgba(0,0,0,0.35);
+    letter-spacing:-0.01em;
+  }
+  .viewer-name em{font-style:italic}
+  .viewer-tag{
+    font-family:var(--mono);font-size:10px;letter-spacing:1.6px;
+    text-transform:uppercase;color:rgba(255,255,255,0.92);
+    background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);
+    padding:6px 11px;border-radius:6px;
+    margin-top:6px;display:inline-block;font-weight:600;
+  }
+  .viewer-controls{
+    position:absolute;bottom:14px;left:14px;right:14px;
+    display:flex;justify-content:space-between;align-items:center;
+    pointer-events:none;
+  }
+  .viewer-hint{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:1.4px;
+    text-transform:uppercase;color:rgba(255,255,255,0.85);
+    background:rgba(0,0,0,0.32);backdrop-filter:blur(8px);
+    padding:6px 11px;border-radius:6px;font-weight:600;
+  }
+  .view-toggles{
+    display:flex;gap:6px;pointer-events:auto;
+    background:rgba(0,0,0,0.34);backdrop-filter:blur(10px);
+    border-radius:8px;padding:4px;
+  }
+  .view-toggles button{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:1.3px;
+    text-transform:uppercase;color:rgba(255,255,255,0.85);
+    font-weight:700;padding:7px 11px;border-radius:6px;
+    transition:all .15s;
+  }
+  .view-toggles button.active{background:rgba(255,255,255,0.95);color:var(--ink)}
+
+  /* sidebar */
+  .conf-sidebar{
+    padding:22px 22px 18px;
+    display:flex;flex-direction:column;
+    border-left:1px solid var(--line);
+    overflow-y:auto;
+    max-height:920px;
+  }
+  @media (max-width:960px){
+    .conf-sidebar{border-left:none;border-top:1px solid var(--line);max-height:none}
+  }
+  .pack-badge{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:1.6px;
+    text-transform:uppercase;font-weight:700;
+    padding:5px 10px;border-radius:5px;
+    display:inline-block;margin-bottom:14px;
+    background:var(--coral);color:#fff;
+    align-self:flex-start;
+  }
+  .pack-badge.entry{background:var(--teal)}
+  .pack-badge.hero{background:var(--coral)}
+  .pack-badge.upmarket{background:var(--forest)}
+  .pack-badge.flagship{background:var(--ink);color:var(--mango)}
+  .pack-price-block{
+    margin-bottom:18px;padding-bottom:18px;
+    border-bottom:1px solid var(--line);
+  }
+  .pack-price-label{
+    font-family:var(--mono);font-size:10px;letter-spacing:1.6px;
+    text-transform:uppercase;color:var(--ink-faint);font-weight:700;
+    margin-bottom:5px;
+  }
+  .pack-price-val{
+    font-family:var(--display);font-size:48px;line-height:1;
+    color:var(--forest);font-weight:400;
+    letter-spacing:-0.02em;margin-bottom:8px;
+  }
+  .pack-price-sub{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:1px;
+    color:var(--ink-soft);font-weight:600;text-transform:uppercase;
+  }
+  .pack-pitch{
+    font-family:var(--serif);font-style:italic;
+    font-size:14.5px;line-height:1.5;
+    color:var(--ink-soft);margin-bottom:18px;
+    padding-left:12px;border-left:2px solid var(--coral);
+  }
+  .pack-highlights{margin-bottom:18px}
+  .pack-highlights h4{font-family:var(--mono);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink-faint);font-weight:700;margin-bottom:10px}
+  .pack-highlights ul{list-style:none;padding:0;margin:0}
+  .pack-highlights li{font-size:13.5px;color:var(--ink-2);line-height:1.5;padding:5px 0 5px 22px;position:relative;border-bottom:.5px dashed var(--line-2)}
+  .pack-highlights li:last-child{border-bottom:none}
+  .pack-highlights li::before{content:'';position:absolute;left:3px;top:11px;width:7px;height:7px;border-radius:50%;background:var(--coral)}
+  .pack-for-who{margin-bottom:18px}
+  .pack-for-who h4{
+    font-family:var(--mono);font-size:10px;letter-spacing:1.6px;
+    text-transform:uppercase;color:var(--ink-faint);font-weight:700;
+    margin-bottom:10px;
+  }
+  .pack-for-who ul{
+    list-style:none;padding:0;margin:0;
+    display:flex;flex-wrap:wrap;gap:5px;
+  }
+  .pack-for-who li{
+    font-size:11.5px;color:var(--ink);
+    background:var(--paper);border:1px solid var(--line-2);
+    padding:4px 9px;border-radius:99px;
+  }
+  .pack-includes{margin-bottom:6px}
+  .pack-includes h4{
+    margin-bottom:0;
+  }
+  .pack-includes-toggle{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:1.6px;
+    text-transform:uppercase;color:var(--ink);font-weight:700;
+    padding:11px 0;cursor:pointer;border-bottom:1px solid var(--line-2);
+  }
+  .pack-includes .caret{transition:transform .2s;font-size:14px;color:var(--coral-deep)}
+  .pack-includes.open .caret{transform:rotate(180deg)}
+  .pack-includes ul{
+    list-style:none;padding:0;margin:0;
+    max-height:0;overflow:hidden;
+    transition:max-height .35s ease;
+  }
+  .pack-includes.open ul{max-height:1500px;padding:10px 0}
+  .pack-includes li{
+    font-size:12.5px;color:var(--ink-soft);
+    padding:5px 0 5px 18px;position:relative;line-height:1.45;
+  }
+  .pack-includes li::before{
+    content:'✓';position:absolute;left:0;top:5px;
+    color:var(--forest);font-weight:700;font-size:11px;
+  }
+  .pack-includes li.star::before{content:'★';color:var(--coral)}
+  .pack-includes li.solar::before{content:'☼';color:var(--mango)}
+  .pack-not{
+    border-top:1px dashed var(--line-2);margin-top:8px;padding-top:10px;
+    max-height:0;overflow:hidden;transition:max-height .35s ease;
+  }
+  .pack-includes.open .pack-not{max-height:300px}
+  .pack-not h5{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:1.4px;
+    text-transform:uppercase;color:var(--ink-faint);font-weight:700;
+    margin-bottom:6px;
+  }
+  .pack-not li{
+    font-size:12px;color:var(--ink-faint);
+    padding:4px 0 4px 18px;position:relative;line-height:1.45;
+  }
+  .pack-not li::before{
+    content:'—';position:absolute;left:0;top:4px;color:var(--ink-faint);
+  }
+  .reserve-line{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:14px 14px;background:var(--paper-3);border-radius:10px;
+    margin-bottom:12px;
+  }
+  .reserve-amt{
+    font-family:var(--display);font-size:22px;color:var(--ink);font-weight:400;
+  }
+  .reserve-lbl{
+    font-family:var(--mono);font-size:9px;letter-spacing:1.3px;
+    text-transform:uppercase;color:var(--ink-faint);font-weight:700;margin-top:2px;
+  }
+  .conf-section{margin-bottom:22px}
+  .conf-section h4{
+    font-family:var(--mono);font-size:10px;
+    letter-spacing:1.6px;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:700;
+    margin-bottom:11px;
+  }
+  .opt-row{display:flex;gap:6px;flex-wrap:wrap}
+  .opt{
+    font-family:var(--sans);font-size:12.5px;
+    padding:8px 12px;border-radius:8px;
+    border:1px solid var(--line-2);background:var(--paper);
+    color:var(--ink-soft);font-weight:500;
+    transition:all .15s;text-align:center;
+    flex:1;min-width:80px;
+  }
+  .opt:hover{border-color:var(--ink-faint);color:var(--ink)}
+  .opt.active{background:var(--forest);color:var(--paper);border-color:var(--forest)}
+  .opt small{display:block;font-family:var(--mono);font-size:9px;
+    letter-spacing:0.6px;margin-top:2px;font-weight:600;
+    opacity:0.75;text-transform:uppercase;
+  }
+  .opt-finish{display:flex;align-items:center;gap:8px;justify-content:center}
+  .swatch{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,0.18)}
+
+  .toggle-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:11px 13px;border:1px solid var(--line-2);
+    border-radius:9px;margin-bottom:7px;background:var(--paper);
+    cursor:pointer;
+  }
+  .toggle-row:last-child{margin-bottom:0}
+  .toggle-row.active{background:rgba(29,58,44,0.06);border-color:var(--forest)}
+  .toggle-name{font-size:13.5px;font-weight:500;color:var(--ink)}
+  .toggle-name small{display:block;font-family:var(--mono);font-size:9.5px;color:var(--ink-faint);font-weight:600;letter-spacing:0.5px;margin-top:2px;text-transform:uppercase}
+  .toggle-add{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--coral-deep);font-weight:700;
+  }
+  .toggle-row.active .toggle-add{color:var(--forest)}
+
+  /* price block */
+  .price-block{
+    margin-top:auto;padding-top:18px;border-top:1px solid var(--line-2);
+  }
+  .price-line{
+    display:flex;justify-content:space-between;
+    font-size:12.5px;color:var(--ink-soft);
+    margin-bottom:5px;
+  }
+  .price-line.total{
+    font-family:var(--display);
+    font-size:32px;color:var(--ink);
+    border-top:1px solid var(--line);padding-top:10px;margin-top:10px;
+    align-items:baseline;
+  }
+  .price-line.total span:first-child{font-size:13px;font-family:var(--mono);letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-faint)}
+  .price-line.total span:last-child{font-weight:400;color:var(--forest)}
+  .price-conf{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:1.3px;
+    text-transform:uppercase;color:var(--ink-faint);
+    margin-top:6px;font-weight:600;
+  }
+  .price-actions{
+    display:grid;gap:8px;margin-top:14px;
+  }
+
+  /* ============ SELL ============ */
+  .sell-grid{
+    display:grid;grid-template-columns:1.3fr 1fr;gap:24px;
+  }
+  @media (max-width:880px){.sell-grid{grid-template-columns:1fr}}
+  .sell-card{
+    background:var(--paper-2);border:1px solid var(--line);
+    border-radius:16px;padding:30px 26px;
+  }
+  .sell-card h3{
+    font-family:var(--display);font-size:32px;line-height:1.1;
+    color:var(--ink);margin-bottom:8px;
+  }
+  .sell-card h3 em{font-style:italic;color:var(--coral)}
+  .sell-card .lede{
+    font-family:var(--serif);font-size:16px;color:var(--ink-soft);
+    margin-bottom:22px;font-weight:300;
+  }
+  .sell-steps{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:22px}
+  .sell-steps li{
+    display:flex;gap:14px;align-items:flex-start;
+  }
+  .sell-num{
+    width:32px;height:32px;border-radius:50%;
+    background:var(--forest);color:var(--paper);
+    display:grid;place-items:center;flex-shrink:0;
+    font-family:var(--display);font-size:17px;
+  }
+  .sell-step-name{font-weight:600;color:var(--ink);font-size:14px;margin-bottom:2px}
+  .sell-step-desc{font-size:13px;color:var(--ink-soft);line-height:1.5}
+
+  .sell-form{display:grid;gap:12px}
+  .sell-form label{
+    font-family:var(--mono);font-size:10px;
+    letter-spacing:1.4px;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:700;
+    display:block;margin-bottom:5px;
+  }
+  .sell-form input,
+  .sell-form select,
+  .sell-form textarea{
+    width:100%;padding:11px 13px;
+    border:1px solid var(--line-2);border-radius:8px;
+    background:var(--paper);color:var(--ink);
+    font-size:14px;font-family:var(--sans);
+  }
+  .sell-form textarea{resize:vertical;min-height:80px;font-family:var(--sans)}
+  .sell-form input:focus,.sell-form select:focus,.sell-form textarea:focus{
+    outline:none;border-color:var(--forest);
+    box-shadow:0 0 0 3px rgba(29,58,44,0.08);
+  }
+  .sell-form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:520px){.sell-form .row{grid-template-columns:1fr}}
+
+  /* ============ FOOTER ============ */
+  footer{
+    margin-top:80px;padding:50px 22px 40px;
+    border-top:1px solid var(--line);background:var(--paper-2);
+    text-align:center;
+  }
+  .footer-mark{
+    font-family:var(--display);font-size:32px;
+    color:var(--forest);letter-spacing:0.06em;margin-bottom:8px;
+  }
+  .footer-sub{
+    font-family:var(--serif);font-style:italic;
+    color:var(--ink-soft);font-size:15px;margin-bottom:18px;
+  }
+  .footer-meta{
+    font-family:var(--mono);font-size:10.5px;
+    letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--ink-faint);font-weight:600;
+  }
+  .footer-meta a{color:var(--coral-deep);font-weight:700}
+
+  /* ============ MODAL ============ */
+  .modal-back{
+    position:fixed;inset:0;
+    background:rgba(20,17,12,0.55);backdrop-filter:blur(8px);
+    z-index:100;display:none;align-items:center;justify-content:center;
+    padding:22px;
+  }
+  .modal-back.open{display:flex}
+  .modal{
+    background:var(--paper);border-radius:18px;
+    max-width:560px;width:100%;max-height:88vh;overflow-y:auto;
+    padding:30px 28px;position:relative;
+  }
+  .modal-close{
+    position:absolute;top:14px;right:14px;
+    width:32px;height:32px;border-radius:50%;
+    background:var(--paper-3);color:var(--ink);
+    font-size:18px;display:grid;place-items:center;
+  }
+  .modal h3{
+    font-family:var(--display);font-size:28px;
+    margin-bottom:8px;color:var(--ink);
+  }
+  .modal-sub{
+    font-family:var(--serif);color:var(--ink-soft);font-size:15px;
+    margin-bottom:20px;font-weight:300;
+  }
+  .summary-box{
+    background:var(--paper-2);border:1px solid var(--line);
+    border-radius:10px;padding:14px 16px;margin-bottom:18px;
+    font-family:var(--mono);font-size:12px;color:var(--ink-soft);
+  }
+  .summary-box .line{display:flex;justify-content:space-between;padding:3px 0}
+  .summary-box .line b{color:var(--ink)}
+
+  /* ============ SECTIONS show/hide ============ */
+  .mode-section{display:none}
+  .mode-section.active{display:block;animation:fadeIn .35s ease}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  /* ============ TOAST ============ */
+  .toast{
+    position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);
+    background:var(--forest);color:var(--paper);
+    padding:13px 22px;border-radius:10px;
+    font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    font-weight:700;z-index:200;
+    transition:transform .3s,opacity .3s;
+    opacity:0;pointer-events:none;
+  }
+  .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+</style>
+
+<!-- SORA CASAS · shared lead capture + analytics — single config source in leads.js -->
+<script src="leads.js"></script>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand" onclick="setMode('buy')">
+      <div class="brand-mark">S</div>
+      <div>
+        <div class="brand-word">SORA <span class="brand-sub" lang="es">Casas</span><span class="brand-sub" lang="en">Homes</span></div>
+      </div>
+    </div>
+    <nav class="topnav" id="topnav">
+      <button data-mode="buy" class="active"><span lang="es">Comprar</span><span lang="en">Buy</span></button>
+      <button data-mode="build"><span lang="es">Construir</span><span lang="en">Build</span></button>
+      <button data-mode="sell"><span lang="es">Vender</span><span lang="en">Sell</span></button>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a href="about.html" style="text-decoration:none;font-size:13px;color:var(--ink-2);padding:6px 11px;border-radius:7px;transition:background .15s" onmouseover="this.style.background='rgba(20,17,12,0.06)'" onmouseout="this.style.background='transparent'"><span lang="es">Nosotros</span><span lang="en">About</span></a>
+      <a href="blog/" style="text-decoration:none;font-size:13px;color:var(--ink-2);padding:6px 11px;border-radius:7px;transition:background .15s" onmouseover="this.style.background='rgba(20,17,12,0.06)'" onmouseout="this.style.background='transparent'"><span lang="es">Blog</span><span lang="en">Blog</span></a>
+      <div class="lang-toggle">
+        <button data-lang="es" class="active">ES</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a href="sorainternalresources.html" title="Acceso equipo Sora" aria-label="Acceso equipo Sora" style="text-decoration:none;font-size:15px;opacity:.42;transition:opacity .15s;line-height:1" onmouseover="this.style.opacity=.9" onmouseout="this.style.opacity=.42">🔒</a>
+      <button class="menu-btn" onclick="document.getElementById('topnav').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <h1>
+    <span lang="es">Tu casa en el <em>trópico</em>.</span>
+    <span lang="en">Your home in the <em>tropics</em>.</span>
+  </h1>
+  <p class="hero-sub">
+    <span lang="es">Construye una casa con Sora, o explora una de nuestras muchas propiedades verificadas en Panamá y Latinoamérica.</span>
+    <span lang="en">Build a home with Sora, or browse one of our many verified properties across Panama and Latin America.</span>
+  </p>
+  <div class="hero-cta">
+    <button class="btn btn-primary" onclick="setMode('build')">
+      <span lang="es">Diseñar mi casa</span><span lang="en">Design my home</span> →
+    </button>
+    <button class="btn btn-ghost" onclick="setMode('buy')">
+      <span lang="es">Ver propiedades</span><span lang="en">Browse properties</span>
+    </button>
+  </div>
+</section>
+
+<!-- ============ MODE LINE ============ -->
+<div style="max-width:1240px;margin:0 auto;padding:0 22px">
+  <div class="modeline">
+    <button data-mode="buy" class="active"><span lang="es">Comprar</span><span lang="en">Buy</span></button>
+    <button data-mode="build"><span lang="es">Construir</span><span lang="en">Build</span></button>
+    <button data-mode="sell"><span lang="es">Vender</span><span lang="en">Sell</span></button>
+  </div>
+</div>
+
+<!-- ============ BUY MODE ============ -->
+<section class="section mode-section active" id="mode-buy">
+  <div class="section-head">
+    <h2 class="section-title"><span lang="es">Casas a la <em>venta</em></span><span lang="en">Homes for <em>sale</em></span></h2>
+  </div>
+
+  <div class="market-filters">
+    <div class="filter-group">
+      <div class="filter-label"><span lang="es">País</span><span lang="en">Country</span></div>
+      <button class="chip active" data-country="all"><span lang="es">Todos</span><span lang="en">All</span></button>
+      <button class="chip" data-country="PA">🇵🇦 Panamá</button>
+      <button class="chip" data-country="MX">🇲🇽 México</button>
+      <button class="chip" data-country="CO">🇨🇴 Colombia</button>
+      <button class="chip" data-country="VE">🇻🇪 Venezuela</button>
+    </div>
+    <div class="filter-group">
+      <div class="filter-label"><span lang="es">Tipo</span><span lang="en">Type</span></div>
+      <button class="chip active" data-type="all"><span lang="es">Todos</span><span lang="en">All</span></button>
+      <button class="chip" data-type="casa"><span lang="es">Casa</span><span lang="en">House</span></button>
+      <button class="chip" data-type="apto"><span lang="es">Apartamento</span><span lang="en">Apartment</span></button>
+      <button class="chip" data-type="lote"><span lang="es">Lote</span><span lang="en">Lot</span></button>
+      <button class="chip" data-type="finca"><span lang="es">Finca</span><span lang="en">Farm</span></button>
+    </div>
+  </div>
+
+  <div class="market-grid" id="market-grid"></div>
+</section>
+
+<!-- ============ BUILD MODE (CONFIGURATOR) ============ -->
+<section class="section mode-section" id="mode-build">
+  <div class="section-head">
+    <div class="section-eyebrow"><span lang="es">Cuatro casas Sora</span><span lang="en">Four Sora homes</span></div>
+    <h2 class="section-title">
+      <span lang="es">Cuatro casas, cuatro <em>precios</em></span>
+      <span lang="en">Four homes, four <em>prices</em></span>
+    </h2>
+    <p class="section-sub">
+      <span lang="es">Nada de elegir entre 18 opciones. Cuatro casas para cuatro compradores reales, cada una con un precio llave en mano fijo: <strong>$155K, $385K, $485K, $815K</strong>.</span>
+      <span lang="en">No picking between 18 options. Four homes for four real buyers, each at a fixed turnkey price: <strong>$155K, $385K, $485K, $815K</strong>.</span>
+    </p>
+  </div>
+
+  <div class="models-row" id="models-row"></div>
+
+  <div class="configurator">
+    <div class="viewer">
+      <canvas id="three-canvas"></canvas>
+      <button class="viewer-fs" onclick="toggleViewerFullscreen()" aria-label="Fullscreen" title="Pantalla completa / Fullscreen">⛶</button>
+      <div class="viewer-overlay">
+        <div>
+          <div class="viewer-name" id="viewer-name">Casa <em>Bahía</em></div>
+          <div class="viewer-tag" id="viewer-tag" lang="es">Costa · Pedasí · 180 m²</div>
+          <div class="viewer-tag" id="viewer-tag-en" lang="en" style="display:none">Coast · Pedasí · 180 m²</div>
+        </div>
+      </div>
+      <div class="viewer-controls">
+        <div class="viewer-hint">
+          <span lang="es">↺ arrastrar · pellizcar para zoom</span>
+          <span lang="en">↺ drag · pinch to zoom</span>
+        </div>
+        <div class="view-toggles">
+          <button data-view="ext" class="active"><span lang="es">Exterior</span><span lang="en">Exterior</span></button>
+          <button data-view="plan"><span lang="es">Planta</span><span lang="en">Plan</span></button>
+          <button data-view="cut"><span lang="es">Corte</span><span lang="en">Section</span></button>
+        </div>
+      </div>
+    </div>
+
+    <aside class="conf-sidebar">
+      <div class="pack-badge" id="pack-badge">
+        <span lang="es">Producto principal</span><span lang="en">Hero product</span>
+      </div>
+      <div class="pack-price-block">
+        <div class="pack-price-label">
+          <span lang="es">Llave en mano</span><span lang="en">Turnkey</span>
+        </div>
+        <div class="pack-price-val" id="pack-price">$385,000</div>
+        <div class="pack-price-sub" id="pack-price-sub">
+          <span lang="es">180 m² · 3 hab · 2.5 baños · construido en 10–12 meses</span>
+          <span lang="en">180 sqm · 3 bd · 2.5 ba · built in 10–12 months</span>
+        </div>
+      </div>
+
+      <div class="pack-pitch" id="pack-pitch"></div>
+
+      <div class="pack-for-who">
+        <h4><span lang="es">Para quién</span><span lang="en">Built for</span></h4>
+        <ul id="pack-for-who-list"></ul>
+      </div>
+
+      <div class="pack-highlights">
+        <h4><span lang="es">Lo más destacado</span><span lang="en">Highlights</span></h4>
+        <ul id="pack-highlights-list"></ul>
+      </div>
+
+      <div class="conf-section" style="margin-top:18px">
+        <h4><span lang="es">Vista previa cosmética</span><span lang="en">Cosmetic preview</span></h4>
+        <p style="font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:0.8px;margin-bottom:8px;text-transform:uppercase;font-weight:600">
+          <span lang="es">No afecta el precio · solo para visualizar</span>
+          <span lang="en">Doesn't change price · visual only</span>
+        </p>
+        <div class="opt-row" data-group="facade" style="margin-bottom:8px">
+          <button class="opt active" data-val="white">
+            <span class="opt-finish"><span class="swatch" style="background:#f5efe1"></span><span lang="es">Cal</span><span lang="en">Lime</span></span>
+          </button>
+          <button class="opt" data-val="wood">
+            <span class="opt-finish"><span class="swatch" style="background:#a07b42"></span><span lang="es">Madera</span><span lang="en">Wood</span></span>
+          </button>
+          <button class="opt" data-val="stone">
+            <span class="opt-finish"><span class="swatch" style="background:#6b6359"></span><span lang="es">Piedra</span><span lang="en">Stone</span></span>
+          </button>
+        </div>
+        <div class="opt-row" data-group="roof">
+          <button class="opt active" data-val="gable"><span lang="es">Dos aguas</span><span lang="en">Gable</span></button>
+          <button class="opt" data-val="flat"><span lang="es">Plano</span><span lang="en">Flat</span></button>
+          <button class="opt" data-val="thatch"><span lang="es">Penca</span><span lang="en">Thatch</span></button>
+        </div>
+      </div>
+
+      <div class="price-block">
+        <div class="reserve-line">
+          <div>
+            <div class="reserve-amt">$5,000</div>
+            <div class="reserve-lbl"><span lang="es">Reserva reembolsable</span><span lang="en">Refundable hold</span></div>
+          </div>
+          <div style="text-align:right">
+            <div class="reserve-amt">±10%</div>
+            <div class="reserve-lbl"><span lang="es">Banda de precio</span><span lang="en">Price band</span></div>
+          </div>
+        </div>
+        <div class="price-actions">
+          <button class="btn btn-primary" onclick="openSave()">
+            <span lang="es">Reservar este modelo</span><span lang="en">Reserve this model</span>
+          </button>
+          <button class="btn btn-ghost" onclick="openContact()">
+            <span lang="es">Hablar con un arquitecto</span><span lang="en">Talk to an architect</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ============ FOR FOREIGN BUYERS (prominent) ============ -->
+  <div style="margin-top:48px;background:var(--forest-deep);border-radius:24px;padding:clamp(28px,4.4vw,54px);color:#eee7d6;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-40px;right:-30px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(244,185,66,.16),transparent 70%);pointer-events:none"></div>
+    <div style="max-width:780px;position:relative">
+      <div style="font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mango);font-weight:700;margin-bottom:14px"><span lang="es">Para compradores extranjeros</span><span lang="en">For foreign buyers</span></div>
+      <h2 style="font-family:var(--display);font-weight:400;font-size:clamp(30px,4.8vw,52px);line-height:1.04;color:#fdfbf4;margin:0 0 14px">
+        <span lang="es">Construye en Panamá <em style="font-style:italic;color:var(--mango)">sin estar</em> en Panamá</span>
+        <span lang="en">Build in Panama <em style="font-style:italic;color:var(--mango)">without being</em> in Panama</span>
+      </h2>
+      <p style="font-family:var(--serif);font-size:clamp(15px,2vw,18px);color:#bcc8bb;line-height:1.6;margin:0">
+        <span lang="es">La mayoría de nuestros compradores deciden antes de pisar el terreno. Conseguimos el lote, contratamos y supervisamos en sitio, y te mostramos cada avance por video. Tú decides desde casa, en tu idioma.</span>
+        <span lang="en">Most of our buyers decide before they ever stand on the land. We source the lot, hire and supervise on the ground, and show you every step by video. You decide from home, in your language.</span>
+      </p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px;margin-top:32px;position:relative">
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:20px 22px">
+        <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--mango);font-weight:700;margin-bottom:12px"><span lang="es">Tu dinero, protegido</span><span lang="en">Your money, protected</span></div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:13px;color:#cdd6cb;line-height:1.5">
+          <li style="padding:5px 0"><span lang="es">Pagos por hitos contra avance verificado</span><span lang="en">Milestone payments against verified progress</span></li>
+          <li style="padding:5px 0"><span lang="es">Seguro contra todo riesgo durante la obra</span><span lang="en">All-risk insurance during construction</span></li>
+          <li style="padding:5px 0"><span lang="es">Precio llave en mano fijo en el contrato</span><span lang="en">Fixed turnkey price locked in the contract</span></li>
+        </ul>
+      </div>
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:20px 22px">
+        <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--mango);font-weight:700;margin-bottom:12px"><span lang="es">Lo ves todo, cada semana</span><span lang="en">You see it all, every week</span></div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:13px;color:#cdd6cb;line-height:1.5">
+          <li style="padding:5px 0"><span lang="es">Recorridos por video en WhatsApp</span><span lang="en">WhatsApp video walk-throughs</span></li>
+          <li style="padding:5px 0"><span lang="es">Reportes de avance con fotos</span><span lang="en">Photo progress reports</span></li>
+          <li style="padding:5px 0"><span lang="es">Un gerente de proyecto bilingüe</span><span lang="en">A bilingual project manager</span></li>
+        </ul>
+      </div>
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:20px 22px">
+        <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--mango);font-weight:700;margin-bottom:12px"><span lang="es">La ley te respalda</span><span lang="en">The law backs you</span></div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:13px;color:#cdd6cb;line-height:1.5">
+          <li style="padding:5px 0"><span lang="es">Misma protección de título que un panameño (desde 1972)</span><span lang="en">Same title protection as a Panamanian (since 1972)</span></li>
+          <li style="padding:5px 0"><span lang="es">El dólar es la moneda local, sin riesgo cambiario</span><span lang="en">The US dollar is the local currency, no FX risk</span></li>
+          <li style="padding:5px 0"><span lang="es">Exoneración predial de 15 a 20 años en obra nueva</span><span lang="en">15 to 20 year property-tax exoneration on new builds</span></li>
+        </ul>
+      </div>
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:20px 22px">
+        <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--mango);font-weight:700;margin-bottom:12px"><span lang="es">Tu residencia, resuelta</span><span lang="en">Your residency, sorted</span></div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:13px;color:#cdd6cb;line-height:1.5">
+          <li style="padding:5px 0"><span lang="es">Desde $300K en propiedad calificas para la visa de inversionista</span><span lang="en">From $300K in property you qualify for the investor visa</span></li>
+          <li style="padding:5px 0"><span lang="es">Nuestra abogada crea tu sociedad (SA)</span><span lang="en">Our in-house lawyer sets up your corporation (SA)</span></li>
+          <li style="padding:5px 0"><span lang="es">Te acompañamos en todo el trámite</span><span lang="en">We guide you through the whole process</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BUILD PROCESS · PANAMA SPECIFIC ============ -->
+  <div style="margin-top:48px">
+    <div class="section-head" style="margin-bottom:24px">
+      <div class="section-eyebrow"><span lang="es">El proceso en Panamá</span><span lang="en">The Panama process</span></div>
+      <h2 class="section-title" style="font-size:clamp(28px,4vw,42px)">
+        <span lang="es">De primer plano a <em>llaves en mano</em></span>
+        <span lang="en">From first sketch to <em>keys in hand</em></span>
+      </h2>
+      <p class="section-sub" style="margin-top:10px">
+        <span lang="es">Construir en Panamá toma típicamente 10–12 meses. Estos son los pasos reales, con tiempos y honorarios verificados contra contratos vigentes.</span>
+        <span lang="en">Building in Panama typically takes 10–12 months. These are the real steps, with timing and fees verified against current contracts.</span>
+      </p>
+    </div>
+    <!-- bounded timeline chart -->
+    <div class="gantt">
+      <div class="gantt-head">
+        <div></div>
+        <div class="gantt-axis">
+          <span style="left:0%">0</span><span style="left:14.29%">2</span><span style="left:28.57%">4</span><span style="left:42.86%">6</span><span style="left:57.14%">8</span><span style="left:71.43%">10</span><span style="left:85.71%">12</span><span style="left:100%">14</span>
+          <span style="left:50%;transform:translateX(-50%);top:-15px;color:var(--ink-faint)" class="gantt-axis-unit"><span lang="es">meses</span><span lang="en">months</span></span>
+        </div>
+      </div>
+      <div class="gantt-rows">
+        <div class="gantt-row"><div class="gantt-lbl"><span lang="es">Diseño + planos</span><span lang="en">Design + plans</span><small>6–10 <span lang="es">sem</span><span lang="en">wk</span></small></div><div class="gantt-track"><div class="gantt-band"></div><div class="gantt-bar" style="left:0%;width:17.86%"></div><div class="gantt-bar tail" style="left:17.86%;width:3.57%"></div></div></div>
+        <div class="gantt-row"><div class="gantt-lbl"><span lang="es">Permisos</span><span lang="en">Permits</span><small>8–14 <span lang="es">sem</span><span lang="en">wk</span></small></div><div class="gantt-track"><div class="gantt-band"></div><div class="gantt-bar" style="left:10.71%;width:25%"></div><div class="gantt-bar tail" style="left:35.71%;width:7.14%"></div></div></div>
+        <div class="gantt-row"><div class="gantt-lbl"><span lang="es">Tierra + cimientos</span><span lang="en">Earthwork + foundation</span><small>4–6 <span lang="es">sem</span><span lang="en">wk</span></small></div><div class="gantt-track"><div class="gantt-band"></div><div class="gantt-bar" style="left:28.57%;width:10.71%"></div><div class="gantt-bar tail" style="left:39.28%;width:3.57%"></div></div></div>
+        <div class="gantt-row"><div class="gantt-lbl"><span lang="es">Estructura + techo</span><span lang="en">Structure + roof</span><small>12–16 <span lang="es">sem</span><span lang="en">wk</span></small></div><div class="gantt-track"><div class="gantt-band"></div><div class="gantt-bar" style="left:35.71%;width:28.57%"></div><div class="gantt-bar tail" style="left:64.28%;width:7.14%"></div></div></div>
+        <div class="gantt-row"><div class="gantt-lbl"><span lang="es">Instalaciones</span><span lang="en">MEP rough-in</span><small>6–8 <span lang="es">sem</span><span lang="en">wk</span></small></div><div class="gantt-track"><div class="gantt-band"></div><div class="gantt-bar" style="left:53.57%;width:17.86%"></div><div class="gantt-bar tail" style="left:71.43%;width:7.14%"></div></div></div>
+        <div class="gantt-row"><div class="gantt-lbl"><span lang="es">Acabados</span><span lang="en">Finishes</span><small>10–14 <span lang="es">sem</span><span lang="en">wk</span></small></div><div class="gantt-track"><div class="gantt-band"></div><div class="gantt-bar" style="left:60.71%;width:28.57%"></div><div class="gantt-bar tail" style="left:89.28%;width:7.14%"></div></div></div>
+        <div class="gantt-row"><div class="gantt-lbl"><span lang="es">Entrega + llaves</span><span lang="en">Handover + keys</span><small>2–4 <span lang="es">sem</span><span lang="en">wk</span></small></div><div class="gantt-track"><div class="gantt-band"></div><div class="gantt-bar" style="left:85.71%;width:7.14%"></div><div class="gantt-bar tail" style="left:92.85%;width:7.14%"></div></div></div>
+      </div>
+      <div class="gantt-foot">
+        <div class="gantt-legend">
+          <span><b style="background:linear-gradient(90deg,var(--forest),var(--forest-2))"></b><span lang="es">Duración típica</span><span lang="en">Typical duration</span></span>
+          <span><b style="background:repeating-linear-gradient(45deg,rgba(29,58,44,.30),rgba(29,58,44,.30) 3px,rgba(29,58,44,.12) 3px,rgba(29,58,44,.12) 6px)"></b><span lang="es">Margen si hay demoras</span><span lang="en">Slack if delays</span></span>
+          <span><b style="background:rgba(244,185,66,.30)"></b><span lang="es">Entrega típica: 10–12 meses</span><span lang="en">Typical delivery: 10–12 months</span></span>
+        </div>
+      </div>
+    </div>
+    <style>
+      .gantt{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:22px 24px 16px;margin-bottom:20px}
+      .gantt-head{display:grid;grid-template-columns:168px 1fr;align-items:end;margin-bottom:9px}
+      .gantt-axis{position:relative;height:16px}
+      .gantt-axis>span{position:absolute;transform:translateX(-50%);font-family:var(--mono);font-size:9.5px;color:var(--ink-faint);letter-spacing:.5px;bottom:0}
+      .gantt-row{display:grid;grid-template-columns:168px 1fr;align-items:center;padding:4px 0}
+      .gantt-lbl{font-size:12.5px;color:var(--ink-2);font-weight:500;padding-right:14px;line-height:1.2}
+      .gantt-lbl small{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.6px;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-top:2px}
+      .gantt-track{position:relative;height:24px;background:repeating-linear-gradient(90deg,var(--line),var(--line) 1px,transparent 1px,transparent calc(100%/7));border-radius:4px}
+      .gantt-band{position:absolute;top:0;bottom:0;left:71.43%;width:14.29%;background:rgba(244,185,66,.16);border-left:1px dashed rgba(180,140,40,.45);border-right:1px dashed rgba(180,140,40,.45)}
+      .gantt-bar{position:absolute;top:5px;height:14px;border-radius:7px;background:linear-gradient(90deg,var(--forest),var(--forest-2));box-shadow:0 1px 3px rgba(20,17,12,.18)}
+      .gantt-bar.tail{background:repeating-linear-gradient(45deg,rgba(29,58,44,.30),rgba(29,58,44,.30) 3px,rgba(29,58,44,.12) 3px,rgba(29,58,44,.12) 6px);border-radius:0 7px 7px 0;box-shadow:none}
+      .gantt-foot{margin-top:12px}
+      .gantt-legend{display:flex;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-faint);align-items:center}
+      .gantt-legend b{display:inline-block;width:18px;height:9px;border-radius:3px;vertical-align:middle;margin-right:6px}
+      @media(max-width:600px){.gantt-head,.gantt-row{grid-template-columns:104px 1fr}.gantt-lbl{font-size:10.5px;padding-right:8px}.gantt-axis-unit{display:none}}
+    </style>
+    <div style="background:var(--paper-2);border:1px solid var(--line);border-radius:14px;overflow:hidden">
+      <div class="process-row">
+        <div class="process-num">1</div>
+        <div class="process-name"><strong><span lang="es">Diseño + planos</span><span lang="en">Design + plans</span></strong><br><small><span lang="es">Arquitecto panameño licenciado prepara planos para MIVIOT</span><span lang="en">Licensed Panamanian architect prepares MIVIOT plans</span></small></div>
+        <div class="process-time">6–10 <span lang="es">sem</span><span lang="en">wk</span></div>
+        <div class="process-cost">7–10%</div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">2</div>
+        <div class="process-name"><strong><span lang="es">Permisos municipales</span><span lang="en">Municipal permits</span></strong><br><small><span lang="es">MIVIOT + alcaldía · más ANATI si es costa</span><span lang="en">MIVIOT + municipality · plus ANATI if coast</span></small></div>
+        <div class="process-time">8–14 <span lang="es">sem</span><span lang="en">wk</span></div>
+        <div class="process-cost">1–2%</div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">3</div>
+        <div class="process-name"><strong><span lang="es">Movimiento de tierra + cimientos</span><span lang="en">Earthwork + foundation</span></strong><br><small><span lang="es">Estudio de suelo, pilotes, plataforma</span><span lang="en">Soil study, piles, slab</span></small></div>
+        <div class="process-time">4–6 <span lang="es">sem</span><span lang="en">wk</span></div>
+        <div class="process-cost">12–15%</div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">4</div>
+        <div class="process-name"><strong><span lang="es">Estructura + techo</span><span lang="en">Structure + roof</span></strong><br><small><span lang="es">Bloque/M2, vigas, cubierta</span><span lang="en">Block/M2, beams, roof</span></small></div>
+        <div class="process-time">12–16 <span lang="es">sem</span><span lang="en">wk</span></div>
+        <div class="process-cost">30–35%</div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">5</div>
+        <div class="process-name"><strong><span lang="es">Instalaciones</span><span lang="en">MEP rough-in</span></strong><br><small><span lang="es">Eléctrico · plomería · A/C · datos</span><span lang="en">Electrical · plumbing · A/C · data</span></small></div>
+        <div class="process-time">6–8 <span lang="es">sem</span><span lang="en">wk</span></div>
+        <div class="process-cost">10–12%</div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">6</div>
+        <div class="process-name"><strong><span lang="es">Acabados</span><span lang="en">Finishes</span></strong><br><small><span lang="es">Pisos, baños, cocina, pintura, puertas</span><span lang="en">Floors, baths, kitchen, paint, doors</span></small></div>
+        <div class="process-time">10–14 <span lang="es">sem</span><span lang="en">wk</span></div>
+        <div class="process-cost">25–30%</div>
+      </div>
+      <div class="process-row" style="border-bottom:none">
+        <div class="process-num">7</div>
+        <div class="process-name"><strong><span lang="es">Entrega + ocupación</span><span lang="en">Handover + occupancy</span></strong><br><small><span lang="es">Inspección MIVIOT, certificado, llaves</span><span lang="en">MIVIOT inspection, certificate, keys</span></small></div>
+        <div class="process-time">2–4 <span lang="es">sem</span><span lang="en">wk</span></div>
+        <div class="process-cost">0–2%</div>
+      </div>
+    </div>
+    <style>
+      .process-row{display:grid;grid-template-columns:auto 1fr auto auto;gap:18px;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--ink-soft)}
+      .process-num{width:30px;height:30px;border-radius:50%;background:var(--forest);color:var(--paper);display:grid;place-items:center;font-family:var(--display);font-size:16px;flex-shrink:0}
+      .process-name{line-height:1.4}
+      .process-name small{font-family:var(--mono);font-size:10px;letter-spacing:0.8px;color:var(--ink-faint);text-transform:uppercase;font-weight:600}
+      .process-time{font-family:var(--mono);font-size:11.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink);font-weight:700;text-align:right;min-width:60px}
+      .process-cost{font-family:var(--display);font-size:18px;color:var(--coral-deep);text-align:right;min-width:60px}
+      @media (max-width:520px){.process-row{grid-template-columns:auto 1fr;gap:12px}.process-time,.process-cost{grid-column:2;text-align:left}}
+    </style>
+
+    <!-- Foreign buyer details -->
+    <!-- Land cost note -->
+    <div class="sell-card" style="padding:22px;margin-top:24px">
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--coral-deep);font-weight:700;margin-bottom:12px"><span lang="es">Costo del terreno (no incluido en la estimación)</span><span lang="en">Land cost (not included in the estimate)</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;font-size:14px;color:var(--ink-soft)">
+        <div><strong style="color:var(--ink)">Pedasí:</strong> $20–$80/m²</div>
+        <div><strong style="color:var(--ink)">Boquete:</strong> $25–$100/m²</div>
+        <div><strong style="color:var(--ink)">Volcán:</strong> $15–$60/m²</div>
+        <div><strong style="color:var(--ink)">Bocas:</strong> $30–$150/m²</div>
+      </div>
+      <p style="font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.5px;margin:12px 0 0"><span lang="es">Vendemos solo tierra titulada. Mira los listings o pídenos un lote en tu zona.</span><span lang="en">We sell titled land only. Browse the listings or ask us for a lot in your area.</span></p>
+    </div>
+  </div>
+
+  <!-- Why Sora panel -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:48px">
+    <div class="sell-card" style="padding:24px">
+      <div style="font-family:var(--display);font-size:34px;color:var(--forest);margin-bottom:4px">10–12</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px;font-weight:700"><span lang="es">Meses · obra</span><span lang="en">Months · build</span></div>
+      <div style="font-size:13.5px;color:var(--ink-soft)"><span lang="es">De primer plano firmado a llaves en mano (16–24 con permisos).</span><span lang="en">From signed plans to keys (16–24 with permits).</span></div>
+    </div>
+    <div class="sell-card" style="padding:24px">
+      <div style="font-family:var(--display);font-size:34px;color:var(--forest);margin-bottom:4px">±15%</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px;font-weight:700"><span lang="es">Banda de precio</span><span lang="en">Price band</span></div>
+      <div style="font-size:13.5px;color:var(--ink-soft)"><span lang="es">Estimado honesto · sin sorpresas en facturación.</span><span lang="en">Honest estimate · no billing surprises.</span></div>
+    </div>
+    <div class="sell-card" style="padding:24px">
+      <div style="font-family:var(--display);font-size:34px;color:var(--forest);margin-bottom:4px">15%</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px;font-weight:700"><span lang="es">Depósito inicial</span><span lang="en">Initial deposit</span></div>
+      <div style="font-size:13.5px;color:var(--ink-soft)"><span lang="es">El resto en tres hitos contra avance verificado.</span><span lang="en">Balance in three milestones against verified progress.</span></div>
+    </div>
+    <div class="sell-card" style="padding:24px">
+      <div style="font-family:var(--display);font-size:34px;color:var(--forest);margin-bottom:4px">10 yr</div>
+      <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px;font-weight:700"><span lang="es">Garantía estructural</span><span lang="en">Structural warranty</span></div>
+      <div style="font-size:13.5px;color:var(--ink-soft)"><span lang="es">Más 2 años acabados, 1 año equipos.</span><span lang="en">Plus 2 yrs finishes, 1 yr equipment.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SELL MODE ============ -->
+<section class="section mode-section" id="mode-sell">
+  <div class="section-head">
+    <div class="section-eyebrow"><span lang="es">Lista tu propiedad</span><span lang="en">List your property</span></div>
+    <h2 class="section-title"><span lang="es">Vender con <em>Sora</em></span><span lang="en">Sell with <em>Sora</em></span></h2>
+    <p class="section-sub">
+      <span lang="es">Listamos tu casa o tu lote ante los compradores extranjeros que ya buscan con Sora. Todo en inglés y español, con una comisión más baja que un broker tradicional. Solo tomamos propiedades que recomendaríamos nosotros mismos.</span>
+      <span lang="en">We list your home or land to the foreign buyers already searching with Sora. Everything in English and Spanish, at a lower commission than a traditional broker. We only take on properties we would stand behind ourselves.</span>
+    </p>
+  </div>
+
+  <div class="sell-grid">
+    <div class="sell-card">
+      <h3><span lang="es">Cómo <em>funciona</em></span><span lang="en">How it <em>works</em></span></h3>
+      <p class="lede">
+        <span lang="es">Cuatro pasos, sin vueltas. Tomamos pocas propiedades a la vez para venderlas de verdad.</span>
+        <span lang="en">Four steps, no runaround. We take on few listings at a time so we can actually sell them.</span>
+      </p>
+      <ul class="sell-steps">
+        <li>
+          <div class="sell-num">1</div>
+          <div>
+            <div class="sell-step-name"><span lang="es">Tasación honesta en 48h</span><span lang="en">Honest valuation in 48h</span></div>
+            <div class="sell-step-desc"><span lang="es">Nos mandas fotos y los datos. Te decimos el precio real de mercado, aunque sea menos del que esperabas.</span><span lang="en">Send us photos and the details. We tell you the real market price, even if it is lower than you hoped.</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="sell-num">2</div>
+          <div>
+            <div class="sell-step-name"><span lang="es">Fotografía + ficha</span><span lang="en">Photography + listing sheet</span></div>
+            <div class="sell-step-desc"><span lang="es">Si firmamos exclusiva, mandamos al fotógrafo. Sin costo para ti.</span><span lang="en">If we sign an exclusive, we send the photographer. No cost to you.</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="sell-num">3</div>
+          <div>
+            <div class="sell-step-name"><span lang="es">Te traemos los compradores</span><span lang="en">We bring the buyers</span></div>
+            <div class="sell-step-desc"><span lang="es">Tu propiedad va en nuestra web y directo a los compradores extranjeros en nuestra lista. Filtramos a los curiosos; solo te llegan los serios.</span><span lang="en">Your property goes on our site and straight to the foreign buyers on our list. We screen out the tire-kickers; only serious buyers reach you.</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="sell-num">4</div>
+          <div>
+            <div class="sell-step-name"><span lang="es">Cierre con abogada de verdad</span><span lang="en">Closing with a real lawyer</span></div>
+            <div class="sell-step-desc"><span lang="es">Nuestra abogada coordina escritura, notaría y registro. Tú firmas, nosotros llevamos el papeleo.</span><span lang="en">Our lawyer coordinates the deed, notary and registry. You sign, we handle the paperwork.</span></div>
+          </div>
+        </li>
+      </ul>
+      <div style="background:var(--paper);border:1px solid var(--line-2);border-radius:10px;padding:14px 16px;">
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;font-weight:700">
+          <span lang="es">Honorarios</span><span lang="en">Fees</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:4px">
+          <span><span lang="es">Comisión Sora</span><span lang="en">Sora commission</span></span>
+          <b>3.0%</b>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:14px;margin-bottom:4px">
+          <span><span lang="es">Broker tradicional</span><span lang="en">Traditional broker</span></span>
+          <span style="color:var(--ink-faint);text-decoration:line-through">5–6%</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:14px;color:var(--coral-deep);font-weight:600">
+          <span><span lang="es">Tu ahorro</span><span lang="en">Your savings</span></span>
+          <span>~$15,000<small style="font-family:var(--mono);font-size:9px;margin-left:5px;letter-spacing:1px"> @ $500K</small></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sell-card">
+      <h3 style="margin-bottom:6px"><span lang="es">Cuéntanos de tu <em>propiedad</em></span><span lang="en">Tell us about your <em>property</em></span></h3>
+      <p class="lede">
+        <span lang="es">Respondemos por WhatsApp en menos de 4 horas hábiles.</span>
+        <span lang="en">We respond on WhatsApp in under 4 business hours.</span>
+      </p>
+      <form class="sell-form" onsubmit="submitSell(event)">
+        <div>
+          <label><span lang="es">Tu nombre</span><span lang="en">Your name</span></label>
+          <input type="text" required name="name">
+        </div>
+        <div class="row">
+          <div>
+            <label>WhatsApp</label>
+            <input type="tel" required name="whatsapp" placeholder="+507 …">
+          </div>
+          <div>
+            <label>Email</label>
+            <input type="email" required name="email">
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label><span lang="es">Tipo</span><span lang="en">Type</span></label>
+            <select name="type">
+              <option value="casa"><span lang="es">Casa</span></option>
+              <option value="apto">Apartamento / Apartment</option>
+              <option value="lote">Lote / Lot</option>
+              <option value="finca">Finca / Farm</option>
+            </select>
+          </div>
+          <div>
+            <label><span lang="es">Ubicación</span><span lang="en">Location</span></label>
+            <input type="text" name="location" placeholder="Boquete · Pedasí · …">
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label><span lang="es">Precio esperado (USD)</span><span lang="en">Expected price (USD)</span></label>
+            <input type="text" name="price" placeholder="$280,000">
+          </div>
+          <div>
+            <label><span lang="es">Área</span><span lang="en">Size</span></label>
+            <input type="text" name="size" placeholder="220 m²">
+          </div>
+        </div>
+        <div>
+          <label><span lang="es">Cuéntanos algo de la propiedad</span><span lang="en">Tell us about it</span></label>
+          <textarea name="notes" placeholder=""></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:6px">
+          <span lang="es">Enviar por WhatsApp</span><span lang="en">Send via WhatsApp</span> →
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-mark">SORA</div>
+  <div class="footer-sub">
+    
+  </div>
+  <div class="footer-meta">
+    🇵🇦 Panamá · 🇲🇽 México · 🇨🇴 Colombia · 🇻🇪 Venezuela
+    <br><br>
+    <a href="#" onclick="event.preventDefault();openWhatsApp('General')">WhatsApp</a> · <a href="mailto:hola@sora.la">hola@sora.la</a> · @sora.casas
+    <br><br>
+    <a href="about.html"><span lang="es">Nosotros</span><span lang="en">About</span></a> · <a href="blog/"><span lang="es">Blog</span><span lang="en">Blog</span></a>
+    <br><br>
+    <a href="privacidad.html">Privacidad</a> · <a href="terminos.html">Términos</a>
+  </div>
+</footer>
+
+<!-- ============ PROPERTY DETAIL PAGE ============ -->
+<div class="casa-page" id="casa-page">
+  <div class="casa-top">
+    <div class="casa-top-inner">
+      <a class="casa-back" href="#buy" onclick="event.preventDefault();closeCasa()">← <span lang="es">Volver a casas</span><span lang="en">Back to homes</span></a>
+      <div class="casa-top-brand">SORA</div>
+      <button class="btn btn-primary" style="padding:9px 16px" onclick="openWhatsApp('Pagina de propiedad')"><span lang="es">Hablar con Sora</span><span lang="en">Talk to Sora</span></button>
+    </div>
+  </div>
+  <div class="casa-wrap" id="casa-body"></div>
+</div>
+
+<!-- ============ MODALS ============ -->
+<div class="modal-back" id="modal-save">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3><span lang="es">Reserva tu casa</span><span lang="en">Reserve your home</span></h3>
+    <p class="modal-sub">
+      <span lang="es">$5,000 reembolsable bloquea tu lugar en cola de construcción. Te llamamos en 4h hábiles.</span>
+      <span lang="en">$5,000 refundable holds your spot in the build queue. We call you within 4 business hours.</span>
+    </p>
+    <div class="summary-box" id="summary-box"></div>
+    <form class="sell-form" onsubmit="submitSave(event)">
+      <div class="row">
+        <div>
+          <label><span lang="es">Nombre</span><span lang="en">Name</span></label>
+          <input type="text" required name="name">
+        </div>
+        <div>
+          <label>WhatsApp</label>
+          <input type="tel" required name="whatsapp" placeholder="+507 …">
+        </div>
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" required name="email">
+      </div>
+      <div>
+        <label><span lang="es">¿Cuándo construirías?</span><span lang="en">When would you build?</span></label>
+        <select name="timeline">
+          <option value="3m"><span lang="es">En 3 meses</span> · within 3 months</option>
+          <option value="6m"><span lang="es">En 6 meses</span> · within 6 months</option>
+          <option value="12m"><span lang="es">En un año</span> · within a year</option>
+          <option value="explore"><span lang="es">Solo explorando</span> · just exploring</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" style="margin-top:6px">
+        <span lang="es">Enviar y abrir WhatsApp</span><span lang="en">Send and open WhatsApp</span> →
+      </button>
+    </form>
+  </div>
+</div>
+
+<div class="modal-back" id="modal-listing">
+  <div class="modal" id="modal-listing-body"></div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ============ THREE.JS ============ -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { Sky } from 'three/addons/objects/Sky.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { buildHouse, buildScenery, makeGround, buildBackdrop, disposeG } from './casa-builder.js';
+
+/* ============ DATA ============ */
+// ============ FOUR STARTER PACKS · all-in turnkey pricing ============
+// Designed for foreign buyers researching Panama; each pack solves for ONE clear buyer.
+// All prices include construction + permits + design + connections + listed extras.
+// Land separate (~$25-150/m²). Estimate ±10% — Sora-side validated.
+const MODELS = {
+  refugio: {
+    tier: 'entry',
+    nameEs: 'Casa <em>Refugio</em>',  nameEn: 'Casa <em>Refugio</em>',
+    tagEs: 'El retiro · Bocas o costa · 80 m²',
+    tagEn: 'The retreat · Bocas or coast · 80 sqm',
+    pitch: {
+      es: 'Para una persona o una pareja que quiere escapar a Panamá sin sobreconstruir. Off-grid desde el día uno.',
+      en: 'For one person or a couple who want to escape to Panama without overbuilding. Off-grid from day one.'
+    },
+    forWho: {
+      es: ['Escritores · creativos solos', 'Parejas semi-retiradas', 'Buscadores de off-grid', 'Casa de fin de semana'],
+      en: ['Solo writers / creatives', 'Semi-retired couples', 'Off-grid seekers', 'Weekend retreats']
+    },
+    price: 155000,
+    priceLabel: '$155,000',
+    m2: 80, bedrooms: 1, bathrooms: 1,
+    width: 9, depth: 8, height: 4.5, levels: 1,
+    region_key: 'bocas',
+    buildMonths: '7–9',
+    facade: 'wood', roof: 'thatch',
+    image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=900&q=80',
+    includes: {
+      es: [
+        'Estructura elevada sobre pilotes de hormigón',
+        'Cerramiento madera tropical certificada',
+        'Techo de penca de iraca tratada (vida 15 años)',
+        '1 habitación + loft + baño completo + cocina abierta',
+        'Deck perimetral de 18 m²',
+        '☼ Solar 5 kW + 10 kWh batería LFP (off-grid)',
+        'Mini-split inverter Daikin',
+        'Calentador de agua a gas',
+        'Internet Starlink instalado · primer año',
+        'Filtro de agua + UV',
+        'Cocina full: gas, refrigerador, fregadero piedra',
+        'Permisos MIVIOT incluidos',
+        'Seguro contra todo riesgo durante obra'
+      ],
+      en: [
+        'Elevated structure on concrete piles',
+        'Certified tropical hardwood envelope',
+        'Treated iraca thatch roof (15-yr lifespan)',
+        '1 bedroom + loft + full bath + open kitchen',
+        '18 m² wraparound deck',
+        '☼ Solar 5 kW + 10 kWh LFP battery (off-grid)',
+        'Daikin inverter mini-split A/C',
+        'Gas water heater',
+        'Starlink internet installed · first year included',
+        'Water filter + UV',
+        'Full kitchen: gas, fridge, stone sink',
+        'MIVIOT permits included',
+        'All-risk construction insurance'
+      ]
+    },
+    nicht: {
+      es: ['Aire acondicionado en el loft (clima caribeño suficiente)', 'Piscina (no en este tamaño de lote)'],
+      en: ['A/C in the loft (Caribbean breeze sufficient)', 'Pool (not at this footprint)']
+    }
+  },
+
+  bahia: {
+    tier: 'hero',
+    nameEs: 'Casa <em>Bahía</em>', nameEn: 'Casa <em>Bahía</em>',
+    tagEs: 'La casa de playa · Pedasí · 180 m²',
+    tagEn: 'The beach home · Pedasí · 180 sqm',
+    pitch: {
+      es: 'El producto principal de Sora. Familia de tres o cuatro, frente al Pacífico, piscina incluida, lista para vivir.',
+      en: "Sora's flagship volume product. Family of three or four, facing the Pacific, pool included, move-in ready."
+    },
+    forWho: {
+      es: ['Familias extranjeras (US/CA/EU)', 'Jubilados activos', 'Segunda casa de diseño', 'Inversionista rental boutique'],
+      en: ['Foreign families (US/CA/EU)', 'Active retirees', 'Design-conscious second-home', 'Boutique rental investor']
+    },
+    price: 385000,
+    priceLabel: '$385,000',
+    m2: 180, bedrooms: 3, bathrooms: 2.5,
+    width: 14, depth: 10, height: 3.6, levels: 1,
+    region_key: 'pedasi',
+    buildMonths: '10–12',
+    facade: 'white', roof: 'gable',
+    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=80',
+    includes: {
+      es: [
+        'Hormigón armado + bloque · estándar antisísmico',
+        '3 habitaciones · 2.5 baños · cocina abierta · sala/comedor',
+        'Veranda profunda al sur (45 m² techada)',
+        'Ventanas aluminio anti-impacto (huracán)',
+        'Persianas operables para sal y viento',
+        '★ Piscina 6 × 3 m de hormigón · cloración salina',
+        '★ Cocina exterior (plancha gas · barra granito · techo)',
+        'A/C inverter Mitsubishi en cada habitación',
+        'Pisos: porcelanato 60×60 (común) + madera ingeniería (habitaciones)',
+        'Mesones cuarzo Caesarstone · grifería Grohe',
+        'Cocina Bosch (refrigerador, horno, cooktop, lavavajillas)',
+        'Tanque 5,000 L + bomba presión + filtro',
+        'Cableado Cat6 + fibra óptica a cada cuarto',
+        'Jardín paisajista (jocote, almendro, hibiscos)',
+        'Garaje techado para 2 autos',
+        'Permisos MIVIOT + ANATI (costa) incluidos',
+        'Seguro contra todo riesgo durante obra'
+      ],
+      en: [
+        'Reinforced concrete + block · seismic standard',
+        '3 bed · 2.5 bath · open kitchen · living/dining',
+        'Deep south veranda (45 m² covered)',
+        'Impact-rated aluminum windows (hurricane)',
+        'Operable louvers for salt and wind',
+        '★ 6 × 3 m concrete pool · salt chlorination',
+        '★ Outdoor kitchen (gas plancha · granite bar · roof)',
+        'Mitsubishi inverter A/C in every bedroom',
+        'Floors: 60×60 porcelain (public) + engineered wood (bedrooms)',
+        'Caesarstone quartz counters · Grohe fixtures',
+        'Bosch appliances (fridge, oven, cooktop, dishwasher)',
+        '5,000 L water tank + pressure pump + filter',
+        'Cat6 + fiber to every room',
+        'Landscaped garden (jocote, almond, hibiscus)',
+        'Covered carport for 2 cars',
+        'MIVIOT + ANATI (coastal) permits included',
+        'All-risk construction insurance'
+      ]
+    },
+    nicht: {
+      es: ['Solar (clima exige A/C alto · pagar grid o sumar +$32K)', 'Casita de huéspedes (suma $52K si necesitas)'],
+      en: ['Solar (climate needs heavy A/C · pay grid or add +$32K)', 'Guest casita (add $52K if needed)']
+    }
+  },
+
+  montana: {
+    tier: 'upmarket',
+    nameEs: 'Casa <em>Montaña</em>', nameEn: 'Casa <em>Montaña</em>',
+    tagEs: 'El retiro de altura · Boquete · 220 m²',
+    tagEn: 'The highland retreat · Boquete · 220 sqm',
+    pitch: {
+      es: 'Clima fresco todo el año, chimenea, sin necesidad de aire acondicionado. La elección de nómadas digitales y buscadores de bienestar.',
+      en: 'Cool climate year-round, fireplace, no A/C needed. The pick for digital nomads and wellness seekers.'
+    },
+    forWho: {
+      es: ['Nómadas digitales · remote workers', 'Buscadores de clima fresco', 'Residencia principal año redondo', 'Foco en bienestar'],
+      en: ['Digital nomads · remote workers', 'Cool-climate seekers', 'Full-time year-round residence', 'Wellness-focused']
+    },
+    price: 485000,
+    priceLabel: '$485,000',
+    m2: 220, bedrooms: 3, bathrooms: 3,
+    width: 13, depth: 11, height: 6.0, levels: 2,
+    region_key: 'boquete',
+    buildMonths: '11–13',
+    facade: 'wood', roof: 'gable',
+    image: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=900&q=80',
+    includes: {
+      es: [
+        'Estructura panel M2 + bloque · doble nivel',
+        '3 habitaciones · 3 baños · estudio · cocina abierta',
+        '★ Chimenea de leña en sala (piedra local · diseño 1962)',
+        '★ Pared completa de vidrio doble al jardín',
+        'Sin aire acondicionado (clima 18–24°C todo el año)',
+        'Calefacción por suelo radiante a gas (mañanas frías)',
+        'Pisos: madera de teca recuperada en todo',
+        'Cocina personalizada con isla central',
+        'Mesones cuarzo importado · grifería Hansgrohe',
+        'Cocina Bosch + extractor de campana profesional',
+        'Calentador solar de agua (gas como respaldo)',
+        '☼ Solar 6 kW + 10 kWh (reduce factura · no off-grid)',
+        'Veranda lateral 24 m² para café de la mañana',
+        'Jardín de café Geisha + huerta orgánica + sendero',
+        'Cuarto de huéspedes con baño propio',
+        'Internet fibra C&W instalado',
+        'Garaje cerrado + bodega',
+        'Permisos MIVIOT incluidos',
+        'Seguro contra todo riesgo durante obra'
+      ],
+      en: [
+        'M2 panel + block structure · two-level',
+        '3 bed · 3 bath · study · open kitchen',
+        '★ Wood-burning stone fireplace in living room (1962 design)',
+        '★ Full wall of double-glazed glass to the garden',
+        'No A/C needed (18–24°C climate year-round)',
+        'Gas radiant floor heat (for cool mornings)',
+        'Floors: reclaimed teak throughout',
+        'Custom kitchen with central island',
+        'Imported quartz counters · Hansgrohe fixtures',
+        'Bosch appliances + professional range hood',
+        'Solar water heater (gas backup)',
+        '☼ Solar 6 kW + 10 kWh (offsets bill · not off-grid)',
+        'Side veranda 24 m² for morning coffee',
+        'Geisha coffee garden + organic vegetable plot + path',
+        'Guest room with private bath',
+        'C&W fiber internet installed',
+        'Enclosed garage + storage',
+        'MIVIOT permits included',
+        'All-risk construction insurance'
+      ]
+    },
+    nicht: {
+      es: ['Piscina (clima fresco · no se justifica · suma $32K si insistes)', 'Casita aparte (suma $52K)'],
+      en: ['Pool (cool climate · not justified · add $32K if you insist)', 'Separate casita (add $52K)']
+    }
+  },
+
+  punta: {
+    tier: 'flagship',
+    nameEs: 'Casa <em>Punta</em>', nameEn: 'Casa <em>Punta</em>',
+    tagEs: 'La firma de Sora · Pedasí · 320 m²',
+    tagEn: 'The Sora flagship · Pedasí · 320 sqm',
+    pitch: {
+      es: 'Propiedad de declaración. Cuatro habitaciones, vista de 270° al océano, piscina infinita, casita de huéspedes, solar autónomo. Todo incluido.',
+      en: '270° ocean view, infinity pool, guest casita, off-grid solar. Statement property, every line item already included.'
+    },
+    forWho: {
+      es: ['Patrimonio alto', 'Casa de declaración · vacation home', 'Rental boutique premium ($800-1,500/noche)', 'Familia extendida o pequeño retreat'],
+      en: ['High net worth', 'Statement property · vacation home', 'Premium boutique rental ($800-1,500/night)', 'Extended family or small retreat']
+    },
+    price: 815000,
+    priceLabel: '$815,000',
+    m2: 320, bedrooms: 4, bathrooms: 4,
+    width: 18, depth: 13, height: 6.5, levels: 2,
+    region_key: 'pedasi',
+    buildMonths: '13–15',
+    facade: 'stone', roof: 'flat',
+    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80',
+    includes: {
+      es: [
+        'Hormigón armado + envolvente piedra local',
+        '4 habitaciones (todas en suite) · 4 baños + medio',
+        'Master suite con vestidor + baño doble',
+        'Sala doble altura · planta abierta · vista 270°',
+        '★ Piscina infinity 10 × 4 m (vidrio en borde)',
+        '★ Cocina exterior tipo restaurante (parrilla · plancha · horno · barra · bodega)',
+        '★ Casita de huéspedes 35 m² · baño · kitchenette',
+        '★ Solar 10 kW + 20 kWh LFP · híbrido (off-grid capaz)',
+        'A/C central por ductos (no minisplits visibles)',
+        'Pisos: mármol travertino + teca recuperada',
+        'Mesones mármol Carrara · grifería Dornbracht',
+        'Cocina Miele + refrigerador Sub-Zero',
+        'Bodega de vinos climatizada (120 botellas)',
+        'Domótica Lutron (luz + persianas + audio)',
+        'Audio Sonos en zonas comunes',
+        'Calentador solar de agua + gas respaldo',
+        'Filtración + ósmosis inversa en cocina',
+        'Generador diésel 15 kVA (respaldo total)',
+        'Jardín paisajista profesional con riego automático',
+        'Portón eléctrico + cámaras + alarma',
+        'Permisos MIVIOT + ANATI completos',
+        'Seguro contra todo riesgo durante obra',
+        'Walk-throughs en video semanales por WhatsApp'
+      ],
+      en: [
+        'Reinforced concrete + local stone cladding',
+        '4 ensuite bedrooms · 4.5 baths',
+        'Master suite with walk-in closet + double vanity bath',
+        'Double-height living · open plan · 270° view',
+        '★ 10 × 4 m infinity pool (glass edge)',
+        '★ Restaurant-grade outdoor kitchen (grill · plancha · oven · bar · wine fridge)',
+        '★ Guest casita 35 m² · bath · kitchenette',
+        '★ Solar 10 kW + 20 kWh LFP · hybrid (off-grid capable)',
+        'Central ducted A/C (no visible minisplits)',
+        'Floors: travertine marble + reclaimed teak',
+        'Carrara marble counters · Dornbracht fixtures',
+        'Miele appliances + Sub-Zero fridge',
+        'Climate-controlled wine cellar (120 bottles)',
+        'Lutron smart home (lighting + shades + audio)',
+        'Sonos audio in common areas',
+        'Solar water heater + gas backup',
+        'RO filtration at kitchen tap',
+        '15 kVA diesel backup generator',
+        'Professional landscaped grounds with auto-irrigation',
+        'Electric gate + cameras + alarm',
+        'MIVIOT + ANATI permits all included',
+        'All-risk construction insurance',
+        'Weekly WhatsApp video walk-throughs'
+      ]
+    },
+    nicht: {
+      es: ['Lancha / muelle (proyecto separado si la propiedad lo permite)', 'Cancha de pádel (suma $45K)'],
+      en: ['Boat / dock (separate project if site permits)', 'Padel court (add $45K)']
+    }
+  }
+};
+
+// Cosmetic options that change the 3D model without affecting price
+const FACADES = ['white','wood','stone'];
+const ROOFS = ['gable','flat','thatch'];
+
+// Regional land cost ranges ($/m²) shown as reference (not added to construction price)
+const LAND_COST = {
+  pedasi: { lo: 20, hi: 80, label: 'Pedasí · Azuero' },
+  boquete: { lo: 25, hi: 100, label: 'Boquete · Chiriquí' },
+  bocas: { lo: 30, hi: 150, label: 'Bocas del Toro' }
+};
+
+// Verified Unsplash photo IDs. Type-matched fallback library used for any wrong-looking listing.
+const U = (id) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1280&q=80`;
+const IMG = {
+  // Exteriors
+  lotMountain: U('1469854523086-cc02fe5d8800'),
+  lotJungle:   U('1502082553048-f009c37129b9'),
+  lotVineyard: U('1559548331-f9cb98001426'),
+  coffee:      U('1442975631115-c4f7b05b8a2c'),
+  beach:       U('1613490493576-7fde63acd811'),
+  stilt:       U('1572120360610-d971b9d7767c'),
+  smaColonial: U('1568084680786-a84f91d1153c'),
+  ctgColonial: U('1583531352515-8884af6ab84f'),
+  pobladoApt:  U('1545324418-cc1a3fa10c00'),
+  altamiraApt: U('1502672260266-1c1ef2d93688'),
+  // Interiors
+  intLiving:   U('1600210492486-724fe5c67fb0'),
+  intKitchen:  U('1600489000022-c2086d79f9d4'),
+  intBedroom:  U('1505693416388-ac5ce068fe85'),
+  intBath:     U('1600566753086-00f18fb6b3ea'),
+  // Views + details
+  villaPool:   U('1600596542815-ffad4c1539a9'),
+  terrace:     U('1600607687939-ce8a6c25118c'),
+  oceanView:   U('1505228395891-9a51e7e86bf6'),
+  jungleCanopy:U('1448375240586-882707db888b'),
+  volcano:     U('1519681393784-d120267933ba'),
+  cityNight:   U('1480714378408-67cf0d13bc1b'),
+  vineyard:    U('1506377247377-2a5b3b417ebb'),
+  colonialPatio:U('1564501049412-61c2a3083791'),
+  dock:        U('1505881502353-a1986add3762'),
+  intLiving2:  U('1600585154526-990dced4db0d'),
+  intKitchen2: U('1556912173-3bb406ef7e77'),
+  intBedroom2: U('1522708323590-d24dbb6b0267'),
+  intBath2:    U('1620626011761-996317b8d101'),
+  poolDeck:    U('1572331165267-854da2b010cc'),
+  aerialCoast: U('1507525428034-b723cf961d3e'),
+  gardenTerr:  U('1416879595882-3373a0480b5b'),
+  diningRoom:  U('1617806118233-18e1de247200')
+};
+
+const PROPS = [
+  {id:'p1', country:'PA', flag:'🇵🇦', type:'lote', titleEs:'Lote con vista al Volcán', titleEn:'Lot with volcano view', loc:'Bajo Boquete, Chiriquí', price:'$85,000', size:'1,200 m²', beds:0, baths:0, built:'Lote', status:'available', tone:'finca',
+    img: IMG.lotMountain, gallery:[IMG.lotMountain, IMG.volcano, IMG.jungleCanopy, IMG.coffee],
+    descEs:'Terreno residencial con vista directa al Volcán Barú. Acceso pavimentado, agua y luz en la vía. Listo para construir Casa Montaña.',
+    descEn:'Residential lot with a direct Volcán Barú view. Paved access, water and power on the street. Ready to build Casa Montaña.',
+    moreEs:'Terreno listo para construir en una de las zonas más buscadas de Boquete. La calle pavimentada llega hasta el lindero y tanto el agua como la electricidad ya están en la vía. La pendiente suave permite asentar una casa de una o dos plantas mirando al Barú, sin grandes movimientos de tierra.',
+    moreEn:'Build-ready land in one of Boquete’s most sought-after pockets. The paved road reaches the property line, and both water and power are already on the street. The gentle slope lets you set a one or two-story home facing Barú without major earthworks.',
+    featsEs:['Vista directa al Volcán Barú','Agua y luz en la vía','Calle pavimentada al lindero','Clima de primavera todo el año','Listo para Casa Montaña'],
+    featsEn:['Direct Volcán Barú view','Water and power on the street','Paved road to the lot line','Spring climate year-round','Ready for Casa Montaña'],
+    hoodEs:'Bajo Boquete es el corazón de la comunidad de jubilados extranjeros en Chiriquí. Mercado orgánico los martes, café de especialidad y senderos al bosque nublado a diez minutos.',
+    hoodEn:'Bajo Boquete is the heart of Chiriquí’s foreign-retiree community, with a Tuesday organic market, specialty coffee and cloud-forest trails ten minutes away.'},
+  {id:'p2', country:'PA', flag:'🇵🇦', type:'finca', titleEs:'Finca cafetera Geisha', titleEn:'Geisha coffee farm', loc:'Volcán, Chiriquí', price:'$320,000', size:'4 ha', beds:3, baths:2, built:'2009', status:'available', tone:'finca',
+    img: IMG.coffee, gallery:[IMG.coffee, IMG.volcano, IMG.intLiving, IMG.jungleCanopy],
+    descEs:'Finca de café Geisha en producción con casa principal de 3 habitaciones. Beneficio húmedo incluido, a 1,650 m de altura.',
+    descEn:'Producing Geisha coffee farm with a 3-bedroom main house. Wet mill included, at 1,650 m elevation.',
+    moreEs:'Cuatro hectáreas de café Geisha en plena producción, la variedad que ha hecho famoso a Panamá en las subastas internacionales. Viene con la casa principal de tres habitaciones, beneficio húmedo y un caudal de agua propio. Una compra que vive de su propia cosecha mientras tú disfrutas la altura.',
+    moreEn:'Four hectares of Geisha coffee in full production, the variety that made Panama famous at international auctions. It comes with the three-bedroom main house, a wet mill and its own water source. A property that pays its way through the harvest while you enjoy the elevation.',
+    featsEs:['Café Geisha en producción','Casa principal de 3 habitaciones','Beneficio húmedo en sitio','Agua propia','1,650 m sobre el nivel del mar'],
+    featsEn:['Producing Geisha coffee','3-bedroom main house','On-site wet mill','Own water source','1,650 m above sea level'],
+    hoodEs:'Volcán es más fresco y tranquilo que Boquete, con fincas trabajadas por familias que llevan generaciones en el café. Frontera con Costa Rica a una hora.',
+    hoodEn:'Volcán is cooler and quieter than Boquete, with farms worked by families who have grown coffee for generations. The Costa Rica border is an hour away.'},
+  {id:'p3', country:'PA', flag:'🇵🇦', type:'casa', titleEs:'Casa frente al mar · Pedasí', titleEn:'Beachfront home · Pedasí', loc:'Pedasí, Los Santos', price:'$435,000', size:'185 m²', beds:3, baths:3, built:'2026', status:'new', tone:'beach',
+    img: IMG.beach, gallery:[IMG.beach, IMG.villaPool, IMG.intLiving, IMG.oceanView],
+    descEs:'Casa nueva modelo Bahía, terminada en 2026. Frente al mar, con piscina y paneles solares. Construida por Sora.',
+    descEn:'New Bahía-model home, finished in 2026. Beachfront, with a pool and solar panels. Built by Sora.',
+    moreEs:'Una de las primeras casas que Sora terminó en Pedasí, sobre el modelo Bahía. Tres habitaciones, techos altos para el cruce de brisa y una piscina que mira al mar. Los paneles solares cubren casi todo el consumo, algo que importa cuando vives a media hora de un pueblo tranquilo.',
+    moreEn:'One of the first homes Sora finished in Pedasí, built on the Bahía model. Three bedrooms, high ceilings for cross-breeze and a pool that faces the water. Solar panels cover nearly all the load, which matters when you live half an hour from a quiet town.',
+    featsEs:['Frente de playa','Piscina','Paneles solares','Techos altos para brisa cruzada','Construida y respaldada por Sora'],
+    featsEn:['Beachfront','Pool','Solar panels','High ceilings for cross-breeze','Built and backed by Sora'],
+    hoodEs:'Pedasí pasó de pueblo de pescadores a uno de los puntos favoritos de extranjeros en el Pacífico panameño. Surf, pesca y el aeropuerto de Chitré a una hora.',
+    hoodEn:'Pedasí went from a fishing town to one of the favorite foreign spots on Panama’s Pacific coast. Surf, fishing and the Chitré airport an hour away.'},
+  {id:'p4', country:'PA', flag:'🇵🇦', type:'casa', titleEs:'Casa en pilotes · Bocas', titleEn:'Stilt home · Bocas', loc:'Isla Bastimentos, Bocas del Toro', price:'$245,000', size:'140 m²', beds:3, baths:2, built:'2018', status:'sold', tone:'jungle',
+    img: IMG.stilt, gallery:[IMG.stilt, IMG.dock, IMG.intBedroom, IMG.jungleCanopy],
+    descEs:'Casa de madera sobre pilotes con muelle privado y vista al Caribe. 3 habitaciones, energía solar. Vendida en 11 días.',
+    descEn:'Wooden stilt home with a private dock and Caribbean view. 3 bedrooms, solar power. Sold in 11 days.',
+    moreEs:'Una casa de madera sobre el agua, con muelle propio para amarrar la lancha y nadar desde la terraza. Tres habitaciones, energía solar y el sonido del Caribe de fondo. Se vendió en once días; la dejamos aquí como referencia de lo que se mueve en Bocas.',
+    moreEn:'A wooden home over the water, with its own dock to tie up the boat and swim from the deck. Three bedrooms, solar power and the Caribbean in the background. It sold in eleven days; we keep it here as a reference for what moves in Bocas.',
+    featsEs:['Muelle privado','Sobre el agua','Energía solar','Acceso por lancha','Vendida en 11 días'],
+    featsEn:['Private dock','Over the water','Solar power','Boat access','Sold in 11 days'],
+    hoodEs:'Bastimentos es la isla más natural del archipiélago de Bocas: selva, playas de surf y una comunidad pequeña de extranjeros que llegaron y se quedaron.',
+    hoodEn:'Bastimentos is the wildest island in the Bocas archipelago: jungle, surf beaches and a small community of foreigners who arrived and stayed.'},
+  {id:'p5', country:'MX', flag:'🇲🇽', type:'lote', titleEs:'Lote en la selva · Aldea Zama', titleEn:'Jungle lot · Aldea Zama', loc:'Aldea Zama, Tulum', price:'$185,000', size:'450 m²', beds:0, baths:0, built:'Lote', status:'available', tone:'jungle',
+    img: IMG.lotJungle, gallery:[IMG.lotJungle, IMG.jungleCanopy, IMG.terrace, IMG.villaPool],
+    descEs:'Lote para construir en zona consolidada de Tulum. Cerca de la zona hotelera, cenotes y restaurantes. Permisos al día.',
+    descEn:'Buildable lot in an established Tulum zone. Near the hotel strip, cenotes and restaurants. Permits in order.',
+    moreEs:'Aldea Zama es la zona planificada de Tulum, con calles, servicios y reglamento de construcción, algo poco común en la zona. El lote tiene 450 m² entre vegetación, a pocos minutos de la playa y de los cenotes. Los permisos están en regla, así que se puede empezar a construir sin sorpresas.',
+    moreEn:'Aldea Zama is Tulum’s planned zone, with streets, services and building rules, which is rare for the area. The lot is 450 m² among the vegetation, a few minutes from the beach and the cenotes. Permits are in order, so building can start without surprises.',
+    featsEs:['Zona planificada con servicios','450 m² entre vegetación','Cerca de playa y cenotes','Permisos al día','Apto para renta vacacional'],
+    featsEn:['Planned zone with services','450 m² among the trees','Near beach and cenotes','Permits in order','Suited for vacation rental'],
+    hoodEs:'Tulum sigue siendo uno de los destinos de mayor crecimiento de México, con vuelos directos desde casi todo Estados Unidos al nuevo aeropuerto.',
+    hoodEn:'Tulum is still one of Mexico’s fastest-growing destinations, with direct flights from much of the United States to the new airport.'},
+  {id:'p6', country:'MX', flag:'🇲🇽', type:'casa', titleEs:'Casa colonial · Centro', titleEn:'Colonial home · Centro', loc:'San Miguel de Allende', price:'$680,000', size:'320 m²', beds:3, baths:3, built:'s. XVIII', status:'available', tone:'sunset',
+    img: IMG.smaColonial, gallery:[IMG.smaColonial, IMG.colonialPatio, IMG.intKitchen, IMG.intLiving],
+    descEs:'Casa del siglo XVIII con patio interior, fuente y techos de bóveda. A cuatro cuadras del Jardín. Restaurada en 2024.',
+    descEn:'18th-century home with an interior patio, fountain and vaulted ceilings. Four blocks from El Jardín. Restored in 2024.',
+    moreEs:'Una casona del siglo XVIII restaurada con mano cuidadosa en 2024: se mantuvo la cantera, las vigas y los techos de bóveda, y se modernizó todo lo que no se ve. El patio con fuente es el corazón de la casa. Tres habitaciones, a cuatro cuadras del Jardín principal.',
+    moreEn:'An 18th-century house carefully restored in 2024: the stonework, beams and vaulted ceilings were kept, and everything you don’t see was modernized. The patio with its fountain is the heart of the house. Three bedrooms, four blocks from the main Jardín.',
+    featsEs:['Patio interior con fuente','Techos de bóveda originales','Restauración completa 2024','A 4 cuadras del Jardín','Cantera y vigas conservadas'],
+    featsEn:['Interior patio with fountain','Original vaulted ceilings','Full 2024 restoration','4 blocks from El Jardín','Stonework and beams preserved'],
+    hoodEs:'San Miguel de Allende aparece año tras año entre las mejores ciudades del mundo para viajeros, y tiene la comunidad de jubilados estadounidenses más establecida del centro de México.',
+    hoodEn:'San Miguel de Allende lands among the world’s best cities for travelers year after year, and holds the most established US-retiree community in central Mexico.'},
+  {id:'p7', country:'MX', flag:'🇲🇽', type:'lote', titleEs:'Lote en viñedos · Valle de Guadalupe', titleEn:'Vineyard lot · Valle de Guadalupe', loc:'Valle de Guadalupe, Baja California', price:'$220,000', size:'5,000 m²', beds:0, baths:0, built:'Lote', status:'available', tone:'mountain',
+    img: IMG.vineyard, gallery:[IMG.vineyard, IMG.volcano, IMG.terrace, IMG.gardenTerr],
+    descEs:'Media hectárea apta para viñedo boutique o casa de campo. Vista a los cerros y pozo de agua.',
+    descEn:'Half-hectare suited for a boutique vineyard or country house. Hill views and a water well.',
+    moreEs:'Media hectárea en el valle vinícola más conocido de México, con tierra que ya da uva y un pozo propio. Sirve para un viñedo pequeño, una casa de campo o las dos cosas. El valle se llena los fines de semana con gente de San Diego y Los Ángeles que cruza por el vino.',
+    moreEn:'Half a hectare in Mexico’s best-known wine valley, with land that already grows grapes and its own well. It works for a small vineyard, a country house, or both. The valley fills on weekends with people from San Diego and Los Angeles who cross over for the wine.',
+    featsEs:['5,000 m² con uva','Pozo de agua propio','Vista a los cerros','A 90 min de la frontera','Apto para viñedo boutique'],
+    featsEn:['5,000 m² with vines','Own water well','Hill views','90 min from the border','Suited for a boutique vineyard'],
+    hoodEs:'El Valle de Guadalupe es la capital del vino mexicano, con más de 150 bodegas y una escena de restaurantes que atrae visitantes de todo el sur de California.',
+    hoodEn:'Valle de Guadalupe is the capital of Mexican wine, with over 150 wineries and a restaurant scene that draws visitors from across Southern California.'},
+  {id:'p8', country:'CO', flag:'🇨🇴', type:'apto', titleEs:'Penthouse El Poblado', titleEn:'El Poblado penthouse', loc:'El Poblado, Medellín', price:'$320,000', size:'180 m²', beds:3, baths:3, built:'2019', status:'available', tone:'sunset',
+    img: IMG.pobladoApt, gallery:[IMG.pobladoApt, IMG.cityNight, IMG.intLiving, IMG.intBath],
+    descEs:'Penthouse moderno con terraza panorámica al valle de Aburrá. 3 habitaciones, 3 baños, parqueo doble.',
+    descEn:'Modern penthouse with a panoramic terrace over the Aburrá valley. 3 bedrooms, 3 baths, double parking.',
+    moreEs:'Un penthouse en la mejor zona de Medellín, con terraza que abarca todo el valle de Aburrá y una luz que cambia con el día. Tres habitaciones, tres baños y dos parqueos. El edificio tiene gimnasio, portería 24 horas y está a pasos de los restaurantes de Provenza.',
+    moreEn:'A penthouse in Medellín’s best area, with a terrace that takes in the whole Aburrá valley and light that shifts through the day. Three bedrooms, three baths and two parking spots. The building has a gym, 24-hour security and sits steps from the Provenza restaurants.',
+    featsEs:['Terraza panorámica','Gimnasio y portería 24h','Parqueo doble','A pasos de Provenza','Clima de primavera todo el año'],
+    featsEn:['Panoramic terrace','Gym and 24h security','Double parking','Steps from Provenza','Spring climate year-round'],
+    hoodEs:'El Poblado es el barrio donde se concentran los extranjeros y nómadas digitales en Medellín, con cafés, coworkings y la mejor conexión de la ciudad.',
+    hoodEn:'El Poblado is the neighborhood where foreigners and digital nomads cluster in Medellín, with cafes, coworkings and the city’s best connectivity.'},
+  {id:'p9', country:'CO', flag:'🇨🇴', type:'casa', titleEs:'Casa colonial · Getsemaní', titleEn:'Colonial home · Getsemaní', loc:'Getsemaní, Cartagena', price:'$590,000', size:'240 m²', beds:4, baths:4, built:'s. XVII', status:'new', tone:'beach',
+    img: IMG.ctgColonial, gallery:[IMG.ctgColonial, IMG.colonialPatio, IMG.villaPool, IMG.intBedroom],
+    descEs:'Casa restaurada del siglo XVII con patio central y piscina. 4 habitaciones, a una cuadra del Parque Centenario.',
+    descEn:'Restored 17th-century home with a central patio and pool. 4 bedrooms, a block from Centenario park.',
+    moreEs:'Una casa colonial del siglo XVII dentro de Getsemaní, el barrio más vivo de Cartagena. Patio central con piscina, balcones de madera y cuatro habitaciones repartidas en dos plantas. Restaurada hace poco, lista para vivir o para rentar por noche a buen precio.',
+    moreEn:'A 17th-century colonial home inside Getsemaní, Cartagena’s liveliest neighborhood. A central patio with a pool, wooden balconies and four bedrooms across two floors. Recently restored, ready to live in or to rent by the night at a strong rate.',
+    featsEs:['Patio central con piscina','Balcones de madera','Cuatro habitaciones','Dentro de la ciudad amurallada','Fuerte potencial de renta'],
+    featsEn:['Central patio with pool','Wooden balconies','Four bedrooms','Inside the walled city','Strong rental potential'],
+    hoodEs:'Getsemaní pasó de barrio popular a uno de los lugares más codiciados del Caribe, con música en las plazas y casas coloniales que cambian de mano cada vez más rápido.',
+    hoodEn:'Getsemaní went from a working-class quarter to one of the most coveted spots in the Caribbean, with music in the squares and colonial homes changing hands faster every year.'},
+  {id:'p10', country:'VE', flag:'🇻🇪', type:'apto', titleEs:'Penthouse Altamira', titleEn:'Altamira penthouse', loc:'Altamira, Caracas', price:'$240,000', size:'260 m²', beds:3, baths:3, built:'1998', status:'available', tone:'mountain',
+    img: IMG.altamiraApt, gallery:[IMG.altamiraApt, IMG.cityNight, IMG.intKitchen, IMG.terrace],
+    descEs:'Penthouse renovado con vista al Ávila. 3 habitaciones, 3 baños, planta eléctrica, tanque de agua y parqueo.',
+    descEn:'Renovated penthouse with an Ávila view. 3 bedrooms, 3 baths, backup generator, water tank and parking.',
+    moreEs:'Un penthouse renovado en Altamira, con el cerro Ávila de fondo y 260 m² bien distribuidos. Trae lo que importa en Caracas hoy: planta eléctrica, tanque de agua y dos parqueos en un edificio con portería. Para quien conoce la ciudad y compra con dólares en efectivo, el precio es difícil de igualar.',
+    moreEn:'A renovated penthouse in Altamira, with the Ávila mountain behind it and 260 m² of well-laid-out space. It brings what matters in Caracas today: a backup generator, water tank and two parking spots in a building with a doorman. For someone who knows the city and buys with cash dollars, the price is hard to match.',
+    featsEs:['Vista al Ávila','Planta eléctrica','Tanque de agua','Dos parqueos','Edificio con portería'],
+    featsEn:['Ávila mountain view','Backup generator','Water tank','Two parking spots','Building with a doorman'],
+    hoodEs:'Altamira es de las zonas más seguras y caminables del este de Caracas, con su plaza, restaurantes y la línea de metro a pocos minutos.',
+    hoodEn:'Altamira is among the safest and most walkable areas of eastern Caracas, with its plaza, restaurants and the metro line minutes away.'}
+];
+
+const TONE_GRADIENTS = {
+  beach:    'linear-gradient(135deg,#5fb1cc 0%,#cad9c4 50%,#e8d6a0 100%)',
+  jungle:   'linear-gradient(135deg,#2d4d3a 0%,#4a7d5e 50%,#a5b97e 100%)',
+  mountain: 'linear-gradient(135deg,#5e7186 0%,#8a8b75 50%,#b5a06a 100%)',
+  finca:    'linear-gradient(135deg,#8a722a 0%,#b8985a 50%,#e3d09e 100%)',
+  sunset:   'linear-gradient(135deg,#5a2a2c 0%,#c66a4a 50%,#e9b969 100%)',
+  city:     'linear-gradient(135deg,#2a1f3a 0%,#5a4a6e 50%,#a89dba 100%)'
+};
+
+/* Detail-page extras: a one-line essence + "distance to" facts per property (· separates label and detail) */
+const CASA_EXTRA = {
+  p1:{essEs:'El primer lienzo en blanco con vista al Barú.', essEn:'A blank canvas facing Barú, ready when you are.',
+      nearEs:['5 min · al centro de Boquete','10 min · a senderos del bosque nublado','45 min · al aeropuerto de David','1 h · a la frontera con Costa Rica'],
+      nearEn:['5 min · to Boquete town','10 min · to cloud-forest trails','45 min · to David airport','1 h · to the Costa Rica border']},
+  p2:{essEs:'Una finca que se paga sola, taza tras taza.', essEn:'A farm that pays its own way, cup after cup.',
+      nearEs:['10 min · al pueblo de Volcán','1 h · a la frontera con Costa Rica','1,650 m · de altura','4 ha · de café Geisha en producción'],
+      nearEn:['10 min · to Volcán town','1 h · to the Costa Rica border','1,650 m · elevation','4 ha · of producing Geisha coffee']},
+  p3:{essEs:'Despiertas con el Pacífico bajo los pies.', essEn:'Wake to the Pacific under your feet.',
+      nearEs:['2 min · a la playa','10 min · al pueblo de Pedasí','1 h · al aeropuerto de Chitré','Surf y pesca · a la puerta'],
+      nearEn:['2 min · to the beach','10 min · to Pedasí town','1 h · to Chitré airport','Surf and fishing · at the door']},
+  p4:{essEs:'Madera sobre el agua, con el Caribe de patio.', essEn:'Wood over the water, the Caribbean for a yard.',
+      nearEs:['Muelle propio · para la lancha','15 min · en lancha a Bocas town','Selva y arrecife · alrededor'],
+      nearEn:['Private dock · for the boat','15 min · by boat to Bocas town','Jungle and reef · all around']},
+  p5:{essEs:'Selva consolidada, a minutos de la arena.', essEn:'Established jungle, minutes from the sand.',
+      nearEs:['5 min · a la zona hotelera','5 min · a los cenotes','15 min · al pueblo de Tulum','25 min · al aeropuerto nuevo'],
+      nearEn:['5 min · to the hotel zone','5 min · to the cenotes','15 min · to Tulum town','25 min · to the new airport']},
+  p6:{essEs:'Cantera del siglo XVIII, confort de hoy.', essEn:'18th-century stone, today’s comfort.',
+      nearEs:['4 cuadras · a El Jardín','Caminable · todo el centro','1 h 30 · al aeropuerto de Querétaro'],
+      nearEn:['4 blocks · to El Jardín','Walkable · the whole centro','1 h 30 · to Querétaro airport']},
+  p7:{essEs:'Media hectárea que ya da uva.', essEn:'Half a hectare that already grows grapes.',
+      nearEs:['Bodegas · por todo el valle','Pozo de agua · propio','90 min · a la frontera de San Diego'],
+      nearEn:['Wineries · across the valley','Water well · on the land','90 min · to the San Diego border']},
+  p8:{essEs:'Todo el valle de Aburrá desde tu terraza.', essEn:'The whole Aburrá valley from your terrace.',
+      nearEs:['A pasos · de Provenza','Gimnasio y portería · 24 h','Clima de primavera · todo el año'],
+      nearEn:['Steps · from Provenza','Gym and security · 24 h','Spring weather · year-round']},
+  p9:{essEs:'Música en la plaza, piscina en el patio.', essEn:'Music in the square, a pool in the patio.',
+      nearEs:['1 cuadra · al Parque Centenario','Caminable · la ciudad amurallada','15 min · al aeropuerto'],
+      nearEn:['1 block · to Centenario park','Walkable · the walled city','15 min · to the airport']},
+  p10:{essEs:'El Ávila de fondo, dólares de frente.', essEn:'The Ávila behind you, dollars up front.',
+      nearEs:['A pasos · de la Plaza Altamira','Minutos · a la línea de metro','Planta, tanque y 2 parqueos · incluidos'],
+      nearEn:['Steps · from Plaza Altamira','Minutes · to the metro line','Generator, tank and 2 parking · included']}
+};
+
+/* Per-property map coordinates (approx, neighborhood-level) + extended detail gallery (6 photos) */
+const CASA_MEDIA = {
+  p1:{lat:8.782,lon:-82.435,gal:[IMG.lotMountain,IMG.volcano,IMG.gardenTerr,IMG.jungleCanopy,IMG.aerialCoast,IMG.coffee]},
+  p2:{lat:8.770,lon:-82.633,gal:[IMG.coffee,IMG.volcano,IMG.intLiving,IMG.diningRoom,IMG.jungleCanopy,IMG.gardenTerr]},
+  p3:{lat:7.533,lon:-80.030,gal:[IMG.beach,IMG.villaPool,IMG.intLiving,IMG.intBedroom2,IMG.poolDeck,IMG.oceanView]},
+  p4:{lat:9.308,lon:-82.183,gal:[IMG.stilt,IMG.dock,IMG.intBedroom,IMG.intLiving2,IMG.jungleCanopy,IMG.oceanView]},
+  p5:{lat:20.184,lon:-87.461,gal:[IMG.lotJungle,IMG.jungleCanopy,IMG.terrace,IMG.gardenTerr,IMG.villaPool,IMG.aerialCoast]},
+  p6:{lat:20.914,lon:-100.744,gal:[IMG.smaColonial,IMG.colonialPatio,IMG.intKitchen,IMG.intLiving,IMG.diningRoom,IMG.intBath2]},
+  p7:{lat:32.097,lon:-116.600,gal:[IMG.vineyard,IMG.gardenTerr,IMG.volcano,IMG.terrace,IMG.aerialCoast]},
+  p8:{lat:6.209,lon:-75.567,gal:[IMG.pobladoApt,IMG.cityNight,IMG.intLiving,IMG.intKitchen2,IMG.intBath,IMG.poolDeck]},
+  p9:{lat:10.423,lon:-75.547,gal:[IMG.ctgColonial,IMG.colonialPatio,IMG.villaPool,IMG.intBedroom,IMG.diningRoom,IMG.poolDeck]},
+  p10:{lat:10.497,lon:-66.853,gal:[IMG.altamiraApt,IMG.cityNight,IMG.intKitchen,IMG.intLiving2,IMG.intBath2,IMG.terrace]}
+};
+
+/* ============ STATE ============ */
+let state = {
+  mode: 'buy',
+  modelKey: 'bahia',
+  roof: 'gable',
+  facade: 'white',
+  view: 'ext',
+  filterCountry: 'all',
+  filterType: 'all',
+  lang: localStorage.getItem('sora-casas-lang') || 'es'
+};
+
+/* ============ INIT ============ */
+function init(){
+  document.documentElement.lang = state.lang;
+  document.querySelectorAll('.lang-toggle button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.lang === state.lang);
+    b.addEventListener('click', ()=>setLang(b.dataset.lang));
+  });
+
+  // Mode tabs (both top nav and modeline)
+  document.querySelectorAll('[data-mode]').forEach(b=>{
+    b.addEventListener('click', ()=>setMode(b.dataset.mode));
+  });
+
+  // Filter chips
+  document.querySelectorAll('[data-country]').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      document.querySelectorAll('[data-country]').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      state.filterCountry = b.dataset.country;
+      renderMarket();
+    });
+  });
+  document.querySelectorAll('[data-type]').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      document.querySelectorAll('[data-type]').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      state.filterType = b.dataset.type;
+      renderMarket();
+    });
+  });
+
+  // Configurator cosmetic options (facade + roof only)
+  document.querySelectorAll('[data-group]').forEach(grp=>{
+    grp.querySelectorAll('.opt').forEach(b=>{
+      b.addEventListener('click', ()=>{
+        grp.querySelectorAll('.opt').forEach(x=>x.classList.remove('active'));
+        b.classList.add('active');
+        state[grp.dataset.group] = b.dataset.val;
+        rebuildModel();
+      });
+    });
+  });
+
+  // View toggles
+  document.querySelectorAll('[data-view]').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      document.querySelectorAll('[data-view]').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      state.view = b.dataset.view;
+      updateScene();
+    });
+  });
+
+  // Sync state to whatever default pack is selected
+  const m0 = MODELS[state.modelKey];
+  state.facade = m0.facade; state.roof = m0.roof;
+
+  renderModels();
+  renderPackSidebar();
+  renderMarket();
+  updateViewerLabels();
+  // The 3D viewer must never block the rest of the site (listings, routing, detail pages)
+  try { initThree(); updateScene(); }
+  catch(e){ console.warn('3D viewer unavailable on this device:', e); }
+
+  // Routing: #buy/#build/#sell/#about and #casa/<id>
+  window.addEventListener('hashchange', route);
+  route();
+}
+
+window.toggleViewerFullscreen = function(){
+  var v = document.querySelector('.configurator .viewer') || document.querySelector('.viewer');
+  if(!v) return;
+  var fsEl = document.fullscreenElement || document.webkitFullscreenElement;
+  if(!fsEl){ (v.requestFullscreen || v.webkitRequestFullscreen || function(){}).call(v); }
+  else { (document.exitFullscreen || document.webkitExitFullscreen || function(){}).call(document); }
+};
+window.setLang = function(lang){
+  state.lang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-toggle button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  localStorage.setItem('sora-casas-lang', lang);
+  renderMarket();
+  renderModels();
+  updateViewerLabels();
+  if(casaState.id) renderCasa(casaState.id);
+};
+
+window.setMode = function(mode){
+  state.mode = mode;
+  document.querySelectorAll('[data-mode]').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode === mode);
+  });
+  document.querySelectorAll('.mode-section').forEach(s=>{
+    s.classList.toggle('active', s.id === 'mode-' + mode);
+  });
+  document.getElementById('topnav').classList.remove('open');
+  window.scrollTo({top: document.querySelector('.modeline').offsetTop - 80, behavior:'smooth'});
+};
+
+
+/* ============ RENDER MARKET ============ */
+function renderMarket(){
+  const grid = document.getElementById('market-grid');
+  const lang = state.lang;
+  const items = PROPS.filter(p=>{
+    if(state.filterCountry !== 'all' && p.country !== state.filterCountry) return false;
+    if(state.filterType !== 'all' && p.type !== state.filterType) return false;
+    return true;
+  });
+  if(items.length === 0){
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--ink-faint);font-family:var(--serif);font-style:italic">
+      ${lang==='es' ? 'Ninguna propiedad con esos filtros. Pronto.' : 'No properties for those filters. Soon.'}
+    </div>`;
+    return;
+  }
+  const grad = 'linear-gradient(180deg,rgba(20,17,12,0.0) 55%,rgba(20,17,12,0.35) 100%)';
+  grid.innerHTML = items.map(p=>{
+    const title = lang==='es' ? p.titleEs : p.titleEn;
+    const beds = p.beds > 0 ? `<span>🛏 ${p.beds} ${lang==='es'?'hab':'bd'}</span>` : '';
+    let badge = '';
+    if(p.status === 'new') badge = `<div class="listing-badge new">${lang==='es'?'Nuevo':'New'}</div>`;
+    else if(p.status === 'sold') badge = `<div class="listing-badge sold">${lang==='es'?'Vendido':'Sold'}</div>`;
+    else badge = `<div class="listing-badge">${lang==='es'?'Disponible':'Available'}</div>`;
+    const fallback = (TONE_GRADIENTS[p.tone]||TONE_GRADIENTS.beach);
+    const imgs = (p.gallery && p.gallery.length) ? p.gallery : [p.img];
+    const slides = imgs.map((src,i)=>`<div class="lc-slide${i===0?' on':''}" style="background-image:${grad},url('${src}'),${fallback}"></div>`).join('');
+    const dots = imgs.map((_,i)=>`<span class="lc-dot${i===0?' on':''}"></span>`).join('');
+    const carousel = imgs.length>1
+      ? `<button class="lc-arrow lc-prev" aria-label="Anterior" onclick="lcStep(event,this,-1)">‹</button>
+         <button class="lc-arrow lc-next" aria-label="Siguiente" onclick="lcStep(event,this,1)">›</button>
+         <div class="lc-dots">${dots}</div>`
+      : '';
+    return `
+      <article class="listing" data-i="0" onclick="openCasa('${p.id}')">
+        <div class="listing-img">
+          <div class="lc-track">${slides}</div>
+          ${carousel}
+          ${badge}
+          <div class="listing-flag">${p.flag}</div>
+        </div>
+        <div class="listing-body">
+          <div class="listing-title">${title}</div>
+          <div class="listing-loc">${p.loc}</div>
+          <div class="listing-meta">
+            <span>📐 ${p.size}</span>
+            ${beds}
+            <span>🔎 ${lang==='es'?'Verificado':'Verified'}</span>
+          </div>
+          <div class="listing-price">
+            <div class="listing-price-val">${p.price}</div>
+            <div class="listing-price-cta">${lang==='es'?'Ver casa →':'View home →'}</div>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+/* ---- listing card carousel ---- */
+window.lcStep = function(ev, btn, dir){
+  ev.stopPropagation();
+  const card = btn.closest('.listing');
+  const slides = card.querySelectorAll('.lc-slide');
+  const dots = card.querySelectorAll('.lc-dot');
+  const n = slides.length; if(!n) return;
+  let i = (parseInt(card.dataset.i||'0') + dir + n) % n;
+  card.dataset.i = i;
+  slides.forEach((s,k)=>s.classList.toggle('on', k===i));
+  dots.forEach((d,k)=>d.classList.toggle('on', k===i));
+};
+
+window.openListing = function(id){
+  const p = PROPS.find(x=>x.id===id);
+  if(!p) return;
+  const lang = state.lang;
+  const title = lang==='es' ? p.titleEs : p.titleEn;
+  const desc = lang==='es' ? p.descEs : p.descEn;
+  const labels = lang==='es'
+    ? {price:'Precio', size:'Área', beds:'Habitaciones', loc:'Ubicación', cta:'Contactar a Sora por WhatsApp', tour:'Pedir tour'}
+    : {price:'Price', size:'Size', beds:'Bedrooms', loc:'Location', cta:'Contact Sora on WhatsApp', tour:'Request tour'};
+  const modalBg = p.img
+    ? `linear-gradient(180deg,rgba(20,17,12,0.0) 50%,rgba(20,17,12,0.30) 100%),url('${p.img}')`
+    : (TONE_GRADIENTS[p.tone]||TONE_GRADIENTS.beach);
+  document.getElementById('modal-listing-body').innerHTML = `
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div style="aspect-ratio:16/9;border-radius:12px;margin-bottom:20px;background-image:${modalBg};background-size:cover;background-position:center;position:relative">
+      <div class="listing-flag" style="position:absolute;top:14px;right:14px">${p.flag}</div>
+    </div>
+    <h3 style="margin-bottom:4px">${title}</h3>
+    <div class="listing-loc" style="margin-bottom:14px">${p.loc}</div>
+    <p style="color:var(--ink-soft);font-size:14.5px;line-height:1.55;margin-bottom:18px">${desc}</p>
+    <div class="summary-box">
+      <div class="line"><span>${labels.price}</span><b>${p.price}</b></div>
+      <div class="line"><span>${labels.size}</span><b>${p.size}</b></div>
+      ${p.beds > 0 ? `<div class="line"><span>${labels.beds}</span><b>${p.beds}</b></div>` : ''}
+      <div class="line"><span>${labels.loc}</span><b>${p.loc}</b></div>
+    </div>
+    <button class="btn btn-primary" style="width:100%;margin-bottom:8px" onclick="openWhatsApp('${title.replace(/<[^>]*>/g,'').replace(/'/g,'')}')">
+      ${labels.cta} →
+    </button>
+    <button class="btn btn-ghost" style="width:100%" onclick="closeModal()">${labels.tour}</button>
+  `;
+  document.getElementById('modal-listing').classList.add('open');
+};
+
+window.closeModal = function(){
+  document.querySelectorAll('.modal-back').forEach(m=>m.classList.remove('open'));
+};
+
+/* ============ PROPERTY DETAIL PAGE ============ */
+let casaState = {id:null, imgs:[], i:0};
+
+window.openCasa = function(id){
+  if(!PROPS.find(x=>x.id===id)) return;
+  location.hash = 'casa/' + id;
+};
+window.closeCasa = function(){ location.hash = 'buy'; };
+
+function openCasaView(id){
+  const p = PROPS.find(x=>x.id===id);
+  if(!p){ closeCasaView(); return; }
+  renderCasa(id);
+  const page = document.getElementById('casa-page');
+  page.classList.add('open');
+  page.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+  lbOpen = false;
+}
+function closeCasaView(){
+  const page = document.getElementById('casa-page');
+  if(page) page.classList.remove('open');
+  document.body.style.overflow = '';
+  lbOpen = false;
+  casaState.id = null;
+}
+
+window.casaStep = function(dir){
+  const n = casaState.imgs.length; if(!n) return;
+  casaState.i = (casaState.i + dir + n) % n;
+  syncCasaGallery();
+};
+window.casaThumb = function(i){ casaState.i = i; syncCasaGallery(); };
+function syncCasaGallery(){
+  const i = casaState.i, n = casaState.imgs.length;
+  document.querySelectorAll('#casa-page .ch-slide').forEach((s,k)=>s.classList.toggle('on', k===i));
+  document.querySelectorAll('#casa-page .casa-thumb').forEach((t,k)=>t.classList.toggle('on', k===i));
+  const hc = document.getElementById('ch-count'); if(hc) hc.textContent = (i+1)+' / '+n;
+  const lb = document.getElementById('clb-img'); if(lb) lb.style.backgroundImage = "url('"+casaState.imgs[i]+"')";
+  const lc = document.getElementById('clb-count'); if(lc) lc.textContent = (i+1)+' / '+n;
+  const cap = document.getElementById('clb-cap'); if(cap && casaState.caps) cap.textContent = casaState.caps[i]||'';
+}
+
+const _ci = (d)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const CICON = {
+  ruler:_ci('<path d="M3 8 8 3l13 13-5 5Z"/><path d="M9 9l1.4 1.4M12 6l1.4 1.4M6 11l1.4 1.4M15 9l1.4 1.4"/>'),
+  bed:_ci('<path d="M2 17v-5h20v5M2 17v3M22 17v3M2 12V8a2 2 0 0 1 2-2h6v6"/>'),
+  bath:_ci('<path d="M4 12V6a2 2 0 0 1 4 0M3 12h18v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z"/>'),
+  home:_ci('<path d="M3 10.5 12 3l9 7.5V21H3Z"/>'),
+  cal:_ci('<rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/>'),
+  pin:_ci('<path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/>'),
+  check:_ci('<path d="M20 6 9 17l-5-5"/>'),
+  shield:_ci('<path d="M12 3 5 6v6c0 4 3 6.5 7 9 4-2.5 7-5 7-9V6Z"/><path d="m9 12 2 2 4-4"/>'),
+  expand:_ci('<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>'),
+  heart:_ci('<path d="M12 20s-7-4.5-9-9a4.5 4.5 0 0 1 9-2 4.5 4.5 0 0 1 9 2c-2 4.5-9 9-9 9Z"/>'),
+  share:_ci('<circle cx="18" cy="5" r="2.4"/><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="19" r="2.4"/><path d="m8.1 11 7.8-4.6M8.1 13l7.8 4.6"/>'),
+  doc:_ci('<path d="M6 2.5h8l5 5V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1Z"/><path d="M14 2.5v5h5M9 14h6M9 17h4"/>')
+};
+function captionsFor(type, lang, n){
+  const map = {
+    casa:[['Exterior','Exterior'],['Interior','Interior'],['Detalle','Detail'],['Entorno','Surroundings']],
+    apto:[['El edificio','The building'],['Interior','Interior'],['La vista','The view'],['La zona','The area']],
+    lote:[['El terreno','The land'],['La vista','The view'],['El entorno','The setting'],['Acceso','Access']],
+    finca:[['La finca','The farm'],['La vista','The view'],['La casa','The house'],['El entorno','The setting']]
+  };
+  const arr = map[type] || map.casa, out = [];
+  for(let i=0;i<n;i++){ const c = arr[i%arr.length]; out.push(lang==='es'?c[0]:c[1]); }
+  return out;
+}
+function pricePerM2(p){
+  const pr = parseFloat((p.price||'').replace(/[^0-9.]/g,''));
+  let m = parseFloat((p.size||'').replace(/[^0-9.]/g,''));
+  if(/ha/i.test(p.size||'')) m = m*10000;
+  if(!pr || !m) return '';
+  return '$'+Math.round(pr/m).toLocaleString('en-US');
+}
+let lbOpen = false;
+window.openLightbox = function(){ const lb=document.getElementById('casa-lightbox'); if(lb){ lb.classList.add('open'); lbOpen=true; } };
+window.closeLightbox = function(){ const lb=document.getElementById('casa-lightbox'); if(lb){ lb.classList.remove('open'); lbOpen=false; } };
+function armReveal(){
+  const page = document.getElementById('casa-page'); if(!page) return;
+  const els = page.querySelectorAll('.reveal-up:not(.in)');
+  // reveal on open with a light stagger — guaranteed (no timing/observer dependency)
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    els.forEach((el,i)=>{ el.style.transitionDelay = Math.min(i*55,330)+'ms'; el.classList.add('in'); });
+  }));
+}
+document.addEventListener('keydown', function(e){
+  const cp = document.getElementById('casa-page');
+  if(!cp || !cp.classList.contains('open')) return;
+  if(e.key==='ArrowRight') casaStep(1);
+  else if(e.key==='ArrowLeft') casaStep(-1);
+  else if(e.key==='Escape'){ if(lbOpen) closeLightbox(); else closeCasa(); }
+});
+function monthlyEst(p){
+  const pr = parseFloat((p.price||'').replace(/[^0-9.]/g,'')); if(!pr) return '';
+  const loan = pr*0.7, r = 0.07/12, n = 360;            // illustrative: 30% down, 7%, 30 yr
+  const m = loan*r/(1-Math.pow(1+r,-n));
+  return '$'+Math.round(m).toLocaleString('en-US');
+}
+function casaToast(msg){
+  let t = document.getElementById('casaToast');
+  if(!t){ t = document.createElement('div'); t.id='casaToast'; t.style.cssText='position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0f2218;color:#f7f0df;font-family:var(--mono);font-size:12px;letter-spacing:.3px;padding:11px 18px;border-radius:30px;z-index:400;opacity:0;transition:opacity .2s;pointer-events:none'; document.body.appendChild(t); }
+  t.textContent = msg; requestAnimationFrame(()=>t.style.opacity='1'); clearTimeout(t._ct); t._ct=setTimeout(()=>t.style.opacity='0',1900);
+}
+function isFav(id){ try{ return JSON.parse(localStorage.getItem('sora.casas.favs')||'[]').includes(id); }catch(e){ return false; } }
+window.saveCasa = function(id, btn){
+  let favs=[]; try{ favs=JSON.parse(localStorage.getItem('sora.casas.favs')||'[]'); }catch(e){}
+  const i=favs.indexOf(id), on=i<0; if(on) favs.push(id); else favs.splice(i,1);
+  try{ localStorage.setItem('sora.casas.favs',JSON.stringify(favs)); }catch(e){}
+  if(btn) btn.classList.toggle('on',on);
+  casaToast(on ? (state.lang==='es'?'Guardada ♥':'Saved ♥') : (state.lang==='es'?'Quitada':'Removed'));
+};
+window.shareCasa = function(id){
+  const p=PROPS.find(x=>x.id===id);
+  const ttl = p ? (state.lang==='es'?p.titleEs:p.titleEn).replace(/<[^>]*>/g,'') : 'Sora Casas';
+  const url = location.href.split('#')[0]+'#casa/'+id;
+  if(navigator.share){ navigator.share({title:ttl, url:url}).catch(()=>{}); }
+  else if(navigator.clipboard){ navigator.clipboard.writeText(url); casaToast(state.lang==='es'?'Enlace copiado':'Link copied'); }
+  else casaToast(url);
+};
+window.printCasa = function(){ window.print(); };
+
+function renderCasa(id){
+  const p = PROPS.find(x=>x.id===id); if(!p) return;
+  const lang = state.lang;
+  const x = CASA_EXTRA[id] || {};
+  const media = (typeof CASA_MEDIA!=='undefined' && CASA_MEDIA[id]) || {};
+  const imgs = (media.gal && media.gal.length) ? media.gal : (p.gallery && p.gallery.length ? p.gallery : [p.img]);
+  const t = (es,en)=> lang==='es' ? es : en;
+  casaState = { id:id, imgs:imgs, i:0, caps: captionsFor(p.type, lang, imgs.length) };
+  const title = t(p.titleEs, p.titleEn);
+  const lead  = t(p.descEs, p.descEn);
+  const more  = t(p.moreEs, p.moreEn);
+  const feats = lang==='es' ? p.featsEs : p.featsEn;
+  const hood  = t(p.hoodEs, p.hoodEn);
+  const essence = t(x.essEs, x.essEn);
+  const near = (lang==='es' ? x.nearEs : x.nearEn) || [];
+  const typeLabel = ({lote:t('Lote','Lot'), finca:t('Finca','Farm'), casa:t('Casa','House'), apto:t('Apartamento','Apartment')})[p.type] || '';
+  const countryName = ({PA:'Panamá', MX:'México', CO:'Colombia', VE:'Venezuela'})[p.country] || '';
+  const countryEn = ({PA:'Panama', MX:'Mexico', CO:'Colombia', VE:'Venezuela'})[p.country] || '';
+  const pm2 = pricePerM2(p);
+  const monthly = monthlyEst(p);
+  const geo = media.lat ? media : null;
+  const fav = isFav(id);
+  let badge = '';
+  if(p.status==='new') badge = `<div class="listing-badge new">${t('Nuevo','New')}</div>`;
+  else if(p.status==='sold') badge = `<div class="listing-badge sold">${t('Vendido','Sold')}</div>`;
+  else badge = `<div class="listing-badge">${t('Disponible','Available')}</div>`;
+  const fallback = (TONE_GRADIENTS[p.tone]||TONE_GRADIENTS.beach);
+  const multi = imgs.length>1;
+  const heroSlides = imgs.map((src,i)=>`<div class="ch-slide${i===0?' on':''}" style="background-image:url('${src}'),${fallback}"></div>`).join('');
+  const thumbs = imgs.map((src,i)=>`<div class="casa-thumb${i===0?' on':''}" style="background-image:url('${src}'),${fallback}" onclick="casaThumb(${i})"></div>`).join('');
+
+  const specs = [];
+  specs.push([CICON.ruler, t('Área','Area'), p.size]);
+  if(p.beds>0) specs.push([CICON.bed, t('Habitaciones','Bedrooms'), p.beds]);
+  if(p.baths>0) specs.push([CICON.bath, t('Baños','Baths'), p.baths]);
+  specs.push([CICON.home, t('Tipo','Type'), typeLabel]);
+  specs.push([CICON.cal, t('Año','Built'), p.built]);
+  specs.push([CICON.pin, t('País','Country'), p.flag+' '+(lang==='es'?countryName:countryEn)]);
+  const specsHtml = specs.map(s=>`<div class="casa-spec">${s[0]}<div><div class="k">${s[1]}</div><div class="v">${s[2]}</div></div></div>`).join('');
+
+  const isLand = (p.type==='lote' || p.type==='finca');
+  const buildCta = isLand
+    ? `<button class="btn btn-ghost casa-cta" onclick="closeCasa();setTimeout(()=>setMode('build'),80)">${t('Construir una casa Sora aquí','Build a Sora home here')} →</button>`
+    : '';
+  const steps = isLand
+    ? [[t('Opción','Option'), t('Aseguramos el lote con un acuerdo simple mientras verificamos el título.','We lock the lot with a simple agreement while we verify title.')],
+       [t('Diseño','Design'), t('Eliges un modelo Sora y los acabados en el configurador 3D.','You pick a Sora model and the finishes in the 3D configurator.')],
+       [t('Construcción','Build'), t('Obra llave en mano, pagos por hito, nuestra red de contratistas.','Turnkey build, milestone payments, our contractor network.')],
+       [t('Llaves','Keys'), t('Entrega en alrededor de nueve meses, documentada paso a paso.','Delivery in about nine months, documented step by step.')]]
+    : [[t('Reserva','Reserve'), t('$5,000 reembolsable bloquea la casa mientras avanzamos.','$5,000 refundable holds the home while we move.')],
+       [t('Verificación','Verify'), t('Sora revisa título, gravámenes y due diligence con el abogado.','Sora checks title, liens and due diligence with the attorney.')],
+       [t('Cierre','Close'), t('Escritura ante notario, fondos en cuenta de plica.','Notarized deed, funds held in escrow.')],
+       [t('Llaves','Keys'), t('Recibes la casa, lista para vivir o rentar.','You get the home, ready to live in or rent.')]];
+  const stepsHtml = steps.map((s,i)=>`<div class="casa-step"><div class="n">${i+1}</div><div class="t">${s[0]}</div><p>${s[1]}</p></div>`).join('');
+
+  let sim = PROPS.filter(s=>s.id!==id && s.country===p.country);
+  if(sim.length<3) sim = sim.concat(PROPS.filter(s=>s.id!==id && s.country!==p.country && s.type===p.type));
+  sim = sim.slice(0,3);
+  const simHtml = sim.map(s=>{
+    const stitle = lang==='es' ? s.titleEs : s.titleEn;
+    const img0 = (s.gallery && s.gallery[0]) || s.img;
+    return `<article class="listing" onclick="openCasa('${s.id}')"><div class="listing-img"><div class="lc-track"><div class="lc-slide on" style="background-image:linear-gradient(180deg,rgba(20,17,12,0) 55%,rgba(20,17,12,.35) 100%),url('${img0}'),${TONE_GRADIENTS[s.tone]||TONE_GRADIENTS.beach}"></div></div><div class="listing-flag">${s.flag}</div></div><div class="listing-body"><div class="listing-title">${stitle}</div><div class="listing-loc">${s.loc}</div><div class="listing-price"><div class="listing-price-val">${s.price}</div><div class="listing-price-cta">${t('Ver →','View →')}</div></div></div></article>`;
+  }).join('');
+
+  const cleanTitle = title.replace(/<[^>]*>/g,'').replace(/'/g,'');
+  document.getElementById('casa-body').innerHTML = `
+    <div class="casa-hero" onclick="openLightbox()">
+      ${heroSlides}
+      <div class="ch-scrim"></div>
+      <div class="ch-badge">${badge}</div>
+      ${multi ? `<button class="ch-arrow ch-prev" aria-label="${t('Anterior','Previous')}" onclick="event.stopPropagation();casaStep(-1)">‹</button><button class="ch-arrow ch-next" aria-label="${t('Siguiente','Next')}" onclick="event.stopPropagation();casaStep(1)">›</button><div class="ch-count" id="ch-count">1 / ${imgs.length}</div><button class="ch-viewall" onclick="event.stopPropagation();openLightbox()">${CICON.expand} ${t('Ver fotos','View photos')}</button>` : ''}
+      <div class="ch-inner">
+        <div class="ch-eyebrow">${typeLabel} · ${lang==='es'?countryName:countryEn}</div>
+        <div class="ch-title">${title}</div>
+        <div class="ch-meta"><div class="ch-price">${p.price}</div>${pm2?`<div class="ch-pm2">${pm2}/m²</div>`:''}<div class="ch-loc">${p.flag} ${p.loc}</div></div>
+      </div>
+    </div>
+    ${multi ? `<div class="casa-thumbs">${thumbs}</div>` : ''}
+    ${essence ? `<div class="casa-essence reveal-up"><span class="rule"></span><p>${essence}</p><span class="rule"></span></div>` : ''}
+    <div class="casa-grid">
+      <div class="casa-body reveal-up">
+        <div class="casa-kicker">${t('Sobre esta propiedad','About this property')}</div>
+        <p class="casa-lead">${lead}</p>
+        <p>${more}</p>
+        <h2 class="casa-h2">${CICON.check} ${t('Lo que incluye','What you get')}</h2>
+        <ul class="casa-feats">${feats.map(f=>`<li>${CICON.check}<span>${f}</span></li>`).join('')}</ul>
+        <h2 class="casa-h2">${CICON.pin} ${t('La zona','The area')}</h2>
+        <p>${hood}</p>
+        ${near.length ? `<ul class="casa-nearby">${near.map(nf=>{const pp=nf.split('·');return `<li>${CICON.pin}<span><b>${(pp[0]||'').trim()}</b> ${(pp[1]||'').trim()}</span></li>`}).join('')}</ul>` : ''}
+      </div>
+      <aside>
+        <div class="casa-card reveal-up">
+          <div class="casa-price">${p.price}${pm2?`<span class="pm2">${pm2}/m²</span>`:''}</div>
+          <div class="casa-price-note">${CICON.shield} ${p.status==='sold' ? t('Vendida · referencia','Sold · reference') : t('Precio fijo, sin sobreprecio','Fixed price, no markup')}</div>
+          ${monthly && p.status!=='sold' ? `<div class="casa-fin">${t('desde','from')} <b>~${monthly}/${t('mes','mo')}</b> · <span>${t('estimado · 30% inicial, 30 años','est. · 30% down, 30 yr')}</span></div>` : ''}
+          <div class="casa-specs">${specsHtml}</div>
+          <button class="btn btn-primary casa-cta" onclick="openWhatsApp('${cleanTitle}')">${t('Contactar a Sora','Contact Sora')} →</button>
+          ${buildCta}
+          <div class="casa-actions">
+            <button class="casa-act${fav?' on':''}" onclick="saveCasa('${id}',this)">${CICON.heart} ${t('Guardar','Save')}</button>
+            <button class="casa-act" onclick="shareCasa('${id}')">${CICON.share} ${t('Compartir','Share')}</button>
+            <button class="casa-act" onclick="printCasa()">${CICON.doc} ${t('Ficha','PDF')}</button>
+          </div>
+          <div class="casa-mini">${t('Respondemos por WhatsApp en horas hábiles. Coordinamos un tour presencial o por video.','We reply on WhatsApp during business hours. We arrange a tour in person or by video.')}</div>
+        </div>
+      </aside>
+    </div>
+    ${geo?`<div class="casa-mapsec reveal-up"><h2 class="casa-h2">${CICON.pin} ${t('Ubicación','Location')}</h2><div class="casa-map"><iframe loading="lazy" title="map" src="https://www.openstreetmap.org/export/embed.html?bbox=${(geo.lon-0.018).toFixed(4)}%2C${(geo.lat-0.012).toFixed(4)}%2C${(geo.lon+0.018).toFixed(4)}%2C${(geo.lat+0.012).toFixed(4)}&layer=mapnik&marker=${geo.lat}%2C${geo.lon}"></iframe></div><div class="map-note">${t('Mapa del sector. La ubicación exacta se comparte al avanzar.','Area map. The exact location is shared as you move forward.')} <a href="https://www.openstreetmap.org/?mlat=${geo.lat}&mlon=${geo.lon}#map=14/${geo.lat}/${geo.lon}" target="_blank" rel="noopener" style="color:var(--coral-deep);font-weight:600">${t('Ver en el mapa','Open map')} ↗</a></div></div>`:''}
+    <div class="casa-process reveal-up">
+      <h3>${isLand ? t('Cómo funciona construir con Sora','How building with Sora works') : t('Cómo funciona comprar con Sora','How buying with Sora works')}</h3>
+      <div class="casa-steps">${stepsHtml}</div>
+    </div>
+    <div class="casa-similar reveal-up">
+      <h3>${t('Casas similares','Similar homes')}</h3>
+      <div class="ssub">${t('Más en '+countryName, 'More in '+countryEn)}</div>
+      <div class="casa-similar-grid">${simHtml}</div>
+    </div>
+    <div class="casa-ctaband reveal-up">
+      <div class="ctaband-in">
+        <div class="eye">Sora Casas</div>
+        <h3>${t('¿Lista para verla en persona?','Ready to see it in person?')}</h3>
+        <p>${t('Coordinamos un tour presencial o por video, sin compromiso. Y si vienes, aplicamos un crédito de viaje al cierre.','We set up a tour in person or by video, no pressure. And if you come, we apply a travel credit at closing.')}</p>
+        <div class="ctaband-btns">
+          <button class="btn btn-primary" onclick="openWhatsApp('${cleanTitle}')">${t('Hablar por WhatsApp','Chat on WhatsApp')} →</button>
+          <a class="btn btn-ghost" href="discovery.html" style="border-color:rgba(247,240,223,.3);color:var(--paper)">${t('Discovery Weekend','Discovery Weekend')}</a>
+        </div>
+      </div>
+    </div>
+    <div class="casa-lightbox" id="casa-lightbox" onclick="if(event.target.id==='casa-lightbox')closeLightbox()">
+      <button class="clb-close" aria-label="${t('Cerrar','Close')}" onclick="closeLightbox()">✕</button>
+      ${multi ? `<button class="clb-arrow clb-prev" onclick="casaStep(-1)">‹</button><button class="clb-arrow clb-next" onclick="casaStep(1)">›</button>` : ''}
+      <div class="clb-img" id="clb-img" style="background-image:url('${imgs[0]}')"></div>
+      <div class="clb-cap" id="clb-cap">${casaState.caps[0]||''}</div>
+      <div class="clb-count" id="clb-count">1 / ${imgs.length}</div>
+    </div>
+    <div class="casa-mcta">
+      <div class="mp">${p.price}</div>
+      <button class="btn btn-primary" onclick="openWhatsApp('${cleanTitle}')">${t('Contactar','Contact')} →</button>
+    </div>
+  `;
+  requestAnimationFrame(armReveal);
+}
+
+function route(){
+  const h = (location.hash||'').replace('#','');
+  if(h.indexOf('casa/')===0){ openCasaView(h.split('/')[1]); return; }
+  closeCasaView();
+  if(['buy','build','sell','about'].includes(h)) setMode(h);
+}
+
+/* ============ RENDER MODELS ============ */
+const PACK_BADGES = {
+  entry:    { es: 'Entrada',          en: 'Entry' },
+  hero:     { es: 'Producto principal', en: 'Hero · best seller' },
+  upmarket: { es: 'Upmarket',         en: 'Upmarket' },
+  flagship: { es: 'Firma · halo',     en: 'Flagship · halo' }
+};
+
+function renderModels(){
+  const row = document.getElementById('models-row');
+  const lang = state.lang;
+  row.innerHTML = Object.entries(MODELS).map(([k,m])=>{
+    const name = lang==='es' ? m.nameEs : m.nameEn;
+    const pitch = m.pitch[lang];
+    const specs = `${m.m2} m² · ${m.bedrooms} ${lang==='es'?'hab':'bd'} · ${m.bathrooms} ${lang==='es'?'baños':'ba'}`;
+    const tag = lang==='es' ? m.tagEs : m.tagEn;
+    const tierBadge = PACK_BADGES[m.tier][lang];
+    return `
+      <button class="model-card ${k===state.modelKey?'active':''}" data-model="${k}">
+        <div class="model-img" style="background-image:url('${m.image}')">
+          <span class="model-img-label tier-${m.tier}">${tierBadge}</span>
+        </div>
+        <div class="model-card-body">
+          <div class="name">${name}</div>
+          <div class="specs">${tag}</div>
+          <div class="desc">${pitch}</div>
+          <div class="pack-card-price">
+            <span class="pack-card-price-val">${m.priceLabel}</span>
+            <span class="pack-card-price-lbl">${lang==='es'?'llave en mano':'turnkey'}</span>
+          </div>
+        </div>
+      </button>
+    `;
+  }).join('');
+  row.querySelectorAll('.model-card').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      state.modelKey = b.dataset.model;
+      const m = MODELS[state.modelKey];
+      state.facade = m.facade; state.roof = m.roof;
+      // Update toggle buttons to reflect pack defaults
+      document.querySelectorAll('[data-group="facade"] .opt').forEach(o=>o.classList.toggle('active', o.dataset.val === m.facade));
+      document.querySelectorAll('[data-group="roof"] .opt').forEach(o=>o.classList.toggle('active', o.dataset.val === m.roof));
+      renderModels();
+      updateViewerLabels();
+      renderPackSidebar();
+      rebuildModel();
+    });
+  });
+}
+
+function renderPackSidebar(){
+  const m = MODELS[state.modelKey];
+  const lang = state.lang;
+  const badge = document.getElementById('pack-badge');
+  badge.className = 'pack-badge ' + m.tier;
+  badge.innerHTML = `<span lang="es">${PACK_BADGES[m.tier].es}</span><span lang="en">${PACK_BADGES[m.tier].en}</span>`;
+  // Re-apply language visibility
+  badge.querySelectorAll('[lang]').forEach(s=>s.style.display = s.getAttribute('lang')===lang ? '' : 'none');
+
+  document.getElementById('pack-price').textContent = m.priceLabel;
+  document.getElementById('pack-price-sub').innerHTML = lang==='es'
+    ? `${m.m2} m² · ${m.bedrooms} hab · ${m.bathrooms} baños · construido en ${m.buildMonths} meses`
+    : `${m.m2} sqm · ${m.bedrooms} bd · ${m.bathrooms} ba · built in ${m.buildMonths} months`;
+  document.getElementById('pack-pitch').textContent = m.pitch[lang];
+
+  document.getElementById('pack-for-who-list').innerHTML = m.forWho[lang].map(x=>`<li>${x}</li>`).join('');
+
+  // Highlights: the marketed standouts (★ / ☼) first, padded with the leading included items
+  const hlEl = document.getElementById('pack-highlights-list');
+  const clean = s => s.replace(/^[★☼]\s*/, '');
+  const stars = m.includes[lang].filter(x=>/^[★☼]/.test(x)).map(clean);
+  const highlights = stars.slice(0, 5);
+  for(const it of m.includes[lang]){
+    if(highlights.length >= 5) break;
+    const t = clean(it);
+    if(!highlights.includes(t)) highlights.push(t);
+  }
+  hlEl.innerHTML = highlights.map(x=>`<li>${x}</li>`).join('');
+}
+
+function updateViewerLabels(){
+  const m = MODELS[state.modelKey];
+  document.getElementById('viewer-name').innerHTML = state.lang==='es' ? m.nameEs : m.nameEn;
+  document.getElementById('viewer-tag').textContent = m.tagEs;
+  document.getElementById('viewer-tag-en').textContent = m.tagEn;
+}
+
+/* ============ MODALS ============ */
+window.openSave = function(){
+  const m = MODELS[state.modelKey];
+  const lang = state.lang;
+  document.getElementById('summary-box').innerHTML = `
+    <div class="line"><span>${lang==='es'?'Modelo':'Model'}</span><b>${(lang==='es'?m.nameEs:m.nameEn).replace(/<[^>]+>/g,'')}</b></div>
+    <div class="line"><span>${lang==='es'?'Área':'Size'}</span><b>${m.m2} m² · ${m.bedrooms}BR / ${m.bathrooms}BA</b></div>
+    <div class="line"><span>${lang==='es'?'Región':'Region'}</span><b>${LAND_COST[m.region_key].label}</b></div>
+    <div class="line"><span>${lang==='es'?'Construcción':'Build time'}</span><b>${m.buildMonths} ${lang==='es'?'meses':'months'}</b></div>
+    <div class="line" style="margin-top:6px;padding-top:6px;border-top:1px solid var(--line)"><span>${lang==='es'?'Llave en mano':'Turnkey total'}</span><b style="color:var(--forest)">${m.priceLabel}</b></div>
+    <div class="line"><span>${lang==='es'?'Reserva hoy':'Hold today'}</span><b style="color:var(--coral-deep)">$5,000 ${lang==='es'?'reembolsable':'refundable'}</b></div>
+  `;
+  document.getElementById('modal-save').classList.add('open');
+};
+
+window.openContact = function(){
+  const m = MODELS[state.modelKey];
+  const name = (state.lang==='es' ? m.nameEs : m.nameEn).replace(/<[^>]+>/g,'');
+  openWhatsApp(`${name} (${m.priceLabel} llave en mano)`);
+};
+
+// Lead config + capture. All editable IDs live in window.SORA_CONFIG (defined in <head>).
+const CONFIG = window.SORA_CONFIG || { whatsapp: '50760000000', leadEndpoint: '', bookingUrl: '' };
+const SORA_WA = CONFIG.whatsapp;
+
+// Capture attribution once on load (UTMs + referrer) so every lead is traceable to its source.
+const LEAD_META = (function(){
+  const p = new URLSearchParams(location.search), utm = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k=>{ if(p.get(k)) utm[k]=p.get(k); });
+  return { ...utm, referrer: document.referrer || '', landing: location.pathname };
+})();
+
+function track(ev, params){
+  try{ if(window.gtag) gtag('event', ev, params||{}); }catch(_){}
+  try{ if(window.fbq) fbq('trackCustom', ev, params||{}); }catch(_){}
+}
+
+// Persist the lead server-side (Formspree-compatible) + local backup + analytics event.
+// Returns regardless of network so the WhatsApp handoff is never blocked.
+async function captureLead(type, data){
+  const payload = { type, ...data, ...LEAD_META, lang: state.lang, ts: new Date().toISOString() };
+  try{ const k='sora.casas.leads', a=JSON.parse(localStorage.getItem(k)||'[]'); a.push(payload); localStorage.setItem(k, JSON.stringify(a)); }catch(_){}
+  track('lead', { lead_type: type });
+  if (CONFIG.leadEndpoint){
+    try{ await fetch(CONFIG.leadEndpoint, { method:'POST', headers:{'Content-Type':'application/json', Accept:'application/json'}, body: JSON.stringify(payload) }); }catch(_){}
+  }
+  return payload;
+}
+
+window.openWhatsApp = function(context){
+  const lang = state.lang;
+  const msg = lang==='es'
+    ? `Hola Sora, me interesa ${context}. Quisiera hablar con un arquitecto.`
+    : `Hi Sora, I'm interested in ${context}. I'd like to talk to an architect.`;
+  track('whatsapp_click', { context });
+  window.open(`https://wa.me/${SORA_WA}?text=${encodeURIComponent(msg)}`, '_blank');
+  toast(lang==='es'?'Abriendo WhatsApp…':'Opening WhatsApp…');
+};
+
+window.submitSave = async function(e){
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  const m = MODELS[state.modelKey];
+  data.reservation = {
+    model: state.modelKey,
+    price: m.priceLabel,
+    region: m.region_key,
+    facade: state.facade,
+    roof: state.roof,
+    hold: '$5,000 refundable'
+  };
+  await captureLead('reservation', data);
+  closeModal();
+  openWhatsApp(`${(state.lang==='es'?m.nameEs:m.nameEn).replace(/<[^>]+>/g,'')} - ${m.priceLabel}`);
+};
+
+window.submitSell = async function(e){
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  await captureLead('sell', data);
+  const lang = state.lang;
+  const msg = lang==='es'
+    ? `Hola Sora, quiero vender mi ${data.type} en ${data.location}. Precio esperado: ${data.price}. ${data.notes||''}`
+    : `Hi Sora, I want to sell my ${data.type} in ${data.location}. Expected price: ${data.price}. ${data.notes||''}`;
+  window.open(`https://wa.me/${SORA_WA}?text=${encodeURIComponent(msg)}`, '_blank');
+  toast(lang==='es'?'Enviado · abriendo WhatsApp':'Sent · opening WhatsApp');
+  e.target.reset();
+};
+
+function toast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2400);
+}
+
+
+/* ============ 3D ENGINE — rich furnished render (shared casa-builder.js) ============ */
+const canvas = document.getElementById('three-canvas');
+let scene, camera, renderer, controls, houseGroup, sceneryGroup, backdropGroup, currentHouse=null, sun, sunVec, skyU, groundCtl, curRegion=null;
+
+// map this page's build controls onto the shared house builder
+const FACADE2CLAD = {white:'estuco', wood:'madera', stone:'piedra'};
+const TIER_MAP    = {entry:'esencial', hero:'sora', upmarket:'firma', flagship:'firma'};
+const TIERFIN     = {esencial:{floor:'porcelanato',counter:'concreto'}, sora:{floor:'roble',counter:'marmol_blanco'}, firma:{floor:'concreto',counter:'granito_negro'}};
+const EXTRAS      = {refugio:{solar:true,pool:false}, bahia:{pool:true,solar:false}, montana:{solar:true,pool:false}, punta:{pool:true,solar:true}};
+// per-region terrain + sky: ground tint, scenery, distant geography, atmosphere
+const ENV = {
+  pedasi:  {scn:'beach',    tint:0xe6dcc0, density:7,  backdrop:'ocean',     fog:0xe9e2cd, turbidity:8, rayleigh:1.35, sunEl:60},
+  bocas:   {scn:'beach',    tint:0xd9e0bb, density:9,  backdrop:'caribbean', fog:0xdfeae0, turbidity:9, rayleigh:1.30, sunEl:62},
+  boquete: {scn:'mountain', tint:0x9fbf73, density:10, backdrop:'volcano',   fog:0xd6e0cf, turbidity:4, rayleigh:2.00, sunEl:55},
+  volcan:  {scn:'mountain', tint:0xb6bd7e, density:8,  backdrop:'volcano',   fog:0xdde2cd, turbidity:3, rayleigh:2.20, sunEl:54}
+};
+function isStatic(){ return new URLSearchParams(location.search).has('static') || navigator.userAgent.includes('HeadlessChrome'); }
+
+function initThree(){
+  scene = new THREE.Scene();
+  renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05; renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.03).texture;
+
+  // sky + sun (fixed daytime — matches the configurator's day look)
+  const sky = new Sky(); sky.scale.setScalar(45000); scene.add(sky);
+  skyU = sky.material.uniforms; skyU.turbidity.value=6; skyU.rayleigh.value=1.6; skyU.mieCoefficient.value=0.005; skyU.mieDirectionalG.value=0.8;
+  sunVec = new THREE.Vector3();
+  const phi = THREE.MathUtils.degToRad(90-58), theta = THREE.MathUtils.degToRad(135);
+  sunVec.setFromSphericalCoords(1, phi, theta); skyU.sunPosition.value.copy(sunVec);
+
+  const aspect = canvas.clientWidth / canvas.clientHeight;
+  camera = new THREE.PerspectiveCamera(44, aspect, 0.1, 600);
+  camera.position.set(22, 14, 26);
+
+  controls = new OrbitControls(camera, canvas);
+  controls.enableDamping = true; controls.dampingFactor = 0.08;
+  controls.target.set(0, 2.6, 0); controls.minDistance = 8; controls.maxDistance = 70;
+  controls.maxPolarAngle = Math.PI * 0.495; controls.autoRotateSpeed = 0.5;
+  controls.autoRotate = !isStatic();
+  canvas.addEventListener('pointerdown', ()=>controls.autoRotate = false);
+
+  const hemi = new THREE.HemisphereLight(0xcfe6f2, 0x6b6450, 0.55); scene.add(hemi);
+  sun = new THREE.DirectionalLight(0xfff2d8, 2.7);
+  sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -0.00035; sun.shadow.normalBias = 0.03;
+  const ssc = sun.shadow.camera; ssc.left=-52; ssc.right=52; ssc.top=52; ssc.bottom=-52; ssc.near=1; ssc.far=200;
+  sun.position.copy(sunVec).multiplyScalar(70); sun.target.position.set(0, 2, 0); scene.add(sun, sun.target);
+  scene.fog = new THREE.Fog(0xe3e9e0, 70, 190);
+
+  groundCtl = makeGround(); scene.add(groundCtl.mesh);
+  houseGroup = new THREE.Group(); scene.add(houseGroup);
+  sceneryGroup = new THREE.Group(); scene.add(sceneryGroup);
+  backdropGroup = new THREE.Group(); scene.add(backdropGroup);
+
+  rebuildModel();
+
+  const ro = new ResizeObserver(()=>{
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    renderer.setSize(w, h, false); camera.aspect = w/h; camera.updateProjectionMatrix();
+  });
+  ro.observe(canvas);
+  animate();
+}
+
+function animate(){
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+/* ============ BUILD THE HOUSE FROM THE CURRENT PACK + COSMETIC OPTIONS ============ */
+function rebuildModel(){
+  const m = MODELS[state.modelKey];
+  const tier = TIER_MAP[m.tier] || 'sora';
+  const fin = TIERFIN[tier];
+  const ex = EXTRAS[state.modelKey] || {};
+  const S = {
+    floors: m.levels || 1,
+    size: m.m2 || 180,
+    tier,
+    finish: { cladding: FACADE2CLAD[state.facade] || 'estuco', floor: fin.floor, counter: fin.counter },
+    roofStyle: state.roof || 'flat',
+    pool: !!ex.pool, solar: !!ex.solar, wing: false, decor: true
+  };
+  if(currentHouse){ houseGroup.remove(currentHouse.group); disposeG(currentHouse.group); }
+  currentHouse = buildHouse(S);
+  currentHouse.lights.forEach(l => currentHouse.group.add(l)); // intensity 0 by day — sun lights the interior
+  houseGroup.add(currentHouse.group);
+
+  const env = ENV[m.region_key] || ENV.boquete;
+  groundCtl.set(env.scn, env.tint);
+  if(curRegion !== m.region_key){
+    disposeG(sceneryGroup); scene.remove(sceneryGroup); sceneryGroup = buildScenery(env.scn, env.density); scene.add(sceneryGroup);
+    disposeG(backdropGroup); scene.remove(backdropGroup); backdropGroup = buildBackdrop(env.backdrop); scene.add(backdropGroup);
+    skyU.turbidity.value = env.turbidity; skyU.rayleigh.value = env.rayleigh;
+    const phi = THREE.MathUtils.degToRad(90-env.sunEl), theta = THREE.MathUtils.degToRad(135);
+    sunVec.setFromSphericalCoords(1, phi, theta); skyU.sunPosition.value.copy(sunVec);
+    sun.position.copy(sunVec).multiplyScalar(70);
+    scene.fog = new THREE.Fog(env.fog, 70, 200);
+    curRegion = m.region_key;
+  }
+
+  updateSceneView();
+}
+
+// extras (pool/solar) now live inside the house build, keyed by pack
+function updateAddons(){ /* no-op: handled in rebuildModel via buildHouse */ }
+
+function updateScene(){ updateAddons(); updateSceneView(); }
+
+function updateSceneView(){
+  if(!currentHouse) return;
+  const d = currentHouse.dims;
+  if(state.view === 'plan'){
+    controls.autoRotate = false; currentHouse.roof.visible = false;
+    currentHouse.floors.forEach(f => f.grp.visible = true);
+    camera.position.set(0.1, Math.max(34, (d.baseY + d.fH*d.n)*4), 0.1);
+    controls.target.set(0, d.baseY, 0);
+  } else if(state.view === 'cut'){
+    controls.autoRotate = false; currentHouse.roof.visible = false;
+    currentHouse.floors.forEach(f => f.grp.visible = true);
+    camera.position.set(d.W*1.7, d.baseY + d.fH*1.4, d.D*1.6);
+    controls.target.set(0, d.baseY + d.fH*0.5, 0);
+  } else {
+    currentHouse.roof.visible = true;
+    currentHouse.floors.forEach(f => f.grp.visible = true);
+    controls.autoRotate = !isStatic();
+    if(Math.abs(camera.position.y) > 22){ camera.position.set(22, 14, 26); controls.target.set(0, 2.6, 0); }
+  }
+  controls.update();
+}
+
+init();
+</script>
+
+</body>
+</html>

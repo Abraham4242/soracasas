@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build Process & Timeline · Sora Casas · Internal</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#1d3a2c">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog/blog.css">
+<style>
+  .bp-wrap{max-width:1040px;margin:0 auto;padding:30px 22px 80px}
+  .bp-back{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--forest);text-decoration:none}
+  .bp-h1{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4vw,40px);margin:14px 0 6px;color:var(--forest-deep)}
+  .bp-meta{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--ink-faint);margin-bottom:8px}
+  .bp-wrap p{font-size:15px;line-height:1.65;color:var(--ink-soft);margin:9px 0;max-width:82ch}
+  .bp-h2{font-family:var(--serif);font-size:22px;font-weight:500;margin:34px 0 6px;color:var(--forest-deep);border-bottom:1px solid var(--line);padding-bottom:7px}
+  .bp-nav{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+  .bp-nav a{font-size:12px;color:var(--forest);text-decoration:none;background:var(--paper-2);border:.5px solid var(--line);border-radius:99px;padding:5px 12px}
+  /* gantt */
+  .g{background:var(--paper-2);border:.5px solid var(--line);border-radius:14px;padding:20px 22px 14px;margin:16px 0}
+  .g-head{display:grid;grid-template-columns:172px 1fr;align-items:end;margin-bottom:8px}
+  .g-axis{position:relative;height:15px}
+  .g-axis>span{position:absolute;transform:translateX(-50%);font-family:var(--mono);font-size:9px;color:var(--ink-faint)}
+  .g-row{display:grid;grid-template-columns:172px 1fr;align-items:center;padding:4px 0}
+  .g-lbl{font-size:12px;color:var(--ink-2);font-weight:500;padding-right:12px;line-height:1.2}
+  .g-lbl small{display:block;font-family:var(--mono);font-size:8.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-top:2px}
+  .g-track{position:relative;height:22px;background:repeating-linear-gradient(90deg,var(--line),var(--line) 1px,transparent 1px,transparent calc(100%/7));border-radius:4px}
+  .g-band{position:absolute;top:0;bottom:0;left:71.43%;width:14.29%;background:rgba(244,185,66,.16);border-left:1px dashed rgba(180,140,40,.45);border-right:1px dashed rgba(180,140,40,.45)}
+  .g-bar{position:absolute;top:5px;height:12px;border-radius:6px;background:linear-gradient(90deg,var(--forest),var(--forest-2))}
+  .g-bar.t{background:repeating-linear-gradient(45deg,rgba(29,58,44,.3),rgba(29,58,44,.3) 3px,rgba(29,58,44,.12) 3px,rgba(29,58,44,.12) 6px);border-radius:0 6px 6px 0}
+  .g-legend{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-faint);margin-top:10px;align-items:center}
+  .g-legend b{display:inline-block;width:16px;height:8px;border-radius:3px;vertical-align:middle;margin-right:5px}
+  /* stage cards */
+  .stage{background:var(--paper-2);border:.5px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0}
+  .stage .top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+  .stage .n{font-family:var(--display);font-size:26px;color:var(--coral-deep);line-height:1}
+  .stage h3{font-family:var(--serif);font-size:19px;font-weight:500;color:var(--forest-deep);margin:0}
+  .stage .pill{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:6px;background:var(--paper-3);color:var(--ink-2)}
+  .stage .pill.cost{background:rgba(224,122,95,.14);color:var(--coral-deep)}
+  .stage .lab{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);font-weight:700;margin:10px 0 3px}
+  .stage ul{margin:3px 0 0;padding-left:18px}
+  .stage li{font-size:13.5px;line-height:1.55;color:var(--ink-soft);margin:3px 0}
+  .stage .who{font-size:13.5px;color:var(--ink-2)}
+  .pitfall{color:var(--coral-deep)}
+  .bp-note{background:var(--forest-deep);color:#eee7d6;border-radius:14px;padding:16px 20px;margin:18px 0;font-size:14px;line-height:1.6}
+  .bp-note b{color:var(--mango)}
+  table.bp{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
+  table.bp th,table.bp td{border:.5px solid var(--line-2);padding:7px 10px;text-align:left}
+  table.bp th{background:var(--paper-3);font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="bp-wrap">
+  <a class="bp-back" href="sorainternalresources.html">← Recursos internos · Construcción</a>
+  <h1 class="bp-h1">The build process, stage by stage</h1>
+  <div class="bp-meta">Updated 2026-06-24 · Owner: Abraham · INTERNAL build playbook (1 of 4)</div>
+  <div class="bp-nav"><a href="build-playbook.html">↖ Overview</a><a href="build-costs.html">→ Cost &amp; budget</a>
+    <a href="build-materials.html">→ Materials &amp; finishes by tier</a>
+    <a href="build-architecture.html">→ Architecture &amp; permits</a>
+    <a href="build-team.html">→ Contractor &amp; team</a>
+  </div>
+
+  <p>A custom home in Panama runs <b>10 to 12 months from signed contract to keys</b> for a single-story; 12 to 15 for a two-story or a difficult site. Below is the full sequence, with realistic durations, what share of the budget each stage consumes, who is on the hook, the buyer's touchpoint, and the mistakes that blow up timelines. Phases overlap in reality (permits run while design finishes; MEP overlaps structure), which is why the calendar is shorter than the sum of the stages.</p>
+
+  <div class="bp-note"><b>Read this with the money in mind.</b> The percentages below are share of the construction cost. They map to the milestone-payment schedule (see Contractor &amp; Team). Sora's promise is a <b>fixed turnkey price locked at contract</b>, with payments released only against verified progress at each stage.</div>
+
+  <!-- bounded timeline -->
+  <div class="g">
+    <div class="g-head"><div></div><div class="g-axis">
+      <span style="left:0%">mo 0</span><span style="left:28.57%">4</span><span style="left:57.14%">8</span><span style="left:71.43%">10</span><span style="left:85.71%">12</span><span style="left:100%">14</span>
+    </div></div>
+    <div class="g-row"><div class="g-lbl">Design + plans<small>6–10 wk</small></div><div class="g-track"><div class="g-band"></div><div class="g-bar" style="left:0%;width:17.86%"></div><div class="g-bar t" style="left:17.86%;width:3.57%"></div></div></div>
+    <div class="g-row"><div class="g-lbl">Permits<small>8–14 wk</small></div><div class="g-track"><div class="g-band"></div><div class="g-bar" style="left:10.71%;width:25%"></div><div class="g-bar t" style="left:35.71%;width:7.14%"></div></div></div>
+    <div class="g-row"><div class="g-lbl">Earthwork + foundation<small>4–6 wk</small></div><div class="g-track"><div class="g-band"></div><div class="g-bar" style="left:28.57%;width:10.71%"></div><div class="g-bar t" style="left:39.28%;width:3.57%"></div></div></div>
+    <div class="g-row"><div class="g-lbl">Structure + roof<small>12–16 wk</small></div><div class="g-track"><div class="g-band"></div><div class="g-bar" style="left:35.71%;width:28.57%"></div><div class="g-bar t" style="left:64.28%;width:7.14%"></div></div></div>
+    <div class="g-row"><div class="g-lbl">MEP rough-in<small>6–8 wk</small></div><div class="g-track"><div class="g-band"></div><div class="g-bar" style="left:53.57%;width:17.86%"></div><div class="g-bar t" style="left:71.43%;width:7.14%"></div></div></div>
+    <div class="g-row"><div class="g-lbl">Finishes<small>10–14 wk</small></div><div class="g-track"><div class="g-band"></div><div class="g-bar" style="left:60.71%;width:28.57%"></div><div class="g-bar t" style="left:89.28%;width:7.14%"></div></div></div>
+    <div class="g-row"><div class="g-lbl">Handover + keys<small>2–4 wk</small></div><div class="g-track"><div class="g-band"></div><div class="g-bar" style="left:85.71%;width:7.14%"></div><div class="g-bar t" style="left:92.85%;width:7.14%"></div></div></div>
+    <div class="g-legend"><span><b style="background:linear-gradient(90deg,var(--forest),var(--forest-2))"></b>Typical duration</span><span><b style="background:repeating-linear-gradient(45deg,rgba(29,58,44,.3),rgba(29,58,44,.3) 3px,rgba(29,58,44,.12) 3px,rgba(29,58,44,.12) 6px)"></b>Slack if delays</span><span><b style="background:rgba(244,185,66,.3)"></b>Typical delivery: 10–12 months</span></div>
+  </div>
+
+  <h2 class="bp-h2">Phase 0 · Land &amp; feasibility (before any contract)</h2>
+  <p>This happens before the build clock starts, but it is where builds are won or lost. <b>Titled land only.</b> Confirm titled vs Rights of Possession (ROP), pull a fresh Public Registry certificate, get a survey, and check Paz y Salvo (tax clearance). Verify utilities at the lindero (water, power, road), slope, and access. A quick soil read and a feasibility budget against the model and tier set the fixed price. If the lot can't be built on sanely, this is where we say "not yet."</p>
+  <ul style="font-size:13.5px;color:var(--ink-soft);line-height:1.55">
+    <li><b>Deliverable:</b> verified title, survey, utilities confirmation, feasibility budget, signed fixed-price contract + spec annex.</li>
+    <li><b class="pitfall">Pitfall:</b> ROP land marketed as "beachfront," missing utilities priced as an afterthought, slope that triples earthwork. Never deposit before title + survey.</li>
+  </ul>
+
+  <h2 class="bp-h2">The seven build stages</h2>
+
+  <div class="stage">
+    <div class="top"><span class="n">1</span><h3>Design + plans</h3><span class="pill">6–10 weeks</span><span class="pill cost">7–10% of cost</span></div>
+    <div class="lab">What happens</div>
+    <ul>
+      <li>Anteproyecto (concept) from the chosen model, adapted to the lot, orientation, breeze and views. The buyer reviews in 2D and in the 3D configurator/model.</li>
+      <li>Construction drawings: architectural, structural, electrical, plumbing/sanitary, all signed and sealed by JTIA-licensed (idóneo) professionals (see Architecture &amp; permits).</li>
+      <li>Finish and material selections locked to the tier (Esencial / Sora / Firma), which freezes the BOM and the fixed price.</li>
+    </ul>
+    <div class="lab">Who</div><div class="who">Licensed architect (idóneo) + structural/electrical/sanitary engineers. Sora coordinates; buyer approves.</div>
+    <div class="lab">Buyer touchpoint</div><div class="who">Concept review, one or two revision rounds, then sign-off on plans + finishes. After sign-off, changes become change orders.</div>
+    <div class="lab">Pitfall</div><div class="who pitfall">Endless revisions. Lock the design. Every post-sign-off change costs time and money and is the #1 silent timeline killer.</div>
+  </div>
+
+  <div class="stage">
+    <div class="top"><span class="n">2</span><h3>Permits</h3><span class="pill">8–14 weeks</span><span class="pill cost">1–2% of cost</span></div>
+    <div class="lab">What happens</div>
+    <ul>
+      <li>Plan review through MIVIOT's Ventanilla Única (which coordinates MINSA, IDAAN, Bomberos, the electric utility, MiAmbiente) + the municipal (alcaldía / DOYC) construction permit; ANATI involvement on titled coastal land.</li>
+      <li>Runs largely in parallel with the tail of design and the start of site prep, so it rarely costs the full 8–14 weeks on the critical path.</li>
+    </ul>
+    <div class="lab">Who</div><div class="who">The idóneo architect/engineer submits; Sora tracks. The buyer does nothing here except wait.</div>
+    <div class="lab">Pitfall</div><div class="who pitfall">Coastal/ANATI files and rural municipalities move slowly and unpredictably. Build the slack in; never promise a ground-breaking date before permits are in hand.</div>
+  </div>
+
+  <div class="stage">
+    <div class="top"><span class="n">3</span><h3>Earthwork + foundation</h3><span class="pill">4–6 weeks</span><span class="pill cost">12–15% of cost</span></div>
+    <div class="lab">What happens</div>
+    <ul>
+      <li>Soil study drives the foundation. Clearing, cut/fill, platform, then reinforced-concrete footings/piles and the slab (3,000 PSI concrete standard, Grade 60 rebar, REP-2021 seismic code).</li>
+      <li>Underground plumbing and electrical sleeves go in before the slab pour. Termite/humidity barriers on the coast and in Bocas.</li>
+    </ul>
+    <div class="lab">Who</div><div class="who">GC + foreman (maestro de obra), excavation sub, the structural engineer signing off the pour.</div>
+    <div class="lab">Buyer touchpoint</div><div class="who">First big milestone photo/video set. Slab poured = visible, fundable progress.</div>
+    <div class="lab">Pitfall</div><div class="who pitfall">Skipping or rushing the soil study; pouring on poor fill. Foundation problems are the most expensive to fix later. This is where cheap builders cut.</div>
+  </div>
+
+  <div class="stage">
+    <div class="top"><span class="n">4</span><h3>Structure + roof</h3><span class="pill">12–16 weeks</span><span class="pill cost">30–35% of cost</span></div>
+    <div class="lab">What happens</div>
+    <ul>
+      <li>Walls go up: concrete block on the coast, M2/EMMEDUE panel common in the highlands. Columns, beams, ring beam, second-floor slab if two-story.</li>
+      <li>Roof structure + cover (standing-seam metal, flat TPO, clay, or treated iraca thatch by design), plus the building dries in (windows/doors openings framed).</li>
+    </ul>
+    <div class="lab">Who</div><div class="who">GC, masons, steel crew, roofers, the structural engineer.</div>
+    <div class="lab">Buyer touchpoint</div><div class="who">The most satisfying stretch on video: the house takes its shape. Biggest single payment milestone.</div>
+    <div class="lab">Pitfall</div><div class="who pitfall">The longest stage and where schedule slip accumulates. Weather (rainy season May–Nov), material lead times, and crew availability all bite here.</div>
+  </div>
+
+  <div class="stage">
+    <div class="top"><span class="n">5</span><h3>MEP rough-in (mechanical, electrical, plumbing)</h3><span class="pill">6–8 weeks</span><span class="pill cost">10–12% of cost</span></div>
+    <div class="lab">What happens</div>
+    <ul>
+      <li>In-wall electrical (200A panel, THHN, Cat6/fiber), plumbing supply + drains, A/C line sets, and data before walls are closed and plastered.</li>
+      <li>Water tank + pressure pump, septic (3-chamber) or municipal tie-in, solar conduit if off-grid (Pedasí/Bocas).</li>
+    </ul>
+    <div class="lab">Who</div><div class="who">Electrical and sanitary subs under the GC; the MEP engineers sign off before close-up.</div>
+    <div class="lab">Pitfall</div><div class="who pitfall">Closing walls before inspection. Anything wrong here is buried behind finishes, so verify rough-in before plaster.</div>
+  </div>
+
+  <div class="stage">
+    <div class="top"><span class="n">6</span><h3>Finishes</h3><span class="pill">10–14 weeks</span><span class="pill cost">25–30% of cost</span></div>
+    <div class="lab">What happens</div>
+    <ul>
+      <li>Plaster + paint, floors (porcelain / engineered wood / marble / polished concrete by tier), kitchen + baths, countertops, doors, fixtures, A/C units, built-ins.</li>
+      <li>Pool, outdoor kitchen, landscaping, driveway, gates. This is where the tier (Esencial/Sora/Firma) becomes visible and where the home is sold emotionally.</li>
+    </ul>
+    <div class="lab">Who</div><div class="who">Finish trades: tilers, carpenters, painters, kitchen/cabinet installers, pool sub, landscaper.</div>
+    <div class="lab">Buyer touchpoint</div><div class="who">High-frequency updates; finish selections confirmed against the spec annex (no surprises if locked at Stage 1).</div>
+    <div class="lab">Pitfall</div><div class="who pitfall">Imported finishes (Italian marble, high-end appliances) with long lead times that weren't ordered early. Order long-lead Firma items during Stage 4.</div>
+  </div>
+
+  <div class="stage">
+    <div class="top"><span class="n">7</span><h3>Handover + occupancy</h3><span class="pill">2–4 weeks</span><span class="pill cost">0–2% of cost</span></div>
+    <div class="lab">What happens</div>
+    <ul>
+      <li>Punch list (lista de pendientes) walked and cleared, final municipal (DOYC) inspection + Bomberos occupancy certificate, permiso de ocupación, utility connections activated.</li>
+      <li>Registering the improvement (mejoras) at the Public Registry for property tax; handing over warranties, manuals, as-built notes, and keys.</li>
+    </ul>
+    <div class="lab">Who</div><div class="who">GC clears punch list; Sora + buyer (or buyer's rep) do the final walk; municipality inspects.</div>
+    <div class="lab">Buyer touchpoint</div><div class="who">Final walk-through (in person or by video), punch-list sign-off, then retainage released. Keys.</div>
+    <div class="lab">Pitfall</div><div class="who pitfall">Releasing the final payment before the punch list is truly done. Hold retainage (5–10%) until it is.</div>
+  </div>
+
+  <h2 class="bp-h2">Stage → payment milestone map</h2>
+  <table class="bp"><thead><tr><th>Stage</th><th>Duration</th><th>% of cost</th><th>Payment trigger</th></tr></thead>
+  <tbody>
+    <tr><td>Design + plans</td><td>6–10 wk</td><td>7–10%</td><td>On signed plans (design fee)</td></tr>
+    <tr><td>Permits</td><td>8–14 wk</td><td>1–2%</td><td>Permit lodged / approved</td></tr>
+    <tr><td>Earthwork + foundation</td><td>4–6 wk</td><td>12–15%</td><td>Slab poured + engineer sign-off</td></tr>
+    <tr><td>Structure + roof</td><td>12–16 wk</td><td>30–35%</td><td>Roof on / dried in</td></tr>
+    <tr><td>MEP rough-in</td><td>6–8 wk</td><td>10–12%</td><td>Rough-in inspected</td></tr>
+    <tr><td>Finishes</td><td>10–14 wk</td><td>25–30%</td><td>Finishes complete</td></tr>
+    <tr><td>Handover</td><td>2–4 wk</td><td>0–2% + retainage</td><td>Punch list cleared + occupancy</td></tr>
+  </tbody></table>
+  <p style="font-family:var(--mono);font-size:11px;color:var(--ink-faint)">Percentages are construction cost only (land, design/permit fees, and a ~5–10% retainage held to the end are handled separately). Always pay against verified progress, never ahead of it.</p>
+</div>
+</body>
+</html>

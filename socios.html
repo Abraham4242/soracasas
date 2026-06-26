@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SORA Casas · Red de Socios y Tierras — Directorio de campo</title>
+<meta name="description" content="Directorio interno de socios referidores y propietarios de tierras para SORA Casas — hoteles, tour operadores, abogados, clínicas y comunidades de expats en Panamá.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#1d3a2c">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23f7f0df'/%3E%3Cpath d='M6 18 L16 9 L26 18 L26 25 L6 25 Z' fill='%231d3a2c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f0df;--paper-2:#fcf6e6;--paper-3:#ede4ca;--paper-deep:#e3d9c2;
+    --ink:#14110c;--ink-2:#2a251d;--ink-soft:#4a4337;--ink-faint:#807761;--ink-ghost:#b0a78e;
+    --forest:#1d3a2c;--forest-2:#2a5440;--forest-deep:#0f2218;--coral:#e07a5f;--coral-deep:#b85439;
+    --mango:#f4b942;--teal:#2e8a96;--gold:#d4b87a;--gold-deep:#b39656;--rose:#c64a5e;
+    --line:rgba(20,17,12,.10);--line-2:rgba(20,17,12,.18);--line-strong:rgba(20,17,12,.34);
+    --serif:'Fraunces',Georgia,serif;--sans:'Inter',-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(ellipse at 12% 0%,rgba(160,123,62,.07) 0%,transparent 55%),radial-gradient(ellipse at 88% 100%,rgba(31,58,44,.06) 0%,transparent 60%);}
+  a{color:inherit;text-decoration:none}
+  button,input,select,textarea{font:inherit;color:inherit}
+  button{cursor:pointer;border:none;background:none}
+  html[lang="en"] [lang="es"]{display:none !important}
+  html[lang="es"] [lang="en"]{display:none !important}
+  ::selection{background:var(--ink);color:var(--paper)}
+
+  .top{position:sticky;top:0;z-index:50;background:rgba(247,240,223,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:.5px solid var(--line)}
+  .top-in{max-width:1180px;margin:0 auto;padding:13px 26px;display:flex;align-items:center;gap:12px}
+  .wm{font-family:var(--serif);font-weight:600;font-size:18px;letter-spacing:.04em;display:flex;align-items:center;gap:9px}
+  .wm .mk{width:26px;height:26px;border-radius:7px;background:var(--forest);color:var(--paper);display:grid;place-items:center;font-size:14px;font-family:var(--serif)}
+  .wm em{font-style:italic;color:var(--coral-deep);font-weight:400}
+  .spacer{flex:1}
+  .lang-toggle{display:inline-flex;border:.5px solid var(--line-2);border-radius:7px;overflow:hidden}
+  .lang-toggle button{padding:6px 11px;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;background:transparent;color:var(--ink-faint);font-weight:600}
+  .lang-toggle button.active{background:var(--forest);color:var(--paper)}
+  .top a.back{font-size:12.5px;color:var(--ink-soft);border:.5px solid var(--line);padding:7px 13px;border-radius:7px}
+  .top a.back:hover{border-color:var(--forest);color:var(--forest)}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+
+  /* hero */
+  .hero{padding:44px 0 24px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--forest);font-weight:700;margin-bottom:14px}
+  h1{font-family:var(--serif);font-weight:300;font-size:clamp(32px,5vw,52px);line-height:1.05;letter-spacing:-.02em;margin-bottom:16px}
+  h1 em{font-style:italic;color:var(--forest)}
+  .lede{font-size:17px;color:var(--ink-soft);max-width:720px;line-height:1.55}
+  .lede b{color:var(--ink)}
+
+  /* stat bar */
+  .stats{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 6px}
+  .stat{background:var(--ink);color:var(--paper);border-radius:12px;padding:14px 18px;min-width:120px}
+  .stat .n{font-family:var(--mono);font-weight:700;font-size:26px;line-height:1;color:var(--mango)}
+  .stat .l{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,240,223,.55);margin-top:7px}
+  .stat.alt{background:var(--forest)} .stat.alt .n{color:#fff}
+
+  /* playbook */
+  details.play{margin:22px 0 4px;background:var(--paper-2);border:.5px solid var(--line);border-radius:14px;overflow:hidden}
+  details.play>summary{list-style:none;cursor:pointer;padding:18px 22px;display:flex;align-items:center;gap:12px;font-weight:600;font-size:15px}
+  details.play>summary::-webkit-details-marker{display:none}
+  details.play>summary .chev{margin-left:auto;transition:transform .2s;color:var(--ink-faint)}
+  details.play[open]>summary .chev{transform:rotate(90deg)}
+  .play-body{padding:4px 24px 24px;border-top:.5px solid var(--line)}
+  .play-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:18px}
+  @media(max-width:760px){.play-grid{grid-template-columns:1fr}}
+  .play-grid h4{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--forest);margin-bottom:10px;font-weight:700}
+  .play-grid ol,.play-grid ul{margin-left:18px;font-size:14px;color:var(--ink-soft);line-height:1.7}
+  .play-grid li{margin-bottom:5px}
+  .pitch{background:var(--forest);color:var(--paper);border-radius:11px;padding:18px 20px;margin-top:18px;font-size:14.5px;line-height:1.6}
+  .pitch .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mango);font-weight:700;margin-bottom:8px}
+
+  /* toolbar */
+  .toolbar{position:sticky;top:53px;z-index:40;background:rgba(247,240,223,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:16px 0 12px;margin-top:14px;border-bottom:.5px solid var(--line)}
+  .search{width:100%;background:#fff;border:.5px solid var(--line-2);border-radius:11px;padding:13px 16px;font-size:15px;outline:none}
+  .search:focus{border-color:var(--forest)}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.04em;font-weight:600;padding:7px 12px;border-radius:20px;border:.5px solid var(--line-2);background:#fff;color:var(--ink-soft);white-space:nowrap}
+  .chip:hover{border-color:var(--forest)}
+  .chip.active{background:var(--forest);color:var(--paper);border-color:var(--forest)}
+  .chip .ct{opacity:.6;margin-left:4px}
+  .chiprow{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-top:9px}
+  .chiprow .grp-lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-ghost);font-weight:700;margin-right:2px}
+
+  /* grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;padding:22px 0 70px}
+  .card{background:var(--paper-2);border:.5px solid var(--line);border-radius:15px;padding:18px 19px;display:flex;flex-direction:column;gap:11px;transition:border-color .15s,box-shadow .15s}
+  .card:hover{border-color:var(--line-strong);box-shadow:0 6px 22px rgba(20,17,12,.06)}
+  .card.st-firmado{border-color:var(--forest);background:linear-gradient(180deg,rgba(29,58,44,.06),var(--paper-2))}
+  .card.st-descartado{opacity:.5}
+  .c-top{display:flex;align-items:flex-start;gap:10px}
+  .c-name{font-family:var(--serif);font-weight:500;font-size:18px;line-height:1.2;letter-spacing:-.01em}
+  .c-traffic{margin-left:auto;font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0}
+  .c-traffic.high{background:var(--coral-deep);color:#fff}
+  .c-traffic.medium{background:var(--paper-deep);color:var(--ink-soft)}
+  .c-meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .tag{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.03em;padding:4px 8px;border-radius:6px;background:var(--paper-3);color:var(--ink-soft)}
+  .tag.cat{background:rgba(46,138,150,.14);color:#1f6a73}
+  .tag.geo{background:rgba(29,58,44,.10);color:var(--forest)}
+  .c-why{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
+  .c-contacts{display:flex;flex-wrap:wrap;gap:6px}
+  .cbtn{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:11px;font-weight:600;padding:6px 10px;border-radius:7px;border:.5px solid var(--line-2);background:#fff;color:var(--ink-soft)}
+  .cbtn:hover{border-color:var(--forest);color:var(--forest)}
+  .cbtn.wa:hover{border-color:#25d366;color:#128c3e}
+  .c-track{border-top:.5px solid var(--line);padding-top:11px;margin-top:1px;display:flex;flex-direction:column;gap:8px}
+  .statuses{display:flex;flex-wrap:wrap;gap:5px}
+  .sbtn{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.04em;padding:5px 8px;border-radius:6px;border:.5px solid var(--line-2);background:#fff;color:var(--ink-faint)}
+  .sbtn.on{color:#fff;border-color:transparent}
+  .note{width:100%;background:#fff;border:.5px solid var(--line);border-radius:8px;padding:8px 10px;font-size:12.5px;resize:vertical;min-height:34px;outline:none;font-family:var(--sans)}
+  .note:focus{border-color:var(--forest)}
+
+  .empty{padding:70px 20px;text-align:center;color:var(--ink-faint)}
+  .empty .big{font-family:var(--serif);font-size:24px;color:var(--ink-soft);margin-bottom:10px;font-weight:300}
+  .spin{display:inline-block;width:16px;height:16px;border:2px solid var(--line-2);border-top-color:var(--forest);border-radius:50%;animation:sp 0.8s linear infinite;vertical-align:-3px;margin-right:8px}
+  @keyframes sp{to{transform:rotate(360deg)}}
+
+  footer{border-top:.5px solid var(--line);padding:28px 0 50px;color:var(--ink-faint);font-size:12.5px;line-height:1.7}
+  .exportbtn{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.04em;padding:8px 14px;border-radius:8px;border:.5px solid var(--line-2);background:#fff;color:var(--ink-soft)}
+  .exportbtn:hover{border-color:var(--forest);color:var(--forest)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="wm" href="index.html"><span class="mk">S</span>SORA <em>Socios</em></a>
+    <div class="spacer"></div>
+    <div class="lang-toggle">
+      <button data-lang="es" class="active" onclick="setLang('es')">ES</button>
+      <button data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <a class="back" href="index.html"><span lang="es">← Sitio</span><span lang="en">← Site</span></a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow"><span lang="es">Herramienta de campo · Interna</span><span lang="en">Field tool · Internal</span></div>
+    <h1>
+      <span lang="es">Red de <em>Socios</em> y Tierras</span>
+      <span lang="en">Referral <em>Partner</em> & Land Network</span>
+    </h1>
+    <p class="lede">
+      <span lang="es">El directorio de campo de Minor y Alejandra: cada negocio en Panamá que toca turistas y jubilados extranjeros — hoteles, tour operadores, abogados de inmigración, clínicas, escuelas de español y comunidades de expats. <b>Visítalos, fírmalos como socios referidores, y cuando tengan un extranjero interesado en comprar o construir una casa, nos lo pasan.</b> Marca el avance de cada uno aquí mismo.</span>
+      <span lang="en">Minor and Alejandra's field directory: every business in Panama that touches foreign tourists and retirees — hotels, tour operators, immigration lawyers, clinics, Spanish schools and expat communities. <b>Visit them, sign them as referral partners, and when they have a foreigner interested in buying or building, they hand them to us.</b> Track each one right here.</span>
+    </p>
+
+    <div class="stats" id="stats"></div>
+
+    <details class="play">
+      <summary>
+        <span lang="es">📋 Cómo trabajar este directorio — el sistema de referidos</span>
+        <span lang="en">📋 How to work this directory — the referral system</span>
+        <span class="chev">›</span>
+      </summary>
+      <div class="play-body">
+        <div class="play-grid">
+          <div>
+            <h4><span lang="es">El trato con el socio</span><span lang="en">The partner deal</span></h4>
+            <ul lang="es">
+              <li><b>Bono por presentación:</b> $50–100 cuando el referido agenda una llamada de descubrimiento.</li>
+              <li><b>Comisión por cierre:</b> 1–3% de la venta (o ~$2–5K fijo) cuando el extranjero compra.</li>
+              <li>Acuerdo de socio de una página (firmado, bilingüe).</li>
+              <li><b>Pagar rápido y visible</b> — la red se muere si el pago se tarda.</li>
+            </ul>
+            <ul lang="en">
+              <li><b>Intro bounty:</b> $50–100 when the referral books a discovery call.</li>
+              <li><b>Closing commission:</b> 1–3% of the sale (or ~$2–5K flat) when the foreigner buys.</li>
+              <li>One-page signed bilingual partner agreement.</li>
+              <li><b>Pay fast and visibly</b> — the network dies if payouts lag.</li>
+            </ul>
+          </div>
+          <div>
+            <h4><span lang="es">El flujo</span><span lang="en">The flow</span></h4>
+            <ol lang="es">
+              <li>Visita el negocio · presenta SORA en español.</li>
+              <li>Firma el acuerdo · deja tarjetas/QR a la guía de costos.</li>
+              <li>Socio detecta extranjero interesado → te envía nombre + WhatsApp.</li>
+              <li>Registra el lead (fuente = el socio) en el CRM.</li>
+              <li><b>Pásalo al cerrador en inglés</b> para la llamada. Tú nunca cierras en inglés.</li>
+              <li>Visita mensual para mantenerlos activos.</li>
+            </ol>
+            <ol lang="en">
+              <li>Visit the business · pitch SORA in Spanish.</li>
+              <li>Sign the agreement · drop cards/QR to the cost guide.</li>
+              <li>Partner spots interested foreigner → texts you name + WhatsApp.</li>
+              <li>Log the lead (source = the partner) in the CRM.</li>
+              <li><b>Hand to the English closer</b> for the call. You never close in English.</li>
+              <li>Monthly visit to keep them active.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="pitch">
+          <div class="lbl"><span lang="es">Guion de 10 segundos para el socio</span><span lang="en">10-second partner script</span></div>
+          <span lang="es">"Cuando conozcas a un extranjero que ama Panamá y menciona comprar o construir una casa — solo mándame su nombre y WhatsApp. Nosotros hacemos el resto. Si compra, tú cobras."</span>
+          <span lang="en">"When you meet a foreigner who loves Panama and mentions buying or building a home — just text me their name and WhatsApp. We do the rest. If they buy, you get paid."</span>
+        </div>
+        <div class="play-grid" style="margin-top:22px">
+          <div>
+            <h4><span lang="es">Engine B — Tierras</span><span lang="en">Engine B — Land</span></h4>
+            <ul lang="es">
+              <li>Identifica tierra <b>titulada</b> en Pedasí, Boquete, Volcán, Coronado, Bocas.</li>
+              <li>Negocia <b>opción de compra</b> (derecho a comprar a precio fijo en X meses por una prima pequeña).</li>
+              <li>Coordina el chequeo de título (~$500/lote) + papeleo con la abogada.</li>
+              <li>Meta: avanzar hacia las 6 opciones de tierra firmadas.</li>
+            </ul>
+            <ul lang="en">
+              <li>Identify <b>titled</b> land in Pedasí, Boquete, Volcán, Coronado, Bocas.</li>
+              <li>Negotiate a <b>purchase option</b> (right to buy at a fixed price within X months for a small fee).</li>
+              <li>Coordinate the title check (~$500/lot) + paperwork with the attorney.</li>
+              <li>Goal: progress toward the 6 signed land options.</li>
+            </ul>
+          </div>
+          <div>
+            <h4><span lang="es">Otras tareas esenciales</span><span lang="en">Other essential tasks</span></h4>
+            <ul lang="es">
+              <li>Sembrar tarjetas/QR en cada local (→ guía de costos).</li>
+              <li>Presencia en eventos de jubilados / charlas en hoteles socios.</li>
+              <li>Hospedar visitas de sitio (Discovery Weekend).</li>
+              <li>Documentar avance de obra (fotos/video) para prueba social.</li>
+              <li>Inteligencia de mercado: comps, competidores, precios.</li>
+            </ul>
+            <ul lang="en">
+              <li>Seed cards/QR at every venue (→ cost guide).</li>
+              <li>Presence at retiree events / talks at partner hotels.</li>
+              <li>Host site visits (Discovery Weekend).</li>
+              <li>Document build progress (photo/video) for social proof.</li>
+              <li>Market intel: comps, competitors, pricing.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <div class="toolbar">
+    <input class="search" id="search" placeholder="Buscar socio, ciudad, categoría…" oninput="render()">
+    <div class="chiprow" id="regionChips"></div>
+    <div class="chiprow" id="catChips"></div>
+    <div class="chiprow" id="statusChips"></div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <footer>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px">
+      <button class="exportbtn" onclick="exportCSV()">⤓ <span lang="es">Exportar avance (CSV)</span><span lang="en">Export progress (CSV)</span></button>
+      <button class="exportbtn" onclick="exportJSON()">⤓ JSON</button>
+    </div>
+    <span lang="es"><b>Interno SORA Casas.</b> El estado y las notas se guardan en este dispositivo (localStorage). No es público (noindex). Verifica siempre el contacto antes de visitar — los datos vienen de investigación web y pueden cambiar.</span>
+    <span lang="en"><b>Internal SORA Casas.</b> Status and notes save on this device (localStorage). Not public (noindex). Always verify contact details before visiting — data is from web research and may change.</span>
+  </footer>
+</main>
+
+<script src="socios-data.js"></script>
+<script>
+/* ============================================================
+   PARTNER DATA — loaded from socios-data.js (window.SORA_PARTNERS),
+   built by the sora-partner-directory research workflow.
+   Shape per record:
+   { name, category, region, town, why, traffic('high'|'medium'),
+     website, phone, email, social }
+   ============================================================ */
+const PARTNERS = (window.SORA_PARTNERS || []);
+
+/* ---------- state ---------- */
+const STORE_KEY = 'sora_socios_status_v1';
+const ESTADOS = [
+  {k:'pendiente',  es:'Pendiente',     en:'To do',    color:'#807761'},
+  {k:'contactado', es:'Contactado',    en:'Contacted',color:'#2e8a96'},
+  {k:'interesado', es:'Interesado',    en:'Interested',color:'#b39656'},
+  {k:'firmado',    es:'Socio firmado', en:'Signed',   color:'#1d3a2c'},
+  {k:'descartado', es:'Descartado',    en:'Passed',   color:'#c64a5e'},
+];
+let LANG='es', FILT={region:'',cat:'',status:'',q:''};
+const store = JSON.parse(localStorage.getItem(STORE_KEY)||'{}');
+const keyOf = p => (p.name+'|'+p.region).toLowerCase().replace(/[^a-z0-9|]+/g,'-');
+const rec = p => store[keyOf(p)] || {status:'pendiente',note:''};
+function save(p,patch){const k=keyOf(p);store[k]={...rec(p),...patch};localStorage.setItem(STORE_KEY,JSON.stringify(store));}
+
+/* ---------- lang ---------- */
+function setLang(l){LANG=l;document.documentElement.lang=l;
+  document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+  document.getElementById('search').placeholder = l==='es'?'Buscar socio, ciudad, categoría…':'Search partner, town, category…';
+  buildFilters();render();}
+
+/* ---------- helpers ---------- */
+const t=(es,en)=>LANG==='es'?es:en;
+function uniq(arr){return [...new Set(arr)].sort((a,b)=>a.localeCompare(b));}
+function waLink(phone){const d=(phone||'').replace(/[^0-9]/g,'');return d.length>=7?'https://wa.me/'+(d.length<=8?'507'+d:d):'';}
+
+/* ---------- filters ---------- */
+function buildFilters(){
+  const regions=uniq(PARTNERS.map(p=>p.region).filter(Boolean));
+  const cats=uniq(PARTNERS.map(p=>p.category).filter(Boolean));
+  const cnt=(arr,v)=>arr.filter(x=>x===v).length;
+  const rArr=PARTNERS.map(p=>p.region), cArr=PARTNERS.map(p=>p.category);
+
+  const rc=document.getElementById('regionChips');
+  rc.innerHTML='<span class="grp-lbl">'+t('Región','Region')+'</span>'+
+    '<button class="chip '+(FILT.region===''?'active':'')+'" onclick="setF(\'region\',\'\')">'+t('Todas','All')+'</button>'+
+    regions.map(r=>'<button class="chip '+(FILT.region===r?'active':'')+'" onclick="setF(\'region\',\''+esc(r)+'\')">'+r+'<span class="ct">'+cnt(rArr,r)+'</span></button>').join('');
+
+  const cc=document.getElementById('catChips');
+  cc.innerHTML='<span class="grp-lbl">'+t('Tipo','Type')+'</span>'+
+    '<button class="chip '+(FILT.cat===''?'active':'')+'" onclick="setF(\'cat\',\'\')">'+t('Todos','All')+'</button>'+
+    cats.map(c=>'<button class="chip '+(FILT.cat===c?'active':'')+'" onclick="setF(\'cat\',\''+esc(c)+'\')">'+c+'<span class="ct">'+cnt(cArr,c)+'</span></button>').join('');
+
+  const sc=document.getElementById('statusChips');
+  sc.innerHTML='<span class="grp-lbl">'+t('Estado','Status')+'</span>'+
+    '<button class="chip '+(FILT.status===''?'active':'')+'" onclick="setF(\'status\',\'\')">'+t('Todos','All')+'</button>'+
+    ESTADOS.map(e=>'<button class="chip '+(FILT.status===e.k?'active':'')+'" onclick="setF(\'status\',\''+e.k+'\')">'+t(e.es,e.en)+'<span class="ct">'+PARTNERS.filter(p=>rec(p).status===e.k).length+'</span></button>').join('');
+}
+const esc=s=>s.replace(/'/g,"\\'");
+function setF(k,v){FILT[k]=v;buildFilters();render();}
+
+/* ---------- stats ---------- */
+function renderStats(){
+  const signed=PARTNERS.filter(p=>rec(p).status==='firmado').length;
+  const interested=PARTNERS.filter(p=>rec(p).status==='interesado').length;
+  const worked=PARTNERS.filter(p=>['contactado','interesado','firmado'].includes(rec(p).status)).length;
+  const regions=uniq(PARTNERS.map(p=>p.region).filter(Boolean)).length;
+  const cells=[
+    {n:PARTNERS.length,l:t('Socios potenciales','Potential partners'),alt:false},
+    {n:regions,l:t('Regiones','Regions'),alt:true},
+    {n:worked,l:t('Trabajados','Worked'),alt:true},
+    {n:interested,l:t('Interesados','Interested'),alt:false},
+    {n:signed,l:t('Firmados','Signed'),alt:false},
+  ];
+  document.getElementById('stats').innerHTML=cells.map(c=>'<div class="stat '+(c.alt?'alt':'')+'"><div class="n">'+c.n+'</div><div class="l">'+c.l+'</div></div>').join('');
+}
+
+/* ---------- cards ---------- */
+function render(){
+  FILT.q=document.getElementById('search').value.trim().toLowerCase();
+  renderStats();
+  const grid=document.getElementById('grid');
+  if(!PARTNERS.length){
+    grid.innerHTML='<div class="empty"><div class="big"><span class="spin"></span>'+t('Poblando el directorio con la investigación de campo…','Populating the directory from field research…')+'</div>'+t('Los 13 exploradores están barriendo Pedasí, Boquete, Volcán, Coronado, Bocas y Ciudad de Panamá. Esta página se llena sola al terminar.','The 13 scouts are sweeping Pedasí, Boquete, Volcán, Coronado, Bocas and Panama City. This page fills itself when they finish.')+'</div>';
+    return;
+  }
+  let list=PARTNERS.filter(p=>{
+    if(FILT.region&&p.region!==FILT.region)return false;
+    if(FILT.cat&&p.category!==FILT.cat)return false;
+    if(FILT.status&&rec(p).status!==FILT.status)return false;
+    if(FILT.q){const blob=(p.name+' '+p.category+' '+p.town+' '+p.region+' '+p.why).toLowerCase();if(!blob.includes(FILT.q))return false;}
+    return true;
+  });
+  // sort: high traffic first, then signed/interested up
+  const rank={firmado:0,interesado:1,contactado:2,pendiente:3,descartado:9};
+  list.sort((a,b)=>(rank[rec(a).status]-rank[rec(b).status])||(a.traffic===b.traffic?0:a.traffic==='high'?-1:1)||a.name.localeCompare(b.name));
+
+  if(!list.length){grid.innerHTML='<div class="empty"><div class="big">'+t('Sin resultados','No matches')+'</div>'+t('Ajusta los filtros o la búsqueda.','Adjust filters or search.')+'</div>';return;}
+
+  grid.innerHTML=list.map(p=>{
+    const r=rec(p);
+    const wa=waLink(p.phone);
+    const contacts=[];
+    if(p.website)contacts.push('<a class="cbtn" href="'+p.website+'" target="_blank" rel="noopener">🌐 Web</a>');
+    if(wa)contacts.push('<a class="cbtn wa" href="'+wa+'" target="_blank" rel="noopener">✆ WhatsApp</a>');
+    else if(p.phone)contacts.push('<a class="cbtn" href="tel:'+p.phone.replace(/[^0-9+]/g,'')+'">✆ '+p.phone+'</a>');
+    if(p.email)contacts.push('<a class="cbtn" href="mailto:'+p.email+'">✉ Email</a>');
+    if(p.social){const su=/^https?:/.test(p.social)?p.social:'https://instagram.com/'+p.social.replace(/^@/,'');contacts.push('<a class="cbtn" href="'+su+'" target="_blank" rel="noopener">◎ Social</a>');}
+    const statuses=ESTADOS.map(e=>'<button class="sbtn '+(r.status===e.k?'on':'')+'" style="'+(r.status===e.k?'background:'+e.color:'')+'" onclick="setStatus(this,\''+keyOf(p)+'\',\''+e.k+'\')">'+t(e.es,e.en)+'</button>').join('');
+    return '<div class="card st-'+r.status+'" data-k="'+keyOf(p)+'">'+
+      '<div class="c-top"><div class="c-name">'+p.name+'</div><div class="c-traffic '+p.traffic+'">'+(p.traffic==='high'?t('Alto tráfico','High'):t('Medio','Med'))+'</div></div>'+
+      '<div class="c-meta"><span class="tag cat">'+p.category+'</span><span class="tag geo">'+(p.town?p.town+' · ':'')+p.region+'</span></div>'+
+      (p.why?'<div class="c-why">'+p.why+'</div>':'')+
+      (contacts.length?'<div class="c-contacts">'+contacts.join('')+'</div>':'<div class="c-why" style="color:var(--ink-ghost);font-style:italic">'+t('Sin contacto en archivo — buscar al visitar la zona.','No contact on file — find on the ground.')+'</div>')+
+      '<div class="c-track"><div class="statuses">'+statuses+'</div>'+
+      '<textarea class="note" placeholder="'+t('Notas: con quién hablaste, próximos pasos…','Notes: who you spoke to, next steps…')+'" oninput="setNote(\''+keyOf(p)+'\',this.value)">'+(r.note||'')+'</textarea></div>'+
+    '</div>';
+  }).join('');
+}
+function setStatus(btn,k,s){const p=PARTNERS.find(x=>keyOf(x)===k);if(!p)return;save(p,{status:s});buildFilters();render();}
+function setNote(k,v){const p=PARTNERS.find(x=>keyOf(x)===k);if(!p)return;save(p,{note:v});}
+
+/* ---------- export ---------- */
+function exportCSV(){
+  const rows=[['name','category','region','town','traffic','status','note','website','phone','email','social']];
+  PARTNERS.forEach(p=>{const r=rec(p);rows.push([p.name,p.category,p.region,p.town,p.traffic,r.status,(r.note||'').replace(/\n/g,' '),p.website,p.phone,p.email,p.social]);});
+  const csv=rows.map(r=>r.map(c=>'"'+String(c||'').replace(/"/g,'""')+'"').join(',')).join('\n');
+  dl('sora-socios.csv','text/csv',csv);
+}
+function exportJSON(){dl('sora-socios.json','application/json',JSON.stringify(PARTNERS.map(p=>({...p,...rec(p)})),null,2));}
+function dl(name,type,data){const b=new Blob([data],{type});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=name;a.click();URL.revokeObjectURL(u);}
+
+/* ---------- init ---------- */
+buildFilters();render();
+</script>
+</body>
+</html>

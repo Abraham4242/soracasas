@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sora Casas · Operaciones</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0f2218">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d3a2c'/%3E%3Cpath d='M7 18 L16 10 L25 18 L25 25 L7 25 Z' fill='%23f7f0df'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Serif&family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root{
+    --bg:#f5f1e7;--surface:#fffdf8;--surface-2:#faf5ea;--surface-3:#f1ebdc;
+    --fg:#1b1813;--fg-2:#46413a;--muted:#857d6e;--faint:#b3aa98;
+    --border:rgba(20,17,12,.09);--border-2:rgba(20,17,12,.15);--border-3:rgba(20,17,12,.26);
+    --forest:#1d3a2c;--forest-2:#2a5440;--forest-deep:#0f2218;
+    --accent:#d8694a;--accent-2:#c2613f;--accent-soft:rgba(216,105,74,.10);
+    --good:#3f7d52;--good-soft:rgba(63,125,82,.12);--warn:#b98a2e;--warn-soft:rgba(185,138,46,.13);--info:#3c6e7a;--info-soft:rgba(60,110,122,.12);
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--serif:"Fraunces",Georgia,serif;--display:"Instrument Serif",Georgia,serif;
+    --r6:6px;--r8:8px;--r10:10px;--r12:12px;--sb:236px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}
+  body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased;letter-spacing:-.005em}
+  button,input,textarea{font:inherit;color:inherit}button{cursor:pointer;border:none;background:none}::selection{background:var(--forest);color:#fff}
+  .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}.tnum{font-variant-numeric:tabular-nums}
+  ::-webkit-scrollbar{width:9px;height:9px}::-webkit-scrollbar-thumb{background:var(--border-2);border-radius:6px;border:2px solid var(--bg)}
+  /* LOGIN */
+  #login{position:fixed;inset:0;z-index:200;background:var(--forest-deep);display:flex;align-items:center;justify-content:center;padding:24px;background-image:radial-gradient(ellipse at 20% 10%,rgba(216,105,74,.10),transparent 55%),radial-gradient(ellipse at 85% 90%,rgba(42,84,64,.5),transparent 60%)}
+  #login.hide{display:none}
+  .lcard{width:100%;max-width:368px;background:rgba(255,253,248,.04);border:1px solid rgba(255,255,255,.10);border-radius:var(--r12);padding:30px 28px;text-align:center;backdrop-filter:blur(8px)}
+  .lmark{width:42px;height:42px;border-radius:10px;background:var(--forest-2);display:grid;place-items:center;margin:0 auto 18px}
+  .lword{font-family:var(--display);font-size:30px;color:#fdfbf4;line-height:1}.lsub{font-family:var(--mono);font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:var(--accent);margin-top:8px;margin-bottom:24px}
+  #login input{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:var(--r8);padding:11px 13px;color:#fff;font-size:13.5px;text-align:center;letter-spacing:.5px}#login input:focus{outline:none;border-color:var(--accent)}
+  #login button{width:100%;margin-top:11px;background:var(--accent);color:#fff;font-weight:600;font-size:12px;letter-spacing:.4px;padding:12px;border-radius:var(--r8);transition:.15s}#login button:hover{background:var(--accent-2)}
+  .lhint{margin-top:16px;font-family:var(--mono);font-size:10px;color:#7d8c80;letter-spacing:.3px}.lerr{color:#e89b85;font-size:11.5px;margin-top:10px;min-height:14px}
+  /* SHELL */
+  #app{display:none;grid-template-columns:var(--sb) 1fr;height:100vh}#app.show{display:grid}
+  aside{border-right:1px solid var(--border);display:flex;flex-direction:column;background:var(--bg);min-height:0}
+  .brand{display:flex;align-items:center;gap:10px;padding:16px 16px 14px}.bmark{width:28px;height:28px;border-radius:7px;background:var(--forest);display:grid;place-items:center;flex:0 0 auto}
+  .bword{font-family:var(--display);font-size:21px;color:var(--fg);line-height:1}.bsub{font-family:var(--mono);font-size:8px;letter-spacing:1.6px;text-transform:uppercase;color:var(--accent-2);border:1px solid var(--border-2);padding:2px 5px;border-radius:4px;margin-left:auto}
+  nav{flex:1;overflow-y:auto;padding:4px 10px 10px}.navgroup{font-family:var(--mono);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;color:var(--faint);padding:14px 8px 5px}
+  .navitem{display:flex;align-items:center;gap:9px;width:100%;padding:7px 8px;border-radius:var(--r8);color:var(--fg-2);font-size:12.5px;font-weight:450;text-align:left;position:relative;transition:.12s}
+  .navitem:hover{background:var(--surface-2);color:var(--fg)}.navitem.active{background:var(--accent-soft);color:var(--accent-2);font-weight:600}
+  .navitem.active::before{content:"";position:absolute;left:-10px;top:7px;bottom:7px;width:2.5px;border-radius:2px;background:var(--accent)}
+  .navitem svg{width:15px;height:15px;flex:0 0 auto;opacity:.85}.navitem .ext{margin-left:auto;opacity:.4}.navitem .badge{margin-left:auto;font-family:var(--mono);font-size:9px;color:var(--faint);background:var(--surface-3);padding:1px 5px;border-radius:5px}.navitem .ct2{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--muted)}
+  .me{display:flex;align-items:center;gap:9px;padding:12px 14px;border-top:1px solid var(--border)}.avatar{width:28px;height:28px;border-radius:50%;background:var(--forest);color:#f1ece0;display:grid;place-items:center;font-size:11px;font-weight:600;flex:0 0 auto}
+  .me .nm{font-size:12px;font-weight:600;line-height:1.25}.me .rl{font-size:10.5px;color:var(--muted)}.me button{margin-left:auto;color:var(--faint);padding:5px;border-radius:6px}.me button:hover{color:var(--fg);background:var(--surface-2)}
+  main{display:flex;flex-direction:column;min-width:0;min-height:0;background:var(--bg)}
+  .topbar{display:flex;align-items:center;gap:14px;padding:0 22px;height:54px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(245,241,231,.92);backdrop-filter:blur(10px);z-index:20}
+  .ttitle{font-size:14px;font-weight:600;letter-spacing:-.01em}
+  .search{margin-left:auto;display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border-2);border-radius:var(--r8);padding:7px 11px;width:240px;color:var(--muted)}.search:focus-within{border-color:var(--border-3)}.search input{border:none;background:none;flex:1;font-size:12.5px;color:var(--fg)}.search input:focus{outline:none}.search kbd{font-family:var(--mono);font-size:9.5px;color:var(--faint);border:1px solid var(--border-2);border-radius:4px;padding:1px 4px}
+  .dmode{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;color:var(--muted);border:1px solid var(--border-2);border-radius:99px;padding:4px 9px;cursor:pointer}.dmode .d{width:7px;height:7px;border-radius:50%;background:var(--warn)}.dmode.on .d{background:var(--good)}
+  .tdate{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap}
+  .i18nslot{display:flex;border:1px solid var(--border-2);border-radius:var(--r8);overflow:hidden;flex:0 0 auto}
+  .i18nslot button{font-family:var(--mono);font-size:10px;font-weight:600;padding:6px 9px;color:var(--muted);letter-spacing:1px}
+  .i18nslot button.on{background:var(--forest);color:#f1ece0}
+  .iconbtn{width:32px;height:32px;border-radius:var(--r8);display:grid;place-items:center;color:var(--fg-2);border:1px solid transparent;transition:.12s}.iconbtn:hover{background:var(--surface-2);border-color:var(--border)}
+  .qadd{display:inline-flex;align-items:center;gap:6px;background:var(--forest);color:#f1ece0;font-size:12px;font-weight:600;padding:8px 13px;border-radius:var(--r8);white-space:nowrap;transition:.12s}.qadd:hover{background:var(--forest-deep)}
+  .content{flex:1;overflow-y:auto;padding:22px}.view{display:none}.view.show{display:block}.maxw{max-width:1200px}
+  .greet{font-family:var(--serif);font-weight:500;font-size:26px;letter-spacing:-.01em}.greet em{font-style:italic;color:var(--forest)}.sub{color:var(--muted);font-size:13px;margin-top:3px}
+  .secth{display:flex;align-items:baseline;gap:10px;margin:26px 0 12px}.secth h3{font-size:11px;font-weight:600;text-transform:uppercase;color:var(--muted);font-family:var(--mono);letter-spacing:1px}.secth .ln{flex:1;height:1px;background:var(--border)}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}@media(max-width:900px){.kpis{grid-template-columns:1fr 1fr}}
+  .kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--r10);padding:14px 16px}.kpi .l{font-family:var(--mono);font-size:9.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px}.kpi .l svg{width:13px;height:13px;opacity:.7}.kpi .n{font-family:var(--mono);font-weight:600;font-size:27px;letter-spacing:-.02em;margin-top:8px;line-height:1}.kpi .d{font-size:11px;color:var(--muted);margin-top:5px}.kpi .d b{color:var(--good);font-weight:600}
+  .twoup{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}@media(max-width:900px){.twoup{grid-template-columns:1fr}}
+  .panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--r10);overflow:hidden}.panel .ph{display:flex;align-items:center;gap:8px;padding:12px 15px;border-bottom:1px solid var(--border)}.panel .ph h4{font-size:12.5px;font-weight:600}.panel .ph .c{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .row{display:flex;align-items:center;gap:11px;padding:10px 15px;border-bottom:1px solid var(--border)}.row:last-child{border-bottom:none}.dot{width:7px;height:7px;border-radius:50%;flex:0 0 auto}.row .t{font-size:12.5px;font-weight:500}.row .s{font-size:11px;color:var(--muted)}.row .meta{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--muted);white-space:nowrap}.row.empty{color:var(--faint);justify-content:center;font-size:12px;padding:22px}
+  .pill{font-family:var(--mono);font-size:9.5px;letter-spacing:.4px;padding:2px 7px;border-radius:99px;white-space:nowrap}.pill.sla{background:var(--accent-soft);color:var(--accent-2)}
+  .miniwa{margin-left:auto;color:#1c7a47;border:1px solid rgba(28,122,71,.25);background:rgba(37,211,102,.08);border-radius:6px;padding:4px 8px;font-size:10.5px;font-weight:600;display:inline-flex;gap:5px;align-items:center}
+  /* DIRECTORY */
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}@media(max-width:1040px){.tiles{grid-template-columns:1fr 1fr}}@media(max-width:680px){.tiles{grid-template-columns:1fr}}
+  .tile{display:flex;gap:12px;text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:var(--r10);padding:14px;transition:.13s;position:relative;width:100%}.tile:hover{border-color:var(--border-3)}.tile.soon{cursor:default;opacity:.82}.tile.soon:hover{border-color:var(--border)}
+  .tile .ic{width:36px;height:36px;border-radius:var(--r8);background:var(--surface-3);display:grid;place-items:center;flex:0 0 auto;color:var(--forest)}.tile.soon .ic{color:var(--muted)}.tile .ic svg{width:18px;height:18px}
+  .tile .nm{font-size:13px;font-weight:600;display:flex;align-items:center;gap:7px}.tile .ds{font-size:11.5px;color:var(--muted);margin-top:2px;line-height:1.4}
+  .st{font-family:var(--mono);font-size:8.5px;letter-spacing:.6px;text-transform:uppercase;padding:2px 6px;border-radius:5px;font-weight:600}.st.vivo{background:var(--good-soft);color:var(--good)}.st.beta{background:var(--info-soft);color:var(--info)}.st.soon{background:var(--surface-3);color:var(--muted)}.st.ref{background:var(--warn-soft);color:var(--warn)}
+  .tile .arr{position:absolute;top:14px;right:13px;color:var(--faint);opacity:0;transition:.13s}.tile:hover .arr{opacity:1}
+  /* TOOLBAR + TABS (list views) */
+  .vhead{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}.vhead .greet{font-size:21px}
+  .tabs{display:flex;gap:5px;flex-wrap:wrap;align-items:center}.tab{font-size:11.5px;font-weight:500;color:var(--fg-2);padding:6px 11px;border-radius:99px;border:1px solid transparent;transition:.12s;display:inline-flex;gap:6px;align-items:center}.tab:hover{background:var(--surface-2)}.tab.on{background:var(--forest);color:#f1ece0}.tab .n{font-family:var(--mono);font-size:10px;opacity:.7}
+  .toolbar{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+  /* TABLE */
+  .tbl{background:var(--surface);border:1px solid var(--border);border-radius:var(--r10);overflow:hidden}
+  .tr{display:grid;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid var(--border);transition:.1s}.tr:last-child{border-bottom:none}
+  .tr.head{background:var(--surface-2);font-family:var(--mono);font-size:9.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .tr.body{cursor:pointer}.tr.body:hover{background:var(--surface-2)}
+  .crmgrid{grid-template-columns:1.6fr .9fr .9fr .8fr .7fr 16px}
+  .prosgrid{grid-template-columns:1.7fr 1fr 1.1fr .9fr .8fr 16px}
+  .cell-name{display:flex;align-items:center;gap:10px;min-width:0}.cell-name .av{width:28px;height:28px;border-radius:7px;background:var(--surface-3);color:var(--forest);display:grid;place-items:center;font-size:10.5px;font-weight:600;flex:0 0 auto}
+  .cell-name .nm{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cell-name .sub2{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .badge2{font-family:var(--mono);font-size:9.5px;letter-spacing:.3px;padding:3px 8px;border-radius:6px;white-space:nowrap;display:inline-block}
+  .sg-nuevo{background:var(--info-soft);color:var(--info)}.sg-calificado{background:var(--surface-3);color:var(--fg-2)}.sg-llamada{background:var(--warn-soft);color:var(--warn)}.sg-visita{background:var(--good-soft);color:var(--good)}.sg-loi{background:var(--accent-soft);color:var(--accent-2)}.sg-contrato{background:var(--forest);color:#f1ece0}
+  .ps-por_contactar{background:var(--surface-3);color:var(--muted)}.ps-contactado{background:var(--info-soft);color:var(--info)}.ps-en_conversacion{background:var(--warn-soft);color:var(--warn)}.ps-socio{background:var(--good-soft);color:var(--good)}.ps-descartado{background:var(--surface-3);color:var(--faint)}
+  .val{font-family:var(--mono);font-size:12px;color:var(--forest);font-weight:600}.cellmuted{font-size:12px;color:var(--fg-2)}
+  .conf{font-family:var(--mono);font-size:9px;color:var(--faint);text-transform:uppercase;letter-spacing:.4px}
+  .cticons{display:flex;gap:6px}.ctico{width:26px;height:26px;border-radius:6px;border:1px solid var(--border-2);display:grid;place-items:center;color:var(--fg-2)}.ctico:hover{background:var(--surface-2);color:var(--forest);border-color:var(--border-3)}.ctico.off{opacity:.3;pointer-events:none}.ctico.wa:hover{color:#1c7a47}
+  .emptybig{text-align:center;color:var(--faint);padding:48px;font-size:13px}
+  /* DRAWER */
+  .drawer{position:fixed;top:0;right:0;bottom:0;width:392px;max-width:94vw;background:var(--surface);border-left:1px solid var(--border-2);z-index:60;transform:translateX(100%);transition:transform .22s cubic-bezier(.25,1,.5,1);display:flex;flex-direction:column;box-shadow:-8px 0 30px rgba(20,17,12,.08)}.drawer.open{transform:none}
+  .backdrop{position:fixed;inset:0;background:rgba(20,17,12,.18);z-index:55;opacity:0;pointer-events:none;transition:.2s}.backdrop.open{opacity:1;pointer-events:auto}
+  .dh{display:flex;align-items:flex-start;gap:12px;padding:18px 18px 14px;border-bottom:1px solid var(--border)}.dh .nm{font-size:16px;font-weight:600}.dh .sb2{font-size:11.5px;color:var(--muted);margin-top:2px}.dh .x{margin-left:auto;color:var(--muted)}
+  .db{flex:1;overflow-y:auto;padding:16px 18px}.field{margin-bottom:14px}.field .k{font-family:var(--mono);font-size:9.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--faint);margin-bottom:4px}.field .v{font-size:13px}.field .v a{color:var(--info)}
+  .stagepick{display:flex;gap:5px;flex-wrap:wrap}.stagepick button{font-family:var(--mono);font-size:9.5px;padding:5px 9px;border-radius:6px;border:1px solid var(--border-2);color:var(--fg-2)}.stagepick button.on{border-color:transparent}
+  .dactions{display:flex;gap:8px;flex-wrap:wrap;padding:14px 18px;border-top:1px solid var(--border)}.da{flex:1;min-width:86px;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:11.5px;font-weight:600;padding:10px;border-radius:var(--r8);border:1px solid var(--border-2);color:var(--fg-2);transition:.12s}.da:hover{background:var(--surface-2)}.da.wa{background:rgba(37,211,102,.10);color:#1c7a47;border-color:rgba(28,122,71,.25)}.da.acc{background:var(--forest);color:#f1ece0;border-color:var(--forest)}
+  textarea.notes{width:100%;min-height:70px;background:var(--surface-2);border:1px solid var(--border-2);border-radius:var(--r8);padding:9px 11px;font-size:12.5px;resize:vertical}textarea.notes:focus{outline:none;border-color:var(--border-3)}
+  /* CALENDAR */
+  .calbar{display:flex;align-items:center;gap:10px;margin-bottom:14px}.calbar h3{font-size:16px;font-weight:600;text-transform:capitalize;min-width:170px}.navbtn{width:30px;height:30px;border-radius:var(--r8);border:1px solid var(--border-2);display:grid;place-items:center;color:var(--fg-2)}.navbtn:hover{background:var(--surface-2)}.todaybtn{font-size:11.5px;font-weight:600;padding:7px 12px;border:1px solid var(--border-2);border-radius:var(--r8);color:var(--fg-2)}.todaybtn:hover{background:var(--surface-2)}.callegend{margin-left:auto;display:flex;gap:12px}.callegend span{font-size:10.5px;color:var(--muted);display:flex;align-items:center;gap:5px}
+  .grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r10);overflow:hidden}.gh{background:var(--surface-2);font-family:var(--mono);font-size:9.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);padding:8px 10px;text-align:left}
+  .day{background:var(--surface);min-height:94px;padding:7px 8px;text-align:left;display:flex;flex-direction:column;gap:4px;transition:.1s}.day:hover{background:var(--surface-2)}.day.out{background:var(--surface-2);color:var(--faint)}.day .dn{font-family:var(--mono);font-size:11px;color:var(--fg-2)}.day.today .dn{background:var(--accent);color:#fff;border-radius:50%;width:20px;height:20px;display:grid;place-items:center;font-weight:600}
+  .ev{font-size:10.5px;padding:2px 6px;border-radius:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500;border-left:2px solid}.ev.visita{background:var(--good-soft);color:var(--good);border-color:var(--good)}.ev.llamada{background:var(--info-soft);color:var(--info);border-color:var(--info)}.ev.discovery{background:var(--accent-soft);color:var(--accent-2);border-color:var(--accent)}.ev.entrega{background:var(--warn-soft);color:var(--warn);border-color:var(--warn)}.ev.interno{background:var(--surface-3);color:var(--muted);border-color:var(--border-3)}
+  /* AJUSTES */
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r10);padding:18px 20px;margin-bottom:14px;max-width:720px}.card h4{font-size:13.5px;font-weight:600;margin-bottom:4px}.card p{font-size:12.5px;color:var(--muted);margin-bottom:12px}
+  .inp{width:100%;background:var(--surface-2);border:1px solid var(--border-2);border-radius:var(--r8);padding:10px 12px;font-size:12.5px}.inp:focus{outline:none;border-color:var(--border-3)}.lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;display:block}
+  pre.sql{background:var(--forest-deep);color:#cfe0d2;font-family:var(--mono);font-size:11px;line-height:1.55;padding:14px;border-radius:var(--r8);overflow-x:auto;white-space:pre;margin-top:6px}
+  .primary{background:var(--accent);color:#fff;font-weight:600;font-size:12.5px;padding:11px 18px;border-radius:var(--r8)}.primary:hover{background:var(--accent-2)}.ghost{background:none;border:1px solid var(--border-2);border-radius:var(--r8);padding:11px 16px;font-size:12.5px;color:var(--fg-2)}
+  .soonwrap{max-width:560px;margin:40px auto;text-align:center}.soonic{width:54px;height:54px;border-radius:var(--r12);background:var(--surface);border:1px solid var(--border);display:grid;place-items:center;margin:0 auto 16px;color:var(--forest)}.soonwrap h2{font-family:var(--serif);font-weight:500;font-size:23px}.soonwrap p{color:var(--muted);font-size:13px;margin-top:8px}.openbtn{display:inline-flex;align-items:center;gap:7px;margin-top:18px;background:var(--forest);color:#f1ece0;font-size:12.5px;font-weight:600;padding:11px 18px;border-radius:var(--r8)}
+  /* MODAL */
+  .modal{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(20,17,12,.22)}.modal.open{display:flex}.mbox{width:100%;max-width:420px;background:var(--surface);border:1px solid var(--border-2);border-radius:var(--r12);box-shadow:0 12px 40px rgba(20,17,12,.16);overflow:hidden}.mboxh{display:flex;align-items:center;padding:15px 18px;border-bottom:1px solid var(--border)}.mboxh h3{font-size:14px;font-weight:600}.mboxh .x{margin-left:auto;color:var(--muted)}.mbody{padding:16px 18px;display:flex;flex-direction:column;gap:11px}.seg{display:flex;gap:6px;flex-wrap:wrap}.seg button{font-size:11.5px;padding:7px 11px;border:1px solid var(--border-2);border-radius:var(--r8);color:var(--fg-2)}.seg button.on{background:var(--forest);color:#f1ece0;border-color:var(--forest)}.mfoot{display:flex;gap:8px;padding:14px 18px;border-top:1px solid var(--border)}.mfoot .primary{flex:1}
+  .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--forest-deep);color:#f1ece0;font-size:12.5px;padding:11px 18px;border-radius:99px;z-index:120;opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1}
+  /* icon sizing */
+  .ph svg{width:15px;height:15px}.navitem .ext svg{width:12px;height:12px}.tile .arr svg{width:14px;height:14px}.miniwa svg,.tag svg,.ctico svg{width:13px;height:13px}.qadd svg,.da svg,.openbtn svg,.primary svg{width:14px;height:14px}.search svg{width:15px;height:15px}.navbtn svg,.iconbtn svg,.me button svg{width:16px;height:16px}.kpi .l svg{width:13px;height:13px}.tab svg{width:13px;height:13px}.dmode svg{width:12px;height:12px}
+</style>
+</head>
+<body>
+<div id="login"><div class="lcard"><div class="lmark"><svg width="22" height="22" viewBox="0 0 32 32"><path d="M7 18 L16 10 L25 18 L25 25 L7 25 Z" fill="#f7f0df"/></svg></div><div class="lword">Sora</div><div class="lsub">Casas · Operaciones</div>
+  <input id="pass" type="password" placeholder="Código de acceso" autocomplete="off"><button onclick="doLogin()">Entrar</button><div class="lerr" id="lerr"></div><div class="lhint">Acceso interno del equipo</div></div></div>
+
+<div id="app">
+  <aside>
+    <div class="brand"><div class="bmark"><svg width="17" height="17" viewBox="0 0 32 32"><path d="M7 18 L16 10 L25 18 L25 25 L7 25 Z" fill="#f7f0df"/></svg></div><div class="bword">Sora</div><span class="bsub">Casas</span></div>
+    <nav id="nav"></nav>
+    <div class="me"><div class="avatar">AE</div><div><div class="nm">Abraham Eid</div><div class="rl">Fundador · GM</div></div><button onclick="logout()" title="Salir">__LOGOUT__</button></div>
+  </aside>
+  <main>
+    <div class="topbar"><div class="ttitle" id="ttitle">Inicio</div>
+      <div class="search"><span id="searchIc"></span><input id="search" placeholder="Buscar…" oninput="onSearch(this.value)"><kbd>/</kbd></div>
+      <span class="i18nslot" id="langSlot"></span>
+      <span class="dmode" id="dmode" onclick="route('ajustes')"><span class="d"></span><span id="dmodeT">Local</span></span>
+      <div class="tdate mono" id="tdate"></div>
+      <button class="qadd" onclick="openQuick()">__PLUS__ Nuevo</button>
+      <button class="iconbtn" id="bellBtn" title="Notificaciones">__BELL__</button>
+    </div>
+    <div class="content">
+      <!-- INICIO -->
+      <div class="view show maxw" id="view-inicio">
+        <div class="greet" id="greet">Buenos días, <em>Abraham</em></div><div class="sub" id="greetsub"></div>
+        <div class="kpis" id="kpis"></div>
+        <div class="twoup">
+          <div class="panel"><div class="ph">__CALIC__<h4>Hoy</h4><span class="c" id="todayCount"></span></div><div id="todayList"></div></div>
+          <div class="panel"><div class="ph">__SLAIC__<h4>Responder en menos de 2 h</h4><span class="c" id="slaCount"></span></div><div id="slaList"></div></div>
+        </div>
+        <div class="secth"><h3>Directorio de herramientas</h3><div class="ln"></div></div>
+        <div id="directory"></div>
+      </div>
+      <!-- CRM (list) -->
+      <div class="view" id="view-crm">
+        <div class="vhead"><div class="greet">Leads</div><div class="sub" id="crmsub"></div><button class="qadd" style="margin-left:auto" onclick="openQuick('lead')">__PLUS__ Nuevo lead</button></div>
+        <div class="toolbar"><div class="tabs" id="crmTabs"></div></div>
+        <div id="crmTable"></div>
+      </div>
+      <!-- PROSPECTOS (list) -->
+      <div class="view" id="view-prospectos">
+        <div class="vhead"><div class="greet">Prospectos</div><div class="sub" id="prosSub"></div><button class="qadd" style="margin-left:auto" onclick="openQuick('prospect')">__PLUS__ Agregar</button></div>
+        <div class="toolbar"><div class="tabs" id="prosTabs"></div></div>
+        <div id="prosTable"></div>
+      </div>
+      <!-- CALENDARIO -->
+      <div class="view maxw" id="view-calendario">
+        <div class="calbar"><button class="navbtn" onclick="calMove(-1)">__CHL__</button><h3 id="calTitle"></h3><button class="navbtn" onclick="calMove(1)">__CHR__</button><button class="todaybtn" onclick="calToday()">Hoy</button>
+          <div class="callegend"><span><span class="dot" style="background:var(--good)"></span>Visita</span><span><span class="dot" style="background:var(--info)"></span>Llamada</span><span><span class="dot" style="background:var(--accent)"></span>Discovery</span><span><span class="dot" style="background:var(--warn)"></span>Entrega</span></div></div>
+        <div class="grid7" id="cal"></div>
+      </div>
+      <!-- AJUSTES -->
+      <div class="view maxw" id="view-ajustes"><div class="greet" style="font-size:21px;margin-bottom:14px">Ajustes</div><div id="ajustesBody"></div></div>
+      <!-- SOON -->
+      <div class="view" id="view-soon"><div class="soonwrap" id="soonInner"></div></div>
+    </div>
+  </main>
+</div>
+
+<div class="backdrop" id="backdrop" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer"></div>
+<div class="modal" id="modal"></div>
+<div class="toast" id="toast"></div>
+
+<script src="leads.js"></script>
+<script>
+/* ===== ICONS ===== */
+const I={home:'<path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1Z"/>',users:'<circle cx="9" cy="8" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6"/><path d="M17 14.2A5.5 5.5 0 0 1 20.5 19"/>',target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/>',calendar:'<rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/>',chart:'<path d="M4 20V10M9.5 20V5M15 20v-7M20.5 20V8"/>',cube:'<path d="M12 2.6 21 7.5v9L12 21.4 3 16.5v-9Z"/><path d="M3 7.5 12 12l9-4.5M12 12v9.4"/>',funnel:'<path d="M3 4.5h18l-7 8v6l-4 2v-8Z"/>',map:'<path d="M9 3 3 5.5v16L9 19l6 2.5 6-2.5v-16L15 5.5 9 3Zm0 0v16m6-13.5v16"/>',hammer:'<path d="M14 6l4 4M11.5 8.5 4 16v4h4l7.5-7.5M13 7l4-4 4 4-4 4Z"/>',list:'<path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/>',doc:'<path d="M6 2.5h8l5 5V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1Z"/><path d="M14 2.5v5h5M9 13h6M9 17h6"/>',passport:'<rect x="5" y="2.5" width="14" height="19" rx="2"/><circle cx="12" cy="9.5" r="3"/><path d="M9 16.5h6"/>',community:'<path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M5 21a7 7 0 0 1 14 0"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/>',globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/>',handshake:'<path d="m12 11 2-2 4 3.5M3 8l4-2 5 5-2 2-3-2.5M21 8l-4-2-3 2M3 8v6l4 3M21 8v6l-4 3"/>',phone:'<path d="M6 3.5h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5.5a2 2 0 0 1 2-2Z"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/>',wa:'<path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z"/><path d="M8.5 8.5c0 4 3 7 7 7 .8 0 1.2-1 .8-1.6l-1.5-1-1.2 1c-1.3-.6-2.4-1.7-3-3l1-1.2-1-1.5c-.6-.4-1.6 0-1.6.8Z" fill="currentColor" stroke="none"/>',search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',plus:'<path d="M12 5v14M5 12h14"/>',bell:'<path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 19a2 2 0 0 0 4 0"/>',chl:'<path d="M15 5l-7 7 7 7"/>',chr:'<path d="M9 5l7 7-7 7"/>',logout:'<path d="M9 21H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4M16 16l4-4-4-4M20 12H9"/>',x:'<path d="M6 6l12 12M18 6 6 18"/>',box:'<path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5Z"/><path d="M3 7.5 12 12l9-4.5"/>',ext:'<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M5 5l2 2M17 17l2 2M2 12h3M19 12h3M5 19l2-2M17 7l2-2"/>',link:'<path d="M9 14a4 4 0 0 1 0-5.5l2-2a4 4 0 0 1 6 6l-1 1M15 10a4 4 0 0 1 0 5.5l-2 2a4 4 0 0 1-6-6l1-1"/>'};
+function ic(n,cls){return `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="${cls||''}">${I[n]||''}</svg>`}
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2200)}
+
+/* ===== SUPABASE / DATA LAYER ===== */
+let SUPA=(()=>{try{return JSON.parse(localStorage.getItem('sora.supa')||'null')}catch(_){return null}})();
+let sb=null,MODE='local';
+function connectSupa(){if(SUPA&&SUPA.url&&SUPA.anon&&window.supabase){try{sb=window.supabase.createClient(SUPA.url,SUPA.anon);MODE='supabase';}catch(e){sb=null;MODE='local';}}}
+function lsGet(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(_){return d}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(_){}}
+const KEYMAP={prospects:'sora.prospects',events:'sora.cal',crm:'sora.crm',manual:'sora.manualLeads'};
+const DB={
+  async load(){
+    if(sb){try{const{data,error}=await sb.from('sora_state').select('id,payload');if(error)throw error;const m={};(data||[]).forEach(r=>m[r.id]=r.payload);return m;}catch(e){console.warn('Supabase load falló, modo local:',e.message);MODE='local';sb=null;}}
+    return {prospects:lsGet(KEYMAP.prospects,null),events:lsGet(KEYMAP.events,null),crm:lsGet(KEYMAP.crm,{}),manual:lsGet(KEYMAP.manual,[])};
+  },
+  async save(id,payload){lsSet(KEYMAP[id],payload);if(sb){try{await sb.from('sora_state').upsert({id,payload,updated_at:new Date().toISOString()});}catch(e){console.warn('Supabase save falló:',e.message);}}}
+};
+
+/* ===== STATIC DATA ===== */
+const TOOLS=[
+ {grp:'Ventas & Clientes',items:[{ic:'users',nm:'CRM · Leads',ds:'Lista de leads de nuevo a contrato. Lee lo que capturan los embudos.',st:'vivo',go:'crm'},{ic:'target',nm:'Prospectos',ds:'Socios y canales verificados para outbound (tours, medios, brokers, asociaciones).',st:'vivo',go:'prospectos'},{ic:'calendar',nm:'Calendario',ds:'Citas, visitas, Discovery Weekends y entregas.',st:'vivo',go:'calendario'},{ic:'phone',nm:'Discovery Weekend',ds:'Solicitudes del fin de semana de descubrimiento.',st:'vivo',ext:'discovery.html'}]},
+ {grp:'Marketing & Crecimiento',items:[{ic:'chart',nm:'Centro de Marketing',ds:'Hub de marketing: tráfico, fuentes, métricas.',st:'vivo',ext:'marketing.html'},{ic:'doc',nm:'Guía de Pauta',ds:'Cómo funciona la pauta para este negocio + anuncios listos.',st:'vivo',ext:'marketing-paid-ads.html'},{ic:'globe',nm:'Backlinks',ds:'Link building white-hat, ejecutable esta semana.',st:'vivo',ext:'marketing-backlinks.html'},{ic:'target',nm:'Inteligencia Competitiva',ds:'Brokers de Panamá: listings, equipos, SEO, funnels y nivel de amenaza. Se actualiza cada trimestre.',st:'vivo',ext:'competitive-intel.html'},{ic:'community',nm:'YouTube · Creadores',ds:'Roster de creadores Panamá + pitches de referido.',st:'vivo',ext:'marketing-youtube.html'},{ic:'cube',nm:'Configurador 3D',ds:'Diseña la casa en 3D con precio en vivo.',st:'vivo',ext:'disena-3d.html'},{ic:'funnel',nm:'Embudos',ds:'QIV, Guía de costos y Discovery.',st:'vivo',go:'embudos'},{ic:'globe',nm:'Base de Canales',ds:'FB, subreddits, YouTube, newsletters, podcasts.',st:'ref',ext:'mercados.html'}]},
+ {grp:'Producto & Tierras',items:[{ic:'map',nm:'Banco de Tierras',ds:'Lotes, dueños, opciones, expiraciones.',st:'vivo',ext:'sora-casas-land.html'},{ic:'list',nm:'Listados / Inventario',ds:'Inventario curado + feed MLS ACOBIR.',st:'soon'}]},
+ {grp:'Construcción · Playbook',items:[{ic:'list',nm:'Build Playbook',ds:'Resumen y puerta de entrada a todo el playbook de construcción.',st:'vivo',ext:'build-playbook.html'},{ic:'doc',nm:'Guía del Novato',ds:'La guía narrativa de principio a fin para un completo principiante, con visuales. Empieza aquí.',st:'vivo',ext:'build-guide.html'},{ic:'hammer',nm:'Proceso & Cronograma',ds:'Cada etapa del build, con tiempos, descripciones y % de costo.',st:'vivo',ext:'build-process.html'},{ic:'box',nm:'Materiales & Acabados',ds:'Materiales por nivel (Esencial/Sora/Firma), sourcing y qué resaltar.',st:'vivo',ext:'build-materials.html'},{ic:'chart',nm:'Costos & Presupuesto',ds:'Cómo se arma el precio llave en mano: $/m² por nivel y región, costos blandos, ejemplos.',st:'vivo',ext:'build-costs.html'},{ic:'doc',nm:'Arquitectura & Permisos',ds:'Diseño, idóneos, SPIA, MIVIOT, estudio de suelos, ocupación.',st:'vivo',ext:'build-architecture.html'},{ic:'handshake',nm:'Contratista & Equipo',ds:'Cómo sourcing y vetear al GC y su equipo, contrato, pagos por hito, banderas rojas.',st:'vivo',ext:'build-team.html'},{ic:'cube',nm:'Configurador 3D · Research',ds:'Pipeline glb, materiales y UX del configurador.',st:'vivo',ext:'3d-configurator-research.html'},{ic:'hammer',nm:'Construcciones (tracker)',ds:'Builds activos, % avance, pagos por hito.',st:'soon'},{ic:'box',nm:'Modelos & BOMs',ds:'Casa Bahía + Montaña, 3 niveles.',st:'soon'}]},
+ {grp:'Suministro & Inventario',items:[{ic:'list',nm:'Adquisición de Listings',ds:'Cómo se consiguen listings en Panamá (ACOBIR, MLS, IDX, FSBO, ROP) + playbook de 90 días.',st:'vivo',ext:'supply-listings.html'}]},
+ {grp:'Legal & Cierre',items:[{ic:'doc',nm:'Contratos & Docs',ds:'Opción de terreno, contrato precio fijo, LOI.',st:'soon'},{ic:'passport',nm:'Visas FNV / QIV',ds:'Trámites migratorios en paralelo a la obra.',st:'soon'},{ic:'handshake',nm:'Escrow & Pagos',ds:'Plica del abogado y pagos por hito.',st:'soon'}]},
+ {grp:'Investigación',items:[{ic:'globe',nm:'Mercados',ds:'Datos por mercado: Pedasí, Boquete, Volcán, Bocas.',st:'vivo',ext:'mercados.html'},{ic:'handshake',nm:'Socios / Brokers',ds:'ACOBIR, co-broke, KW, incumbentes.',st:'vivo',ext:'socios.html'},{ic:'gear',nm:'Ajustes',ds:'Backend compartido (Supabase), datos y respaldo.',st:'vivo',go:'ajustes'}]},
+];
+const NAV=[
+ {g:'Principal',items:[{ic:'home',nm:'Inicio',go:'inicio'}]},
+ {g:'Ventas',items:[{ic:'users',nm:'CRM · Leads',go:'crm'},{ic:'target',nm:'Prospectos',go:'prospectos'},{ic:'calendar',nm:'Calendario',go:'calendario'},{ic:'phone',nm:'Discovery',ext:'discovery.html'}]},
+ {g:'Marketing',items:[{ic:'chart',nm:'Centro de Marketing',ext:'marketing.html'},{ic:'doc',nm:'Guía de Pauta',ext:'marketing-paid-ads.html'},{ic:'globe',nm:'Backlinks',ext:'marketing-backlinks.html'},{ic:'target',nm:'Inteligencia Competitiva',ext:'competitive-intel.html'},{ic:'community',nm:'YouTube · Creadores',ext:'marketing-youtube.html'},{ic:'cube',nm:'Configurador 3D',ext:'disena-3d.html'},{ic:'funnel',nm:'Embudos',go:'embudos'}]},
+ {g:'Producto',items:[{ic:'map',nm:'Banco de Tierras',ext:'sora-casas-land.html'},{ic:'list',nm:'Listados',soon:1}]},
+ {g:'Construcción',items:[{ic:'list',nm:'Build Playbook',ext:'build-playbook.html'},{ic:'doc',nm:'Guía del Novato',ext:'build-guide.html'},{ic:'hammer',nm:'Proceso & Cronograma',ext:'build-process.html'},{ic:'box',nm:'Materiales & Acabados',ext:'build-materials.html'},{ic:'chart',nm:'Costos & Presupuesto',ext:'build-costs.html'},{ic:'doc',nm:'Arquitectura & Permisos',ext:'build-architecture.html'},{ic:'handshake',nm:'Contratista & Equipo',ext:'build-team.html'},{ic:'cube',nm:'Configurador 3D · Research',ext:'3d-configurator-research.html'},{ic:'hammer',nm:'Construcciones',soon:1},{ic:'box',nm:'Modelos & BOMs',soon:1}]},
+ {g:'Suministro',items:[{ic:'list',nm:'Adquisición de Listings',ext:'supply-listings.html'}]},
+ {g:'Legal',items:[{ic:'doc',nm:'Documentos',soon:1},{ic:'passport',nm:'Visas FNV/QIV',soon:1}]},
+ {g:'Más',items:[{ic:'community',nm:'Comunidad',soon:1},{ic:'globe',nm:'Mercados',ext:'mercados.html'},{ic:'handshake',nm:'Socios',ext:'socios.html'},{ic:'gear',nm:'Ajustes',go:'ajustes'}]},
+];
+const STAGES=[{id:'nuevo',nm:'Nuevo'},{id:'calificado',nm:'Calificado'},{id:'llamada',nm:'Llamada'},{id:'visita',nm:'Visita'},{id:'loi',nm:'LOI'},{id:'contrato',nm:'Contrato'}];
+const PERSONAS={A:'Jubilado FIRE',B:'Familia surfer',C:'Diversificador UE',D:'Plan-B',E:'LatAm'};
+function daysAgo(d){return new Date(Date.now()-d*864e5).toISOString()}
+const SEED_LEADS=[
+ {name:'Jim & Lisa Carter',source:'paid_meta',market:'Boquete',price:385000,persona:'A',stage:'visita',ts:daysAgo(9),whatsapp:'15551234',config:'Casa Montaña / Sora / 220m²'},
+ {name:'Sam & Jules Ortega',source:'seo',market:'Pedasí',price:470000,persona:'B',stage:'llamada',ts:daysAgo(4),config:'Casa Bahía / Firma / 200m²'},
+ {name:'Charles Whitfield',source:'newsletter_IL',market:'Boquete',price:520000,persona:'C',stage:'calificado',ts:daysAgo(2),config:'Casa Montaña / Firma'},
+ {name:'Marcus Feld',source:'paid_google',market:'Pedasí',price:305000,persona:'D',stage:'nuevo',ts:daysAgo(0.03),config:'Casa Bahía / Sora / 180m²'},
+ {name:'Carolina & Andrés',source:'referral_homeowner',market:'Volcán',price:340000,persona:'E',stage:'loi',ts:daysAgo(16),config:'Casa Montaña / Sora'},
+ {name:'Diane Kowalski',source:'partner_prt',market:'Boquete',price:299000,persona:'A',stage:'nuevo',ts:daysAgo(0.06),config:'Casa Bahía / Esencial'},
+ {name:'The Reyes Family',source:'sora_travel',market:'Pedasí',price:430000,persona:'E',stage:'contrato',ts:daysAgo(28),config:'Casa Bahía / Firma'},
+ {name:'Tom & Beth N.',source:'conference',market:'Bocas del Toro',price:360000,persona:'A',stage:'calificado',ts:daysAgo(6),config:'Casa Bahía / Sora'},
+];
+/* ===== VERIFIED BD PROSPECTS (public business contacts, checked Jun 20 2026) ===== */
+const PCATS=['Tours & Relocación','Medios & Audiencias','Brokerages (co-broke)','Referidos US','Asociación & MLS','Legal & Proveedores','Conferencias','Expansión LATAM'];
+const PROSPECT_SEED=[
+ {id:'p01',company:'Panama Relocation Tours',person:'Jackie Lange',cat:'Tours & Relocación',web:'panamarelocationtours.com',email:'',phone:'+1 972-496-4500',wa:'',loc:'Boquete, PA',prio:'alta',conf:'alta',why:'El mayor embudo de jubilados FIRE (300+ tours). Socio de referido — Sora como parada de tour.',src:'Tel verificado en sitio oficial; sin email público (formulario).'},
+ {id:'p02',company:'Retire in Panama Tours',person:'Oscar / Megan / Rod',cat:'Tours & Relocación',web:'retireinpanamatours.com',email:'',phone:'+507 6257-1832',wa:'50762571832',loc:'Boquete, PA',prio:'alta',conf:'alta',why:'Tours boutique enfocados en Boquete/Chiriquí. Referido / co-marketing.',src:'Tels PA/US/CA verificados; sin email público.'},
+ {id:'p03',company:'DoPanama',person:'Nalini Navarro',cat:'Tours & Relocación',web:'dopanama.com',email:'info@dopanama.com',phone:'+507 6443-3341',wa:'50764433341',loc:'Ciudad de Panamá',prio:'media',conf:'alta',why:'RE licenciada + relocación; co-broke posible (también competidor).',src:'Email y tel en sitio oficial.'},
+ {id:'p04',company:'International Living',person:'Advertising Manager',cat:'Medios & Audiencias',web:'internationalliving.com',email:'advertising@internationalliving.com',phone:'+1 800-681-2402',wa:'',loc:'Irlanda / Baltimore',prio:'alta',conf:'alta',why:'Editor insignia de retiro en el exterior; primera colocación pagada con números reales.',src:'Email de publicidad verificado en /advertise-with-us.'},
+ {id:'p05',company:'Live and Invest Overseas',person:'Conference & Events',cat:'Conferencias',web:'liveandinvestoverseas.com',email:'PanamaConference@LiveandInvestOverseas.com',phone:'+1 888-627-8834',wa:'',loc:'Ciudad de Panamá',prio:'alta',conf:'alta',why:'Sede en Panamá; organiza la conferencia Live & Invest in Panama. Patrocinio/booth.',src:'Email de conferencia verificado; advertise@ por confirmar.'},
+ {id:'p06',company:'Real Estate Trend Alert (RETA)',person:'Ronan McMahon',cat:'Medios & Audiencias',web:'retapartners.com',email:'',phone:'',wa:'',loc:'Irlanda',prio:'alta',conf:'media',why:'50,000 miembros con efectivo (PN ~$3.6M). Coloca proyectos vía "schedule a call".',src:'Solo formulario; re-verificar retapartners.com antes de contactar.'},
+ {id:'p07',company:'Nomad Capitalist',person:'Andrew Henderson',cat:'Medios & Audiencias',web:'nomadcapitalist.com',email:'',phone:'+1 979-966-6623',wa:'',loc:'Remoto',prio:'media',conf:'alta',why:'Audiencia HNW Plan-B (1.1M YT). Formulario de vendors para alianzas.',src:'Tel verificado; usar formulario de vendors (sin email público).'},
+ {id:'p08',company:'The Expat Money Show',person:'Mikkel Thorup',cat:'Medios & Audiencias',web:'expatmoney.com',email:'support@expatmoney.com',phone:'+1 888-833-9728',wa:'',loc:'Chipre',prio:'alta',conf:'alta',why:'Podcast + newsletter 99K, host residente de Panamá. Patrocinio/episodio.',src:'Email y tel verificados en /contact.'},
+ {id:'p09',company:'Schiff Sovereign',person:'James Hickman',cat:'Medios & Audiencias',web:'schiffsovereign.com',email:'admin@schiffsovereign.com',phone:'',wa:'',loc:'Puerto Rico',prio:'media',conf:'alta',why:'Lectores HNW offshore/Plan-B. Newsletter patrocinado/afiliado.',src:'Email verificado en /contact.'},
+ {id:'p10',company:'Casa Solution',person:'',cat:'Brokerages (co-broke)',web:'casasolution.com',email:'info@casasolution.com',phone:'+507 720-1331',wa:'50766116049',loc:'Boquete, PA',prio:'alta',conf:'alta',why:'2,500+ listados nacional; co-broke + sindicación de listados.',src:'Tels en sitio; email ofuscado pero corroborado.'},
+ {id:'p11',company:'Panama Equity',person:'Lisa',cat:'Brokerages (co-broke)',web:'panamaequity.com',email:'lisa@panamaequity.com',phone:'+507 320-4310',wa:'',loc:'Panamá (Obarrio)',prio:'alta',conf:'alta',why:'La marca a vencer; co-broke premium PTY/Pedasí/Bocas.',src:'Email y tels en /contact-us.'},
+ {id:'p12',company:'Panama Sovereign Realty',person:'',cat:'Brokerages (co-broke)',web:'panamasovereign.com',email:'info@panamasovereign.com',phone:'+507 6619-6669',wa:'50766196669',loc:'Pedasí, PA',prio:'alta',conf:'media',why:'Especialista Pedasí/Azuero; embudo US/Canadá. Co-broke playa.',src:'WhatsApp verificado; email enmascarado (confirmar live).'},
+ {id:'p13',company:'Inside Panama Real Estate',person:'',cat:'Brokerages (co-broke)',web:'insidepanamarealestate.com',email:'info@insidepanamarealestate.com',phone:'+507 730-8301',wa:'50766312008',loc:'Boquete / Bocas',prio:'media',conf:'alta',why:'Multilingüe, miembro MLS; co-broke Boquete + Bocas.',src:'Email y tels verificados.'},
+ {id:'p14',company:'Boquete Panama Real Estate',person:'Ryan',cat:'Brokerages (co-broke)',web:'boquetepanamarealestate.com',email:'Boquetepanamarealestate1@gmail.com',phone:'+507 6528-0723',wa:'50765280723',loc:'Boquete, PA',prio:'media',conf:'alta',why:'Equipo licenciado Chiriquí; co-broke Boquete.',src:'Email/WhatsApp en homepage.'},
+ {id:'p15',company:'Island Realty Panama',person:'',cat:'Brokerages (co-broke)',web:'islandrealtypanama.com',email:'info@islandrealtypanama.com',phone:'+1 321-334-4030',wa:'',loc:'Bocas del Toro',prio:'media',conf:'alta',why:'Incumbente de Bocas (1994); co-broke isla/playa.',src:'Email/tel US en sitio; el +507 que circula NO es oficial.'},
+ {id:'p16',company:'Open Doors Panama',person:'Alejandro Porras',cat:'Brokerages (co-broke)',web:'opendoorspanama.com',email:'',phone:'+507 6675-0828',wa:'50766750828',loc:'Pedasí, PA',prio:'media',conf:'alta',why:'Brokerage lujo Pedasí/Venao; co-broke Azuero.',src:'Tels de agentes verificados; sin email público.'},
+ {id:'p17',company:'Keller Williams Panama',person:'',cat:'Brokerages (co-broke)',web:'panama.kw.com',email:'',phone:'',wa:'',loc:'Ciudad de Panamá',prio:'media',conf:'media',why:'Franquicia global; red de referidos + sistemas.',src:'Solo formulario; sin email/tel público.'},
+ {id:'p18',company:'ACOBIR',person:'',cat:'Asociación & MLS',web:'acobir.com',email:'info@acobir.com',phone:'+507 228-7840',wa:'',loc:'Ciudad de Panamá',prio:'alta',conf:'alta',why:'Asociación nacional (1973). Membresía = MLS + credibilidad. No opcional.',src:'Email y tels en /contact-us.'},
+ {id:'p19',company:'MLS ACOBIR',person:'',cat:'Asociación & MLS',web:'mlsacobir.com',email:'info@acobir.com',phone:'+507 228-7840',wa:'',loc:'Ciudad de Panamá',prio:'alta',conf:'alta',why:'MLS oficial (400+ agentes). Acceso vía membresía ACOBIR.',src:'Sin contacto separado; vía ACOBIR.'},
+ {id:'p20',company:'Kraemer & Kraemer',person:'',cat:'Legal & Proveedores',web:'kraemerlaw.com',email:'info@kraemerlaw.com',phone:'+507 310-8688',wa:'',loc:'Panamá / Boquete / Bocas',prio:'alta',conf:'alta',why:'Derecho inmobiliario + migratorio en los mercados de Sora. Cierre/título + FNV/QIV.',src:'Email y tels (incl. Boquete +507 720-6727) en /contact-us.'},
+ {id:'p21',company:'Quijano & Associates',person:'',cat:'Legal & Proveedores',web:'quijano.com',email:'quijano@quijano.com',phone:'+507 269-2641',wa:'',loc:'Ciudad de Panamá',prio:'media',conf:'alta',why:'Firma corporativa (1959); estructura de entidad/fideicomiso/holding.',src:'Email y tel en /contact-us.'},
+ {id:'p22',company:'Dwellito',person:'',cat:'Legal & Proveedores',web:'dwellito.com',email:'',phone:'',wa:'',loc:'California, US',prio:'media',conf:'media',why:'Configurador 3D / prefab — inspiración o white-label para el UX del configurador.',src:'Solo formulario; sin email público (no usar patrones adivinados).'},
+ {id:'p23',company:'Cedreo',person:'',cat:'Legal & Proveedores',web:'cedreo.com',email:'',phone:'',wa:'',loc:'Francia / Atlanta',prio:'media',conf:'media',why:'Software 3D de diseño — visualización de listados.',src:'Solo demo/formulario; sin email público.'},
+ {id:'p24',company:'CAPAC Expo Hábitat',person:'',cat:'Conferencias',web:'capacexpo.com',email:'informacion@capac.org',phone:'+507 265-2500',wa:'',loc:'Ciudad de Panamá',prio:'media',conf:'alta',why:'Mayor feria de construcción/vivienda de Panamá (24-27 sep 2026). Exhibir/patrocinar.',src:'Email y tels verificados; usar informacion@ (no ferias@).'},
+ {id:'p25',company:'Invest Panama Summit (Chord)',person:'Steve Luther',cat:'Conferencias',web:'chordrealestate.com',email:'RSVP@CHORDrealestate.com',phone:'+1 615-988-1001',wa:'',loc:'Nashville / Panamá',prio:'media',conf:'media',why:'Cumbre de inversores US (competidor). Mejor como JV/intel que como booth.',src:'Tel verificado; email enmascarado (confirmar live).'},
+ {id:'p26',company:'Mexico Relocation Guide',person:'Mariana Lange',cat:'Expansión LATAM',web:'mexicorelocationguide.com',email:'',phone:'',wa:'',loc:'México / US',prio:'media',conf:'alta',why:'Audiencia de mudanza a México (expansión #2). Solo formulario/redes.',src:'Verificado: sin email/tel público.'},
+ {id:'p27',company:'ARCR Costa Rica',person:'',cat:'Expansión LATAM',web:'arcr.cr',email:'info@arcr.cr',phone:'+506 4052-4052',wa:'50689352444',loc:'San José, CR',prio:'media',conf:'alta',why:'Asociación de residentes de Costa Rica (expansión #3). Seminarios/membresía.',src:'Tels/WhatsApp verificados; email enmascarado (confirmar live).'},
+ {id:'p28',company:'The Tico Times',person:'David Schmidt',cat:'Expansión LATAM',web:'ticotimes.net',email:'david@ticotimes.net',phone:'+506 7091-6502',wa:'50670916502',loc:'San José, CR',prio:'media',conf:'alta',why:'Medio inglés líder de CR; banners/advertorials.',src:'Email de publicidad y WhatsApp verificados.'},
+ // ===== U.S. lead-source partners (verified Jun 20 2026, see 14-us-lead-partners.md) =====
+ {id:'p29',company:'StartAbroad',person:'',cat:'Referidos US',web:'startabroad.com',email:'info@startabroad.com',phone:'+1 202-918-3118',wa:'12029183118',loc:'Arlington, VA',prio:'alta',conf:'alta',why:'Concierge que mueve ~500 estadounidenses/año hacia Panamá. El pipeline más cálido; comisión por referido. LLAMAR PRIMERO.',src:'Email y tel verificados en /contact y página de Panamá.'},
+ {id:'p30',company:'NAR · CIPS / Global',person:'',cat:'Referidos US',web:'nar.realtor/global',email:'narglobe@nar.realtor',phone:'+1 800-874-6500',wa:'',loc:'Chicago, IL',prio:'alta',conf:'alta',why:'Puerta a ~1,500 agentes de EE.UU. certificados para referir compradores internacionales.',src:'Email y tel en /global + CIPS.'},
+ {id:'p31',company:'eXp Global',person:'',cat:'Referidos US',web:'exprealty.international',email:'info@exprealty.com',phone:'+1 833-303-0610',wa:'',loc:'Bellingham, WA',prio:'alta',conf:'media',why:'Corretaje en 25+ países; referidos a nivel de agente + co-marketing.',src:'Email/tel verificados; confirmar formulario internacional en vivo.'},
+ {id:'p32',company:'RE/MAX Global',person:'',cat:'Referidos US',web:'remax.com',email:'mediarelations@remax.com',phone:'+1 800-525-7452',wa:'',loc:'Denver, CO',prio:'media',conf:'alta',why:'MAXRefer + 110+ países. Referidos de agente + booth R4 (plataforma solo para afiliados).',src:'Email en /press-contacts.'},
+ {id:'p33',company:'LeadingRE',person:'',cat:'Referidos US',web:'leadingre.com',email:'',phone:'+1 312-424-0400',wa:'',loc:'Chicago, IL',prio:'alta',conf:'media',why:'Red de lujo por invitación; 30-40k referidos transfronterizos/año, clientes HNW.',src:'Tel verificado; sin email público (formulario).'},
+ {id:'p34',company:'Taxes for Expats (TFX)',person:'',cat:'Referidos US',web:'taxesforexpats.com',email:'success@tfx.tax',phone:'+1 646-397-2887',wa:'',loc:'New York, NY',prio:'alta',conf:'alta',why:'Tiene programa de afiliados (raro); toda su cartera son estadounidenses mudándose.',src:'Email y tel en /contact.html.'},
+ {id:'p35',company:'Walkner Condon',person:'',cat:'Referidos US',web:'walknercondon.com',email:'info@walknercondon.com',phone:'+1 608-234-4127',wa:'',loc:'Verona, WI',prio:'alta',conf:'alta',why:'Asesor fiduciario con práctica expat (RIA: co-marketing, no comisión).',src:'Email y tel en /contact-us.'},
+ {id:'p36',company:'Bright!Tax',person:'',cat:'Referidos US',web:'brighttax.com',email:'hello@brighttax.com',phone:'',wa:'',loc:'New York, NY',prio:'media',conf:'media',why:'Impuestos expat de EE.UU.; clientes recién reubicados. Co-marketing/afiliado.',src:'Email en /contact. OJO: el tel que circula NO está en el sitio, no usar.'},
+ {id:'p37',company:'Greenback Expat Tax',person:'',cat:'Referidos US',web:'greenbacktaxservices.com',email:'',phone:'+1 888-362-5032',wa:'',loc:'Grandville, MI',prio:'media',conf:'alta',why:'Preparación de impuestos expat; gran cartera de reubicados.',src:'Tel en /contact; email info@ sin confirmar.'},
+ {id:'p38',company:'AARP Media',person:'',cat:'Medios & Audiencias',web:'advertise.aarp.org',email:'ReachARep@aarp.org',phone:'+1 646-521-2500',wa:'',loc:'New York, NY',prio:'alta',conf:'alta',why:'Mayor organización 50+ de EE.UU.; ya publica retiro en Boquete. Contenido nativo BrandAmp (alcance masivo, premium).',src:'Email y tel en /contact. Usar ReachARep@, NO advertise@.'},
+ {id:'p39',company:'Escape Artist',person:'',cat:'Medios & Audiencias',web:'escapeartist.com',email:'editors@escapeartist.com',phone:'',wa:'',loc:'EE.UU.',prio:'alta',conf:'alta',why:'Revista de vida internacional 100k+ subs; cortejan anunciantes de RE internacional.',src:'Email en /contact + formulario de publicidad.'},
+ {id:'p40',company:'Best Places in the World to Retire',person:'',cat:'Medios & Audiencias',web:'bestplacesintheworldtoretire.com',email:'ContactUs@bestplacesintheworldtoretire.com',phone:'+1 520-940-0481',wa:'',loc:'EE.UU.',prio:'alta',conf:'alta',why:'Comunidad Q&A con fuerte contenido de Panamá. Marketplace + Q&A (marca anti-publicidad, contenido educativo).',src:'3 emails + tel en /about.'},
+ {id:'p41',company:'ExpatsEverywhere',person:'Josh & Kalie',cat:'Medios & Audiencias',web:'expatseverywhere.com',email:'info@expatseverywhere.com',phone:'',wa:'',loc:'(remoto)',prio:'media',conf:'alta',why:'YouTube de expats (~77k) con contenido de Panamá; patrocinar un video "construir en Panamá".',src:'Email en /contact.'},
+ {id:'p42',company:'Sarah Elena · RelocateNow',person:'Sarah Elena Bogan',cat:'Medios & Audiencias',web:'relocatenowpanama.com',email:'sarah@lasarahelena.com',phone:'',wa:'',loc:'Costa Rica / Panamá',prio:'media',conf:'alta',why:'Creadora con brazo de reubicación en Costa Rica Y Panamá; complemento natural de referido.',src:'Email en su sitio.'},
+ {id:'p43',company:'Expat.com · Foro Panamá',person:'',cat:'Medios & Audiencias',web:'expat.com',email:'',phone:'',wa:'',loc:'(global)',prio:'alta',conf:'alta',why:'Camino de pago limpio: Directorio de Negocios + banner desde ~$500. Sin riesgo de baneo.',src:'Reglas de publicidad verificadas en /advertisement.'},
+ {id:'p44',company:'US Expats in Panama (grupo FB)',person:'',cat:'Medios & Audiencias',web:'facebook.com',email:'',phone:'',wa:'',loc:'Panamá (FB)',prio:'alta',conf:'media',why:'Grupo FB ~16,500, el de más rápido crecimiento; abierto a reubicación/inversión. Contacto vía admin.',src:'Conteo de PR (sep 2025); URL exacta por confirmar.'},
+ {id:'p45',company:'Panama Properties (Ken Norton)',person:'Ken Norton',cat:'Brokerages (co-broke)',web:'panama-properties.com',email:'',phone:'+507 6169-2453',wa:'50761692453',loc:'Pedasí, PA',prio:'media',conf:'alta',why:'El mejor creador/broker de Pedasí/Azuero. Colaboración "compra lote + construye con Sora".',src:'WhatsApp y licencia verificados; sin email (no adivinar).'},
+];
+const PSTATUS=[{id:'por_contactar',nm:'Por contactar'},{id:'contactado',nm:'Contactado'},{id:'en_conversacion',nm:'En conversación'},{id:'socio',nm:'Socio'},{id:'descartado',nm:'Descartado'}];
+
+/* ===== STATE ===== */
+let LEADS=[],PROSPECTS=[],EVENTS=[],CRMO={},MANUAL=[];
+let lang='es';
+const money=n=>n?'$'+Math.round(n).toLocaleString('en-US'):'—';
+const SRC={paid_meta:'Meta',paid_google:'Google',seo:'SEO',newsletter_IL:'Int. Living',referral_homeowner:'Referido',partner_prt:'PRT',sora_travel:'Sora Travel',conference:'Conferencia',configurador:'Configurador',configurador_3d:'Config. 3D',configurador_3d_whatsapp:'Config. WA'};
+const srcLabel=s=>SRC[s]||s;
+function ago(ts){const m=(Date.now()-new Date(ts))/6e4;if(m<60)return Math.max(1,Math.round(m))+'m';const h=m/60;if(h<24)return Math.round(h)+'h';return Math.round(h/24)+'d'}
+function initials(n){return (n||'?').split(/[ &]+/).filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase()}
+function ymd(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+const DOW=['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'],MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+
+function buildLeads(){
+  const captured=(lsGet('sora.casas.leads',[])||[]).map((c,i)=>({id:'cap'+i,name:c.name||'Lead sin nombre',source:c.type||c.source||'configurador',market:c.region||'—',price:c.price_estimate||c.price||0,persona:'',stage:'nuevo',ts:c.ts||daysAgo(0),whatsapp:c.whatsapp,email:c.email,config:c.config||'',notes:''}));
+  const seed=SEED_LEADS.map((s,i)=>({id:'seed'+i,notes:'',...s}));
+  LEADS=[...captured,...seed,...(MANUAL||[])];
+  LEADS.forEach(l=>{if(CRMO[l.id]){l.stage=CRMO[l.id].stage||l.stage;l.notes=CRMO[l.id].notes??l.notes;}});
+}
+function seedEvents(){const t=new Date();const mk=(o,ti,ty,h)=>{const d=new Date(t);d.setDate(t.getDate()+o);return{id:'e'+o+ty,date:ymd(d),title:ti,type:ty,time:h}};return[mk(0,'Llamada · Charles Whitfield','llamada','10:00'),mk(0,'Visita lote Pedasí · Sam & Jules','visita','15:00'),mk(1,'Discovery Weekend · grupo Boquete','discovery','09:00'),mk(2,'Llamada de calificación · Tom & Beth','llamada','11:30'),mk(3,'Entrega Casa Bahía #1','entrega','12:00'),mk(5,'Sora Sunday · Pedasí','interno','13:00'),mk(-1,'Seguimiento · Diane K.','llamada','16:00'),mk(7,'Cierre · The Reyes Family','interno','10:00')]}
+
+/* ===== NAV ===== */
+function renderNav(){
+  $('#nav').innerHTML=NAV.map(g=>`<div class="navgroup">${g.g}</div>`+g.items.map(it=>{
+    const right=it.ext?`<span class="ext">${ic('ext')}</span>`:(it.soon?`<span class="badge">pronto</span>`:(it.go==='prospectos'?`<span class="ct2">${PROSPECTS.length}</span>`:''));
+    const act=it.ext?`onclick="window.open('${it.ext}','_blank')"`:(it.soon?`onclick="showSoon('${it.nm}')"`:`onclick="route('${it.go}')"`);
+    return `<button class="navitem ${it.go==='inicio'?'active':''}" data-go="${it.go||''}" ${act}>${ic(it.ic)}<span>${it.nm}</span>${right}</button>`;
+  }).join('')).join('');
+}
+/* ===== INICIO ===== */
+function renderInicio(){
+  const nuevo=LEADS.filter(l=>l.stage==='nuevo');const today=ymd(new Date());const todays=EVENTS.filter(e=>e.date===today).sort((a,b)=>(a.time||'').localeCompare(b.time||''));
+  $('#kpis').innerHTML=[{ic:'users',l:'Leads nuevos',n:nuevo.length,d:'<b>+'+Math.max(1,nuevo.length-6)+'</b> vs ayer'},{ic:'calendar',l:'Citas hoy',n:todays.length,d:todays.length?todays[0].time+' · '+todays[0].title.split('·')[0]:'sin citas'},{ic:'target',l:'Prospectos activos',n:PROSPECTS.filter(p=>p.status!=='descartado').length,d:PROSPECTS.filter(p=>p.status==='por_contactar').length+' por contactar'},{ic:'map',l:'Lotes en opción',n:4,d:'1 vence en 12 días'}].map(k=>`<div class="kpi"><div class="l">${ic(k.ic)}${k.l}</div><div class="n">${k.n}</div><div class="d">${k.d}</div></div>`).join('');
+  $('#todayCount').textContent=todays.length+' eventos';
+  $('#todayList').innerHTML=todays.length?todays.map(e=>`<div class="row"><span class="dot" style="background:var(--${e.type==='visita'?'good':e.type==='llamada'?'info':e.type==='discovery'?'accent':e.type==='entrega'?'warn':'muted'})"></span><div><div class="t">${e.title}</div><div class="s">${({visita:'Visita',llamada:'Llamada',discovery:'Discovery',entrega:'Entrega',interno:'Interno'})[e.type]}</div></div><div class="meta">${e.time||''}</div></div>`).join(''):'<div class="row empty">Sin eventos para hoy</div>';
+  const sla=nuevo.slice().sort((a,b)=>new Date(b.ts)-new Date(a.ts));$('#slaCount').textContent=sla.length+' por contactar';
+  $('#slaList').innerHTML=sla.length?sla.map(l=>`<div class="row"><div class="avatar" style="width:26px;height:26px;font-size:10px">${initials(l.name)}</div><div><div class="t">${l.name}</div><div class="s">${srcLabel(l.source)} · ${l.market} · ${money(l.price)}</div></div>${(Date.now()-new Date(l.ts))/36e5<2?'<span class="pill sla">'+ago(l.ts)+'</span>':'<span class="meta">'+ago(l.ts)+'</span>'}${l.whatsapp?`<button class="miniwa" onclick="event.stopPropagation();waLeadDirect('${l.id}')">${ic('wa')}</button>`:''}</div>`).join(''):'<div class="row empty">Todo contactado ✦</div>';
+  $('#directory').innerHTML=TOOLS.map(g=>`<div class="secth" style="margin-top:18px"><h3>${g.grp}</h3><div class="ln"></div></div><div class="tiles">${g.items.map(t=>{
+    const stl={vivo:'En vivo',beta:'Beta',soon:'Próximamente',ref:'Referencia'}[t.st];const act=t.st==='soon'?`onclick="showSoon('${t.nm}')"`:(t.ext?`onclick="window.open('${t.ext}','_blank')"`:`onclick="route('${t.go}')"`);
+    return `<button class="tile ${t.st==='soon'?'soon':''}" ${act}><div class="ic">${ic(t.ic)}</div><div style="flex:1"><div class="nm">${t.nm} <span class="st ${t.st}">${stl}</span></div><div class="ds">${t.ds}</div></div><span class="arr">${ic('ext')}</span></button>`;
+  }).join('')}</div>`).join('');
+}
+/* ===== CRM LIST ===== */
+let crmFilter='todos';
+function renderCrm(){
+  const total=LEADS.reduce((s,l)=>s+(l.price||0),0);$('#crmsub').textContent=LEADS.length+' leads · '+money(total)+' en pipeline';
+  $('#crmTabs').innerHTML=[`<button class="tab ${crmFilter==='todos'?'on':''}" onclick="crmTab('todos')">Todos <span class="n">${LEADS.length}</span></button>`].concat(STAGES.map(s=>{const c=LEADS.filter(l=>l.stage===s.id).length;return `<button class="tab ${crmFilter===s.id?'on':''}" onclick="crmTab('${s.id}')">${s.nm} <span class="n">${c}</span></button>`})).join('');
+  let ls=LEADS.filter(l=>crmFilter==='todos'||l.stage===crmFilter).sort((a,b)=>new Date(b.ts)-new Date(a.ts));
+  const q=($('#search').value||'').toLowerCase();if(q&&$('#view-crm').classList.contains('show'))ls=ls.filter(l=>(l.name+l.source+l.market+l.config).toLowerCase().includes(q));
+  const head=`<div class="tr head crmgrid"><div>Cliente</div><div>Etapa</div><div>Fuente</div><div>Mercado</div><div>Valor</div><div></div></div>`;
+  const rows=ls.map(l=>`<div class="tr body crmgrid" onclick="openLead('${l.id}')"><div class="cell-name"><div class="av">${initials(l.name)}</div><div style="min-width:0"><div class="nm">${l.name}</div><div class="sub2">${l.config||PERSONAS[l.persona]||'—'}</div></div></div><div><span class="badge2 sg-${l.stage}">${STAGES.find(s=>s.id===l.stage).nm}</span></div><div class="cellmuted">${srcLabel(l.source)}</div><div class="cellmuted">${l.market}</div><div class="val">${money(l.price)}</div><div style="color:var(--faint)">${ic('chr')}</div></div>`).join('');
+  $('#crmTable').innerHTML=ls.length?`<div class="tbl">${head}${rows}</div>`:'<div class="emptybig">Sin leads en esta etapa</div>';
+}
+function crmTab(f){crmFilter=f;renderCrm()}
+function moveLead(id,dir){const l=LEADS.find(x=>x.id===id);if(!l)return;const i=STAGES.findIndex(s=>s.id===l.stage)+dir;if(i<0||i>=STAGES.length)return;setLeadStage(id,STAGES[i].id)}
+function setLeadStage(id,stage){const l=LEADS.find(x=>x.id===id);if(!l)return;l.stage=stage;CRMO[id]={stage:l.stage,notes:l.notes||''};DB.save('crm',CRMO);renderCrm();renderInicio()}
+function openLead(id){const l=LEADS.find(x=>x.id===id);if(!l)return;
+  $('#drawer').innerHTML=`<div class="dh"><div class="avatar" style="width:38px;height:38px;font-size:13px">${initials(l.name)}</div><div><div class="nm">${l.name}</div><div class="sb2">${srcLabel(l.source)} · ${l.market} · hace ${ago(l.ts)}</div></div><button class="x iconbtn" onclick="closeDrawer()">${ic('x')}</button></div>
+   <div class="db"><div class="field"><div class="k">Etapa</div><div class="stagepick">${STAGES.map(s=>`<button class="${l.stage===s.id?'on sg-'+s.id:''}" onclick="setLeadStage('${l.id}','${s.id}');openLead('${l.id}')">${s.nm}</button>`).join('')}</div></div>
+   <div class="field"><div class="k">Precio estimado</div><div class="v mono">${money(l.price)}</div></div>
+   <div class="field"><div class="k">Configuración</div><div class="v">${l.config||'—'}</div></div>
+   ${l.email?`<div class="field"><div class="k">Email</div><div class="v"><a href="mailto:${l.email}">${l.email}</a></div></div>`:''}
+   ${l.whatsapp?`<div class="field"><div class="k">WhatsApp</div><div class="v mono">+${l.whatsapp}</div></div>`:''}
+   <div class="field"><div class="k">Notas</div><textarea class="notes" id="leadNotes" placeholder="Agrega una nota…">${l.notes||''}</textarea></div></div>
+   <div class="dactions">${l.whatsapp?`<button class="da wa" onclick="waLeadDirect('${l.id}')">${ic('wa')} WhatsApp</button>`:''}<button class="da" onclick="scheduleFromLead('${l.id}')">${ic('calendar')} Agendar</button><button class="da acc" onclick="moveLead('${l.id}',1);openLead('${l.id}')">${ic('chr')} Avanzar</button></div>`;
+  const ta=$('#leadNotes');if(ta)ta.addEventListener('input',e=>{l.notes=e.target.value;CRMO[l.id]={stage:l.stage,notes:l.notes};DB.save('crm',CRMO)});
+  openDrawer();
+}
+function waLeadDirect(id){const l=LEADS.find(x=>x.id===id);if(!l||!l.whatsapp)return;const msg=`Hola ${l.name.split(' ')[0]} 👋 Soy del equipo de Sora Casas. Vi tu interés (${l.config||l.market}). ¿Te muestro un tour en video?`;window.open('https://wa.me/'+l.whatsapp+'?text='+encodeURIComponent(msg),'_blank')}
+function scheduleFromLead(id){const l=LEADS.find(x=>x.id===id);closeDrawer();openQuick('event',{title:'Visita · '+l.name,type:'visita'})}
+
+/* ===== PROSPECTOS LIST ===== */
+let prosFilter='todas';
+function renderProspectos(){
+  const active=PROSPECTS.filter(p=>p.status!=='descartado').length;$('#prosSub').textContent=PROSPECTS.length+' prospectos · '+active+' activos · contactos verificados';
+  $('#prosTabs').innerHTML=[`<button class="tab ${prosFilter==='todas'?'on':''}" onclick="prosTab('todas')">Todas <span class="n">${PROSPECTS.length}</span></button>`].concat(PCATS.map(c=>{const n=PROSPECTS.filter(p=>p.cat===c).length;if(!n)return'';return `<button class="tab ${prosFilter===c?'on':''}" onclick="prosTab('${c.replace(/'/g,'')}')">${c.split(' ')[0]} <span class="n">${n}</span></button>`})).join('');
+  let ps=PROSPECTS.filter(p=>prosFilter==='todas'||p.cat.startsWith(prosFilter)||p.cat===prosFilter);
+  const q=($('#search').value||'').toLowerCase();if(q&&$('#view-prospectos').classList.contains('show'))ps=ps.filter(p=>(p.company+p.person+p.cat+p.loc+p.why).toLowerCase().includes(q));
+  const head=`<div class="tr head prosgrid"><div>Empresa</div><div>Categoría</div><div>Contacto</div><div>Estado</div><div>Ubicación</div><div></div></div>`;
+  const rows=ps.map(p=>`<div class="tr body prosgrid" onclick="openProspect('${p.id}')">
+    <div class="cell-name"><div class="av">${initials(p.company)}</div><div style="min-width:0"><div class="nm">${p.company}</div><div class="sub2">${p.person||p.web}</div></div></div>
+    <div class="cellmuted">${p.cat.split('(')[0]}</div>
+    <div class="cticons">${p.email?`<a class="ctico" href="mailto:${p.email}" title="${p.email}" onclick="event.stopPropagation()">${ic('mail')}</a>`:`<span class="ctico off">${ic('mail')}</span>`}${p.wa?`<a class="ctico wa" href="https://wa.me/${p.wa}" target="_blank" title="WhatsApp" onclick="event.stopPropagation()">${ic('wa')}</a>`:(p.phone?`<a class="ctico" href="tel:${p.phone.replace(/[^+\\d]/g,'')}" title="${p.phone}" onclick="event.stopPropagation()">${ic('phone')}</a>`:`<span class="ctico off">${ic('phone')}</span>`)}<a class="ctico" href="https://${p.web}" target="_blank" title="${p.web}" onclick="event.stopPropagation()">${ic('link')}</a></div>
+    <div><span class="badge2 ps-${p.status}">${PSTATUS.find(s=>s.id===p.status).nm}</span></div>
+    <div class="cellmuted">${p.loc}</div><div style="color:var(--faint)">${ic('chr')}</div></div>`).join('');
+  $('#prosTable').innerHTML=ps.length?`<div class="tbl">${head}${rows}</div>`:'<div class="emptybig">Sin prospectos en esta categoría</div>';
+}
+function prosTab(f){prosFilter=f;renderProspectos()}
+function setProspectStatus(id,st){const p=PROSPECTS.find(x=>x.id===id);if(!p)return;p.status=st;DB.save('prospects',PROSPECTS);renderProspectos();renderNav()}
+function openProspect(id){const p=PROSPECTS.find(x=>x.id===id);if(!p)return;
+  const tel=p.phone?p.phone.replace(/[^+\d]/g,''):'';
+  $('#drawer').innerHTML=`<div class="dh"><div class="avatar" style="width:38px;height:38px;font-size:13px;border-radius:9px;background:var(--surface-3);color:var(--forest)">${initials(p.company)}</div><div><div class="nm">${p.company}</div><div class="sb2">${p.cat}${p.person?' · '+p.person:''}</div></div><button class="x iconbtn" onclick="closeDrawer()">${ic('x')}</button></div>
+   <div class="db">
+    <div class="field"><div class="k">Estado</div><div class="stagepick">${PSTATUS.map(s=>`<button class="${p.status===s.id?'on ps-'+s.id:''}" onclick="setProspectStatus('${p.id}','${s.id}');openProspect('${p.id}')">${s.nm}</button>`).join('')}</div></div>
+    <div class="field"><div class="k">Por qué es prospecto</div><div class="v">${p.why}</div></div>
+    <div class="field"><div class="k">Sitio web</div><div class="v"><a href="https://${p.web}" target="_blank">${p.web}</a></div></div>
+    <div class="field"><div class="k">Email</div><div class="v">${p.email?`<a href="mailto:${p.email}">${p.email}</a>`:'<span style="color:var(--faint)">No público — usar formulario en el sitio</span>'}</div></div>
+    <div class="field"><div class="k">Teléfono</div><div class="v mono">${p.phone||'<span style="color:var(--faint)">No público</span>'}</div></div>
+    <div class="field"><div class="k">Ubicación · Prioridad · Confianza</div><div class="v">${p.loc} · <b>${p.prio}</b> · <span class="conf">verif. ${p.conf}</span></div></div>
+    <div class="field"><div class="k">Verificación</div><div class="v" style="font-size:11.5px;color:var(--muted)">${p.src}</div></div>
+    <div class="field"><div class="k">Notas</div><textarea class="notes" id="prosNotes" placeholder="Última conversación, siguiente paso…">${p.notes||''}</textarea></div>
+   </div>
+   <div class="dactions">${p.email?`<button class="da acc" onclick="window.open('mailto:${p.email}?subject='+encodeURIComponent('Sora Casas · alianza')+'','_blank')">${ic('mail')} Email</button>`:''}${p.wa?`<button class="da wa" onclick="window.open('https://wa.me/${p.wa}','_blank')">${ic('wa')} WhatsApp</button>`:(tel?`<button class="da" onclick="window.open('tel:${tel}')">${ic('phone')} Llamar</button>`:'')}<button class="da" onclick="window.open('https://${p.web}','_blank')">${ic('link')} Sitio</button></div>`;
+  const ta=$('#prosNotes');if(ta)ta.addEventListener('input',e=>{p.notes=e.target.value;clearTimeout(ta._t);ta._t=setTimeout(()=>DB.save('prospects',PROSPECTS),500)});
+  openDrawer();
+}
+/* ===== CALENDAR ===== */
+let calRef=new Date();calRef.setDate(1);
+function renderCal(){
+  $('#calTitle').textContent=MES[calRef.getMonth()]+' '+calRef.getFullYear();
+  const start=(new Date(calRef).getDay()+6)%7,dim=new Date(calRef.getFullYear(),calRef.getMonth()+1,0).getDate(),prevDim=new Date(calRef.getFullYear(),calRef.getMonth(),0).getDate(),today=ymd(new Date());
+  let cells=DOW.map(d=>`<div class="gh">${d}</div>`).join('');
+  for(let i=0;i<42;i++){let dn,mo,out=false;if(i<start){dn=prevDim-start+i+1;mo=-1;out=true}else if(i>=start+dim){dn=i-start-dim+1;mo=1;out=true}else{dn=i-start+1;mo=0}
+    const d=new Date(calRef.getFullYear(),calRef.getMonth()+mo,dn),key=ymd(d),evs=EVENTS.filter(e=>e.date===key).sort((a,b)=>(a.time||'').localeCompare(b.time||''));
+    cells+=`<button class="day ${out?'out':''} ${key===today?'today':''}" onclick="dayClick('${key}')"><span class="dn">${dn}</span>${evs.slice(0,3).map(e=>`<span class="ev ${e.type}">${e.time?e.time+' ':''}${e.title.replace(/·.*/,'').trim()}</span>`).join('')}${evs.length>3?`<span style="font-size:9.5px;color:var(--muted)">+${evs.length-3} más</span>`:''}</button>`;}
+  $('#cal').innerHTML=cells;
+}
+function calMove(n){calRef.setMonth(calRef.getMonth()+n);renderCal()}
+function calToday(){calRef=new Date();calRef.setDate(1);renderCal()}
+function dayClick(key){openQuick('event',{date:key})}
+
+/* ===== AJUSTES ===== */
+function renderAjustes(){
+  const sql=`-- Pega esto en Supabase → SQL Editor → Run\ncreate table if not exists sora_state (\n  id text primary key,\n  payload jsonb,\n  updated_at timestamptz default now()\n);\nalter table sora_state enable row level security;\n-- Interno: permitir lectura/escritura con la anon key\n-- (para producción, usa Supabase Auth y restringe por usuario)\ncreate policy "equipo_sora" on sora_state\n  for all using (true) with check (true);`;
+  $('#ajustesBody').innerHTML=`
+  <div class="card"><h4>Backend compartido (Supabase)</h4><p>Conecta una base Supabase para que todo el equipo vea los mismos prospectos, etapas de leads, notas y calendario. Sin conectar, funciona en <b>modo local</b> (solo este navegador).</p>
+    <div style="display:flex;gap:6px;align-items:center;margin-bottom:14px"><span class="dmode ${MODE==='supabase'?'on':''}"><span class="d"></span>${MODE==='supabase'?'Conectado a Supabase':'Modo local (este navegador)'}</span></div>
+    <label class="lbl">Supabase URL</label><input class="inp" id="supaUrl" placeholder="https://xxxx.supabase.co" value="${SUPA?.url||''}" style="margin-bottom:10px">
+    <label class="lbl">Supabase anon key</label><input class="inp" id="supaKey" placeholder="eyJhbGci…" value="${SUPA?.anon||''}" style="margin-bottom:14px">
+    <div style="display:flex;gap:8px"><button class="primary" onclick="saveSupa()">Conectar y recargar</button>${SUPA?'<button class="ghost" onclick="clearSupa()">Desconectar</button>':''}</div>
+  </div>
+  <div class="card"><h4>1 · Crea la tabla en Supabase</h4><p>En tu proyecto Supabase, abre <b>SQL Editor</b> y ejecuta:</p><pre class="sql">${sql.replace(/</g,'&lt;')}</pre><button class="ghost" style="margin-top:10px" onclick="navigator.clipboard&&navigator.clipboard.writeText(\`${sql.replace(/`/g,'\\`')}\`);toast('SQL copiado')">Copiar SQL</button></div>
+  <div class="card"><h4>2 · Pega tus credenciales arriba</h4><p>En Supabase → <b>Project Settings → API</b>: copia <b>Project URL</b> y <b>anon public key</b>. Pégalas arriba y pulsa "Conectar". Al primer arranque se suben los ${PROSPECT_SEED.length} prospectos verificados y el calendario.</p></div>
+  <div class="card"><h4>Datos y respaldo</h4><p>Modo actual: <b>${MODE==='supabase'?'Supabase (compartido)':'Local'}</b>. Puedes exportar todo a un archivo de respaldo.</p><div style="display:flex;gap:8px"><button class="ghost" onclick="exportData()">Exportar respaldo (.json)</button></div>
+    <p style="margin-top:14px;font-size:11.5px;color:var(--faint)">Nota de seguridad: el acceso por código es una compuerta de front-end y la política RLS de arriba permite escritura con la anon key — apto para uso interno. Para producción, activa <b>Supabase Auth</b> (magic link o Google) y restringe las políticas por usuario autenticado.</p></div>`;
+}
+function saveSupa(){const url=$('#supaUrl').value.trim(),anon=$('#supaKey').value.trim();if(!url||!anon){toast('Faltan URL o key');return}SUPA={url,anon};lsSet('sora.supa',SUPA);toast('Conectando…');setTimeout(()=>location.reload(),600)}
+function clearSupa(){localStorage.removeItem('sora.supa');toast('Desconectado');setTimeout(()=>location.reload(),500)}
+function exportData(){const blob={prospects:PROSPECTS,events:EVENTS,crm:CRMO,manual:MANUAL,exported:new Date().toISOString()};const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(blob,null,2)],{type:'application/json'}));a.download='sora-operaciones-respaldo.json';a.click()}
+
+/* ===== ROUTING ===== */
+const TITLES={inicio:'Inicio',crm:'CRM · Leads',prospectos:'Prospectos',calendario:'Calendario',ajustes:'Ajustes'};
+function route(go){
+  if(go==='embudos'){showSoon('Embudos',{links:[['QIV countdown','qiv.html'],['Guía de costos','guia.html'],['Discovery Weekend','discovery.html']]});return;}
+  $$('.view').forEach(v=>v.classList.remove('show'));const v=$('#view-'+go);if(v)v.classList.add('show');
+  $('#ttitle').textContent=TITLES[go]||go;$$('.navitem').forEach(n=>n.classList.toggle('active',n.dataset.go===go));
+  if(go==='crm')renderCrm();if(go==='prospectos')renderProspectos();if(go==='calendario')renderCal();if(go==='inicio')renderInicio();if(go==='ajustes')renderAjustes();
+}
+function showSoon(name,opts){opts=opts||{};$$('.view').forEach(v=>v.classList.remove('show'));$('#view-soon').classList.add('show');$('#ttitle').textContent=name;$$('.navitem').forEach(n=>n.classList.remove('active'));
+  $('#soonInner').innerHTML=`<div class="soonic">${ic('hammer')}</div><h2>${name}</h2><p>${opts.links?'Abre uno de los embudos de captura activos:':'Esta herramienta está en el plan del equipo. La columna vertebral (CRM, prospectos, calendario, banco de tierras, configurador) ya está viva.'}</p>${opts.links?'<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:18px">'+opts.links.map(([l,u])=>`<button class="openbtn" style="background:var(--surface);color:var(--fg);border:1px solid var(--border-2)" onclick="window.open('${u}','_blank')">${ic('ext')} ${l}</button>`).join('')+'</div>':'<button class="openbtn" onclick="route(\'inicio\')">'+ic('home')+' Volver al inicio</button>'}`;
+}
+function openDrawer(){$('#drawer').classList.add('open');$('#backdrop').classList.add('open')}
+function closeDrawer(){$('#drawer').classList.remove('open');$('#backdrop').classList.remove('open')}
+
+/* ===== QUICK ADD ===== */
+let quickType='lead',quickPrefill={};
+function openQuick(type,prefill){quickType=type||(/* default by current view */ $('#view-prospectos').classList.contains('show')?'prospect':'lead');quickPrefill=prefill||{};renderModal();$('#modal').classList.add('open')}
+function closeModal(){$('#modal').classList.remove('open')}
+function segPick(b){b.parentNode.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on')}
+function renderModal(){
+  const T=quickType;const title={lead:'Nuevo lead',event:'Nuevo evento',prospect:'Nuevo prospecto'}[T];
+  let body='';
+  if(T==='lead')body=`<div><label class="lbl">Nombre</label><input class="inp" id="qName" placeholder="Nombre del cliente"></div><div style="display:flex;gap:10px"><div style="flex:1"><label class="lbl">Mercado</label><input class="inp" id="qMarket" placeholder="Pedasí…"></div><div style="flex:1"><label class="lbl">Precio est.</label><input class="inp mono" id="qPrice" placeholder="380000"></div></div><div><label class="lbl">Fuente</label><div class="seg" id="qSeg">${['SEO','Meta','Google','Referido','Conferencia','Configurador'].map((s,i)=>`<button class="${i===0?'on':''}" onclick="segPick(this)">${s}</button>`).join('')}</div></div>`;
+  else if(T==='event')body=`<div><label class="lbl">Título</label><input class="inp" id="qTitle" value="${(quickPrefill.title||'').replace(/"/g,'&quot;')}" placeholder="Visita lote · cliente"></div><div style="display:flex;gap:10px"><div style="flex:1"><label class="lbl">Fecha</label><input class="inp mono" id="qDate" value="${quickPrefill.date||ymd(new Date())}"></div><div style="flex:1"><label class="lbl">Hora</label><input class="inp mono" id="qTime" placeholder="15:00"></div></div><div><label class="lbl">Tipo</label><div class="seg" id="qSeg">${[['visita','Visita'],['llamada','Llamada'],['discovery','Discovery'],['entrega','Entrega'],['interno','Interno']].map(([v,l],i)=>`<button data-v="${v}" class="${(quickPrefill.type?quickPrefill.type===v:i===0)?'on':''}" onclick="segPick(this)">${l}</button>`).join('')}</div></div>`;
+  else body=`<div><label class="lbl">Empresa</label><input class="inp" id="qComp" placeholder="Nombre de la empresa"></div><div style="display:flex;gap:10px"><div style="flex:1"><label class="lbl">Email</label><input class="inp" id="qEmail" placeholder="contacto@…"></div><div style="flex:1"><label class="lbl">Teléfono</label><input class="inp mono" id="qPhone" placeholder="+507…"></div></div><div><label class="lbl">Categoría</label><div class="seg" id="qSeg">${PCATS.map((c,i)=>`<button data-v="${c}" class="${i===0?'on':''}" onclick="segPick(this)">${c.split(' ')[0]}</button>`).join('')}</div></div><div><label class="lbl">Por qué</label><input class="inp" id="qWhy" placeholder="Relevancia / razón"></div>`;
+  $('#modal').innerHTML=`<div class="mbox"><div class="mboxh"><h3>${title}</h3><button class="x iconbtn" onclick="closeModal()">${ic('x')}</button></div><div class="mbody">${body}</div><div class="mfoot"><button class="primary" onclick="saveQuick()">Crear</button><button class="ghost" onclick="closeModal()">Cancelar</button></div></div>`;
+}
+function saveQuick(){
+  if(quickType==='lead'){const name=$('#qName').value.trim()||'Lead sin nombre',seg=$('#qSeg').querySelector('.on').textContent;const lead={id:'man'+Date.now(),name,source:seg.toLowerCase(),market:$('#qMarket').value.trim()||'—',price:+($('#qPrice').value.replace(/\D/g,''))||0,persona:'',stage:'nuevo',ts:new Date().toISOString(),config:'',notes:''};MANUAL.unshift(lead);LEADS.unshift(lead);DB.save('manual',MANUAL);closeModal();renderCrm();renderInicio();toast('Lead creado')}
+  else if(quickType==='event'){const seg=$('#qSeg').querySelector('.on');EVENTS.push({id:'m'+Date.now(),date:$('#qDate').value||ymd(new Date()),time:$('#qTime').value||'',title:$('#qTitle').value.trim()||'Evento',type:seg?seg.dataset.v:'interno'});DB.save('events',EVENTS);closeModal();renderCal();renderInicio();toast('Evento creado')}
+  else{const seg=$('#qSeg').querySelector('.on');PROSPECTS.unshift({id:'pm'+Date.now(),company:$('#qComp').value.trim()||'Prospecto',person:'',cat:seg?seg.dataset.v:PCATS[0],web:'',email:$('#qEmail').value.trim(),phone:$('#qPhone').value.trim(),wa:'',loc:'',prio:'media',conf:'manual',why:$('#qWhy').value.trim(),src:'Agregado manualmente',status:'por_contactar',notes:''});DB.save('prospects',PROSPECTS);closeModal();renderProspectos();renderNav();toast('Prospecto agregado')}
+}
+
+/* ===== LOGIN / BOOT ===== */
+const TEAM_PASS='sora2026';
+function doLogin(){const v=$('#pass').value.trim();if(v===TEAM_PASS){sessionStorage.setItem('sora.team','1');boot();}else{$('#lerr').textContent='Código incorrecto. Intenta de nuevo.';$('#pass').value='';}}
+function logout(){sessionStorage.removeItem('sora.team');location.reload()}
+function onSearch(q){const sv=$$('.view.show')[0];if(sv&&sv.id==='view-crm')renderCrm();else if(sv&&sv.id==='view-prospectos')renderProspectos();else{if(!$('#view-inicio').classList.contains('show'))route('inicio');$$('#directory .tile').forEach(t=>{t.style.display=t.textContent.toLowerCase().includes(q.toLowerCase())?'':'none'})}}
+async function boot(){
+  $('#login').classList.add('hide');$('#app').classList.add('show');
+  connectSupa();
+  const data=await DB.load();
+  PROSPECTS=(data.prospects&&data.prospects.length)?data.prospects:PROSPECT_SEED.map(p=>({...p,status:'por_contactar',notes:''}));
+  // merge any newly-added seed prospects (e.g. the U.S. partner list) for users who already had stored data
+  {const have=new Set(PROSPECTS.map(p=>p.id));let added=false;PROSPECT_SEED.forEach(p=>{if(!have.has(p.id)){PROSPECTS.push({...p,status:'por_contactar',notes:''});added=true;}});if(added)DB.save('prospects',PROSPECTS);}
+  EVENTS=(data.events&&data.events.length)?data.events:seedEvents();
+  CRMO=data.crm||{};MANUAL=data.manual||[];
+  // seed remote on first connect
+  if(sb){if(!data.prospects||!data.prospects.length)DB.save('prospects',PROSPECTS);if(!data.events||!data.events.length)DB.save('events',EVENTS);}
+  buildLeads();renderNav();renderInicio();
+  $('#dmode').classList.toggle('on',MODE==='supabase');$('#dmodeT').textContent=MODE==='supabase'?'Supabase':'Local';
+  const now=new Date(),h=now.getHours();$('#greet').innerHTML=(h<12?'Buenos días':h<19?'Buenas tardes':'Buenas noches')+', <em>Abraham</em>';$('#greetsub').textContent='Esto es lo que pasa hoy en Sora Casas.';
+  $('#tdate').textContent=now.toLocaleDateString('es',{weekday:'short',day:'numeric',month:'short'}).replace('.','');
+  $('#searchIc').innerHTML=ic('search');
+}
+function hydrate(){const set=(s,h)=>{const e=$(s);if(e)e.innerHTML=h};set('.me button',ic('logout'));set('#bellBtn',ic('bell'));set('.topbar .qadd',ic('plus')+' Nuevo');set('#view-crm .qadd',ic('plus')+' Nuevo lead');set('#view-prospectos .qadd',ic('plus')+' Agregar');const nv=$$('.calbar .navbtn');if(nv[0])nv[0].innerHTML=ic('chl');if(nv[1])nv[1].innerHTML=ic('chr');$$('.ph').forEach(ph=>{if(ph.innerHTML.includes('__CALIC__'))ph.innerHTML=ph.innerHTML.replace('__CALIC__','<span style="color:var(--forest);display:flex">'+ic('calendar')+'</span>');if(ph.innerHTML.includes('__SLAIC__'))ph.innerHTML=ph.innerHTML.replace('__SLAIC__','<span style="color:var(--accent-2);display:flex">'+ic('bell')+'</span>')});}
+hydrate();
+$('#pass')&&$('#pass').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
+addEventListener('keydown',e=>{if(e.key==='/'&&$('#app').classList.contains('show')&&document.activeElement.tagName!=='INPUT'&&document.activeElement.tagName!=='TEXTAREA'){e.preventDefault();$('#search').focus()}if(e.key==='Escape'){closeDrawer();closeModal()}});
+if(sessionStorage.getItem('sora.team'))boot();else $('#pass').focus();
+</script>
+<script src="team-i18n.js"></script>
+<script>
+const EQUIPO_DICT={
+ "Casas · Operaciones":"Homes · Operations","Entrar":"Enter","Acceso interno del equipo":"Internal team access","Código incorrecto. Intenta de nuevo.":"Wrong code. Try again.",
+ "Casas":"Homes","Fundador · GM":"Founder · GM","Inicio":"Home","Nuevo":"New","Hoy":"Today","Responder en menos de 2 h":"Respond within 2 h","Directorio de herramientas":"Tools directory",
+ "Leads":"Leads","Nuevo lead":"New lead","Prospectos":"Prospects","Agregar":"Add","Ajustes":"Settings",
+ "Buenos días,":"Good morning,","Buenas tardes,":"Good afternoon,","Buenas noches,":"Good evening,","Esto es lo que pasa hoy en Sora Casas.":"Here's what's happening today at Sora Casas.",
+ "Principal":"Main","Ventas":"Sales","Marketing":"Marketing","Producto":"Product","Legal":"Legal","Más":"More","Investigación":"Research","Suministro":"Supply","Suministro & Inventario":"Supply & Inventory","Adquisición de Listings":"Listing Acquisition","Construcción":"Build","Construcción · Playbook":"Build · Playbook","Proceso & Cronograma":"Process & Timeline","Materiales & Acabados":"Materials & Finishes","Arquitectura & Permisos":"Architecture & Permits","Contratista & Equipo":"Contractor & Team","Construcciones (tracker)":"Builds (tracker)","Build Playbook":"Build Playbook","Costos & Presupuesto":"Cost & Budget","Guía del Novato":"Beginner's Guide",
+ "CRM · Leads":"CRM · Leads","Calendario":"Calendar","Discovery":"Discovery","Lead Machine":"Lead Machine","Configurador 3D":"3D Configurator","Embudos":"Funnels","Inteligencia Competitiva":"Competitive Intel","Banco de Tierras":"Land Bank","Construcciones":"Builds","Listados":"Listings","Documentos":"Documents","Visas FNV/QIV":"FNV/QIV Visas","Comunidad":"Community","Mercados":"Markets","Socios":"Partners","pronto":"soon",
+ "Ventas & Clientes":"Sales & Clients","Marketing & Crecimiento":"Marketing & Growth","Producto & Tierras":"Product & Land","Legal & Cierre":"Legal & Closing",
+ "Discovery Weekend":"Discovery Weekend","Base de Canales":"Channel Base","Listados / Inventario":"Listings / Inventory","Modelos & BOMs":"Models & BOMs","Contratos & Docs":"Contracts & Docs","Visas FNV / QIV":"FNV / QIV Visas","Escrow & Pagos":"Escrow & Payments","Socios / Brokers":"Partners / Brokers",
+ "Lista de leads de nuevo a contrato. Lee lo que capturan los embudos.":"Lead list from new to contract. Reads what the funnels capture.",
+ "Socios y canales verificados para outbound (tours, medios, brokers, asociaciones).":"Verified partners and channels for outbound (tours, media, brokers, associations).",
+ "Citas, visitas, Discovery Weekends y entregas.":"Appointments, visits, Discovery Weekends and deliveries.",
+ "Solicitudes del fin de semana de descubrimiento.":"Discovery weekend requests.",
+ "Contenido → rankings → tráfico → casas.":"Content → rankings → traffic → homes.",
+ "Diseña la casa en 3D con precio en vivo.":"Design the home in 3D with live pricing.",
+ "QIV, Guía de costos y Discovery.":"QIV, Cost guide and Discovery.",
+ "Lotes, dueños, opciones, expiraciones.":"Lots, owners, options, expirations.",
+ "Builds activos, % avance, pagos por hito.":"Active builds, % progress, milestone payments.",
+ "Inventario curado + feed MLS ACOBIR.":"Curated inventory + ACOBIR MLS feed.",
+ "Casa Bahía + Casa Montaña, 3 niveles.":"Casa Bahía + Casa Montaña, 3 tiers.",
+ "Opción de terreno, contrato precio fijo, LOI.":"Land option, fixed-price contract, LOI.",
+ "Trámites migratorios en paralelo a la obra.":"Immigration paperwork alongside construction.",
+ "Plica del abogado y pagos por hito.":"Lawyer escrow and milestone payments.",
+ "Datos por mercado: Pedasí, Boquete, Volcán, Bocas.":"Market data: Pedasí, Boquete, Volcán, Bocas.",
+ "ACOBIR, co-broke, KW, incumbentes.":"ACOBIR, co-broke, KW, incumbents.",
+ "Backend compartido (Supabase), datos y respaldo.":"Shared backend (Supabase), data and backup.",
+ "En vivo":"Live","Beta":"Beta","Próximamente":"Coming soon","Referencia":"Reference",
+ "Leads nuevos":"New leads","Citas hoy":"Appointments today","Prospectos activos":"Active prospects","Lotes en opción":"Lots under option","1 vence en 12 días":"1 expires in 12 days",
+ "Sin eventos para hoy":"No events today","Todo contactado ✦":"All contacted ✦",
+ "Visita":"Visit","Llamada":"Call","Entrega":"Delivery","Interno":"Internal",
+ "Cliente":"Client","Etapa":"Stage","Fuente":"Source","Mercado":"Market","Valor":"Value","Todos":"All","Calificado":"Qualified","Contrato":"Contract","Sin leads en esta etapa":"No leads in this stage",
+ "Jubilado FIRE":"FIRE retiree","Familia surfer":"Surfer family","Diversificador UE":"EU diversifier","Plan-B":"Plan-B","LatAm":"LatAm",
+ "Referido":"Referral","Conferencia":"Conference","Configurador":"Configurator","Config. 3D":"3D Config","Config. WA":"WA Config","Int. Living":"Int. Living",
+ "Precio estimado":"Estimated price","Configuración":"Configuration","Notas":"Notes","Agendar":"Schedule","Avanzar":"Advance",
+ "Empresa":"Company","Categoría":"Category","Contacto":"Contact","Estado":"Status","Ubicación":"Location","Todas":"All","Sin prospectos en esta categoría":"No prospects in this category",
+ "Por contactar":"To contact","Contactado":"Contacted","En conversación":"In conversation","Socio":"Partner","Descartado":"Discarded",
+ "Tours & Relocación":"Tours & Relocation","Medios & Audiencias":"Media & Audiences","Brokerages (co-broke)":"Brokerages (co-broke)","Asociación & MLS":"Association & MLS","Legal & Proveedores":"Legal & Vendors","Conferencias":"Conferences","Expansión LATAM":"Expansion LATAM",
+ "Tours":"Tours","Medios":"Media","Brokerages":"Brokerages","Asociación":"Association","Expansión":"Expansion","Referidos":"Referrals","Referidos US":"US Referrals",
+ "Por qué es prospecto":"Why it's a prospect","Sitio web":"Website","Teléfono":"Phone","Verificación":"Verification","Sitio":"Site","Llamar":"Call",
+ "No público":"Not public","No público — usar formulario en el sitio":"Not public — use the site form","Ubicación · Prioridad · Confianza":"Location · Priority · Confidence","alta":"high","media":"medium","manual":"manual",
+ "Lun":"Mon","Mar":"Tue","Mié":"Wed","Jue":"Thu","Vie":"Fri","Sáb":"Sat","Dom":"Sun",
+ "Backend compartido (Supabase)":"Shared backend (Supabase)","Conectado a Supabase":"Connected to Supabase","Modo local (este navegador)":"Local mode (this browser)","Conectar y recargar":"Connect and reload","Desconectar":"Disconnect",
+ "1 · Crea la tabla en Supabase":"1 · Create the table in Supabase","Copiar SQL":"Copy SQL","2 · Pega tus credenciales arriba":"2 · Paste your credentials above","Datos y respaldo":"Data and backup","Exportar respaldo (.json)":"Export backup (.json)",
+ "SQL copiado":"SQL copied","Faltan URL o key":"Missing URL or key","Conectando…":"Connecting…","Desconectado":"Disconnected","Lead creado":"Lead created","Evento creado":"Event created","Prospecto agregado":"Prospect added",
+ "Nuevo evento":"New event","Nuevo prospecto":"New prospect","Nombre":"Name","Precio est.":"Est. price","Título":"Title","Fecha":"Date","Hora":"Time","Tipo":"Type","Por qué":"Why","Crear":"Create","Cancelar":"Cancel",
+ "Esta herramienta está en el plan del equipo. La columna vertebral (CRM, prospectos, calendario, banco de tierras, configurador) ya está viva.":"This tool is on the team roadmap. The backbone (CRM, prospects, calendar, land bank, configurator) is already live.",
+ "Abre uno de los embudos de captura activos:":"Open one of the active capture funnels:","Volver al inicio":"Back to home","Guía de costos":"Cost guide",
+ "Buscar…":"Search…","Código de acceso":"Access code","Agrega una nota…":"Add a note…","Última conversación, siguiente paso…":"Last conversation, next step…","Nombre del cliente":"Client name","Nombre de la empresa":"Company name","Relevancia / razón":"Relevance / reason","Visita lote · cliente":"Site visit · client","Salir":"Log out","Notificaciones":"Notifications","Buscar":"Search"
+};
+const EQUIPO_FRAGS=[
+ [" en pipeline"," in pipeline"],[" prospectos · "," prospects · "],[" activos · contactos verificados"," active · verified contacts"],
+ [" eventos"," events"],[" por contactar"," to contact"],[" vs ayer"," vs yesterday"],["sin citas","no appointments"],[" más"," more"],
+ ["verif. alta","verified high"],["verif. media","verified medium"],["verif. manual","verified manual"],["hace ",""],
+ ["enero","January"],["febrero","February"],["marzo","March"],["abril","April"],["mayo","May"],["junio","June"],["julio","July"],["agosto","August"],["septiembre","September"],["octubre","October"],["noviembre","November"],["diciembre","December"]
+];
+SoraI18N.init(EQUIPO_DICT,EQUIPO_FRAGS);
+SoraI18N.mountToggle('#langSlot');
+</script>
+</body>
+</html>

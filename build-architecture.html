@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architecture, Engineering &amp; Permits · Sora Casas · Internal</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#1d3a2c">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog/blog.css">
+<style>
+  .bp-wrap{max-width:1040px;margin:0 auto;padding:30px 22px 80px}
+  .bp-back{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--forest);text-decoration:none}
+  .bp-h1{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4vw,40px);margin:14px 0 6px;color:var(--forest-deep)}
+  .bp-meta{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--ink-faint);margin-bottom:8px}
+  .bp-nav{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+  .bp-nav a{font-size:12px;color:var(--forest);text-decoration:none;background:var(--paper-2);border:.5px solid var(--line);border-radius:99px;padding:5px 12px}
+  .bp-wrap p{font-size:15px;line-height:1.65;color:var(--ink-soft);margin:9px 0;max-width:84ch}
+  .bp-h2{font-family:var(--serif);font-size:22px;font-weight:500;margin:34px 0 6px;color:var(--forest-deep);border-bottom:1px solid var(--line);padding-bottom:7px}
+  .bp-wrap li{font-size:14px;line-height:1.6;color:var(--ink-soft);margin:4px 0}
+  .bp-wrap b{color:var(--ink-2)}
+  .note{background:var(--forest-deep);color:#eee7d6;border-radius:14px;padding:16px 20px;margin:16px 0;font-size:14px;line-height:1.6}
+  .note b{color:var(--mango)}
+  .warn{background:var(--paper-2);border:.5px solid var(--line);border-left:3px solid var(--gold-deep);border-radius:0 10px 10px 0;padding:12px 16px;margin:14px 0;font-size:13px;color:var(--ink-2);line-height:1.55}
+  table.t{width:100%;border-collapse:collapse;margin:12px 0;font-size:12.5px}
+  table.t th,table.t td{border:.5px solid var(--line-2);padding:7px 9px;text-align:left;vertical-align:top}
+  table.t th{background:var(--paper-3);font-family:var(--mono);font-size:9px;letter-spacing:.05em;text-transform:uppercase}
+  .gap{color:var(--coral-deep);font-weight:600}
+</style>
+</head>
+<body>
+<div class="bp-wrap">
+  <a class="bp-back" href="sorainternalresources.html">← Recursos internos · Construcción</a>
+  <h1 class="bp-h1">Architecture, engineering &amp; permits</h1>
+  <div class="bp-meta">Updated 2026-06-24 · Owner: Abraham · INTERNAL build playbook (3 of 4)</div>
+  <div class="bp-nav"><a href="build-playbook.html">↖ Overview</a><a href="build-costs.html">→ Cost &amp; budget</a><a href="build-process.html">→ Process &amp; timeline</a><a href="build-materials.html">→ Materials &amp; finishes</a><a href="build-team.html">→ Contractor &amp; team</a></div>
+
+  <div class="note"><b>The rule that governs everything:</b> a foreign buyer can absolutely build in Panama, but <b>every project must run through a Panama-licensed professional (an <i>idóneo</i>)</b>. A foreign architect can design it, but a local <i>idóneo</i> architect must sign and seal the plans (and bears sole legal responsibility), with separate idóneos for structural, electrical, and sanitary sheets. The licensing body is <b>JTIA</b> (the state regulator); <b>SPIA</b> is the professional guild (it publishes recommended fees, it does not license).</div>
+
+  <h2 class="bp-h2">The idóneos (who signs what)</h2>
+  <table class="t"><thead><tr><th>Professional</th><th>Code</th><th>Produces</th></tr></thead>
+  <tbody>
+    <tr><td>Arquitecto idóneo</td><td>A</td><td>Anteproyecto, planos arquitectónicos (plantas, fachadas, cortes, techos, acabados), specs. The legal "technical guardian."</td></tr>
+    <tr><td>Ingeniero estructural</td><td>ES</td><td>Planos estructurales + <b>memoria de cálculo estructural</b> (signs every page); requires the soil study.</td></tr>
+    <tr><td>Ingeniero eléctrico</td><td>EL</td><td>Planos eléctricos per the RIE; approved by the electric distributor + Bomberos (valid ~2 yr).</td></tr>
+    <tr><td>Ing. sanitario / plomero</td><td>PL</td><td>Planos sanitarios/hidráulicos + memorias; reviewed by MINSA + IDAAN (valid ~3 yr).</td></tr>
+  </tbody></table>
+  <p><b>Foreign design → built via <i>refrendo</i>:</b> a foreign architect's design can be built, but the local idóneo who signs and seals is the only responsible party. Expect a Panamanian architect to charge a <b>~$1,500 minimum</b> just to translate, adapt to seismic/block code, and stamp (plus separate EL/PL stamps). <b>Sora takeaway: don't pursue foreign idoneidad</b> (very restrictive — only via marriage/child/naturalization + degree reválida); retain local idóneos to refrendar and adapt.</p>
+
+  <h2 class="bp-h2">Deliverables &amp; the 3D model</h2>
+  <ul>
+    <li><b>Anteproyecto</b> (schematic): plans, elevations, a memoria — the feasibility + <b>client-communication stage where the 3D/glb model lives</b>. Registered via the municipal RLA before construction docs. Not buildable from.</li>
+    <li><b>Planos / proyecto de ejecución</b> (buildable set): exact dimensions, full structural + MEP calcs, quantities/budget. Architectural + structural + memoria de cálculo + hydraulic + sanitary + electrical + budget.</li>
+    <li><b>Software:</b> AutoCAD (2D/3D standard), Revit/ArchiCAD (BIM), SketchUp (massing). <b>glb pipeline:</b> source model → export glTF/glb (SketchUp/Blender native; Revit needs an exporter) → WebGL viewer or <code>&lt;model-viewer&gt;</code> embed. The glb belongs at the <b>anteproyecto</b> gate for sign-off — it is a sales/visualization tool, not a regulatory deliverable.</li>
+    <li><b>Code:</b> the structural code is <b>REP-2021</b> (REP-2014 superseded), referencing ACI 318 / AISC 360 / ASCE 7; the memoria must demonstrate seismic + wind compliance — important near Barú (Boquete/Volcán) and on liquefiable coastal sand.</li>
+  </ul>
+
+  <h2 class="bp-h2">Soil study (estudio de suelos)</h2>
+  <p>Not a standalone permit but a required input, practically needed for any ground-floor-plus-one-story or sloped/unstable lot (most custom homes). <b>~US$2,590, ~2–8 weeks</b> (anchor figure, confirm locally). Done by a geotechnical idóneo + lab (Tecnilab, Geolabs, Ingeniería Prego, UTP LABGEO). It produces bearing capacity + the foundation recommendation, and can <b>downgrade an over-cautious pile design to ordinary zapatas, saving real money</b>. Coastal risk: shallow water table, liquefaction, saline corrosion. Highland risk: collapse-prone volcanic soils + slope stability.</p>
+
+  <h2 class="bp-h2">Permitting — the gauntlet</h2>
+  <table class="t"><thead><tr><th>Body</th><th>Role</th><th>Timeline / fee</th></tr></thead>
+  <tbody>
+    <tr><td>MIVIOT / Ventanilla Única</td><td>Coordinates simultaneous multi-entity plan review</td><td>misc-plans up to 30 business days; review valid 5 yr</td></tr>
+    <tr><td>Municipality / Alcaldía (DOYC)</td><td>Issues the permiso de construcción; runs avalúo</td><td>~15–20 business days; <b>~1% of declared construction value</b> + B/.50 cartón + B/.5/sheet + B/.8 timbres. Permit valid 5 yr.</td></tr>
+    <tr><td>MINSA</td><td>Sanitary plans; septic needs a percolation test</td><td>review fees</td></tr>
+    <tr><td>MiAmbiente</td><td>Environmental Impact Study (EIA) when triggered</td><td><b>2 months – 1 year</b> by category</td></tr>
+    <tr><td>Bomberos (DINASEPI)</td><td>Construction cert (permit input) + occupancy cert (gates utilities)</td><td>B/.8 timbres + fees</td></tr>
+    <tr><td>IDAAN</td><td>Water connection</td><td>install 25–45 days</td></tr>
+    <tr><td>Electric (ENSA / EDEMET-EDECHI)</td><td>Electrical plan + connection</td><td>plan valid ~2 yr</td></tr>
+    <tr><td>ANATI</td><td>Land titling / tenure</td><td><b>ROP→title 1–3+ years</b></td></tr>
+  </tbody></table>
+  <p><b>Worked example:</b> a B/.80,000 house ≈ B/.800 construction tax + B/.50 cartón + per-sheet + B/.8 timbres ≈ ~B/.908 in municipal charges (excludes professional fees). <b>Does one custom home need an EIA?</b> Usually no on an ordinary titled interior lot — <b>but coastal/island/protected sites (Pedasí, Bocas) are materially more likely to trigger it</b>, the swing factor between a 3-month and a 12-month permit phase.</p>
+
+  <h2 class="bp-h2">Coast vs highland — the real difference is land tenure</h2>
+  <ul>
+    <li><b>Boquete / Volcán / David (Chiriquí):</b> mostly titled, cleaner permitting; David needs a fresh Registro Público cert + Catastro cert, idóneo/JTIA seal, Bomberos + MINSA permits. <b>Volcán is distrito Tierras Altas, a separate alcaldía from David;</b> electricity is EDEMET-EDECHI.</li>
+    <li><b>Pedasí (Los Santos / Azuero):</b> permits via Municipio de Pedasí (fees not confirmed; extrapolated from Los Santos). The <b>22 m public-domain coastal strip applies.</b></li>
+    <li><b>Bocas:</b> dominated by <span class="gap">ROP and maritime concessions, not title.</span> Over-water builds need land behind + a maritime concession + EIA. Hybrid ROP-land-plus-concession is common — careful legal review required.</li>
+    <li><b>Coastal law everywhere:</b> the 22 m from high tide is public domain and cannot be titled (Ley 44/2006). ROP→title conversion needs proven possession &gt;5 years + an MOP-registered survey, and <b>cannot succeed in protected areas, comarcas, or concession zones.</b></li>
+  </ul>
+
+  <h2 class="bp-h2">Inspections, occupancy &amp; property tax</h2>
+  <ul>
+    <li><b>Inspections + final inspection</b> are by the <b>municipal DOYC</b>, not MIVIOT. Expat consensus: enforcement is light in practice — <b>builder selection matters more than inspection</b> (a Sora value-prop).</li>
+    <li><b>Permiso de Ocupación</b> (occupancy): issued by the municipality, <b>must be requested by the same party who pulled the construction permit</b> (a reason to keep the builder bound to completion). Needs the Bomberos occupancy cert + updated Registro Público cert + builder Paz y Salvo. ~30–45 days.</li>
+    <li><b>Utilities</b> (gated by the occupancy permit): electricity (occupancy copy + connection fee; ≥200A/3-phase/underground need a stamped plan) and water (Carta del Promotor for new property).</li>
+    <li><b>Register the improvement (mejoras)</b> at the Registro Público for property tax; update values at ANATI first. <b>IBI (Ley 66/2017, Vivienda Principal): first $120k exempt, 0.5% to $250k, 0.7% above.</b> The old 20-year exoneration is legacy (permits before 2019 only).</li>
+  </ul>
+
+  <h2 class="bp-h2">Fees &amp; timeline</h2>
+  <table class="t"><thead><tr><th>Item</th><th>Typical</th></tr></thead>
+  <tbody>
+    <tr><td>Architect</td><td>5–12% of construction cost</td></tr>
+    <tr><td>Civil/structural (COICI baseline)</td><td>~0.5%+ (never &lt; B/.750)</td></tr>
+    <tr><td>Foreign-plan adaptation + stamp</td><td>~$1,500 min + EL/PL stamps</td></tr>
+    <tr><td>Municipal permit</td><td>~1% of declared value + add-ons</td></tr>
+    <tr><td>Soil study</td><td>~$2,590</td></tr>
+    <tr><td>Contractor/builder margin</td><td>15–20%</td></tr>
+  </tbody></table>
+  <p><b>Ready to break ground: ~3–7 months</b> on a clean titled/highland lot; far longer where land tenure, environmental review, or coastal concessions are involved. <b>Top delay causes, ranked:</b> (1) land title / ANATI (ROP→title 1–3+ yr — the dominant Pedasí/Bocas risk); (2) plan-correction cycles (~3-month window or the file lapses); (3) environmental review; (4) multi-entity backlog; (5) rainy season — start in the dry season (Dec–Apr). A pre-designed model can cut 6–8 months off design/approval.</p>
+
+  <div class="warn"><b>Caveat:</b> figures are indicative (sourced from summaries of MIVIOT/DOYC/JTIA/ANATI pages + law-firm guides, not all directly fetched); confirm against the live municipal acuerdo and a local quote. Specific gaps: exact ANATI titling timelines, Pedasí-specific municipal fees, one conflicting IBI band. Source-of-truth doc: <code>sora-real-estate/20-build-architecture-permits.md</code>.</div>
+</div>
+</body>
+</html>

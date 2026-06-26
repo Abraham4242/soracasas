@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Centro de Marketing · Sora Casas</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0f2218">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d3a2c'/%3E%3Cpath d='M7 18 L16 10 L25 18 L25 25 L7 25 Z' fill='%23f7f0df'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Serif&family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://apis.google.com/js/api.js" async defer></script>
+<style>
+  :root{--bg:#f5f1e7;--surface:#fffdf8;--surface-2:#faf5ea;--surface-3:#f1ebdc;--fg:#1b1813;--fg-2:#46413a;--muted:#857d6e;--faint:#b3aa98;--border:rgba(20,17,12,.09);--border-2:rgba(20,17,12,.15);--border-3:rgba(20,17,12,.26);--forest:#1d3a2c;--forest-2:#2a5440;--forest-deep:#0f2218;--accent:#d8694a;--accent-2:#c2613f;--accent-soft:rgba(216,105,74,.10);--good:#3f7d52;--good-soft:rgba(63,125,82,.12);--warn:#b98a2e;--warn-soft:rgba(185,138,46,.13);--info:#3c6e7a;--info-soft:rgba(60,110,122,.12);--rose:#a8473a;--rose-soft:rgba(168,71,58,.12);--sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--serif:"Fraunces",Georgia,serif;--display:"Instrument Serif",Georgia,serif;--r6:6px;--r8:8px;--r10:10px;--r12:12px}
+  *{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:13px;line-height:1.5;-webkit-font-smoothing:antialiased;letter-spacing:-.005em}
+  button,input{font:inherit;color:inherit}button{cursor:pointer;border:none;background:none}a{color:inherit;text-decoration:none}::selection{background:var(--forest);color:#fff}.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}.tnum{font-variant-numeric:tabular-nums}
+  ::-webkit-scrollbar{width:9px;height:9px}::-webkit-scrollbar-thumb{background:var(--border-2);border-radius:6px;border:2px solid var(--bg)}
+  #login{position:fixed;inset:0;z-index:200;background:var(--forest-deep);display:flex;align-items:center;justify-content:center;padding:24px;background-image:radial-gradient(ellipse at 20% 10%,rgba(216,105,74,.10),transparent 55%),radial-gradient(ellipse at 85% 90%,rgba(42,84,64,.5),transparent 60%)}#login.hide{display:none}
+  .lcard{width:100%;max-width:368px;background:rgba(255,253,248,.04);border:1px solid rgba(255,255,255,.10);border-radius:var(--r12);padding:30px 28px;text-align:center;backdrop-filter:blur(8px)}.lmark{width:42px;height:42px;border-radius:10px;background:var(--forest-2);display:grid;place-items:center;margin:0 auto 18px}.lword{font-family:var(--display);font-size:30px;color:#fdfbf4;line-height:1}.lsub{font-family:var(--mono);font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:var(--accent);margin-top:8px;margin-bottom:24px}#login input{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:var(--r8);padding:11px 13px;color:#fff;font-size:13.5px;text-align:center;letter-spacing:.5px}#login input:focus{outline:none;border-color:var(--accent)}#login button{width:100%;margin-top:11px;background:var(--accent);color:#fff;font-weight:600;font-size:12px;padding:12px;border-radius:var(--r8)}.lhint{margin-top:16px;font-family:var(--mono);font-size:10px;color:#7d8c80}.lerr{color:#e89b85;font-size:11.5px;margin-top:10px;min-height:14px}
+  #app{display:none;flex-direction:column;min-height:100vh}#app.show{display:flex}
+  .top{display:flex;align-items:center;gap:14px;padding:0 24px;height:58px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(245,241,231,.93);backdrop-filter:blur(10px);z-index:20}
+  .bk{display:flex;align-items:center;gap:8px;color:var(--fg-2);font-size:12px;font-weight:500;padding:7px 10px;border-radius:var(--r8)}.bk:hover{background:var(--surface-2)}
+  .brand{display:flex;align-items:center;gap:9px}.bmark{width:28px;height:28px;border-radius:7px;background:var(--forest);display:grid;place-items:center}.bword{font-family:var(--display);font-size:20px}.tname{font-weight:600;font-size:13.5px;border-left:1px solid var(--border-2);padding-left:13px;margin-left:3px}
+  .gstatus{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10.5px;color:var(--muted);border:1px solid var(--border-2);border-radius:99px;padding:5px 11px}.gstatus .d{width:7px;height:7px;border-radius:50%;background:var(--warn)}.gstatus.on .d{background:var(--good)}
+  .gconnect{display:inline-flex;align-items:center;gap:7px;background:var(--forest);color:#f1ece0;font-size:12px;font-weight:600;padding:8px 13px;border-radius:var(--r8)}.gconnect:hover{background:var(--forest-deep)}
+  .tdate{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .i18nslot{display:flex;border:1px solid var(--border-2);border-radius:var(--r8);overflow:hidden;flex:0 0 auto}
+  .i18nslot button{font-family:var(--mono);font-size:10px;font-weight:600;padding:6px 9px;color:var(--muted);letter-spacing:1px}
+  .i18nslot button.on{background:var(--forest);color:#f1ece0}
+  .tabbar{display:flex;gap:4px;padding:10px 24px 0;border-bottom:1px solid var(--border);position:sticky;top:58px;background:var(--bg);z-index:15;overflow-x:auto}
+  .mtab{font-size:12.5px;font-weight:500;color:var(--muted);padding:9px 13px 12px;border-bottom:2px solid transparent;white-space:nowrap;transition:.12s}.mtab:hover{color:var(--fg)}.mtab.on{color:var(--accent-2);border-color:var(--accent)}
+  .wrap{flex:1;padding:22px 24px;max-width:1280px;width:100%;margin:0 auto}
+  .mview{display:none}.mview.show{display:block}
+  .secth{display:flex;align-items:center;gap:10px;margin:22px 0 12px}.secth h3{font-size:11px;font-weight:600;text-transform:uppercase;color:var(--muted);font-family:var(--mono);letter-spacing:1px}.secth .ln{flex:1;height:1px;background:var(--border)}.secth .rt{font-size:11px;color:var(--faint)}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}@media(max-width:920px){.kpis{grid-template-columns:1fr 1fr}}
+  .kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--r10);padding:14px 16px}.kpi .l{font-family:var(--mono);font-size:9.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted)}.kpi .nr{display:flex;align-items:flex-end;justify-content:space-between;margin-top:9px}.kpi .n{font-family:var(--mono);font-weight:600;font-size:25px;letter-spacing:-.02em;line-height:1}.kpi .dl{font-family:var(--mono);font-size:11px;font-weight:600;display:flex;align-items:center;gap:3px}.dl.up{color:var(--good)}.dl.down{color:var(--rose)}.kpi .sp{margin-top:10px}
+  .panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--r10);overflow:hidden}.panel .ph{display:flex;align-items:center;gap:8px;padding:13px 16px;border-bottom:1px solid var(--border)}.panel .ph h4{font-size:13px;font-weight:600}.panel .ph .seg{margin-left:auto;display:flex;gap:4px}.panel .ph .seg button{font-family:var(--mono);font-size:10px;color:var(--muted);padding:4px 8px;border-radius:6px}.panel .ph .seg button.on{background:var(--surface-3);color:var(--fg)}
+  .chartbox{padding:16px}
+  .two{display:grid;grid-template-columns:1.55fr 1fr;gap:12px;margin-top:12px}@media(max-width:900px){.two{grid-template-columns:1fr}}
+  .tbl{width:100%;border-collapse:collapse}.tbl th{text-align:left;font-family:var(--mono);font-size:9.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);font-weight:500;padding:9px 16px;background:var(--surface-2);border-bottom:1px solid var(--border)}.tbl td{padding:10px 16px;border-bottom:1px solid var(--border);font-size:12.5px}.tbl tr:last-child td{border-bottom:none}.tbl tr.b:hover td{background:var(--surface-2)}.tbl td.r,.tbl th.r{text-align:right;font-variant-numeric:tabular-nums}
+  .kwname{font-weight:600}.kwsub{font-size:10.5px;color:var(--muted)}
+  .pos{font-family:var(--mono);font-weight:600}.delta{font-family:var(--mono);font-size:11px;font-weight:600;display:inline-flex;align-items:center;gap:2px}.delta.up{color:var(--good)}.delta.down{color:var(--rose)}.delta.flat{color:var(--faint)}
+  .pillchip{font-family:var(--mono);font-size:9px;letter-spacing:.3px;padding:2px 7px;border-radius:5px;background:var(--surface-3);color:var(--fg-2)}
+  .tgt{font-family:var(--mono);font-size:11px;color:var(--faint)}
+  .cwv{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.cwvc{text-align:center;padding:14px;border-radius:var(--r8);border:1px solid var(--border)}.cwvc .lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted)}.cwvc .v{font-family:var(--mono);font-size:22px;font-weight:600;margin-top:6px}.cwvc.good{background:var(--good-soft)}.cwvc.good .v{color:var(--good)}.cwvc.warn{background:var(--warn-soft)}.cwvc.warn .v{color:var(--warn)}
+  .channels{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}@media(max-width:900px){.channels{grid-template-columns:1fr 1fr}}@media(max-width:600px){.channels{grid-template-columns:1fr}}
+  .chcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r10);padding:15px 16px}.chcard .hd{display:flex;align-items:center;gap:9px;margin-bottom:12px}.chcard .ico{width:30px;height:30px;border-radius:var(--r8);background:var(--surface-3);display:grid;place-items:center;color:var(--forest)}.chcard .ico svg{width:16px;height:16px}.chcard .ti{font-size:13px;font-weight:600}.chcard .tg{font-family:var(--mono);font-size:9px;color:var(--muted)}
+  .chrow{display:flex;justify-content:space-between;padding:5px 0;font-size:12px;color:var(--muted)}.chrow b{color:var(--fg);font-family:var(--mono);font-variant-numeric:tabular-nums}.chrow.tot{border-top:1px solid var(--border);margin-top:6px;padding-top:9px}.chrow.tot b{color:var(--forest);font-size:14px}
+  .editable{cursor:text;border-bottom:1px dashed var(--border-3)}
+  .funnel{display:flex;flex-direction:column;gap:3px;padding:6px 0}.fstg{display:grid;grid-template-columns:150px 1fr 110px;align-items:center;gap:14px}.fbar{height:30px;border-radius:6px;display:flex;align-items:center;padding-left:11px;color:#f1ece0;font-family:var(--mono);font-size:12px;font-weight:600}.fmeta{font-size:11px;color:var(--muted);text-align:right}.fmeta b{color:var(--fg);font-family:var(--mono)}.flab{font-size:12.5px;font-weight:500}.fconv{font-family:var(--mono);font-size:10px;color:var(--faint)}
+  .content-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}@media(max-width:980px){.content-cols{grid-template-columns:1fr 1fr}}
+  .ccol{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r10)}.ccolh{display:flex;align-items:center;gap:7px;padding:11px 13px;border-bottom:1px solid var(--border);font-size:11.5px;font-weight:600}.ccolh .ct{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--muted)}.ccolb{padding:9px;display:flex;flex-direction:column;gap:8px}
+  .citem{background:var(--surface);border:1px solid var(--border);border-radius:var(--r8);padding:10px 11px}.citem .t{font-size:12px;font-weight:600;line-height:1.3}.citem .m{display:flex;align-items:center;gap:6px;margin-top:7px}.citem .kw{font-family:var(--mono);font-size:9.5px;color:var(--info)}.citem .w{margin-left:auto;font-family:var(--mono);font-size:9.5px;color:var(--faint)}
+  .note{background:var(--accent-soft);border:1px solid rgba(216,105,74,.2);border-radius:var(--r10);padding:13px 16px;font-size:12px;color:var(--fg-2);margin-bottom:14px;display:flex;gap:10px;align-items:flex-start}.note svg{width:16px;height:16px;color:var(--accent-2);flex:0 0 auto;margin-top:1px}.note b{color:var(--accent-2)}
+  .modal{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(20,17,12,.22)}.modal.open{display:flex}.mbox{width:100%;max-width:440px;background:var(--surface);border:1px solid var(--border-2);border-radius:var(--r12);box-shadow:0 12px 40px rgba(20,17,12,.16)}.mboxh{display:flex;align-items:center;padding:15px 18px;border-bottom:1px solid var(--border)}.mboxh h3{font-size:14px;font-weight:600}.mboxh .x{margin-left:auto;color:var(--muted)}.mbody{padding:16px 18px;display:flex;flex-direction:column;gap:11px}.lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;display:block}.inp{width:100%;background:var(--surface-2);border:1px solid var(--border-2);border-radius:var(--r8);padding:10px 12px;font-size:12.5px}.inp:focus{outline:none;border-color:var(--border-3)}.mfoot{display:flex;gap:8px;padding:14px 18px;border-top:1px solid var(--border)}.primary{flex:1;background:var(--accent);color:#fff;font-weight:600;font-size:12.5px;padding:11px;border-radius:var(--r8)}.ghost{background:none;border:1px solid var(--border-2);border-radius:var(--r8);padding:11px 16px;font-size:12.5px;color:var(--fg-2)}.help{font-size:11px;color:var(--muted);line-height:1.5}.help a{color:var(--info)}
+  .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--forest-deep);color:#f1ece0;font-size:12.5px;padding:11px 18px;border-radius:99px;z-index:120;opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1}
+  svg.icn{width:16px;height:16px}
+</style>
+</head>
+<body>
+<div id="login"><div class="lcard"><div class="lmark"><svg width="22" height="22" viewBox="0 0 32 32"><path d="M7 18 L16 10 L25 18 L25 25 L7 25 Z" fill="#f7f0df"/></svg></div><div class="lword">Sora</div><div class="lsub">Centro de Marketing</div><input id="pass" type="password" placeholder="Código de acceso" autocomplete="off"><button onclick="doLogin()">Entrar</button><div class="lerr" id="lerr"></div><div class="lhint">Acceso interno del equipo</div></div></div>
+
+<div id="app">
+  <div class="top">
+    <a class="bk" href="sorainternalresources.html">__BACK__ Operaciones</a>
+    <div class="brand"><div class="bmark"><svg width="16" height="16" viewBox="0 0 32 32"><path d="M7 18 L16 10 L25 18 L25 25 L7 25 Z" fill="#f7f0df"/></svg></div><div class="tname">Centro de Marketing</div></div>
+    <span class="gstatus" id="gstatus"><span class="d"></span><span id="gstatusT">Google desconectado</span></span>
+    <button class="gconnect" onclick="openGoogle()">__GICON__ Conectar Google</button>
+    <span class="i18nslot" id="langSlot"></span>
+    <span class="tdate" id="tdate"></span>
+  </div>
+  <div class="tabbar" id="tabbar"></div>
+  <div class="wrap">
+    <div style="margin:0 0 16px;padding:15px 18px;background:#1d3a2c;color:#f7f0df;border-radius:10px;font-size:13px;line-height:1.5">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-bottom:9px">Marketing guides</div>
+      <a href="marketing-paid-ads.html" style="color:#f7f0df;text-decoration:none;display:block;padding:4px 0;border-top:.5px solid rgba(247,240,223,.14)">📘 <b>Paid Ads Guide</b> — how paid advertising works for this business + ready-to-run Google/Meta ads →</a>
+      <a href="marketing-backlinks.html" style="color:#f7f0df;text-decoration:none;display:block;padding:4px 0;border-top:.5px solid rgba(247,240,223,.14)">🔗 <b>Backlink Playbook</b> — white-hat link building, executable this week →</a>
+      <a href="marketing-youtube.html" style="color:#f7f0df;text-decoration:none;display:block;padding:4px 0;border-top:.5px solid rgba(247,240,223,.14)">▶️ <b>YouTube Partner Playbook</b> — verified Panama creator roster + ready-to-send pitches →</a>
+    </div>
+    <div class="note" id="datanote">__INFO__<div><b>Datos de demostración.</b> Conecta Search Console + GA4 (botón arriba) para ver métricas reales de tu dominio. Requiere el dominio verificado en Google y GA4 instalado — hoy <span class="mono">soracasas.com</span> aún no está registrado, así que conecta <span class="mono">sora.la</span> si ya está verificado.</div></div>
+
+    <!-- RESUMEN -->
+    <div class="mview show" id="mv-resumen">
+      <div class="kpis" id="kpiRow"></div>
+      <div class="two">
+        <div class="panel"><div class="ph">__CHARTI__<h4>Rendimiento del dominio</h4><div class="seg"><button class="on" onclick="chartMetric('clicks',this)">Clics</button><button onclick="chartMetric('impressions',this)">Impresiones</button><button onclick="chartMetric('position',this)">Posición</button></div></div><div class="chartbox" id="domChart"></div></div>
+        <div class="panel"><div class="ph">__USERSI__<h4>Tráfico por canal (GA4)</h4></div><div id="channelMix"></div></div>
+      </div>
+      <div class="two">
+        <div class="panel"><div class="ph">__KWI__<h4>Keywords en movimiento</h4><a class="tg" style="margin-left:auto;color:var(--accent-2);font-size:11px;font-weight:600" onclick="mtab('keywords')">Ver todas →</a></div><div id="kwMovers"></div></div>
+        <div class="panel"><div class="ph">__CWVI__<h4>Core Web Vitals · inicio</h4></div><div class="chartbox"><div class="cwv" id="cwv"></div></div></div>
+      </div>
+    </div>
+
+    <!-- DOMINIO -->
+    <div class="mview" id="mv-dominio">
+      <div class="secth"><h3>Search Console</h3><div class="ln"></div><span class="rt" id="domRange"></span></div>
+      <div class="panel"><div class="ph">__CHARTI__<h4>Clics e impresiones · 12 semanas</h4></div><div class="chartbox" id="domBig"></div></div>
+      <div class="two" style="margin-top:12px">
+        <div class="panel"><div class="ph">__DOCI__<h4>Páginas con más clics</h4></div><table class="tbl" id="topPages"></table></div>
+        <div class="panel"><div class="ph">__GLOBEI__<h4>Por país y dispositivo</h4></div><div class="chartbox" id="geoDevice"></div></div>
+      </div>
+    </div>
+
+    <!-- KEYWORDS -->
+    <div class="mview" id="mv-keywords">
+      <div class="secth"><h3>Keyword tracker</h3><div class="ln"></div><span class="rt">Posición media vía GSC · objetivo de la estrategia SEO</span></div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px" id="kwPillars"></div>
+      <div class="panel"><table class="tbl" id="kwTable"></table></div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="mview" id="mv-contenido">
+      <div class="secth"><h3>Calendario editorial</h3><div class="ln"></div><span class="rt">Cadencia: L/X/V pilar nuevo · M/J refresh</span></div>
+      <div class="content-cols" id="contentCols"></div>
+    </div>
+
+    <!-- CANALES -->
+    <div class="mview" id="mv-canales">
+      <div class="secth"><h3>Canales de adquisición</h3><div class="ln"></div><span class="rt">Pagado: entrada manual (API en fase 2)</span></div>
+      <div class="channels" id="channelCards"></div>
+      <div class="secth"><h3>Métrica norte</h3><div class="ln"></div></div>
+      <div class="kpis" id="northStar"></div>
+    </div>
+
+    <!-- EMBUDO -->
+    <div class="mview" id="mv-embudo">
+      <div class="secth"><h3>Embudo de demanda</h3><div class="ln"></div><span class="rt">$15K/mes pagado · venta promedio $400K</span></div>
+      <div class="panel"><div class="chartbox"><div class="funnel" id="funnel"></div></div></div>
+      <div class="kpis" id="funnelKpis" style="margin-top:14px"></div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="modal"></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const I={back:'<path d="M15 5l-7 7 7 7"/>',google:'<path d="M21 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.1a4.4 4.4 0 0 1-1.9 2.9v2.4h3.1A9.3 9.3 0 0 0 21 12.2Z"/><path d="M12 21c2.5 0 4.6-.8 6.1-2.2l-3.1-2.4c-.8.6-1.9.9-3 .9-2.3 0-4.3-1.6-5-3.7H3.8v2.5A9 9 0 0 0 12 21Z"/><path d="M7 13.6a5.4 5.4 0 0 1 0-3.4V7.7H3.8a9 9 0 0 0 0 8.1L7 13.6Z"/><path d="M12 6.6c1.3 0 2.5.5 3.4 1.3l2.6-2.6A9 9 0 0 0 3.8 7.7L7 10.2c.7-2.1 2.7-3.6 5-3.6Z"/>',chart:'<path d="M4 20V10M9.5 20V5M15 20v-7M20.5 20V8"/>',users:'<circle cx="9" cy="8" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6"/>',kw:'<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',cwv:'<path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 8v4l3 2M21 4l-4 4-2-2"/>',doc:'<path d="M6 2.5h8l5 5V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1Z"/><path d="M14 2.5v5h5"/>',globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/>',info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',seo:'<path d="M4 4h16v16H4z" opacity="0"/><circle cx="11" cy="11" r="6"/><path d="m20 20-4-4"/>',ads:'<path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1Z"/><path d="M16 9a4 4 0 0 1 0 6"/>',meta:'<path d="M3 16c2-7 5-9 7-2s5 9 7 2"/><circle cx="3" cy="16" r="0" /><path d="M3 16c0 2 1.5 3 3 3 3 0 4-4 6-9s3-9 6-9c1.5 0 3 1 3 3"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/>',handshake:'<path d="m12 11 2-2 4 3.5M3 8l4-2 5 5-2 2-3-2.5M21 8l-4-2-3 2M3 8v6l4 3M21 8v6l-4 3"/>',plane:'<path d="M10 13 3 11l1-2 7 1 4-6 2.5.5L15 11l5 1-1 2-5-.5-2 6-2-.5Z"/>'};
+function ic(n){return `<svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${I[n]||''}</svg>`}
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2400)}
+const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+const TABS=[['resumen','Resumen'],['dominio','Dominio'],['keywords','Keywords'],['contenido','Contenido'],['canales','Canales'],['embudo','Embudo']];
+
+/* ===== SEEDED DATA (replaced by live Google when connected) ===== */
+function genSeries(start,growth,wk,noise){const a=[];let v=start;for(let i=0;i<wk;i++){v=v*(1+growth)+(((i*37)%11)-5)*noise;a.push(Math.max(0,Math.round(v)))}return a}
+let DATA={
+  weeks:12,
+  clicks:genSeries(120,0.08,12,4),
+  impressions:genSeries(4200,0.07,12,90),
+  position:[24.1,22.8,21.5,20.9,19.4,18.7,17.9,16.8,15.9,15.1,14.4,13.6],
+  ga4:{users:1840,sessions:2360,channels:[['Búsqueda orgánica',46,0x3f7d52],['Directo',19,0x857d6e],['Pagado',16,0xd8694a],['Referido',11,0x3c6e7a],['Social',8,0xb98a2e]]},
+  cwv:[['LCP','1.9 s','good'],['INP','142 ms','good'],['CLS','0.06','good']],
+  topPages:[['/construir/costo-construir-casa-panama',412,9800,8.2],['/lugares/pedasi',288,7400,11.5],['/lugares/boquete',254,8100,12.1],['/visa-qiv',231,5200,6.4],['/lugares/volcan',176,3900,7.3],['/construir/casa-bahia',132,2600,9.1]],
+};
+const PILLARS=['Construir','Comprar','Visas','Comparar','Costo','Español'];
+// Priority keywords from the SORA Casas keyword research (validate volume in Keyword Planner
+// before quoting). pos/prev/target/impr/clicks/ctr are seed values, replaced by live GSC on connect.
+let KEYWORDS=[
+ // Pillar 1 — Build with Sora (lowest competition, perfect intent to the 4 models)
+ ['build a house in Panama','Construir',11,15,5,410,38,'9.3'],
+ ['cost to build a house in Panama','Construir',8,12,3,520,72,'13.8'],
+ ['turnkey home Costa Rica','Construir',14,19,5,180,16,'8.9'],
+ ['casa llave en mano Panamá','Construir',9,13,4,140,12,'8.6'],
+ // Pillar 2 — Buy verified (secondary markets, beatable SERPs)
+ ['Pedasi real estate','Comprar',14,18,6,310,24,'7.7'],
+ ['Boquete real estate','Comprar',22,27,8,690,33,'4.8'],
+ ['Coronado Panama real estate','Comprar',17,21,7,260,19,'7.3'],
+ ['terrenos en venta Panamá','Comprar',12,15,5,450,30,'6.7'],
+ // Pillar 3 — Visa = buy a house (funnel-tied, high value)
+ ['Panama Friendly Nations Visa','Visas',31,39,12,1600,28,'1.8'],
+ ['Panama Qualified Investor Visa','Visas',18,24,8,640,30,'4.7'],
+ ['Panama Pensionado Visa','Visas',24,30,9,900,26,'2.9'],
+ // Pillar 4 — Decide: Panama vs alternatives (mid-funnel, converts well)
+ ['Panama vs Costa Rica retire','Comparar',19,26,7,1100,52,'4.7'],
+ ['Boquete vs Volcan','Comparar',6,9,3,120,28,'23.3'],
+ ['best places to retire in Panama','Comparar',16,22,6,780,41,'5.3'],
+ // Pillar 5 — Cost & lifestyle hub (top-of-funnel, snowbird wave)
+ ['cost of living Panama','Costo',28,35,10,4200,96,'2.3'],
+ ['living in Boquete','Costo',12,16,5,540,38,'7.0'],
+ ['casas en venta Pedasí','Español',13,16,6,450,24,'5.3'],
+].map(k=>({kw:k[0],pillar:k[1],pos:k[2],prev:k[3],target:k[4],impr:k[5],clicks:k[6],ctr:k[7],spark:genSeries(28-k[2],-0.02,8,1).map(v=>Math.max(1,v))}));
+const CONTENT=[
+ ['Cost to Build a House in Panama 2026','Construir','cost to build a house in Panama','Rankeando',4500],
+ ['Turnkey Home Costa Rica — Fixed-Price Guide','Construir','turnkey home Costa Rica','Publicado',2500],
+ ['Boquete vs Volcán — Comparativa 2026','Comparar','Boquete vs Volcan','Publicado',4000],
+ ['Casa Llave en Mano Panamá','Construir','casa llave en mano Panamá','Publicado',3000],
+ ['QIV Countdown — $300K antes del 15 oct','Visas','Panama Qualified Investor Visa','Publicado',2500],
+ ['Coronado Panama Real Estate — Buyer Guide','Comprar','Coronado Panama real estate','Borrador',3500],
+ ['Cost of Living in Panama 2026','Costo','cost of living Panama','Borrador',4200],
+ ['Friendly Nations Visa vía bienes raíces','Visas','Panama Friendly Nations Visa','Planeado',3000],
+ ['Coffee Farm for Sale Boquete','Comprar','coffee farm for sale Boquete','Planeado',3000],
+ ['Casas en venta Pedasí (ES)','Español','casas en venta Pedasí','Planeado',2500],
+ ['Living in Boquete — Expat Field Guide','Costo','living in Boquete','Planeado',3000],
+ ['Panama vs Costa Rica Retirement','Comparar','Panama vs Costa Rica retire','Borrador',4000],
+];
+let CHANNELS=[
+ {k:'Orgánico (SEO)',ic:'seo',spend:0,leads:14,note:'CAC ~$0'},
+ {k:'Google Ads',ic:'ads',spend:1500,leads:20,note:'búsqueda alta intención'},
+ {k:'Meta',ic:'meta',spend:2000,leads:34,note:'lookalikes + reels'},
+ {k:'Newsletter (Int. Living)',ic:'mail',spend:3500,leads:9,note:'colocación dedicada'},
+ {k:'Referidos / PRT',ic:'handshake',spend:0,leads:7,note:'2–3% al cierre'},
+ {k:'Sora Travel',ic:'plane',spend:0,leads:5,note:'embudo de turismo'},
+];
+const FUNNEL=[['Clics',4500,'',0x2a5440],['Leads',200,'4.5%',0x2f6248],['Calificados',100,'50%',0x3f7d52],['Llamadas',30,'30%',0xb98a2e],['Visitas',6,'20%',0xc2613f],['Contratos',2,'33%',0xd8694a]];
+
+/* ===== chart helpers (inline SVG) ===== */
+function spark(arr,w,h,col,fill){if(!arr||!arr.length)return'';const mn=Math.min(...arr),mx=Math.max(...arr),rng=mx-mn||1;const pts=arr.map((v,i)=>[i/(arr.length-1)*w,h-((v-mn)/rng)*(h-4)-2]);const d=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');const area=fill?`<path d="${d} L${w} ${h} L0 ${h} Z" fill="${col}" opacity=".10"/>`:'';return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${area}<path d="${d}" fill="none" stroke="${col}" stroke-width="1.6"/></svg>`}
+function areaChart(arr,w,h,col,labels){if(!arr.length)return'';const mn=Math.min(...arr)*0.9,mx=Math.max(...arr)*1.05,rng=mx-mn||1;const pts=arr.map((v,i)=>[i/(arr.length-1)*w,h-((v-mn)/rng)*(h-26)-22]);const d=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');let gl='';[0,.5,1].forEach(g=>{const y=22+(h-26)*g;gl+=`<line x1="0" y1="${y}" x2="${w}" y2="${y}" stroke="rgba(20,17,12,.06)"/>`});const dots=pts.map(p=>`<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="2" fill="${col}"/>`).join('');const xl=(labels||[]).map((l,i)=>`<text x="${(i/(labels.length-1)*w).toFixed(0)}" y="${h-4}" font-size="9" fill="#b3aa98" font-family="JetBrains Mono" text-anchor="${i===0?'start':i===labels.length-1?'end':'middle'}">${l}</text>`).join('');return `<svg width="100%" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" style="display:block">${gl}<path d="${d} L${w} ${h-18} L0 ${h-18} Z" fill="${col}" opacity=".09"/><path d="${d}" fill="none" stroke="${col}" stroke-width="2"/>${dots}<text x="0" y="13" font-size="10" fill="#857d6e" font-family="JetBrains Mono">${Math.round(mx)}</text>${xl}</svg>`}
+function donut(channels){const tot=channels.reduce((s,c)=>s+c[1],0);let a=-90,segs='';const cx=46,cy=46,r=34;channels.forEach(c=>{const ang=c[1]/tot*360;const a2=a+ang;const x1=cx+r*Math.cos(a*Math.PI/180),y1=cy+r*Math.sin(a*Math.PI/180),x2=cx+r*Math.cos(a2*Math.PI/180),y2=cy+r*Math.sin(a2*Math.PI/180);segs+=`<path d="M${cx} ${cy} L${x1.toFixed(1)} ${y1.toFixed(1)} A${r} ${r} 0 ${ang>180?1:0} 1 ${x2.toFixed(1)} ${y2.toFixed(1)} Z" fill="#${c[2].toString(16).padStart(6,'0')}"/>`;a=a2});return `<svg width="92" height="92" viewBox="0 0 92 92">${segs}<circle cx="46" cy="46" r="20" fill="var(--surface)"/></svg>`}
+
+/* ===== renders ===== */
+function pct(cur,prev){return prev?((cur-prev)/prev*100):0}
+function renderResumen(){
+  const c=DATA.clicks,im=DATA.impressions,po=DATA.position;const h=v=>v.slice(-4).reduce((s,x)=>s+x,0),p=v=>v.slice(-8,-4).reduce((s,x)=>s+x,0);
+  const cl=h(c),clp=p(c),ip=h(im),ipp=p(im),ctr=(cl/ip*100),ctrp=(clp/ipp*100),pos=po.slice(-1)[0],posp=po.slice(-5)[0];
+  const k=[
+   {l:'Clics (28 d)',n:cl.toLocaleString(),d:pct(cl,clp),inv:0,sp:spark(c,72,22,'#3f7d52',1)},
+   {l:'Impresiones',n:(ip/1000).toFixed(1)+'k',d:pct(ip,ipp),inv:0,sp:spark(im,72,22,'#3c6e7a',1)},
+   {l:'CTR',n:ctr.toFixed(1)+'%',d:pct(ctr,ctrp),inv:0,sp:spark(c.map((x,i)=>x/im[i]*100),72,22,'#b98a2e',0)},
+   {l:'Posición media',n:pos.toFixed(1),d:pct(pos,posp),inv:1,sp:spark(po.map(x=>30-x),72,22,'#d8694a',0)},
+  ];
+  $('#kpiRow').innerHTML=k.map(x=>{const up=x.inv?x.d<0:x.d>0;return `<div class="kpi"><div class="l">${x.l}</div><div class="nr"><div class="n">${x.n}</div><div class="dl ${up?'up':'down'}">${up?'▲':'▼'} ${Math.abs(x.d).toFixed(1)}%</div></div><div class="sp">${x.sp}</div></div>`}).join('');
+  chartMetric(curMetric);
+  $('#channelMix').innerHTML=`<div class="chartbox" style="display:flex;gap:18px;align-items:center"><div>${donut(DATA.ga4.channels)}</div><div style="flex:1">${DATA.ga4.channels.map(c=>`<div style="display:flex;align-items:center;gap:8px;padding:3px 0;font-size:12px"><span style="width:9px;height:9px;border-radius:2px;background:#${c[2].toString(16).padStart(6,'0')}"></span><span style="color:var(--fg-2)">${c[0]}</span><b class="mono" style="margin-left:auto">${c[1]}%</b></div>`).join('')}<div style="margin-top:8px;font-size:11px;color:var(--muted)" class="mono">${DATA.ga4.users.toLocaleString()} usuarios · ${DATA.ga4.sessions.toLocaleString()} sesiones</div></div></div>`;
+  const movers=KEYWORDS.slice().sort((a,b)=>(b.prev-b.pos)-(a.prev-a.pos)).slice(0,6);
+  $('#kwMovers').innerHTML=`<table class="tbl">${movers.map(k=>`<tr class="b"><td><div class="kwname" style="font-size:12px">${k.kw}</div></td><td class="r"><span class="pos">#${k.pos}</span></td><td class="r" style="width:70px">${delta(k.prev-k.pos)}</td><td class="r" style="width:70px">${spark(k.spark,56,18,'#3f7d52',0)}</td></tr>`).join('')}</table>`;
+  $('#cwv').innerHTML=DATA.cwv.map(c=>`<div class="cwvc ${c[2]}"><div class="lab">${c[0]}</div><div class="v">${c[1]}</div></div>`).join('');
+}
+let curMetric='clicks';
+function chartMetric(m,btn){curMetric=m;if(btn){btn.parentNode.querySelectorAll('button').forEach(b=>b.classList.remove('on'));btn.classList.add('on')}const map={clicks:[DATA.clicks,'#3f7d52'],impressions:[DATA.impressions,'#3c6e7a'],position:[DATA.position.map(x=>30-x),'#d8694a']};const[arr,col]=map[m];const labels=['12 sem','','','','8','','','','4','','','hoy'];$('#domChart').innerHTML=areaChart(arr,560,180,col,labels)}
+function delta(d){if(d>0)return `<span class="delta up">▲ ${d}</span>`;if(d<0)return `<span class="delta down">▼ ${Math.abs(d)}</span>`;return `<span class="delta flat">–</span>`}
+function renderDominio(){
+  $('#domRange').textContent='Últimos 90 días';
+  $('#domBig').innerHTML=areaChart(DATA.impressions,920,200,'#3c6e7a',['12 sem','','','','','','8','','','','','','4','','','hoy'])+`<div style="display:flex;gap:18px;margin-top:8px;font-family:var(--mono);font-size:11px;color:var(--muted)"><span><span style="color:var(--info)">●</span> Impresiones</span><span><span style="color:var(--good)">●</span> Clics ${spark(DATA.clicks,80,16,'#3f7d52',0)}</span></div>`;
+  $('#topPages').innerHTML=`<thead><tr><th>Página</th><th class="r">Clics</th><th class="r">Impr.</th><th class="r">Pos.</th></tr></thead><tbody>${DATA.topPages.map(p=>`<tr class="b"><td class="mono" style="font-size:11.5px;color:var(--info)">${p[0]}</td><td class="r mono">${p[1]}</td><td class="r mono">${p[2].toLocaleString()}</td><td class="r"><span class="pos">${p[3]}</span></td></tr>`).join('')}</tbody>`;
+  $('#geoDevice').innerHTML=`<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">País</div>${[['Estados Unidos',62],['Canadá',14],['Reino Unido',9],['Panamá',7],['Otros',8]].map(g=>bar(g[0],g[1],'#3f7d52')).join('')}<div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin:14px 0 8px">Dispositivo</div>${[['Escritorio',58],['Móvil',38],['Tablet',4]].map(g=>bar(g[0],g[1],'#3c6e7a')).join('')}`;
+}
+function bar(l,v,c){return `<div style="margin:5px 0"><div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:3px"><span style="color:var(--fg-2)">${l}</span><b class="mono" style="font-size:11px">${v}%</b></div><div style="height:7px;background:var(--surface-3);border-radius:4px;overflow:hidden"><div style="height:100%;width:${v}%;background:${c};border-radius:4px"></div></div></div>`}
+let kwPillarFilter='Todas';
+function renderKeywords(){
+  $('#kwPillars').innerHTML=['Todas',...PILLARS].map(p=>`<button class="mtab" style="border:1px solid var(--border-2);border-radius:99px;padding:6px 11px;border-bottom-width:1px;${kwPillarFilter===p?'background:var(--forest);color:#f1ece0':''}" onclick="kwFilter('${p}')">${p}</button>`).join('');
+  let ks=KEYWORDS.filter(k=>kwPillarFilter==='Todas'||k.pillar===kwPillarFilter).sort((a,b)=>a.pos-b.pos);
+  $('#kwTable').innerHTML=`<thead><tr><th>Keyword</th><th>Pilar</th><th class="r">Posición</th><th class="r">Cambio</th><th class="r">Objetivo</th><th class="r">Impr.</th><th class="r">Clics</th><th class="r">CTR</th><th class="r">Tendencia</th></tr></thead><tbody>${ks.map(k=>`<tr class="b"><td class="kwname">${k.kw}</td><td><span class="pillchip">${k.pillar}</span></td><td class="r"><span class="pos">#${k.pos}</span></td><td class="r">${delta(k.prev-k.pos)}</td><td class="r tgt">#${k.target}</td><td class="r mono">${k.impr.toLocaleString()}</td><td class="r mono">${k.clicks}</td><td class="r mono">${k.ctr}%</td><td class="r">${spark(k.spark,64,18,'#3f7d52',0)}</td></tr>`).join('')}</tbody>`;
+}
+function kwFilter(p){kwPillarFilter=p;renderKeywords()}
+function renderContenido(){
+  const cols=[['Planeado','Planeado'],['Borrador','Borrador'],['Publicado','Publicado'],['Rankeando','Rankeando']];
+  $('#contentCols').innerHTML=cols.map(([id,nm])=>{const items=CONTENT.filter(c=>c[3]===id);return `<div class="ccol"><div class="ccolh">${nm}<span class="ct">${items.length}</span></div><div class="ccolb">${items.map(c=>`<div class="citem"><div class="t">${c[0]}</div><div class="m"><span class="kw">${c[2]}</span><span class="w">${(c[4]/1000).toFixed(1)}k</span></div><div style="margin-top:5px"><span class="pillchip">${c[1]}</span></div></div>`).join('')||'<div style="font-size:11px;color:var(--faint);text-align:center;padding:14px">—</div>'}</div></div>`}).join('');
+}
+function renderCanales(){
+  $('#channelCards').innerHTML=CHANNELS.map((c,i)=>{const cpl=c.leads?c.spend/c.leads:0;return `<div class="chcard"><div class="hd"><div class="ico">${ic(c.ic)}</div><div><div class="ti">${c.k}</div><div class="tg">${c.note}</div></div></div><div class="chrow"><span>Inversión</span><b class="editable" contenteditable onblur="setSpend(${i},this.textContent)">${money(c.spend)}</b></div><div class="chrow"><span>Leads</span><b class="editable" contenteditable onblur="setLeads(${i},this.textContent)">${c.leads}</b></div><div class="chrow tot"><span>CPL</span><b>${cpl?money(cpl):'—'}</b></div></div>`}).join('');
+  const tSpend=CHANNELS.reduce((s,c)=>s+c.spend,0),tLeads=CHANNELS.reduce((s,c)=>s+c.leads,0);const calls=Math.round(tLeads*0.3),visits=Math.round(calls*0.2),buyers=Math.max(1,Math.round(visits*0.33));
+  $('#northStar').innerHTML=[
+   {l:'Inversión total/mes',n:money(tSpend)},{l:'CPL combinado',n:money(tSpend/tLeads)},
+   {l:'Costo por llamada',n:money(tSpend/Math.max(1,calls))},{l:'Costo por comprador',n:money(tSpend/buyers)},
+  ].map(x=>`<div class="kpi"><div class="l">${x.l}</div><div class="nr"><div class="n" style="font-size:21px">${x.n}</div></div></div>`).join('');
+}
+function setSpend(i,t){CHANNELS[i].spend=+(t.replace(/[^0-9]/g,''))||0;renderCanales()}
+function setLeads(i,t){CHANNELS[i].leads=+(t.replace(/[^0-9]/g,''))||0;renderCanales()}
+function renderEmbudo(){
+  const mx=FUNNEL[0][1];
+  $('#funnel').innerHTML=FUNNEL.map((f,i)=>{const w=Math.max(8,f[1]/mx*100);return `<div class="fstg"><div class="flab">${f[0]} ${f[2]?`<span class="fconv">${f[2]}</span>`:''}</div><div><div class="fbar" style="width:${w}%;background:#${f[3].toString(16).padStart(6,'0')}">${f[1].toLocaleString()}</div></div><div class="fmeta">${i===0?'$3.33 CPC':''}</div></div>`}).join('');
+  $('#funnelKpis').innerHTML=[['Costo por lead','$75'],['Costo por llamada','$500'],['Costo por visita','$2,500'],['Costo por comprador','$7,500']].map(x=>`<div class="kpi"><div class="l">${x[0]}</div><div class="nr"><div class="n" style="font-size:21px">${x[1]}</div></div></div>`).join('');
+}
+
+/* ===== TABS ===== */
+function renderTabs(){$('#tabbar').innerHTML=TABS.map(([id,nm])=>`<button class="mtab ${id==='resumen'?'on':''}" data-t="${id}" onclick="mtab('${id}')">${nm}</button>`).join('')}
+function mtab(id){$$('.mview').forEach(v=>v.classList.remove('show'));$('#mv-'+id).classList.add('show');$$('.tabbar .mtab').forEach(b=>b.classList.toggle('on',b.dataset.t===id));
+  if(id==='resumen')renderResumen();if(id==='dominio')renderDominio();if(id==='keywords')renderKeywords();if(id==='contenido')renderContenido();if(id==='canales')renderCanales();if(id==='embudo')renderEmbudo();}
+
+/* ===== GOOGLE CONNECT (client-side, GIS + gapi) ===== */
+let GOOGLE=(()=>{try{return JSON.parse(localStorage.getItem('sora.google')||'null')}catch(_){return null}})();
+let gToken=null,gReady=false;
+function openGoogle(){
+  $('#modal').innerHTML=`<div class="mbox"><div class="mboxh"><h3>Conectar Google</h3><button class="x" onclick="closeModal()">✕</button></div><div class="mbody">
+    <p class="help">Trae métricas reales de <b>Search Console</b> y <b>GA4</b>. Requiere un <b>OAuth Client ID</b> (Web) de un proyecto Google Cloud con las APIs <i>Search Console</i> y <i>Analytics Data</i> habilitadas, y tu dominio verificado en GSC. <a href="https://console.cloud.google.com/apis/credentials" target="_blank">Crear credenciales →</a></p>
+    <div><label class="lbl">OAuth Client ID</label><input class="inp" id="gci" placeholder="xxxx.apps.googleusercontent.com" value="${GOOGLE?.clientId||''}"></div>
+    <div><label class="lbl">Propiedad de Search Console (URL)</label><input class="inp" id="ggsc" placeholder="https://sora.la/  ó  sc-domain:sora.la" value="${GOOGLE?.gsc||''}"></div>
+    <div><label class="lbl">GA4 Property ID (opcional)</label><input class="inp" id="gga4" placeholder="properties/123456789 ó solo el número" value="${GOOGLE?.ga4||''}"></div>
+    <p class="help">El origen autorizado en tu OAuth Client debe incluir <span class="mono">${location.origin}</span></p>
+  </div><div class="mfoot"><button class="primary" onclick="connectGoogle()">Conectar</button><button class="ghost" onclick="closeModal()">Cancelar</button></div></div>`;
+  $('#modal').classList.add('open');
+}
+function closeModal(){$('#modal').classList.remove('open')}
+function ensureGapi(cb){if(window.gapi&&window.gapi.client)return cb();if(!window.gapi){toast('Cargando Google…');return setTimeout(()=>ensureGapi(cb),400)}gapi.load('client',cb)}
+function connectGoogle(){
+  const clientId=$('#gci').value.trim(),gsc=$('#ggsc').value.trim(),ga4=$('#gga4').value.trim().replace(/^properties\//,'');
+  if(!clientId||!gsc){toast('Falta Client ID o propiedad GSC');return}
+  GOOGLE={clientId,gsc,ga4};localStorage.setItem('sora.google',JSON.stringify(GOOGLE));closeModal();
+  if(!window.google||!google.accounts){toast('Google aún cargando, reintenta en 2s');return}
+  try{
+    const tc=google.accounts.oauth2.initTokenClient({client_id:clientId,scope:'https://www.googleapis.com/auth/webmasters.readonly https://www.googleapis.com/auth/analytics.readonly',callback:(resp)=>{
+      if(resp.error){toast('Error de autorización: '+resp.error);return}
+      gToken=resp.access_token;ensureGapi(()=>{gapi.client.setToken({access_token:gToken});pullGoogle();});
+    }});
+    tc.requestAccessToken();
+  }catch(e){toast('No se pudo iniciar OAuth: '+e.message)}
+}
+async function pullGoogle(){
+  toast('Trayendo datos de Google…');
+  const end=new Date(),start=new Date(Date.now()-90*864e5);const sd=start.toISOString().slice(0,10),ed=end.toISOString().slice(0,10);
+  const site=encodeURIComponent(GOOGLE.gsc);
+  try{
+    // by date
+    const byDate=await gapi.client.request({path:`https://searchconsole.googleapis.com/webmasters/v3/sites/${site}/searchAnalytics/query`,method:'POST',body:{startDate:sd,endDate:ed,dimensions:['date'],rowLimit:90}});
+    const rows=(byDate.result.rows||[]).sort((a,b)=>a.keys[0]<b.keys[0]?-1:1);
+    if(rows.length){const wk=v=>{const o=[];for(let i=0;i<rows.length;i+=7)o.push(rows.slice(i,i+7).reduce((s,r)=>s+r[v],0));return o};
+      DATA.clicks=wk('clicks');DATA.impressions=wk('impressions');
+      const posWk=[];for(let i=0;i<rows.length;i+=7){const sl=rows.slice(i,i+7);posWk.push(sl.reduce((s,r)=>s+r.position,0)/sl.length)}DATA.position=posWk;}
+    // by query → keywords
+    const byQ=await gapi.client.request({path:`https://searchconsole.googleapis.com/webmasters/v3/sites/${site}/searchAnalytics/query`,method:'POST',body:{startDate:sd,endDate:ed,dimensions:['query'],rowLimit:50}});
+    const qrows=byQ.result.rows||[];if(qrows.length){KEYWORDS=qrows.map(r=>({kw:r.keys[0],pillar:guessPillar(r.keys[0]),pos:+r.position.toFixed(1),prev:+r.position.toFixed(1),target:Math.max(1,Math.round(r.position/3)),impr:r.impressions,clicks:r.clicks,ctr:(r.ctr*100).toFixed(1),spark:[r.position,r.position,r.position]}))}
+    // by page → top pages
+    const byP=await gapi.client.request({path:`https://searchconsole.googleapis.com/webmasters/v3/sites/${site}/searchAnalytics/query`,method:'POST',body:{startDate:sd,endDate:ed,dimensions:['page'],rowLimit:8}});
+    const prows=byP.result.rows||[];if(prows.length)DATA.topPages=prows.map(r=>[r.keys[0].replace(/^https?:\/\/[^/]+/,''),r.clicks,r.impressions,+r.position.toFixed(1)]);
+    // GA4
+    if(GOOGLE.ga4){try{const ga=await gapi.client.request({path:`https://analyticsdata.googleapis.com/v1beta/properties/${GOOGLE.ga4}:runReport`,method:'POST',body:{dateRanges:[{startDate:'28daysAgo',endDate:'today'}],dimensions:[{name:'sessionDefaultChannelGroup'}],metrics:[{name:'sessions'},{name:'totalUsers'}]}});
+      const gr=ga.result.rows||[];if(gr.length){const tot=gr.reduce((s,r)=>s+ +r.metricValues[0].value,0);const cols=[0x3f7d52,0x857d6e,0xd8694a,0x3c6e7a,0xb98a2e];DATA.ga4.channels=gr.slice(0,5).map((r,i)=>[r.dimensionValues[0].value,Math.round(+r.metricValues[0].value/tot*100),cols[i%5]]);DATA.ga4.sessions=tot;DATA.ga4.users=gr.reduce((s,r)=>s+ +r.metricValues[1].value,0)}}catch(e){console.warn('GA4',e)}}
+    gReady=true;$('#gstatus').classList.add('on');$('#gstatusT').textContent='Google en vivo · '+GOOGLE.gsc.replace(/^https?:\/\//,'').replace(/\/$/,'');$('#datanote').style.display='none';
+    mtab($$('.tabbar .mtab.on')[0]?.dataset.t||'resumen');toast('Datos en vivo de Google ✦');
+  }catch(e){console.warn(e);toast('Error al traer datos (revisa permisos/propiedad). Mostrando demo.');}
+}
+function guessPillar(q){q=q.toLowerCase();
+ if(/ vs |versus|best places|compare/.test(q))return'Comparar';
+ if(/build|construir|builder|llave en mano|turnkey|cost to build/.test(q))return'Construir';
+ if(/visa|nations|investor|pensionado|residency/.test(q))return'Visas';
+ if(/cost of living|living in|expat|retire|retir/.test(q))return'Costo';
+ if(/casas|venta|español/.test(q))return'Español';
+ if(/real estate|for sale|terreno|lote|property|home/.test(q))return'Comprar';
+ return'Comprar';}
+
+/* ===== LOGIN / BOOT ===== */
+const TEAM_PASS='sora2026';
+function doLogin(){const v=$('#pass').value.trim();if(v===TEAM_PASS||v==='sora'){sessionStorage.setItem('sora.team','1');boot()}else{$('#lerr').textContent='Código incorrecto.';$('#pass').value=''}}
+$('#pass')&&$('#pass').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin()});
+function hydrate(){const set=(s,h)=>{const e=$(s);if(e)e.innerHTML=h};set('.bk',ic('back')+' Operaciones');set('.gconnect',ic('google')+' Conectar Google');
+  $$('.ph h4').forEach(()=>{});const phi={'#datanote':'info'};
+  document.querySelectorAll('[data-ic]').forEach(e=>e.innerHTML=ic(e.dataset.ic));
+  // header icons in panel headers
+  const map=[['__CHARTI__','chart'],['__USERSI__','users'],['__KWI__','kw'],['__CWVI__','cwv'],['__DOCI__','doc'],['__GLOBEI__','globe'],['__INFO__','info'],['__BACK__','back'],['__GICON__','google']];
+}
+function injectStatic(){
+  // replace placeholder tokens for panel-header icons
+  document.querySelectorAll('.ph').forEach(ph=>{ph.innerHTML=ph.innerHTML.replace('__CHARTI__','<span style="color:var(--forest);display:flex">'+ic('chart')+'</span>').replace('__USERSI__','<span style="color:var(--forest);display:flex">'+ic('users')+'</span>').replace('__KWI__','<span style="color:var(--forest);display:flex">'+ic('kw')+'</span>').replace('__CWVI__','<span style="color:var(--forest);display:flex">'+ic('cwv')+'</span>').replace('__DOCI__','<span style="color:var(--forest);display:flex">'+ic('doc')+'</span>').replace('__GLOBEI__','<span style="color:var(--forest);display:flex">'+ic('globe')+'</span>')});
+  $('#datanote').innerHTML=$('#datanote').innerHTML.replace('__INFO__',ic('info'));
+  $('.bk').innerHTML=$('.bk').innerHTML.replace('__BACK__',ic('back'));
+  $('.gconnect').innerHTML=$('.gconnect').innerHTML.replace('__GICON__',ic('google'));
+}
+function boot(){
+  $('#login').classList.add('hide');$('#app').classList.add('show');
+  injectStatic();renderTabs();renderResumen();
+  $('#tdate').textContent=new Date().toLocaleDateString('es',{weekday:'short',day:'numeric',month:'short'}).replace('.','');
+  if(GOOGLE&&GOOGLE.clientId){/* user previously configured; offer reconnect on demand */}
+}
+if(sessionStorage.getItem('sora.team'))boot();else $('#pass').focus();
+</script>
+<script src="team-i18n.js"></script>
+<script>
+const MKT_DICT={
+ "Centro de Marketing":"Marketing Center","Código de acceso":"Access code","Entrar":"Enter","Operaciones":"Operations","Google desconectado":"Google disconnected","Conectar Google":"Connect Google",
+ "Datos de demostración.":"Demo data.",
+ "Conecta Search Console + GA4 (botón arriba) para ver métricas reales de tu dominio. Requiere el dominio verificado en Google y GA4 instalado — hoy":"Connect Search Console + GA4 (button above) to see real metrics for your domain. Requires the domain verified in Google and GA4 installed — today",
+ "aún no está registrado, así que conecta":"isn't registered yet, so connect","si ya está verificado.":"if it's already verified.",
+ "Resumen":"Overview","Dominio":"Domain","Contenido":"Content","Canales":"Channels","Embudo":"Funnel",
+ "Rendimiento del dominio":"Domain performance","Clics":"Clicks","Impresiones":"Impressions","Posición":"Position",
+ "Tráfico por canal (GA4)":"Traffic by channel (GA4)","Keywords en movimiento":"Keywords on the move","Ver todas →":"View all →","Core Web Vitals · inicio":"Core Web Vitals · home",
+ "Clics e impresiones · 12 semanas":"Clicks and impressions · 12 weeks","Páginas con más clics":"Top pages by clicks","Por país y dispositivo":"By country and device",
+ "Keyword tracker":"Keyword tracker","Posición media vía GSC · objetivo de la estrategia SEO":"Average position via GSC · SEO strategy target",
+ "Calendario editorial":"Editorial calendar","Cadencia: L/X/V pilar nuevo · M/J refresh":"Cadence: Mon/Wed/Fri new pillar · Tue/Thu refresh",
+ "Canales de adquisición":"Acquisition channels","Pagado: entrada manual (API en fase 2)":"Paid: manual entry (API in phase 2)","Métrica norte":"North-star metric",
+ "Embudo de demanda":"Demand funnel","$15K/mes pagado · venta promedio $400K":"$15K/mo paid · avg sale $400K",
+ "Clics (28 d)":"Clicks (28 d)","Posición media":"Avg position",
+ "Búsqueda orgánica":"Organic search","Directo":"Direct","Pagado":"Paid","Referido":"Referral","Social":"Social",
+ "Últimos 90 días":"Last 90 days","Página":"Page",
+ "País":"Country","Dispositivo":"Device","Estados Unidos":"United States","Canadá":"Canada","Reino Unido":"United Kingdom","Panamá":"Panama","Otros":"Others","Escritorio":"Desktop","Móvil":"Mobile","Tablet":"Tablet",
+ "Pilar":"Pillar","Cambio":"Change","Objetivo":"Target","Tendencia":"Trend","Todas":"All","Construir":"Build","Comprar":"Buy","Comparar":"Compare","Costo":"Cost","Retiro":"Retire","Español":"Spanish",
+ "Planeado":"Planned","Borrador":"Draft","Publicado":"Published","Rankeando":"Ranking",
+ "Orgánico (SEO)":"Organic (SEO)","Referidos / PRT":"Referrals / PRT","búsqueda alta intención":"high-intent search","colocación dedicada":"dedicated placement","2–3% al cierre":"2–3% at closing","embudo de turismo":"tourism funnel",
+ "Inversión":"Investment","Inversión total/mes":"Total spend/mo","CPL combinado":"Blended CPL","Costo por llamada":"Cost per call","Costo por comprador":"Cost per buyer",
+ "Calificados":"Qualified","Llamadas":"Calls","Visitas":"Visits","Contratos":"Contracts","Costo por lead":"Cost per lead","Costo por visita":"Cost per visit",
+ "Propiedad de Search Console (URL)":"Search Console property (URL)","GA4 Property ID (opcional)":"GA4 Property ID (optional)","Conectar":"Connect","Cancelar":"Cancel",
+ "Trae métricas reales de":"Brings real metrics from","(Web) de un proyecto Google Cloud con las APIs":"(Web) from a Google Cloud project with the","habilitadas, y tu dominio verificado en GSC.":"APIs enabled, and your domain verified in GSC.","Crear credenciales →":"Create credentials →",
+ "El origen autorizado en tu OAuth Client debe incluir":"The authorized origin in your OAuth Client must include",
+ "Cargando Google…":"Loading Google…","Falta Client ID o propiedad GSC":"Missing Client ID or GSC property","Google aún cargando, reintenta en 2s":"Google still loading, retry in 2s","Trayendo datos de Google…":"Fetching Google data…","Datos en vivo de Google ✦":"Live Google data ✦","Error al traer datos (revisa permisos/propiedad). Mostrando demo.":"Error fetching data (check permissions/property). Showing demo.","Código incorrecto.":"Wrong code."
+};
+const MKT_FRAGS=[
+ [" y "," and "],[" usuarios · "," users · "],[" sesiones"," sessions"],
+ ["Google en vivo · ","Google live · "],["Error de autorización: ","Authorization error: "],["No se pudo iniciar OAuth: ","Couldn't start OAuth: "],
+ ["12 sem","12 wk"],["hoy","today"]
+];
+SoraI18N.init(MKT_DICT,MKT_FRAGS);
+SoraI18N.mountToggle('#langSlot');
+</script>
+</body>
+</html>

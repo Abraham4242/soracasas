@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Diseña tu casa · 3D · SORA Casas</title>
+<meta name="description" content="Configurador 3D fotorrealista en tiempo real: cambia modelo, acabado, revestimiento, pisos y encimeras; entra a la casa, recórrela, cambia la hora del día — con precio llave en mano en vivo.">
+<meta name="theme-color" content="#1d3a2c">
+<link rel="canonical" href="https://soracasas.com/disena-3d.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23f7f0df'/%3E%3Cpath d='M6 18 L16 9 L26 18 L26 25 L6 25 Z' fill='%231d3a2c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#f7f0df;--paper-2:#fcf6e6;--paper-3:#ede4ca;--ink:#14110c;--ink-2:#2a251d;--ink-soft:#4a4337;--ink-faint:#807761;--ink-ghost:#b0a78e;
+    --line:rgba(20,17,12,.10);--line-2:rgba(20,17,12,.18);--line-strong:rgba(20,17,12,.40);--forest:#1d3a2c;--forest-2:#2a5440;--forest-deep:#0f2218;
+    --coral:#e07a5f;--coral-deep:#b85439;--mango:#f4b942;--teal:#2e8a96;--gold:#d4b87a;--gold-deep:#b39656;
+    --serif:"Fraunces",Georgia,serif;--display:"Instrument Serif",Georgia,serif;--sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;--mono:"JetBrains Mono",Menlo,monospace}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(ellipse at 10% 0%,rgba(160,123,62,.07) 0%,transparent 55%),radial-gradient(ellipse at 90% 100%,rgba(31,58,44,.06) 0%,transparent 60%);overflow-x:hidden;padding-bottom:84px}
+  ::selection{background:var(--ink);color:var(--paper)}button,input,select{font:inherit;color:inherit}button{cursor:pointer;border:none;background:none}a{color:inherit;text-decoration:none}
+  [data-lang]{display:none}body[data-l="es"] [data-lang="es"]{display:inline}body[data-l="en"] [data-lang="en"]{display:inline}body[data-l="es"] .blk[data-lang="es"]{display:block}body[data-l="en"] .blk[data-lang="en"]{display:block}
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(247,240,223,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+  .topbar-inner{max-width:1320px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{display:flex;align-items:center;gap:11px}.brand-mark{width:30px;height:30px;border-radius:7px;background:var(--forest);color:var(--paper);display:grid;place-items:center;font-family:var(--display);font-size:18px}
+  .brand-word{font-family:var(--display);font-size:24px;letter-spacing:.04em;color:var(--ink)}.brand-sub{font-family:var(--mono);font-size:9.5px;color:var(--coral-deep);background:rgba(224,122,95,.10);border:1px solid rgba(224,122,95,.30);padding:3px 8px;border-radius:5px;letter-spacing:1.4px;font-weight:700;text-transform:uppercase}
+  .topnav{display:flex;align-items:center;gap:8px}.topnav a{font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);padding:8px 12px;border-radius:7px;font-weight:600}.topnav a:hover{color:var(--ink);background:rgba(20,17,12,.05)}
+  .lang-toggle{display:flex;border:1px solid var(--line-2);border-radius:7px;overflow:hidden}.lang-toggle button{font-family:var(--mono);font-size:10.5px;font-weight:600;padding:7px 11px;color:var(--ink-faint);letter-spacing:1.2px}.lang-toggle button.active{background:var(--forest);color:var(--paper)}
+  @media(max-width:820px){.topnav a.hide-sm{display:none}}
+  .hero{max-width:1320px;margin:0 auto;padding:26px 22px 4px;text-align:center}.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;color:var(--coral-deep);font-weight:700;margin-bottom:11px}
+  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(34px,5.6vw,56px);line-height:1.02;color:var(--forest-deep)}.hero h1 em{font-style:italic;color:var(--forest)}
+  .hero p{font-family:var(--serif);font-weight:300;font-size:clamp(15px,2vw,18px);color:var(--ink-soft);max-width:58ch;margin:10px auto 0}
+  .wrap{max-width:1320px;margin:0 auto;padding:20px 22px}.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start}@media(max-width:980px){.grid{grid-template-columns:1fr;gap:20px}}
+  .sticky{position:sticky;top:76px}@media(max-width:980px){.sticky{position:static}}
+  .stage{position:relative;background:linear-gradient(180deg,#bcd9e6,#eaf1e9);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(20,17,12,.13);aspect-ratio:16/11}
+  #c3d{display:block;width:100%;height:100%;outline:none}
+  .stage .loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--forest-deep);background:linear-gradient(180deg,#cfe3ea,#eaf1e9);z-index:6}
+  .spin{width:30px;height:30px;border:3px solid rgba(29,58,44,.2);border-top-color:var(--forest);border-radius:50%;animation:sp .8s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+  .stage .tools{position:absolute;top:12px;right:12px;display:flex;gap:7px;z-index:4}
+  .stage .tools button{width:36px;height:36px;border-radius:9px;background:rgba(15,34,24,.78);color:#f1ece0;display:grid;place-items:center;font-size:15px;backdrop-filter:blur(6px);transition:.15s}.stage .tools button:hover{background:var(--forest)}.stage .tools button.on{background:var(--mango);color:var(--forest-deep)}
+  .stage .hint{position:absolute;bottom:11px;left:14px;z-index:4;font-family:var(--mono);font-size:9.5px;letter-spacing:.6px;text-transform:uppercase;color:rgba(255,255,255,.7);text-shadow:0 1px 4px rgba(0,0,0,.4)}
+  .stage .badge3d{position:absolute;top:12px;left:14px;z-index:4;font-family:var(--mono);font-size:9px;letter-spacing:1.3px;text-transform:uppercase;color:#0f2218;background:rgba(244,185,66,.92);padding:4px 9px;border-radius:6px;font-weight:700}
+  .stage .capbar{position:absolute;bottom:0;left:0;right:0;z-index:4;display:flex;justify-content:space-between;align-items:center;padding:9px 14px;background:linear-gradient(0deg,rgba(15,34,24,.6),transparent);color:#f1ece0;font-family:var(--mono);font-size:10px;letter-spacing:.6px;text-transform:uppercase}
+  .fpnote{position:absolute;inset:0;display:none;align-items:flex-end;justify-content:center;padding-bottom:52px;z-index:5;pointer-events:none}.fpnote.show{display:flex}.fpnote span{background:rgba(15,34,24,.88);color:#f1ece0;font-family:var(--mono);font-size:10px;letter-spacing:.5px;text-transform:uppercase;padding:9px 15px;border-radius:99px}
+  .ctrlrow{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px;align-items:center}
+  .ctrlrow .lbl{font-family:var(--mono);font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink-ghost);margin-right:2px}
+  .ctrlrow button{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);background:var(--paper-2);border:1.5px solid var(--line);border-radius:99px;padding:9px 14px;font-weight:600;transition:.15s}
+  .ctrlrow button:hover{border-color:var(--line-strong);color:var(--ink)}.ctrlrow button.on{background:var(--forest);color:var(--paper);border-color:var(--forest)}
+  .ctrlrow.tod button.on{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff}
+  .pcard{background:#eef2ec;border:1px solid rgba(29,58,44,.14);border-radius:20px;padding:20px 22px;margin-top:16px}
+  .pcard .row{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;border-bottom:1px dotted var(--line-2);font-size:14px;color:var(--ink-soft)}.pcard .row:last-of-type{border-bottom:none}.pcard .row .v{font-variant-numeric:tabular-nums;color:var(--ink-2);font-weight:600}
+  .pcard .total{margin-top:9px;padding-top:13px;border-top:2px solid var(--forest)}.pcard .total .lab{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--forest-2)}.pcard .total .amt{font-family:var(--serif);font-size:36px;color:var(--forest-deep);line-height:1;margin-top:3px}.pcard .band{font-size:12px;color:var(--ink-faint);margin-top:5px}
+  .visa{display:inline-flex;align-items:center;gap:7px;margin-top:13px;background:var(--forest);color:var(--paper);font-family:var(--mono);font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;font-weight:600;padding:8px 13px;border-radius:99px}.visa.none{display:none}.visa .dot{width:7px;height:7px;border-radius:50%;background:var(--mango)}
+  .group{margin-bottom:18px}.group>.glabel{font-family:var(--mono);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink-faint);font-weight:700;margin-bottom:9px;display:flex;justify-content:space-between;align-items:baseline}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:9px}.opts.three{grid-template-columns:1fr 1fr 1fr}@media(max-width:480px){.opts.three{grid-template-columns:1fr}}
+  .opt{text-align:left;background:var(--paper-2);border:1.5px solid var(--line);border-radius:13px;padding:12px 14px;transition:.15s;position:relative}.opt:hover{border-color:var(--line-strong)}.opt.sel{border-color:var(--forest);background:#eef2ec;box-shadow:0 0 0 3px rgba(29,58,44,.08)}
+  .opt .t{font-family:var(--serif);font-size:15px;color:var(--ink-2);font-weight:500}.opt .d{font-size:11px;color:var(--ink-faint);margin-top:2px;line-height:1.35}.opt .pp{font-family:var(--mono);font-size:10.5px;color:var(--gold-deep);margin-top:5px;font-weight:600}
+  .opt.add .check{display:none}.opt.add.sel .check{display:grid;position:absolute;top:10px;right:11px;width:18px;height:18px;border-radius:50%;background:var(--forest);color:#fff;place-items:center;font-size:11px}
+  .swatches{display:flex;gap:5px;margin-top:7px}.sw{width:15px;height:15px;border-radius:4px;border:1px solid rgba(0,0,0,.12)}
+  .fopts{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:380px){.fopts{grid-template-columns:1fr}}
+  .optf{display:flex;align-items:center;gap:9px;background:var(--paper-2);border:1.5px solid var(--line);border-radius:11px;padding:8px 11px;transition:.15s}.optf:hover{border-color:var(--line-strong)}.optf.sel{border-color:var(--forest);background:#eef2ec;box-shadow:0 0 0 3px rgba(29,58,44,.08)}
+  .fchip{width:24px;height:24px;border-radius:6px;border:1px solid rgba(0,0,0,.14);flex:0 0 auto;box-shadow:inset 0 -4px 7px rgba(0,0,0,.14)}.ft{font-size:12.5px;color:var(--ink-2);font-weight:500;text-align:left}
+  .sizewrap{background:var(--paper-2);border:1px solid var(--line);border-radius:13px;padding:15px 17px}.sizewrap .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}.sizewrap .top b{font-family:var(--serif);font-size:21px;color:var(--ink-2)}.sizewrap .top span{font-family:var(--mono);font-size:11px;color:var(--ink-faint)}
+  input[type=range]{width:100%;accent-color:var(--forest);height:4px}
+  .lead{background:var(--forest-deep);color:#eee7d6;border-radius:20px;padding:24px;margin-top:24px}.lead h3{font-family:var(--serif);font-weight:400;font-size:23px;color:#fdfbf4;margin-bottom:4px}.lead p{color:#a9b6a3;font-size:13.5px;margin-bottom:15px}
+  .lead .fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:560px){.lead .fields{grid-template-columns:1fr}}
+  .lead input{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:11px;padding:12px 14px;color:#fff;font-size:14px}.lead input::placeholder{color:#8a9a8c}.lead input:focus{outline:none;border-color:var(--mango)}
+  .lead .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:13px}
+  .btn{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:13px 19px;border-radius:11px;transition:.15s}.btn-primary{background:var(--mango);color:var(--forest-deep)}.btn-primary:hover{filter:brightness(1.05);transform:translateY(-1px)}.btn-wa{background:#25D366;color:#073b22}
+  .ok{display:none;background:rgba(244,185,66,.14);border:1px solid rgba(244,185,66,.4);border-radius:12px;padding:13px 15px;margin-top:13px;color:#f4e8cf;font-size:14px}.ok.show{display:block}
+  .bar{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(15,34,24,.97);backdrop-filter:blur(10px);color:#eee7d6;border-top:1px solid rgba(255,255,255,.08)}.bar-inner{max-width:1320px;margin:0 auto;padding:11px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px}.bar .lab{font-family:var(--mono);font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;color:#9fb0a4}.bar .amt{font-family:var(--serif);font-size:24px;color:#fff;line-height:1}.bar .sum{font-size:11.5px;color:#a9b6a3}.bar .btn{background:var(--mango);color:var(--forest-deep)}@media(max-width:560px){.bar .sum{display:none}}
+  .glb{margin-top:10px;font-size:12px;color:var(--ink-faint)}.glb b{color:var(--ink-2)}.glb label{color:var(--coral-deep);font-weight:600;cursor:pointer;text-decoration:underline}
+  footer{margin-top:30px;border-top:1px solid var(--line);background:var(--paper-2)}.foot{max-width:1320px;margin:0 auto;padding:24px 22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}.foot .dis{font-size:11.5px;color:var(--ink-faint);max-width:62ch}.foot a{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-left:14px}
+</style>
+</head>
+<body data-l="es">
+
+<div class="topbar"><div class="topbar-inner">
+  <a class="brand" href="index.html"><div class="brand-mark">S</div><div class="brand-word">Sora</div><div class="brand-sub">Casas · 3D</div></a>
+  <div class="topnav"><a class="hide-sm" href="index.html#construir"><span data-lang="es">Construir</span><span data-lang="en">Build</span></a>
+    <div class="lang-toggle"><button id="lEs" class="active" onclick="setLang('es')">ES</button><button id="lEn" onclick="setLang('en')">EN</button></div></div>
+</div></div>
+
+<div class="hero">
+  <div class="eyebrow"><span data-lang="es">Configurador 3D · Tiempo real</span><span data-lang="en">3D configurator · Real-time</span></div>
+  <h1><span data-lang="es">Diseña tu <em>casa</em>, hasta el último detalle</span><span data-lang="en">Design your <em>home</em>, down to the last detail</span></h1>
+  <p><span class="blk" data-lang="es">Cambia la arquitectura, los pisos, las encimeras y el revestimiento; entra y recórrela; ajusta la hora del día — todo en 3D fotorrealista, con el precio llave en mano en vivo.</span><span class="blk" data-lang="en">Change the architecture, flooring, countertops and cladding; step inside and walk through; set the time of day — all in photoreal 3D, with the live turnkey price.</span></p>
+</div>
+
+<div class="wrap"><div class="grid">
+  <div class="sticky">
+    <div class="stage">
+      <span class="badge3d">WebGL · PBR · 3D</span>
+      <div class="tools"><button id="btnRotate" title="Auto-rotar" onclick="toggleRotate()">⟳</button><button title="Restablecer" onclick="resetView()">⌖</button><button title="Foto" onclick="snapPhoto()">📷</button><button title="Pantalla completa" onclick="goFs()">⛶</button></div>
+      <canvas id="c3d"></canvas>
+      <div class="hint"><span data-lang="es">Arrastra para girar · scroll para acercar</span><span data-lang="en">Drag to orbit · scroll to zoom</span></div>
+      <div class="capbar"><span id="capText">Casa Bahía · Sora · Pedasí</span><span style="color:#f4d99a" id="viewCap"></span></div>
+      <div class="fpnote" id="fpnote"><span data-lang="es">Clic para mirar · W A S D para moverte · Esc para salir</span><span data-lang="en">Click to look · W A S D to move · Esc to exit</span></div>
+      <div class="loading" id="loading"><div class="spin"></div><div style="font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase"><span data-lang="es">Cargando motor 3D…</span><span data-lang="en">Loading 3D engine…</span></div></div>
+    </div>
+    <div class="ctrlrow" id="views">
+      <button data-v="exterior" class="on" onclick="setView('exterior')"><span data-lang="es">Exterior</span><span data-lang="en">Exterior</span></button>
+      <button data-v="aerea" onclick="setView('aerea')"><span data-lang="es">Aérea</span><span data-lang="en">Aerial</span></button>
+      <button data-v="dollhouse" onclick="setView('dollhouse')"><span data-lang="es">Sin techo</span><span data-lang="en">Roof off</span></button>
+      <button data-v="baja" onclick="setView('baja')"><span data-lang="es">Planta baja</span><span data-lang="en">Ground floor</span></button>
+      <button data-v="alta" id="vAlta" onclick="setView('alta')"><span data-lang="es">Planta alta</span><span data-lang="en">Upper floor</span></button>
+      <button data-v="recorrido" onclick="setView('recorrido')"><span data-lang="es">▶ Recorrido</span><span data-lang="en">▶ Walkthrough</span></button>
+    </div>
+    <div class="ctrlrow tod" id="todRow">
+      <span class="lbl"><span data-lang="es">Luz</span><span data-lang="en">Light</span></span>
+      <button data-t="dia" class="on" onclick="setTod('dia')"><span data-lang="es">Día</span><span data-lang="en">Day</span></button>
+      <button data-t="atardecer" onclick="setTod('atardecer')"><span data-lang="es">Atardecer</span><span data-lang="en">Sunset</span></button>
+      <button data-t="noche" onclick="setTod('noche')"><span data-lang="es">Noche</span><span data-lang="en">Night</span></button>
+    </div>
+    <div class="pcard">
+      <div class="row"><span data-lang="es">Construcción llave en mano</span><span data-lang="en">Turnkey construction</span><span class="v" id="pConstr">—</span></div>
+      <div class="row"><span data-lang="es">Diseño, permisos y gestión</span><span data-lang="en">Design, permits & management</span><span class="v" id="pSoft">—</span></div>
+      <div class="row" id="rowExtras"><span data-lang="es">Extras</span><span data-lang="en">Extras</span><span class="v" id="pExtras">—</span></div>
+      <div class="row" id="rowLot"><span data-lang="es">Lote en sitio Sora</span><span data-lang="en">Lot on a Sora site</span><span class="v" id="pLot">—</span></div>
+      <div class="total"><div class="lab"><span data-lang="es">Precio llave en mano estimado</span><span data-lang="en">Estimated turnkey price</span></div><div class="amt" id="pTotal">—</div><div class="band"><span id="pBand">—</span> · <span id="pPerM2">—</span></div></div>
+      <div class="visa none" id="visa"><span class="dot"></span><span id="visaText"></span></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="group"><div class="glabel"><span><span data-lang="es">Modelo</span><span data-lang="en">Model</span></span></div><div class="opts" id="optModel"></div></div>
+    <div class="group"><div class="glabel"><span><span data-lang="es">¿Dónde construyes?</span><span data-lang="en">Where do you build?</span></span></div><div class="opts three" id="optRegion"></div></div>
+    <div class="group"><div class="glabel"><span><span data-lang="es">Nivel de acabado</span><span data-lang="en">Finish level</span></span><span style="font-family:var(--mono);font-size:9px;color:var(--ink-ghost)"><span data-lang="es">transforma la arquitectura</span><span data-lang="en">transforms the architecture</span></span></div><div class="opts three" id="optTier"></div></div>
+    <div class="group"><div class="glabel"><span><span data-lang="es">Revestimiento exterior</span><span data-lang="en">Exterior cladding</span></span></div><div class="fopts" id="optClad"></div></div>
+    <div class="group"><div class="glabel"><span><span data-lang="es">Piso interior</span><span data-lang="en">Interior flooring</span></span></div><div class="fopts" id="optFloor"></div></div>
+    <div class="group"><div class="glabel"><span><span data-lang="es">Encimera de cocina</span><span data-lang="en">Kitchen countertop</span></span></div><div class="fopts" id="optCounter"></div></div>
+    <div class="group"><div class="glabel"><span><span data-lang="es">Tamaño</span><span data-lang="en">Size</span></span></div><div class="sizewrap"><div class="top"><b><span id="sizeVal">180</span> m²</b><span id="sizeHint"></span></div><input type="range" id="size" min="120" max="340" step="10" value="180" oninput="onSize(this.value)"></div></div>
+    <div class="group"><div class="glabel"><span><span data-lang="es">Extras</span><span data-lang="en">Extras</span></span><span style="font-family:var(--mono);font-size:9.5px;color:var(--ink-ghost)"><span data-lang="es">opcional</span><span data-lang="en">optional</span></span></div><div class="opts" id="optAddons"></div></div>
+    <div class="glb"><b><span data-lang="es">¿Tienes el modelo del arquitecto?</span><span data-lang="en">Have the architect's model?</span></b> <span data-lang="es">Carga un </span><span data-lang="en">Load a </span><label for="glbFile">.glb / .gltf</label><span data-lang="es"> y reemplaza la casa por la real.</span><span data-lang="en"> to swap in the real one.</span><input type="file" id="glbFile" accept=".glb,.gltf" style="display:none" onchange="loadGLB(event)"></div>
+    <div class="lead"><h3><span data-lang="es">Recibe tu diseño</span><span data-lang="en">Get your design</span></h3><p><span data-lang="es">Te enviamos el resumen y un asesor bilingüe te contacta en menos de 2 horas.</span><span data-lang="en">We'll send your summary and a bilingual advisor reaches out in under 2 hours.</span></p>
+      <div class="fields"><input id="fName" placeholder="Nombre / Name"><input id="fEmail" type="email" placeholder="Email"><input id="fWa" placeholder="WhatsApp (opcional)" style="grid-column:1/-1"></div>
+      <div class="actions"><button class="btn btn-primary" onclick="submitLead()"><span data-lang="es">Enviar mi diseño</span><span data-lang="en">Send my design</span></button><button class="btn btn-wa" onclick="waLead()"><span data-lang="es">Hablar por WhatsApp</span><span data-lang="en">Chat on WhatsApp</span></button></div>
+      <div class="ok" id="ok"></div></div>
+  </div>
+</div></div>
+
+<footer><div class="foot"><div class="dis"><span data-lang="es">Render 3D fotorrealista ilustrativo en tiempo real (modelo paramétrico). Precios estimados con datos de construcción 2026 (rango ±15%); el precio final se fija en el contrato tras la visita y el diseño. Sora vende solo tierra titulada.</span><span data-lang="en">Illustrative photoreal real-time 3D (parametric model). Estimates use 2026 construction data (±15%); final price is locked in the contract after your visit and design. Sora sells titled land only.</span></div><div><a href="index.html">Sora Casas</a><a href="privacidad.html"><span data-lang="es">Privacidad</span><span data-lang="en">Privacy</span></a><a href="terminos.html"><span data-lang="es">Términos</span><span data-lang="en">Terms</span></a></div></div></footer>
+
+<div class="bar"><div class="bar-inner"><div><div class="lab"><span data-lang="es">Tu casa Sora · estimado</span><span data-lang="en">Your Sora home · estimate</span></div><div class="amt" id="barAmt">—</div></div><div class="sum" id="barSum"></div><button class="btn" onclick="document.querySelector('.lead').scrollIntoView({behavior:'smooth'})"><span data-lang="es">Reservar diseño</span><span data-lang="en">Reserve design</span></button></div></div>
+
+<script src="leads.js"></script>
+<script>
+const MODELS={
+ bahia:{name:'Casa Bahía',base:180,min:140,max:280,floors:1,scene:'beach',region:'pedasi',glb:'models/bahia.glb',d:{es:'Playa · una planta',en:'Beach · single-story'}},
+ montana:{name:'Casa Montaña',base:220,min:160,max:340,floors:2,scene:'mountain',region:'boquete',glb:'models/montana.glb',d:{es:'Montaña · dos plantas',en:'Mountain · two-story'}},
+ volcan:{name:'Casa Volcán',base:200,min:150,max:300,floors:1,scene:'mountain',region:'volcan',glb:'models/volcan.glb',d:{es:'Tierras altas · una planta',en:'Highland · single-story'}},
+ bocas:{name:'Casa Bocas',base:170,min:130,max:260,floors:1,scene:'beach',region:'bocas',glb:'models/bocas.glb',d:{es:'Caribe · una planta',en:'Caribbean · single-story'}}
+};
+const TIERS={esencial:{name:'Esencial',m2:1200,d:{es:'Ventanas modestas, volumen simple',en:'Modest windows, simple volume'},sw:['#eae4d7','#d8c9ac','#9a958c']},sora:{name:'Sora',m2:1500,d:{es:'Madera, piedra y grandes cristales',en:'Wood, stone & big glazing'},sw:['#e0d4bd','#7c5a39','#39342d']},firma:{name:'Firma',m2:1900,d:{es:'Cristal de piso a techo, voladizos',en:'Floor-to-ceiling glass, cantilevers'},sw:['#cfc6b6','#55514b','#16140f']}};
+const REGIONS={pedasi:{name:'Pedasí',mult:1,scene:'beach'},boquete:{name:'Boquete',mult:1,scene:'mountain'},volcan:{name:'Volcán',mult:.95,scene:'mountain'},bocas:{name:'Bocas del Toro',mult:1.15,scene:'beach'}};
+const ADDONS={piscina:{name:{es:'Piscina',en:'Pool'},price:28000},solar:{name:{es:'Paquete solar / off-grid',en:'Solar / off-grid pack'},price:22000},habitacion:{name:{es:'Habitación extra',en:'Extra bedroom'},price:35000},amoblado:{name:{es:'Amoblamiento Sora premium',en:'Sora premium furnishing'},price:24000},lote:{name:{es:'Lote en sitio Sora',en:'Lot on a Sora site'},price:60000}};
+const FINISH={
+  cladding:{madera:{l:{es:'Madera',en:'Wood'},c:'#7c5a39'},piedra:{l:{es:'Piedra',en:'Stone'},c:'#9a948a'},estuco:{l:{es:'Estuco',en:'Stucco'},c:'#e0d8c6'},concreto:{l:{es:'Concreto',en:'Concrete'},c:'#857f76'}},
+  floor:{roble:{l:{es:'Roble',en:'Oak'},c:'#9c7748'},porcelanato:{l:{es:'Porcelanato',en:'Porcelain'},c:'#d6d0c4'},marmol:{l:{es:'Mármol',en:'Marble'},c:'#e8e6df'},concreto:{l:{es:'Concreto pulido',en:'Polished concrete'},c:'#b0aaa0'}},
+  counter:{marmol_blanco:{l:{es:'Mármol blanco',en:'White marble'},c:'#ece9e2'},granito_negro:{l:{es:'Granito negro',en:'Black granite'},c:'#2c2a27'},madera:{l:{es:'Madera maciza',en:'Solid wood'},c:'#7c5a39'},concreto:{l:{es:'Concreto',en:'Concrete'},c:'#9a948b'}}
+};
+const TIERFIN={esencial:{cladding:'estuco',floor:'porcelanato',counter:'concreto'},sora:{cladding:'madera',floor:'roble',counter:'marmol_blanco'},firma:{cladding:'piedra',floor:'concreto',counter:'granito_negro'}};
+const SOFT=.12;
+window.S={model:'bahia',tier:'sora',region:'pedasi',size:180,addons:new Set(),finish:{...TIERFIN.sora},tod:'dia'};
+let lang=localStorage.getItem('sora.lang')||'es';
+const $=s=>document.querySelector(s);const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+function setLang(l){lang=l;localStorage.setItem('sora.lang',l);document.documentElement.lang=l;document.body.dataset.l=l;$('#lEs').classList.toggle('active',l==='es');$('#lEn').classList.toggle('active',l==='en');build();render()}
+function finOpts(cat,sel){return Object.entries(FINISH[cat]).map(([k,o])=>`<button class="optf ${sel===k?'sel':''}" onclick="pickFinish('${cat}','${k}')"><span class="fchip" style="background:${o.c}"></span><span class="ft">${o.l[lang]}</span></button>`).join('')}
+function build(){const S=window.S;
+  $('#optModel').innerHTML=Object.entries(MODELS).map(([k,m])=>`<button class="opt ${S.model===k?'sel':''}" onclick="pick('model','${k}')"><div class="t">${m.name}</div><div class="d">${m.d[lang]}</div></button>`).join('');
+  $('#optRegion').innerHTML=Object.entries(REGIONS).map(([k,r])=>{const tag=r.mult!==1?`<div class="pp">${r.mult>1?'+':''}${Math.round((r.mult-1)*100)}%</div>`:'';return `<button class="opt ${S.region===k?'sel':''}" onclick="pick('region','${k}')"><div class="t">${r.name}</div>${tag}</button>`}).join('');
+  $('#optTier').innerHTML=Object.entries(TIERS).map(([k,t])=>`<button class="opt ${S.tier===k?'sel':''}" onclick="pick('tier','${k}')"><div class="t">${t.name}</div><div class="d">${t.d[lang]}</div><div class="swatches">${t.sw.map(c=>`<span class="sw" style="background:${c}"></span>`).join('')}</div><div class="pp">$${t.m2.toLocaleString('en-US')}/m²</div></button>`).join('');
+  $('#optClad').innerHTML=finOpts('cladding',S.finish.cladding);$('#optFloor').innerHTML=finOpts('floor',S.finish.floor);$('#optCounter').innerHTML=finOpts('counter',S.finish.counter);
+  $('#optAddons').innerHTML=Object.entries(ADDONS).map(([k,a])=>`<button class="opt add ${S.addons.has(k)?'sel':''}" onclick="toggle('${k}')"><div class="check">✓</div><div class="t">${a.name[lang]}</div><div class="pp">+$${a.price.toLocaleString('en-US')}</div></button>`).join('');
+  $('#vAlta').style.display=MODELS[S.model].floors>1?'':'none';}
+function pick(kind,val){const S=window.S;S[kind]=val;if(kind==='model'){const m=MODELS[val];S.size=m.base;S.region=m.region;const sl=$('#size');sl.min=m.min;sl.max=m.max;sl.value=m.base;$('#sizeVal').textContent=m.base}if(kind==='tier'){S.finish={...TIERFIN[val]}}build();render()}
+function pickFinish(cat,val){window.S.finish[cat]=val;build();render()}
+function toggle(k){const S=window.S;S.addons.has(k)?S.addons.delete(k):S.addons.add(k);build();render()}
+function onSize(v){window.S.size=+v;$('#sizeVal').textContent=v;render()}
+function calc(){const S=window.S,t=TIERS[S.tier],r=REGIONS[S.region];const constr=S.size*t.m2*r.mult,soft=constr*SOFT;let extras=0,lot=0;S.addons.forEach(k=>{if(k==='lote')lot+=ADDONS[k].price;else extras+=ADDONS[k].price});const total=constr+soft+extras+lot;return{constr,soft,extras,lot,total,perM2:total/S.size}}
+function render(){const S=window.S,p=calc();
+  $('#pConstr').textContent=money(p.constr);$('#pSoft').textContent=money(p.soft);$('#pExtras').textContent=p.extras?money(p.extras):'—';$('#rowExtras').style.opacity=p.extras?1:.45;$('#pLot').textContent=p.lot?money(p.lot):'—';$('#rowLot').style.display=p.lot?'flex':'none';
+  $('#pTotal').textContent=money(p.total);$('#pBand').textContent=money(p.total*.85)+' – '+money(p.total*1.15);$('#pPerM2').textContent='$'+Math.round(p.perM2).toLocaleString('en-US')+'/m²';
+  $('#barAmt').textContent=money(p.total);$('#barSum').textContent=`${MODELS[S.model].name} · ${TIERS[S.tier].name} · ${S.size} m² · ${REGIONS[S.region].name}`;$('#capText').textContent=`${MODELS[S.model].name} · ${TIERS[S.tier].name} · ${REGIONS[S.region].name}`;$('#sizeHint').textContent=lang==='es'?'Arrastra para ajustar':'Drag to adjust';
+  const v=$('#visa');if(p.total>=300000){v.classList.remove('none');$('#visaText').textContent=lang==='es'?'Califica para la Visa de Inversionista Calificado':'Qualifies for the Qualified Investor Visa';}else if(p.total>=200000){v.classList.remove('none');$('#visaText').textContent=lang==='es'?'Califica para la Visa de Naciones Amigas':'Qualifies for the Friendly Nations Visa';}else v.classList.add('none');
+  if(window.SoraScene)window.SoraScene.update(window.S);}
+function summary(){const S=window.S,p=calc();const ex=[...S.addons].map(k=>ADDONS[k].name[lang]).join(', ')||(lang==='es'?'ninguno':'none');const fin=`${FINISH.cladding[S.finish.cladding].l[lang]} / ${FINISH.floor[S.finish.floor].l[lang]} / ${FINISH.counter[S.finish.counter].l[lang]}`;return{model:MODELS[S.model].name,tier:TIERS[S.tier].name,region:REGIONS[S.region].name,size:S.size,addons:ex,fin,total:p.total,low:Math.round(p.total*.85),high:Math.round(p.total*1.15),perM2:Math.round(p.perM2)}}
+function waMessage(){const s=summary();return lang==='es'?`Hola Sora 👋 Diseñé mi ${s.model} (acabado ${s.tier}) en ${s.region}, ${s.size} m². Acabados: ${s.fin}. Extras: ${s.addons}. Precio estimado: ${money(s.total)} (rango ${money(s.low)}–${money(s.high)}). Me gustaría saber más.`:`Hi Sora 👋 I designed my ${s.model} (${s.tier} finish) in ${s.region}, ${s.size} m². Finishes: ${s.fin}. Extras: ${s.addons}. Estimated price: ${money(s.total)} (range ${money(s.low)}–${money(s.high)}). I'd love to know more.`}
+function leadData(){const s=summary();return{name:$('#fName').value.trim(),email:$('#fEmail').value.trim(),whatsapp:$('#fWa').value.trim(),config:`${s.model} / ${s.tier} / ${s.region} / ${s.size}m² / ${s.fin} / ${s.addons}`,finishes:s.fin,price_estimate:s.total,model:s.model,tier:s.tier,region:s.region,size_m2:s.size,addons:s.addons}}
+async function submitLead(){const d=leadData();if(!d.email&&!d.whatsapp){flash(lang==='es'?'Agrega tu email o WhatsApp para enviarte el diseño.':'Add your email or WhatsApp so we can send your design.');return}if(window.captureLead)await window.captureLead('configurador_3d',d);if(window.track)window.track('configurator_lead',{price:d.price_estimate});flash(lang==='es'?'¡Listo! Recibimos tu diseño. Un asesor te contacta pronto.':'Done! We received your design. An advisor will reach out shortly.')}
+function waLead(){const d=leadData();if(window.captureLead)window.captureLead('configurador_3d_whatsapp',d);if(window.soraWhatsApp)window.soraWhatsApp(waMessage());else window.open('https://wa.me/'+(window.SORA_CONFIG?.whatsapp||'')+'?text='+encodeURIComponent(waMessage()),'_blank')}
+function flash(m){const o=$('#ok');o.textContent=m;o.classList.add('show')}
+function toggleRotate(){window.SoraScene&&window.SoraScene.toggleRotate()}
+function resetView(){setView('exterior')}
+function setView(v){document.querySelectorAll('#views button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));window.SoraScene&&window.SoraScene.setView(v)}
+function setTod(t){window.S.tod=t;document.querySelectorAll('#todRow button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));window.SoraScene&&window.SoraScene.setTod(t)}
+function snapPhoto(){window.SoraScene&&window.SoraScene.snap()}
+function goFs(){const s=document.querySelector('.stage');if(!document.fullscreenElement)s.requestFullscreen&&s.requestFullscreen();else document.exitFullscreen()}
+function loadGLB(e){const f=e.target.files[0];if(f&&window.SoraScene)window.SoraScene.loadGLB(f)}
+setLang(lang);
+</script>
+
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.169.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.169.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {PointerLockControls} from 'three/addons/controls/PointerLockControls.js';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {Sky} from 'three/addons/objects/Sky.js';
+
+const canvas=$('#c3d');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,preserveDrawingBuffer:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;renderer.outputColorSpace=THREE.SRGBColorSpace;
+
+const scene=new THREE.Scene();
+const pmrem=new THREE.PMREMGenerator(renderer);scene.environment=pmrem.fromScene(new RoomEnvironment(),0.03).texture;
+
+// ===== SKY =====
+const sky=new Sky();sky.scale.setScalar(45000);scene.add(sky);
+const skyU=sky.material.uniforms;skyU.turbidity.value=6;skyU.rayleigh.value=1.6;skyU.mieCoefficient.value=0.005;skyU.mieDirectionalG.value=0.8;
+const sunVec=new THREE.Vector3();
+
+// ===== POSTPROCESS (optional, robust) =====
+let composer=null,gtao=null,bloom=null,smaa=null;
+async function setupPost(w,h){
+  try{
+    const [{EffectComposer},{RenderPass},{GTAOPass},{OutputPass},{UnrealBloomPass},{SMAAPass}]=await Promise.all([
+      import('three/addons/postprocessing/EffectComposer.js'),import('three/addons/postprocessing/RenderPass.js'),
+      import('three/addons/postprocessing/GTAOPass.js'),import('three/addons/postprocessing/OutputPass.js'),
+      import('three/addons/postprocessing/UnrealBloomPass.js'),import('three/addons/postprocessing/SMAAPass.js')]);
+    composer=new EffectComposer(renderer);
+    composer.addPass(new RenderPass(scene,camera));
+    gtao=new GTAOPass(scene,camera,w,h);gtao.blendIntensity=0.9;composer.addPass(gtao);
+    bloom=new UnrealBloomPass(new THREE.Vector2(w,h),0.22,0.5,0.92);composer.addPass(bloom);
+    composer.addPass(new OutputPass());
+    smaa=new SMAAPass(w,h);composer.addPass(smaa);
+    composer.setSize(w,h);
+  }catch(e){console.warn('postprocess disabled:',e);composer=null;}
+}
+
+const camera=new THREE.PerspectiveCamera(44,1,.1,600);camera.position.set(22,14,26);
+const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.08;controls.target.set(0,2.6,0);controls.minDistance=7;controls.maxDistance=95;controls.maxPolarAngle=Math.PI*.495;controls.autoRotateSpeed=.6;
+const hemi=new THREE.HemisphereLight(0xcfe6f2,0x6b6450,.5);scene.add(hemi);
+const sun=new THREE.DirectionalLight(0xfff2d8,2.6);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.bias=-.00035;sun.shadow.normalBias=.03;
+const ssc=sun.shadow.camera;ssc.left=-52;ssc.right=52;ssc.top=52;ssc.bottom=-52;ssc.near=1;ssc.far=200;scene.add(sun,sun.target);
+
+// ===== PROCEDURAL TEXTURES =====
+function CV(){const c=document.createElement('canvas');c.width=c.height=512;return c;}
+function R(a,b){return a+Math.random()*(b-a);}
+function tex(draw,srgb=true){const c=CV();draw(c.getContext('2d'),512);const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.colorSpace=srgb?THREE.SRGBColorSpace:THREE.NoColorSpace;t.anisotropy=8;return t;}
+function fillNoise(x,s,base,dark,light,density){x.fillStyle=base;x.fillRect(0,0,s,s);for(let i=0;i<density;i++){const px=R(0,s),py=R(0,s),r=R(.5,2.2);x.fillStyle=Math.random()<.5?dark:light;x.globalAlpha=R(.03,.14);x.beginPath();x.arc(px,py,r,0,7);x.fill();}x.globalAlpha=1;}
+const B={};
+B.wood=tex((x,s)=>{const ph=s/5;for(let r=0;r<5;r++){const y=r*ph,sh=R(-12,12);x.fillStyle=`rgb(${150+sh},${108+sh},${66+sh})`;x.fillRect(0,y,s,ph);for(let g=0;g<26;g++){x.strokeStyle=`rgba(70,45,22,${R(.04,.13)})`;x.lineWidth=R(.5,1.6);x.beginPath();const gy=y+R(0,ph);x.moveTo(0,gy);for(let xx=0;xx<=s;xx+=32)x.lineTo(xx,gy+Math.sin(xx*.05+r)*R(.5,2.5));x.stroke();}x.strokeStyle='rgba(40,25,12,.4)';x.lineWidth=2;x.beginPath();x.moveTo(0,y);x.lineTo(s,y);x.stroke();}});
+B.tile=tex((x,s)=>{const n=4,g=s/n;fillNoise(x,s,'#dcd6ca','#c8c2b4','#ece7dc',1400);for(let i=0;i<=n;i++){x.strokeStyle='rgba(120,112,98,.5)';x.lineWidth=4;x.beginPath();x.moveTo(i*g,0);x.lineTo(i*g,s);x.moveTo(0,i*g);x.lineTo(s,i*g);x.stroke();}});
+B.marble=tex((x,s)=>{x.fillStyle='#ece9e2';x.fillRect(0,0,s,s);for(let i=0;i<22;i++){x.strokeStyle=`rgba(120,118,112,${R(.05,.22)})`;x.lineWidth=R(.5,2.6);x.beginPath();let px=R(0,s),py=R(0,s);x.moveTo(px,py);for(let k=0;k<8;k++){px+=R(-70,70);py+=R(-70,70);x.lineTo(px,py);}x.stroke();}fillNoise(x,s,'rgba(0,0,0,0)','#d8d4cb','#fbfaf6',600);});
+B.granite=tex((x,s)=>{x.fillStyle='#2c2a27';x.fillRect(0,0,s,s);for(let i=0;i<5200;i++){const c=Math.random();x.fillStyle=c<.5?'#46433d':(c<.8?'#615c52':'#8a8378');x.globalAlpha=R(.2,.7);x.beginPath();x.arc(R(0,s),R(0,s),R(.5,2),0,7);x.fill();}x.globalAlpha=1;});
+B.concrete=tex((x,s)=>{fillNoise(x,s,'#b6b0a6','#9c968c','#cfc9bd',2600);for(let i=0;i<5;i++){x.strokeStyle='rgba(90,86,78,.18)';x.lineWidth=R(.6,1.6);x.beginPath();x.moveTo(R(0,s),0);x.lineTo(R(0,s),s);x.stroke();}});
+B.stone=tex((x,s)=>{x.fillStyle='#6f6960';x.fillRect(0,0,s,s);const rows=6;let y=0;for(let r=0;r<rows;r++){const h=s/rows;let xx=R(-30,0);while(xx<s){const w=R(60,130);const sh=R(-22,22);x.fillStyle=`rgb(${154+sh},${146+sh},${134+sh})`;x.fillRect(xx+2,y+2,w-4,h-4);x.strokeStyle='rgba(60,56,50,.6)';x.lineWidth=2;x.strokeRect(xx+2,y+2,w-4,h-4);xx+=w;}y+=h;}});
+B.slats=tex((x,s)=>{const n=12,w=s/n;for(let i=0;i<n;i++){const sh=R(-16,16);x.fillStyle=`rgb(${134+sh},${96+sh},${58+sh})`;x.fillRect(i*w,0,w,s);x.strokeStyle='rgba(50,32,16,.5)';x.lineWidth=2;x.strokeRect(i*w,0,w,s);for(let g=0;g<10;g++){x.strokeStyle=`rgba(60,40,20,${R(.04,.1)})`;x.lineWidth=.8;x.beginPath();x.moveTo(i*w+R(2,w-2),0);x.lineTo(i*w+R(2,w-2),s);x.stroke();}}});
+B.stucco=tex((x,s)=>{fillNoise(x,s,'#e6dfce','#d4ccb8','#f2ecdd',3000);});
+B.sand=tex((x,s)=>{fillNoise(x,s,'#d8c79c','#c3b288','#e8d9b2',5000);});
+B.grass=tex((x,s)=>{x.fillStyle='#86a06a';x.fillRect(0,0,s,s);for(let i=0;i<9000;i++){const c=Math.random();x.strokeStyle=c<.5?'#6f8d54':'#9bb47e';x.globalAlpha=R(.2,.6);x.lineWidth=R(.5,1.3);const px=R(0,s),py=R(0,s);x.beginPath();x.moveTo(px,py);x.lineTo(px+R(-2,2),py-R(1.5,4));x.stroke();}x.globalAlpha=1;});
+function mat(base,rx,ry,rough,opts){const m=base.clone();m.needsUpdate=true;m.wrapS=m.wrapT=THREE.RepeatWrapping;m.repeat.set(rx,ry);return new THREE.MeshStandardMaterial(Object.assign({map:m,roughness:rough,metalness:0},opts||{}));}
+function tint(base,rx,ry,rough,color,opts){const m=mat(base,rx,ry,rough,opts);m.color=new THREE.Color(color);return m;}
+
+// finish material resolvers
+function floorMat(key,W,D){const rx=W/3.2,ry=D/3.2;switch(key){case'roble':return mat(B.wood,rx,ry,.42);case'porcelanato':return mat(B.tile,rx*.8,ry*.8,.16);case'marmol':return mat(B.marble,rx*.5,ry*.5,.1);default:return tint(B.concrete,rx*.4,ry*.4,.5,'#c6c0b5');}}
+function counterMat(key){switch(key){case'marmol_blanco':return mat(B.marble,1.4,.6,.12);case'granito_negro':return mat(B.granite,1.4,.6,.16,{metalness:.1});case'madera':return mat(B.wood,1.4,.5,.4);default:return tint(B.concrete,1,.5,.5,'#a39d92');}}
+function cladMat(key,h){switch(key){case'madera':return mat(B.slats,2.6,h/2.4,.55);case'piedra':return mat(B.stone,2.2,h/3,.85);case'concreto':return tint(B.concrete,1.6,h/3,.6,'#8a847a');default:return tint(B.stucco,2,h/3,.9,'#e2dac8');}}
+
+const glassMk=(c,o)=>new THREE.MeshPhysicalMaterial({color:c,metalness:0,roughness:.04,transparent:true,opacity:o,envMapIntensity:1.8,clearcoat:.6,emissive:new THREE.Color(0xffcf8a),emissiveIntensity:0});
+const box=(w,h,d,m)=>{const x=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);x.castShadow=true;x.receiveShadow=true;return x;};
+const cyl=(rt,rb,h,m,seg=14)=>{const x=new THREE.Mesh(new THREE.CylinderGeometry(rt,rb,h,seg),m);x.castShadow=true;x.receiveShadow=true;return x;};
+
+const FX={uph:new THREE.MeshStandardMaterial({color:0x8d8676,roughness:.92}),uph2:new THREE.MeshStandardMaterial({color:0x5d6b62,roughness:.9}),
+  metal:new THREE.MeshStandardMaterial({color:0xb9b6b0,roughness:.3,metalness:.85}),black:new THREE.MeshStandardMaterial({color:0x1a1816,roughness:.4,metalness:.3}),
+  white:new THREE.MeshStandardMaterial({color:0xede9e0,roughness:.6}),wood:()=>mat(B.wood,1,1,.45),
+  plant:new THREE.MeshStandardMaterial({color:0x4f7d52,roughness:.7}),lamp:new THREE.MeshStandardMaterial({color:0xf6e6c2,emissive:0xffcf8a,emissiveIntensity:0,roughness:.4}),
+  glassClear:new THREE.MeshPhysicalMaterial({color:0xdfeef2,roughness:.03,transparent:true,opacity:.25,envMapIntensity:1.6})};
+
+const TP={
+ esencial:{glass:.32,overhang:.5,roofH:.45,wall:0xe9e3d6,roof:0x9a958c,base:0xc9c3b6,glass_c:0xaec3cf,glass_o:.4,cantile:0},
+ sora:{glass:.56,overhang:1.0,roofH:.5,wall:0xe0d4bd,roof:0x39342d,base:0x8f8980,glass_c:0x9fb6c2,glass_o:.42,cantile:0},
+ firma:{glass:.86,overhang:1.5,roofH:.42,wall:0xcfc6b6,roof:0x1a1813,base:0x423e38,glass_c:0x8fa8b4,glass_o:.42,cantile:.22}
+};
+
+let house=null,glbModel=null,rotating=false,MODE='glb',loadedModelKey=null,customGLB=false,loadingGLB=false;
+function disposeG(g){g.traverse(o=>{if(o.geometry)o.geometry.dispose();if(o.material){(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>{if(m.map&&m.map.isCanvasTexture)m.map.dispose();});}});}
+
+function furnishLiving(f,W,D,y,floorMatKey){
+  const wood=FX.wood();
+  const sofa=box(W*.4,.4,.95,FX.uph);sofa.position.set(-W*.17,y+.34,D*.24);f.add(sofa);
+  const sb=box(W*.4,.55,.22,FX.uph);sb.position.set(-W*.17,y+.5,D*.33);f.add(sb);
+  [-1,1].forEach(s=>{const arm=box(.22,.5,.95,FX.uph);arm.position.set(-W*.17+s*(W*.2),y+.4,D*.24);f.add(arm);});
+  const cof=box(1.3,.16,.66,wood);cof.position.set(-W*.17,y+.24,D*.02);f.add(cof);
+  const rug=box(W*.46,.03,D*.36,new THREE.MeshStandardMaterial({color:0xc7b694,roughness:.96}));rug.position.set(-W*.15,y+.165,D*.12);f.add(rug);
+  const cons=box(W*.34,.5,.4,wood);cons.position.set(-W*.17,y+.4,-D*.04);f.add(cons);
+  const tv=box(1.9,1.05,.07,FX.black);tv.position.set(-W*.17,y+1.25,-D*.05);f.add(tv);
+  // floor lamp
+  const lp=cyl(.04,.04,1.7,FX.metal);lp.position.set(-W*.34,y+.85,D*.2);f.add(lp);const sh=cyl(.22,.16,.3,FX.lamp);sh.position.set(-W*.34,y+1.75,D*.2);f.add(sh);H.lampMats.push(sh.material);H.lights.push(addPoint(-W*.34,y+1.7,D*.2,0xffcf8a,4));
+}
+function furnishKitchen(f,W,D,y,counterKey){
+  const cMat=counterMat(counterKey),cab=new THREE.MeshStandardMaterial({color:0x35302a,roughness:.45}),cabL=FX.white;
+  const runW=W*.34;
+  const lower=box(runW,.9,.62,cab);lower.position.set(W*.27,y+.46,-D*.31);f.add(lower);
+  const ctop=box(runW+.05,.08,.66,cMat);ctop.position.set(W*.27,y+.94,-D*.31);f.add(ctop);
+  const upper=box(runW,.62,.34,cabL);upper.position.set(W*.27,y+1.95,-D*.36);f.add(upper);
+  const splash=box(runW,.7,.04,mat(B.tile,2,.6,.2));splash.position.set(W*.27,y+1.35,-D*.31-.31);f.add(splash);
+  const hood=box(.7,.4,.5,FX.metal);hood.position.set(W*.27,y+1.85,-D*.31);f.add(hood);
+  const stove=box(.62,.04,.56,FX.black);stove.position.set(W*.27,y+.99,-D*.31);f.add(stove);
+  const sink=box(.5,.06,.4,FX.metal);sink.position.set(W*.27-runW*.3,y+.99,-D*.31);f.add(sink);
+  const fridge=box(.7,2.0,.7,FX.metal);fridge.position.set(W*.27+runW*.5+.4,y+1.0,-D*.31);f.add(fridge);
+  // island
+  const island=box(2.1,.9,1.0,cab);island.position.set(W*.16,y+.46,D*.04);f.add(island);
+  const itop=box(2.2,.09,1.1,cMat);itop.position.set(W*.16,y+.95,D*.04);f.add(itop);
+  [-.7,0,.7].forEach(o=>{const st=cyl(.16,.14,.02,FX.wood());const leg=cyl(.03,.03,.62,FX.metal);st.position.set(W*.16+o,y+.95+.32,D*.04+.75);leg.position.set(W*.16+o,y+.31,D*.04+.75);f.add(st,leg);});
+  // pendant lights over island
+  [-.6,.6].forEach(o=>{const pl=cyl(.13,.05,.22,FX.lamp);pl.position.set(W*.16+o,y+2.0,D*.04);f.add(pl);H.lampMats.push(pl.material);H.lights.push(addPoint(W*.16+o,y+1.95,D*.04,0xffd79a,3.5));const wire=cyl(.01,.01,.6,FX.black);wire.position.set(W*.16+o,y+2.4,D*.04);f.add(wire);});
+}
+function furnishDining(f,W,D,y){
+  const wood=FX.wood();
+  const t=box(1.9,.1,.9,wood);t.position.set(-W*.27,y+.76,-D*.27);f.add(t);
+  [[-1,1],[1,1],[-1,-1],[1,-1]].forEach(([sx,sz])=>{const l=cyl(.05,.05,.76,wood);l.position.set(-W*.27+sx*.8,y+.38,-D*.27+sz*.34);f.add(l);});
+  [[-.8,-.55],[.8,-.55],[-.8,.55],[.8,.55],[0,-.62],[0,.62]].forEach(([cx,cz])=>{const seat=box(.42,.06,.42,FX.uph2);seat.position.set(-W*.27+cx,y+.46,-D*.27+cz);f.add(seat);const bk=box(.42,.5,.07,FX.uph2);bk.position.set(-W*.27+cx,y+.7,-D*.27+cz-Math.sign(cz||1)*.18);f.add(bk);[[.18,.18],[-.18,.18],[.18,-.18],[-.18,-.18]].forEach(([lx,lz])=>{const lg=cyl(.025,.025,.46,FX.wood());lg.position.set(-W*.27+cx+lx,y+.23,-D*.27+cz+lz);f.add(lg);});});
+  const pl=cyl(.32,.32,.12,FX.lamp);pl.position.set(-W*.27,y+2.1,-D*.27);f.add(pl);H.lampMats.push(pl.material);H.lights.push(addPoint(-W*.27,y+2.0,-D*.27,0xffd79a,3.5));
+}
+function furnishBedroom(f,W,D,y){
+  const wood=FX.wood();
+  const bed=box(2.2,.45,2.4,wood);bed.position.set(-W*.1,y+.32,-D*.06);f.add(bed);
+  const mat_=box(2.05,.28,2.25,FX.white);mat_.position.set(-W*.1,y+.6,-D*.06);f.add(mat_);
+  const duv=box(2.0,.16,1.6,new THREE.MeshStandardMaterial({color:0xcfc4ad,roughness:.92}));duv.position.set(-W*.1,y+.74,-D*.06+.34);f.add(duv);
+  const head=box(2.35,1.05,.16,FX.uph);head.position.set(-W*.1,y+.78,-D*.06-1.18);f.add(head);
+  [[-1.4],[1.4]].forEach(([nx])=>{const ns=box(.55,.5,.45,wood);ns.position.set(-W*.1+nx,y+.4,-D*.06-1.0);f.add(ns);const tl=cyl(.12,.1,.28,FX.lamp);tl.position.set(-W*.1+nx,y+.78,-D*.06-1.0);f.add(tl);H.lampMats.push(tl.material);H.lights.push(addPoint(-W*.1+nx,y+.85,-D*.06-1.0,0xffcf8a,2.4));});
+  const ward=box(W*.26,2.1,.62,FX.white);ward.position.set(W*.3,y+1.2,-D*.26);f.add(ward);
+  const bench=box(1.8,.4,.5,FX.uph2);bench.position.set(-W*.1,y+.34,-D*.06+1.5);f.add(bench);
+  const rug=box(W*.4,.03,D*.34,new THREE.MeshStandardMaterial({color:0xbcae8e,roughness:.96}));rug.position.set(-W*.1,y+.16,-D*.06+.4);f.add(rug);
+}
+function furnishBath(f,W,D,y){
+  const cMat=counterMat('marmol_blanco');
+  const van=box(1.5,.85,.55,new THREE.MeshStandardMaterial({color:0x4a4038,roughness:.5}));van.position.set(W*.34,y+.44,D*.3);f.add(van);
+  const vtop=box(1.55,.08,.6,cMat);vtop.position.set(W*.34,y+.9,D*.3);f.add(vtop);
+  const mir=box(1.2,.9,.04,FX.glassClear);mir.position.set(W*.34,y+1.6,D*.3+.3);f.add(mir);
+  const toilet=box(.45,.7,.62,FX.white);toilet.position.set(W*.34,y+.35,-D*.05);f.add(toilet);
+  // shower glass
+  const sg=box(.06,2.0,1.4,FX.glassClear);sg.position.set(W*.2,y+1.0,D*.22);f.add(sg);
+  const sg2=box(1.3,2.0,.06,FX.glassClear);sg2.position.set(W*.27,y+1.0,D*.5);f.add(sg2);
+}
+function furnishFloor(f,floorIdx,W,D,y,model,decor,floorKey,counterKey){
+  const bedroom=(model==='montana'&&floorIdx===1);
+  if(bedroom){furnishBedroom(f,W,D,y);furnishBath(f,W,D,y);}
+  else{furnishLiving(f,W,D,y,floorKey);furnishKitchen(f,W,D,y,counterKey);furnishDining(f,W,D,y);}
+  if(decor){
+    [[W*.4,D*.3],[-W*.42,-D*.32]].forEach(([px,pz])=>{const pot=cyl(.22,.16,.5,new THREE.MeshStandardMaterial({color:0xb8b1a4,roughness:.85}));pot.position.set(px,y+.4,pz);f.add(pot);const fol=new THREE.Mesh(new THREE.IcosahedronGeometry(.62,0),FX.plant);fol.position.set(px,y+1.15,pz);fol.castShadow=true;f.add(fol);});
+    const art=box(1.2,.85,.05,new THREE.MeshStandardMaterial({color:bedroom?0x6f7d8a:0x9a6f5a,roughness:.6}));art.position.set(W*.46,y+1.6,bedroom?D*.1:-D*.05);art.rotation.y=-Math.PI/2;f.add(art);
+  }
+  // ceiling light (always, dim by day)
+  H.lights.push(addPoint(0,y+2.7,0,0xfff0d6,decor?6:4));
+}
+
+let H={lights:[],lampMats:[],glassMats:[]};
+function addPoint(x,y,z,c,base){const p=new THREE.PointLight(c,0,14,2);p.position.set(x,y,z);p.userData.base=base;return p;}
+
+function buildHouse(S){
+  H={lights:[],lampMats:[],glassMats:[]};
+  const g=new THREE.Group();const P=TP[S.tier];const model=S.model;const floors=MODELS[model].floors;const decor=S.addons.has('amoblado');
+  const areaPerFloor=S.size/(floors>1?1.7:1);let W=Math.sqrt(areaPerFloor*1.7),D=areaPerFloor/W;W=Math.max(11,Math.min(26,W));D=Math.max(7.5,Math.min(15,D));const sx=.6;W*=sx;D*=sx;
+  const fH=3.0,baseY=.6,t=.16;
+  const wallMat=tint(B.stucco,W/4,fH/3,.9,P.wall),roofMat=tint(B.concrete,2,2,.85,P.roof),baseMat=tint(B.concrete,3,1,.9,P.base),frameMat=new THREE.MeshStandardMaterial({color:0x23201a,roughness:.5,metalness:.2});
+  const claddingMat=cladMat(S.finish.cladding,fH);
+  const plinth=box(W+1.4,baseY,D+1.4,baseMat);plinth.position.y=baseY/2;g.add(plinth);
+  const floorGroups=[];
+  for(let i=0;i<floors;i++){
+    const fg=new THREE.Group();const y0=baseY+i*fH;const off=(S.tier==='firma'&&i===1)?D*P.cantile:0;fg.position.z=off;
+    const fMat=floorMat(S.finish.floor,W,D);const slab=box(W,t,D,fMat);slab.position.set(0,y0+t/2,0);fg.add(slab);
+    // FRONT glass curtain
+    const gW=W*P.glass;const gMat=glassMk(P.glass_c,P.glass_o);H.glassMats.push(gMat);
+    const gl=new THREE.Mesh(new THREE.BoxGeometry(gW,fH-.2,.08),gMat);gl.position.set(0,y0+fH/2,D/2);fg.add(gl);
+    for(let m=-2;m<=2;m++){const mu=box(.05,fH-.2,.12,frameMat);mu.position.set(m*gW/5,y0+fH/2,D/2+.02);fg.add(mu);}
+    const fl=(W-gW)/2;if(fl>.3){[-1,1].forEach(s=>{const fw=box(fl,fH,t,wallMat);fw.position.set(s*(gW/2+fl/2),y0+fH/2,D/2);fg.add(fw);});}
+    const back=box(W,fH,t,wallMat);back.position.set(0,y0+fH/2,-D/2);fg.add(back);
+    [-W*.26,W*.26].forEach(wx=>{const gm=glassMk(P.glass_c,P.glass_o);H.glassMats.push(gm);const w=new THREE.Mesh(new THREE.BoxGeometry(1.6,1.3,.1),gm);w.position.set(wx,y0+fH*.58,-D/2);fg.add(w);const fr=box(1.8,1.5,.05,frameMat);fr.position.set(wx,y0+fH*.58,-D/2-.05);fg.add(fr);});
+    const left=box(t,fH,D,claddingMat);left.position.set(-W/2,y0+fH/2,0);fg.add(left);
+    const right=box(t,fH,D,wallMat);right.position.set(W/2,y0+fH/2,0);fg.add(right);
+    const rgm=glassMk(P.glass_c,P.glass_o);H.glassMats.push(rgm);const rw=new THREE.Mesh(new THREE.BoxGeometry(.1,1.5,2.0),rgm);rw.position.set(W/2,y0+fH*.58,D*.08);fg.add(rw);
+    if(i===0){const door=box(1.1,2.2,.14,FX.wood());door.position.set(W*.30,y0+1.1,D/2+.01);fg.add(door);}
+    // partitions
+    const pmat=new THREE.MeshStandardMaterial({color:0xefe9dc,roughness:.95});
+    const pL=box(W*.34,fH-.22,t*.8,pmat);pL.position.set(-W*.30,y0+(fH-.22)/2,0);fg.add(pL);
+    const pR=box(W*.16,fH-.22,t*.8,pmat);pR.position.set(W*.42,y0+(fH-.22)/2,0);fg.add(pR);
+    const pZ=box(t*.8,fH-.22,D*.4,pmat);pZ.position.set(W*.05,y0+(fH-.22)/2,-D*.3);fg.add(pZ);
+    furnishFloor(fg,i,W,D,y0+t,model,decor,S.finish.floor,S.finish.counter);
+    g.add(fg);floorGroups.push({grp:fg,y0});
+  }
+  // stairs (montana)
+  if(floors>1){const steps=10,sw=1.2,sh=fH/steps,sd=.28;const smat=FX.wood();for(let k=0;k<steps;k++){const st=box(sw,sh,sd,smat);st.position.set(-W*.36,baseY+sh*(k+.5),-D*.2+k*sd);fg_add(g,st);}const rail=box(.06,1.0,steps*sd,FX.metal);rail.position.set(-W*.36+sw/2,baseY+fH*.6,-D*.2+steps*sd/2);g.add(rail);}
+  function fg_add(gr,m){gr.add(m);}
+  // ROOF
+  const roofTop=baseY+floors*fH;const roofOff=(S.tier==='firma'&&floors>1)?D*P.cantile:0;
+  const roof=new THREE.Group();const slab=box(W+P.overhang*2,P.roofH,D+P.overhang*2,roofMat);slab.position.set(0,roofTop+P.roofH/2,roofOff/2);roof.add(slab);
+  if(S.tier!=='esencial'){const par=box(W+P.overhang*2-.2,.25,D+P.overhang*2-.2,roofMat);par.position.set(0,roofTop+P.roofH+.12,roofOff/2);roof.add(par);}
+  g.add(roof);
+  const can=box(3,.16,2.4,roofMat);can.position.set(W*.30,baseY+2.6,D/2+1.0);g.add(can);
+  const deck=box(W*.92,.16,3.4,mat(B.wood,3,1,.5));deck.position.set(0,baseY-.02,D/2+1.7);deck.receiveShadow=true;g.add(deck);
+  if(S.addons.has('habitacion')){const ww=5.0,wd=D*.82,wh=fH;const wing=box(ww,wh,wd,wallMat);wing.position.set(W/2+ww/2,baseY+wh/2,-D*.04);g.add(wing);const wr=box(ww+1,.4,wd+1,roofMat);wr.position.set(W/2+ww/2,baseY+wh+.2,-D*.04);g.add(wr);const gm=glassMk(P.glass_c,P.glass_o);H.glassMats.push(gm);const wg=new THREE.Mesh(new THREE.BoxGeometry(ww*.7,1.5,.1),gm);wg.position.set(W/2+ww/2,baseY+fH*.55,wd/2-D*.04);g.add(wg);}
+  if(S.addons.has('solar')){const pm=new THREE.MeshStandardMaterial({color:0x10131a,roughness:.22,metalness:.55});for(let a=0;a<5;a++)for(let b=0;b<2;b++){const pn=box(2.0,.07,1.25,pm);pn.position.set(-W*.32+a*2.15,roofTop+P.roofH+.35,-D*.2+b*1.45+roofOff/2);pn.rotation.x=-.28;roof.add(pn);}}
+  if(S.addons.has('piscina')){const pw=7,pd=3.6;const cop=box(pw+.8,.22,pd+.8,mat(B.tile,2,1,.3));cop.position.set(-W*.05,baseY-.05,D/2+5.8);cop.receiveShadow=true;g.add(cop);const wat=new THREE.Mesh(new THREE.BoxGeometry(pw,.3,pd),new THREE.MeshPhysicalMaterial({color:0x2e8a96,roughness:.06,metalness:.05,transparent:true,opacity:.92,envMapIntensity:1.5,clearcoat:.8}));wat.position.set(-W*.05,baseY-.02,D/2+5.8);g.add(wat);}
+  return {group:g,roof,floors:floorGroups,lights:H.lights,lampMats:H.lampMats,glassMats:H.glassMats,dims:{W,D,fH,n:floors,baseY,roofH:P.roofH}};
+}
+H.lights&&0;
+
+// scenery
+let sceneryGroup=new THREE.Group();scene.add(sceneryGroup);
+function palm(x,z){const t=new THREE.Group();const tr=cyl(.18,.26,5,FX.wood());tr.position.y=2.5;t.add(tr);const lm=new THREE.MeshStandardMaterial({color:0x4f7d52,roughness:.8,side:THREE.DoubleSide});for(let i=0;i<6;i++){const l=new THREE.Mesh(new THREE.ConeGeometry(.5,3.2,4),lm);l.position.y=5;l.rotation.z=Math.PI/2.4;l.rotation.y=i*Math.PI/3;l.castShadow=true;t.add(l);}t.position.set(x,0,z);t.scale.setScalar(.9+Math.random()*.3);return t;}
+function pine(x,z){const t=new THREE.Group();const tr=cyl(.22,.28,1.6,new THREE.MeshStandardMaterial({color:0x6b4e34,roughness:.9}));tr.position.y=.8;t.add(tr);const gm=new THREE.MeshStandardMaterial({color:0x3c6043,roughness:.85});for(let i=0;i<3;i++){const c=new THREE.Mesh(new THREE.ConeGeometry(1.7-i*.4,2.4,8),gm);c.position.y=1.8+i*1.5;c.castShadow=true;t.add(c);}t.position.set(x,0,z);t.scale.setScalar(.9+Math.random()*.4);return t;}
+let curScene=null;
+function buildScenery(scn){disposeG(sceneryGroup);scene.remove(sceneryGroup);sceneryGroup=new THREE.Group();[[-22,9],[24,-14],[-26,-18],[28,13],[-17,-24],[20,20]].forEach(([x,z])=>sceneryGroup.add(scn==='beach'?palm(x,z):pine(x,z)));scene.add(sceneryGroup);}
+let groundMat=mat(B.sand,40,40,1);const ground=new THREE.Mesh(new THREE.CircleGeometry(150,64),groundMat);ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;scene.add(ground);
+
+// ground + scenery — applied in BOTH procedural and glb modes
+function applyEnv(S){
+  const scn=REGIONS[S.region].scene;
+  if(scn==='beach'){groundMat.map=B.sand.clone();groundMat.map.wrapS=groundMat.map.wrapT=THREE.RepeatWrapping;groundMat.map.repeat.set(40,40);groundMat.color.set(0xffffff);groundMat.needsUpdate=true;}
+  else{groundMat.map=B.grass.clone();groundMat.map.wrapS=groundMat.map.wrapT=THREE.RepeatWrapping;groundMat.map.repeat.set(50,50);groundMat.color.set(0xffffff);groundMat.needsUpdate=true;}
+  if(curScene!==scn){buildScenery(scn);curScene=scn;}
+}
+
+// ===== GLB MODEL MODE: index named materials/nodes, map the same controls onto the real .glb =====
+const GLBMAT={},GLBNODE={};
+function indexGLB(root){
+  for(const k in GLBMAT)delete GLBMAT[k];for(const k in GLBNODE)delete GLBNODE[k];
+  root.traverse(o=>{
+    if(o.name&&!GLBNODE[o.name])GLBNODE[o.name]=o;
+    if(o.isMesh){const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>{if(m&&m.name)(GLBMAT[m.name]=GLBMAT[m.name]||[]).push(m);});}
+  });
+}
+function shade(hex,amt){const c=new THREE.Color(hex);c.offsetHSL(0,0,amt);return c;}
+function setMat(name,color){(GLBMAT[name]||[]).forEach(m=>{if(m.color&&color!=null)m.color.set(color);m.needsUpdate=true;});}
+function applyConfig(S){
+  if(!glbModel)return;
+  if(GLBNODE['Ground'])GLBNODE['Ground'].visible=false; // scene already has sand/grass — avoid z-fight
+  if(!customGLB){
+    const clad=FINISH.cladding[S.finish.cladding].c;
+    setMat('MAT_WALL',clad);setMat('MAT_WALL2',shade(clad,-.10));setMat('MAT_TRIM',shade(clad,.10));
+    setMat('MAT_FLOOR',FINISH.floor[S.finish.floor].c);
+    setMat('MAT_DECK',FINISH.cladding.madera.c);
+    setMat('MAT_ROOF',new THREE.Color(TP[S.tier].roof));setMat('MAT_ROOF_CLAY',new THREE.Color(TP[S.tier].roof));
+    (GLBMAT['MAT_GLASS']||[]).forEach(m=>{if(m.color)m.color.setHex(TP[S.tier].glass_c);if('opacity'in m)m.opacity=Math.max(.3,TP[S.tier].glass_o);m.needsUpdate=true;});
+    const tog=(n,on)=>{if(GLBNODE[n])GLBNODE[n].visible=on;};
+    tog('Pool',S.addons.has('piscina'));tog('Solar',S.addons.has('solar'));tog('Wing',S.addons.has('habitacion'));
+    if(GLBNODE['Deck'])GLBNODE['Deck'].visible=true;
+  }
+  // size → gentle footprint scale, kept grounded
+  const base=MODELS[S.model]?MODELS[S.model].base:180,k=Math.max(.8,Math.min(1.32,Math.sqrt(S.size/base)));
+  glbModel.scale.setScalar((glbModel.userData.fit||1)*k);
+  const bb=new THREE.Box3().setFromObject(glbModel);glbModel.position.y-=bb.min.y;
+}
+function mountGLB(root,custom){
+  if(house){scene.remove(house.group);disposeG(house.group);house=null;}
+  if(glbModel){scene.remove(glbModel);disposeG(glbModel);}
+  glbModel=root;customGLB=!!custom;
+  glbModel.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
+  indexGLB(glbModel);
+  glbModel.scale.setScalar(1);glbModel.position.set(0,0,0);
+  const sz=new THREE.Box3().setFromObject(glbModel).getSize(new THREE.Vector3());
+  const fit=22/Math.max(sz.x,sz.z,1e-3);glbModel.userData.fit=fit;glbModel.scale.setScalar(fit);
+  const bb=new THREE.Box3().setFromObject(glbModel);
+  glbModel.position.x-=(bb.min.x+bb.max.x)/2;glbModel.position.z-=(bb.min.z+bb.max.z)/2;glbModel.position.y-=bb.min.y;
+  scene.add(glbModel);
+  // lightweight house stand-in so views / walkthrough / tod keep working
+  house={group:glbModel,roof:GLBNODE['Roof']||{visible:true},floors:[],lights:[],lampMats:[],glassMats:[],
+    dims:{W:sz.x*fit,D:sz.z*fit,fH:Math.max(3,sz.y*fit),n:1,baseY:0,roofH:.4}};
+}
+function loadModelGLB(S){
+  loadingGLB=true;const ld=$('#loading');if(ld)ld.style.display='flex';
+  gltfLoader.load(MODELS[S.model].glb,gltf=>{
+    mountGLB(gltf.scene,false);loadedModelKey=S.model;applyConfig(S);applyEnv(S);setTod(S.tod);applyView('exterior',false);
+    loadingGLB=false;if(ld)ld.style.display='none';
+  },undefined,err=>{
+    console.warn('glb load failed → procedural fallback',err);MODE='proc';loadedModelKey=null;loadingGLB=false;if(ld)ld.style.display='none';update(S);
+  });
+}
+
+function update(S){
+  if(MODE==='glb'){
+    if(loadingGLB)return;
+    if(!customGLB&&loadedModelKey!==S.model){loadModelGLB(S);return;}
+    applyConfig(S);applyEnv(S);setTod(S.tod);applyView(curView,false);
+    return;
+  }
+  if(house){scene.remove(house.group);disposeG(house.group);}
+  house=buildHouse(S);house.lights.forEach(l=>house.group.add(l));scene.add(house.group);
+  applyEnv(S);setTod(S.tod);applyView(curView,false);
+}
+
+// ===== TIME OF DAY =====
+const TOD={
+ dia:{el:58,az:135,sunI:2.7,sunC:0xfff3da,hemiI:.55,hemiS:0xcfe6f2,exp:1.04,turb:6,ray:1.6,interior:0,glow:0,fog:[62,160]},
+ atardecer:{el:7,az:108,sunI:2.5,sunC:0xffb066,hemiI:.4,hemiS:0xe8c8a8,exp:1.12,turb:10,ray:3.2,interior:.55,glow:.3,fog:[50,150]},
+ noche:{el:-7,az:90,sunI:.22,sunC:0x9fb6e6,hemiI:.16,hemiS:0x2a3550,exp:1.28,turb:2,ray:.5,interior:1.1,glow:1.0,fog:[44,150]}
+};
+function setTod(t){const c=TOD[t]||TOD.dia;const phi=THREE.MathUtils.degToRad(90-c.el),theta=THREE.MathUtils.degToRad(c.az);sunVec.setFromSphericalCoords(1,phi,theta);skyU.sunPosition.value.copy(sunVec);skyU.turbidity.value=c.turb;skyU.rayleigh.value=c.ray;
+  sun.position.copy(sunVec).multiplyScalar(70);sun.intensity=c.sunI;sun.color.setHex(c.sunC);sun.target.position.set(0,2,0);
+  hemi.intensity=c.hemiI;hemi.color.setHex(c.hemiS);renderer.toneMappingExposure=c.exp;
+  const scn=curScene==='beach'?0xe3e9e0:0xdfe6df;scene.fog=new THREE.Fog(t==='noche'?0x131722:(t==='atardecer'?0xe9cdb0:scn),c.fog[0],c.fog[1]);
+  if(house){house.lights.forEach(l=>l.intensity=(l.userData.base||4)*c.interior);house.lampMats.forEach(m=>m.emissiveIntensity=c.glow*1.1);house.glassMats.forEach(m=>m.emissiveIntensity=c.glow*.6);}
+  if(bloom)bloom.strength=t==='noche'?.5:(t==='atardecer'?.32:.2);}
+
+// ===== VIEWS =====
+let curView='exterior',tween=null;
+function poseFor(name){const d=house.dims,W=d.W,De=d.D,fH=d.fH,n=d.n,b=d.baseY,top=b+fH*n;
+  switch(name){case'aerea':return{p:new THREE.Vector3(W*.3,top*2.3+13,De*.5),t:new THREE.Vector3(0,b,0)};
+    case'dollhouse':return{p:new THREE.Vector3(W*.95,top*1.5+6,De*1.25),t:new THREE.Vector3(0,b+fH*.5,0)};
+    case'baja':return{p:new THREE.Vector3(W*.95,b+fH*1.7,De*1.1),t:new THREE.Vector3(0,b+fH*.45,0)};
+    case'alta':return{p:new THREE.Vector3(W*.95,b+fH+fH*1.7,De*1.1),t:new THREE.Vector3(0,b+fH+fH*.45,0)};
+    default:return{p:new THREE.Vector3(W*1.05,top*1.0+4,De*1.6),t:new THREE.Vector3(0,top*.4,0)};}}
+function applyView(name,animate=true){curView=name;if(fpActive)exitFP();
+  house.roof.visible=true;house.floors.forEach(f=>f.grp.visible=true);
+  if(name==='dollhouse'||name==='baja'||name==='alta')house.roof.visible=false;
+  if(name==='baja'&&house.floors[1])house.floors[1].grp.visible=false;
+  $('#viewCap').textContent={exterior:'Exterior',aerea:lang==='es'?'Vista aérea':'Aerial',dollhouse:lang==='es'?'Sin techo':'Roof off',baja:lang==='es'?'Planta baja':'Ground floor',alta:lang==='es'?'Planta alta':'Upper floor',recorrido:lang==='es'?'Recorrido':'Walkthrough'}[name]||'';
+  if(name==='recorrido'){enterFP();return;}
+  const goal=poseFor(name);
+  if(animate){tween={fromP:camera.position.clone(),fromT:controls.target.clone(),toP:goal.p,toT:goal.t,s:performance.now(),dur:680};controls.enabled=false;}
+  else{camera.position.copy(goal.p);controls.target.copy(goal.t);controls.update();}}
+
+// ===== FIRST PERSON =====
+const fp=new PointerLockControls(camera,renderer.domElement);const keys={};let fpActive=false;
+addEventListener('keydown',e=>keys[e.code]=true);addEventListener('keyup',e=>keys[e.code]=false);
+function enterFP(){house.roof.visible=false;controls.enabled=false;fpActive=true;const b=house.dims.baseY;camera.position.set(0,b+1.65,house.dims.D*.15);camera.lookAt(0,b+1.6,-house.dims.D);try{scene.add(fp.object);}catch(e){}$('#fpnote').classList.add('show');renderer.domElement.addEventListener('click',lockFP);}
+function lockFP(){if(fpActive)fp.lock();}
+function exitFP(){fpActive=false;try{fp.unlock();}catch(e){}try{scene.remove(fp.object);}catch(e){}$('#fpnote').classList.remove('show');renderer.domElement.removeEventListener('click',lockFP);controls.enabled=true;}
+function fpStep(dt){const sp=7*dt;const fwd=(keys['KeyW']?1:0)-(keys['KeyS']?1:0);const rgt=(keys['KeyD']?1:0)-(keys['KeyA']?1:0);if(fwd||rgt){fp.moveForward(fwd*sp);fp.moveRight(rgt*sp);const b=house.dims.baseY;camera.position.y=b+1.65;const lim=Math.max(house.dims.W,house.dims.D)*.62;camera.position.x=Math.max(-lim,Math.min(lim,camera.position.x));camera.position.z=Math.max(-lim,Math.min(lim,camera.position.z));}}
+
+const gltfLoader=new GLTFLoader();
+function loadGLB(file){const url=URL.createObjectURL(file);loadingGLB=true;const ld=$('#loading');if(ld)ld.style.display='flex';gltfLoader.load(url,(gltf)=>{mountGLB(gltf.scene,true);loadingGLB=false;URL.revokeObjectURL(url);try{applyConfig(window.S);}catch(e){}applyEnv(window.S);setTod(window.S.tod);applyView('exterior',false);if(ld)ld.style.display='none';},undefined,()=>{loadingGLB=false;if(ld)ld.style.display='none';alert('No se pudo cargar el modelo (.glb/.gltf).');});}
+
+function resize(){const s=canvas.parentElement,w=s.clientWidth,h=s.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();if(composer){composer.setSize(w,h);gtao&&gtao.setSize(w,h);bloom&&bloom.setSize(w,h);smaa&&smaa.setSize(w,h);}}
+new ResizeObserver(resize).observe(canvas.parentElement);
+
+window.SoraScene={update,loadGLB,setView:applyView,setTod,
+  setMode(m){MODE=m;loadedModelKey=null;customGLB=false;update(window.S);},
+  toggleRotate(){rotating=!rotating;controls.autoRotate=rotating;$('#btnRotate').classList.toggle('on',rotating);},
+  snap(){try{const a=document.createElement('a');a.download='sora-casa.png';a.href=renderer.domElement.toDataURL('image/png');a.click();}catch(e){}}};
+
+(async()=>{update(window.S);const s=canvas.parentElement;await setupPost(s.clientWidth,s.clientHeight);resize();$('#loading').style.display='none';})();
+let last=performance.now();
+renderer.setAnimationLoop(()=>{const now=performance.now(),dt=Math.min(.05,(now-last)/1000);last=now;
+  if(tween){const k=Math.min(1,(now-tween.s)/tween.dur),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;camera.position.lerpVectors(tween.fromP,tween.toP,e);controls.target.lerpVectors(tween.fromT,tween.toT,e);camera.lookAt(controls.target);if(k>=1){tween=null;controls.enabled=true;controls.update();}}
+  else if(fpActive){fpStep(dt);}else{controls.update();}
+  if(composer)composer.render();else renderer.render(scene,camera);});
+</script>
+</body>
+</html>

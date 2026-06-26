@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datos · Por qué el mundo se muda al sur · Sora Casas</title>
+<meta name="description" content="La historia, en datos, de por qué cada vez más extranjeros compran casa en Latinoamérica. Cifras verificadas sobre jubilación, costo de vida y los destinos que lideran.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f0df; --paper-2:#fcf6e6; --paper-3:#fffdf8;
+    --ink:#14110c; --ink-soft:#4a4337; --ink-faint:#8a8073;
+    --forest:#1d3a2c; --forest-deep:#0f2218;
+    --coral:#e07a5f; --coral-deep:#c1573a;
+    --gold:#c7a456; --teal:#2e8a96;
+    --line:rgba(20,17,12,0.10); --line-2:rgba(20,17,12,0.18);
+    --display:'Instrument Serif',serif;
+    --serif:'Fraunces',serif;
+    --sans:'Inter',system-ui,sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:15px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(ellipse at 8% 0%, rgba(160,123,62,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 92% 12%, rgba(46,138,150,0.06) 0%, transparent 55%);
+    overflow-x:hidden;
+  }
+  html[lang="en"] [lang="es"]{display:none !important}
+  html[lang="es"] [lang="en"]{display:none !important}
+  ::selection{background:var(--ink);color:var(--paper)}
+  a{color:inherit;text-decoration:none}
+  button{cursor:pointer;border:none;background:none;font:inherit;color:inherit}
+
+  /* ---- top bar ---- */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(247,240,223,0.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+  .topbar-inner{max-width:1180px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand-mark{width:30px;height:30px;border-radius:7px;background:var(--forest);color:var(--paper);display:grid;place-items:center;font-family:var(--display);font-size:18px}
+  .brand-word{font-family:var(--display);font-size:23px;letter-spacing:0.04em;color:var(--ink)}
+  .brand-sub{font-family:var(--mono);font-size:9px;color:var(--coral-deep);background:rgba(224,122,95,0.10);border:1px solid rgba(224,122,95,0.30);padding:3px 7px;border-radius:5px;letter-spacing:1.3px;font-weight:700;text-transform:uppercase;margin-left:2px}
+  .topbar-r{display:flex;align-items:center;gap:12px}
+  .tb-link{font-family:var(--mono);font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-soft);font-weight:600;padding:8px 12px;border-radius:7px;transition:all .15s}
+  .tb-link:hover{background:rgba(20,17,12,0.05);color:var(--ink)}
+  .lang-toggle{display:flex;border:1px solid var(--line-2);border-radius:7px;overflow:hidden}
+  .lang-toggle button{font-family:var(--mono);font-size:10.5px;font-weight:600;padding:7px 11px;color:var(--ink-faint);letter-spacing:1.2px}
+  .lang-toggle button.active{background:var(--forest);color:var(--paper)}
+  .tb-lock{font-size:14px;opacity:.42;transition:opacity .15s;line-height:1}
+  .tb-lock:hover{opacity:.9}
+
+  /* ---- layout ---- */
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+  .section{padding:74px 0}
+  .section.tight{padding:48px 0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:var(--coral-deep);font-weight:600;margin-bottom:18px}
+  .sec-title{font-family:var(--serif);font-size:clamp(28px,4.2vw,42px);font-weight:500;line-height:1.08;letter-spacing:-0.015em;color:var(--ink);margin-bottom:14px}
+  .sec-title em{font-style:italic;color:var(--forest);font-weight:400}
+  .sec-sub{font-family:var(--serif);font-size:clamp(17px,2vw,20px);line-height:1.5;color:var(--ink-soft);max-width:640px;font-weight:300}
+
+  /* ---- hero ---- */
+  .hero{position:relative;text-align:center;padding:96px 22px 64px;max-width:960px;margin:0 auto}
+  .hero::before{content:'';position:absolute;top:24px;left:50%;transform:translateX(-50%);width:92%;max-width:860px;height:300px;background:url('https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1500&q=80');background-size:cover;background-position:center 55%;border-radius:24px;opacity:0.16;z-index:-1;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,0.85) 25%,transparent 100%);mask-image:linear-gradient(180deg,rgba(0,0,0,0.85) 25%,transparent 100%)}
+  .hero .eyebrow{margin-bottom:24px}
+  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(44px,7.5vw,86px);line-height:1.0;letter-spacing:-0.02em;margin-bottom:22px}
+  .hero h1 em{font-style:italic;color:var(--forest)}
+  .hero p{font-family:var(--serif);font-size:clamp(18px,2.2vw,22px);line-height:1.45;color:var(--ink-soft);max-width:600px;margin:0 auto;font-weight:300}
+
+  /* ---- big stat trio ---- */
+  .stat-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:8px}
+  @media(min-width:760px){.stat-grid{grid-template-columns:repeat(3,1fr)}}
+  .stat-card{background:var(--paper-3);border:1px solid var(--line);border-radius:18px;padding:30px 26px}
+  .stat-num{font-family:var(--display);font-size:clamp(54px,7vw,72px);line-height:1;color:var(--forest);letter-spacing:-0.02em}
+  .stat-card.coral .stat-num{color:var(--coral-deep)}
+  .stat-card.teal .stat-num{color:var(--teal)}
+  .stat-label{font-family:var(--serif);font-size:17px;line-height:1.4;color:var(--ink);margin-top:14px;margin-bottom:12px}
+  .stat-src{font-family:var(--mono);font-size:10px;letter-spacing:0.4px;color:var(--ink-faint);line-height:1.5;text-transform:uppercase}
+  .tag{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:3px 7px;border-radius:4px;margin-bottom:11px}
+  .tag.ok{background:rgba(29,58,44,0.10);color:var(--forest)}
+  .tag.il{background:rgba(199,164,86,0.16);color:#8a6d20}
+
+  /* ---- chart card ---- */
+  .chart{background:var(--paper-3);border:1px solid var(--line);border-radius:20px;padding:34px 32px}
+  @media(max-width:600px){.chart{padding:26px 20px}}
+  .chart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap;margin-bottom:26px}
+  .chart-title{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--ink);line-height:1.2}
+  .chart-note{font-family:var(--mono);font-size:10px;letter-spacing:.4px;color:var(--ink-faint);text-transform:uppercase;text-align:right;line-height:1.6;max-width:230px}
+
+  /* horizontal bars */
+  .bars{display:flex;flex-direction:column;gap:18px}
+  .barrow{display:grid;grid-template-columns:140px 1fr auto;align-items:center;gap:16px}
+  @media(max-width:560px){.barrow{grid-template-columns:96px 1fr auto;gap:10px}}
+  .bar-label{font-family:var(--sans);font-size:13.5px;font-weight:500;color:var(--ink);display:flex;align-items:center;gap:7px}
+  .bar-track{height:13px;background:rgba(20,17,12,0.06);border-radius:8px;overflow:hidden;position:relative}
+  .bar-fill{height:100%;width:0;border-radius:8px;transition:width 1.1s cubic-bezier(.22,1,.36,1)}
+  .bar-val{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--ink-soft);min-width:64px;text-align:right}
+  .f-forest{background:linear-gradient(90deg,#2c5440,#1d3a2c)}
+  .f-coral{background:linear-gradient(90deg,#e8967c,#d05f3f)}
+  .f-gold{background:linear-gradient(90deg,#d8bd78,#c7a456)}
+  .f-teal{background:linear-gradient(90deg,#46a3af,#2e8a96)}
+  .f-mute{background:linear-gradient(90deg,#b6ada0,#9a9082)}
+
+  /* leaderboard */
+  .leader{display:flex;flex-direction:column;gap:12px}
+  .lrow{display:flex;align-items:center;gap:16px;padding:16px 18px;background:var(--paper-2);border:1px solid var(--line);border-radius:14px;transition:transform .2s,border-color .2s}
+  .lrow:hover{transform:translateX(3px);border-color:var(--line-2)}
+  .lrow.hl{background:rgba(29,58,44,0.05);border-color:rgba(29,58,44,0.22)}
+  .lrank{font-family:var(--display);font-size:34px;line-height:1;color:var(--forest);width:46px;flex:none;text-align:center}
+  .lrow.hl .lrank{color:var(--coral-deep)}
+  .lflag{font-size:26px;flex:none}
+  .lmain{flex:1;min-width:0}
+  .lname{font-family:var(--serif);font-size:19px;font-weight:500;color:var(--ink)}
+  .lwhy{font-size:13px;color:var(--ink-soft);margin-top:2px}
+  .lpin{font-family:var(--mono);font-size:9.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;color:var(--coral-deep);background:rgba(224,122,95,0.12);padding:5px 9px;border-radius:6px;flex:none}
+
+  /* seasonality svg */
+  .season-wrap{width:100%;overflow:hidden}
+  .season-svg{width:100%;height:auto;display:block}
+  .month-axis{display:flex;justify-content:space-between;margin-top:10px}
+  .month-axis span{font-family:var(--mono);font-size:9.5px;color:var(--ink-faint);letter-spacing:.5px}
+
+  /* split / callout */
+  .split{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+  @media(min-width:860px){.split{grid-template-columns:1.05fr 0.95fr;gap:60px}}
+  .callout{background:var(--forest-deep);color:var(--paper);border-radius:22px;padding:42px 38px}
+  .callout .eyebrow{color:var(--gold)}
+  .callout h3{font-family:var(--serif);font-size:26px;font-weight:500;line-height:1.25;margin-bottom:16px}
+  .callout p{color:rgba(247,240,223,0.78);font-size:15px;line-height:1.65;margin-bottom:14px}
+  .callout .btn{display:inline-flex;align-items:center;gap:8px;margin-top:10px;background:var(--coral);color:#fff;font-family:var(--mono);font-size:11px;letter-spacing:1.4px;text-transform:uppercase;font-weight:700;padding:13px 20px;border-radius:10px;transition:transform .15s,background .2s}
+  .callout .btn:hover{transform:translateY(-2px);background:#e88a70}
+  .minirow{display:flex;gap:26px;flex-wrap:wrap;margin-top:6px}
+  .mini{}
+  .mini b{font-family:var(--display);font-size:38px;color:var(--ink);line-height:1;display:block}
+  .mini.coral b{color:var(--coral-deep)}
+  .mini.teal b{color:var(--teal)}
+  .mini span{font-family:var(--mono);font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-faint);line-height:1.5;display:block;margin-top:8px;max-width:170px}
+
+  /* sources */
+  .sources{border-top:1px solid var(--line);padding-top:30px}
+  .sources h4{font-family:var(--mono);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px}
+  .sources ul{list-style:none;display:grid;grid-template-columns:1fr;gap:9px}
+  @media(min-width:760px){.sources ul{grid-template-columns:1fr 1fr;gap:9px 36px}}
+  .sources li{font-size:12.5px;color:var(--ink-soft);line-height:1.5;padding-left:16px;position:relative}
+  .sources li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--forest)}
+  .honest{font-family:var(--serif);font-style:italic;font-size:14.5px;color:var(--ink-soft);line-height:1.6;margin-top:24px;max-width:680px}
+
+  /* footer */
+  footer{background:var(--forest-deep);color:var(--paper);text-align:center;padding:56px 22px 44px;margin-top:30px}
+  .footer-mark{font-family:var(--display);font-size:40px;letter-spacing:0.06em}
+  .footer-sub{font-family:var(--mono);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(247,240,223,0.55);margin-top:8px}
+  .footer-meta{font-size:13px;color:rgba(247,240,223,0.7);margin-top:22px;line-height:2}
+  .footer-meta a{color:rgba(247,240,223,0.7);border-bottom:1px solid rgba(247,240,223,0.2)}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">
+      <div class="brand-mark">S</div>
+      <div><span class="brand-word">SORA</span><span class="brand-sub" lang="es">Datos</span><span class="brand-sub" lang="en">Data</span></div>
+    </a>
+    <div class="topbar-r">
+      <a class="tb-link" href="index.html#buy"><span lang="es">Ver casas</span><span lang="en">Browse homes</span></a>
+      <div class="lang-toggle">
+        <button data-lang="es" class="active">ES</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a class="tb-lock" href="sorainternalresources.html" title="Acceso equipo Sora" aria-label="Acceso equipo">🔒</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow"><span lang="es">Datos · La historia detrás del movimiento</span><span lang="en">Data · The story behind the move</span></div>
+  <h1>
+    <span lang="es">Por qué el mundo se muda <em>al sur</em>.</span>
+    <span lang="en">Why the world is moving <em>south</em>.</span>
+  </h1>
+  <p>
+    <span lang="es">Cada año más norteamericanos y europeos compran casa en Latinoamérica. No es una corazonada. Esto es lo que dicen los números, con la fuente de cada uno.</span>
+    <span lang="en">Every year more North Americans and Europeans buy a home in Latin America. It is not a hunch. Here is what the numbers say, with the source for each one.</span>
+  </p>
+</section>
+
+<!-- THE WAVE -->
+<section class="section tight">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span lang="es">La ola</span><span lang="en">The wave</span></div>
+    <h2 class="sec-title reveal" style="margin-bottom:34px"><span lang="es">El interés ya es <em>masivo</em></span><span lang="en">The interest is already <em>massive</em></span></h2>
+    <div class="stat-grid">
+      <div class="stat-card reveal">
+        <div class="tag ok">Harris Poll 2025</div>
+        <div class="stat-num"><span class="cup" data-to="44" data-suf="%">0%</span></div>
+        <div class="stat-label"><span lang="es">de los adultos en EE.UU. han considerado seriamente jubilarse fuera del país.</span><span lang="en">of US adults have seriously considered retiring outside the country.</span></div>
+        <div class="stat-src"><span lang="es">14% planea hacerlo en 2 años</span><span lang="en">14% plan to within 2 years</span></div>
+      </div>
+      <div class="stat-card coral reveal">
+        <div class="tag ok">SSA</div>
+        <div class="stat-num">~<span class="cup" data-to="682" data-suf="K">0</span></div>
+        <div class="stat-label"><span lang="es">beneficiarios de Seguro Social de EE.UU. ya cobran su cheque viviendo en el exterior.</span><span lang="en">US Social Security beneficiaries already collect their check while living abroad.</span></div>
+        <div class="stat-src"><span lang="es">Administración del Seguro Social</span><span lang="en">Social Security Administration</span></div>
+      </div>
+      <div class="stat-card teal reveal">
+        <div class="tag ok">UN DESA</div>
+        <div class="stat-num">+<span class="cup" data-to="23" data-suf="%">0%</span></div>
+        <div class="stat-label"><span lang="es">creció la migración hacia Latinoamérica y el Caribe entre 2020 y 2024.</span><span lang="en">growth in migration to Latin America and the Caribbean between 2020 and 2024.</span></div>
+        <div class="stat-src"><span lang="es">Naciones Unidas, DESA</span><span lang="en">United Nations, DESA</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HARRIS BAR -->
+<section class="section tight">
+  <div class="wrap">
+    <div class="chart reveal" id="chart-harris">
+      <div class="chart-head">
+        <div class="chart-title"><span lang="es">De cada 100 adultos en EE.UU.</span><span lang="en">Out of every 100 US adults</span></div>
+        <div class="chart-note"><span lang="es">Confirmado · Harris Poll 2025</span><span lang="en">Confirmed · Harris Poll 2025</span></div>
+      </div>
+      <div class="bars">
+        <div class="barrow">
+          <div class="bar-label"><span lang="es">Lo han considerado</span><span lang="en">Have considered it</span></div>
+          <div class="bar-track"><div class="bar-fill f-forest" data-w="44"></div></div>
+          <div class="bar-val">44</div>
+        </div>
+        <div class="barrow">
+          <div class="bar-label"><span lang="es">Planean en 2 años</span><span lang="en">Plan within 2 years</span></div>
+          <div class="bar-track"><div class="bar-fill f-coral" data-w="14"></div></div>
+          <div class="bar-val">14</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE THEY LAND -->
+<section class="section tight">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span lang="es">Dónde aterrizan</span><span lang="en">Where they land</span></div>
+    <h2 class="sec-title reveal"><span lang="es">Latinoamérica lidera el <em>ranking de retiro</em></span><span lang="en">Latin America leads the <em>retirement ranking</em></span></h2>
+    <p class="sec-sub reveal" style="margin-bottom:30px"><span lang="es">El índice anual de International Living puntúa los mejores lugares del mundo para jubilarse. En 2026, tres de los seis primeros están en Latinoamérica.</span><span lang="en">International Living's annual index scores the best places in the world to retire. In 2026, three of the top six are in Latin America.</span></p>
+    <div class="chart reveal">
+      <div class="chart-head">
+        <div class="chart-title"><span lang="es">Índice Global de Retiro 2026</span><span lang="en">Global Retirement Index 2026</span></div>
+        <div class="chart-note"><span lang="es">Confirmado · posición en el índice, no puntaje absoluto</span><span lang="en">Confirmed · index rank, not absolute score</span></div>
+      </div>
+      <div class="leader">
+        <div class="lrow">
+          <div class="lrank">1</div><div class="lflag">🇬🇷</div>
+          <div class="lmain"><div class="lname">Grecia</div><div class="lwhy"><span lang="es">Líder global del índice 2026</span><span lang="en">Global leader of the 2026 index</span></div></div>
+        </div>
+        <div class="lrow hl">
+          <div class="lrank">2</div><div class="lflag">🇵🇦</div>
+          <div class="lmain"><div class="lname">Panamá</div><div class="lwhy"><span lang="es">El mejor de las Américas. Dólar, vuelos directos y la visa Friendly Nations.</span><span lang="en">Best in the Americas. US dollar, direct flights and the Friendly Nations visa.</span></div></div>
+          <div class="lpin"><span lang="es">Mercado base de Sora</span><span lang="en">Sora's home market</span></div>
+        </div>
+        <div class="lrow">
+          <div class="lrank">3</div><div class="lflag">🇨🇷</div>
+          <div class="lmain"><div class="lname">Costa Rica</div><div class="lwhy"><span lang="es">Naturaleza, salud privada accesible y una comunidad expat madura.</span><span lang="en">Nature, affordable private healthcare and a mature expat community.</span></div></div>
+        </div>
+        <div class="lrow">
+          <div class="lrank">5</div><div class="lflag">🇲🇽</div>
+          <div class="lmain"><div class="lname">México</div><div class="lwhy"><span lang="es">El destino más grande para jubilados de EE.UU., de Lago Chapala a San Miguel.</span><span lang="en">The largest destination for US retirees, from Lake Chapala to San Miguel.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COST OF LIVING -->
+<section class="section tight">
+  <div class="wrap">
+    <div class="chart reveal" id="chart-cost">
+      <div class="chart-head">
+        <div class="chart-title"><span lang="es">Tu dinero rinde más</span><span lang="en">Your money goes further</span></div>
+        <div class="chart-note"><span lang="es">Ilustrativo · estimado mensual para una pareja, estilo Numbeo. Varía por ciudad.</span><span lang="en">Illustrative · monthly estimate for a couple, Numbeo-style. Varies by city.</span></div>
+      </div>
+      <div class="bars">
+        <div class="barrow">
+          <div class="bar-label">🇺🇸 <span lang="es">EE.UU. (ref.)</span><span lang="en">USA (ref.)</span></div>
+          <div class="bar-track"><div class="bar-fill f-mute" data-w="100"></div></div>
+          <div class="bar-val">$3,900</div>
+        </div>
+        <div class="barrow">
+          <div class="bar-label">🇨🇷 Costa Rica</div>
+          <div class="bar-track"><div class="bar-fill f-teal" data-w="59"></div></div>
+          <div class="bar-val">$2,300</div>
+        </div>
+        <div class="barrow">
+          <div class="bar-label">🇵🇦 Panamá</div>
+          <div class="bar-track"><div class="bar-fill f-forest" data-w="54"></div></div>
+          <div class="bar-val">$2,100</div>
+        </div>
+        <div class="barrow">
+          <div class="bar-label">🇲🇽 México</div>
+          <div class="bar-track"><div class="bar-fill f-coral" data-w="46"></div></div>
+          <div class="bar-val">$1,800</div>
+        </div>
+        <div class="barrow">
+          <div class="bar-label">🇨🇴 Colombia</div>
+          <div class="bar-track"><div class="bar-fill f-gold" data-w="41"></div></div>
+          <div class="bar-val">$1,600</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEASONALITY -->
+<section class="section tight">
+  <div class="wrap">
+    <div class="eyebrow reveal"><span lang="es">El ritmo del año</span><span lang="en">The rhythm of the year</span></div>
+    <h2 class="sec-title reveal"><span lang="es">La ola llega cada <em>invierno</em></span><span lang="en">The wave arrives every <em>winter</em></span></h2>
+    <p class="sec-sub reveal" style="margin-bottom:30px"><span lang="es">El interés por mudarse al sur sube cuando el norte se congela. El pico va de diciembre a febrero, justo cuando empieza la estación seca en Panamá.</span><span lang="en">Interest in moving south rises when the north freezes. The peak runs December to February, right when Panama's dry season begins.</span></p>
+    <div class="chart reveal">
+      <div class="chart-head">
+        <div class="chart-title"><span lang="es">Interés de búsqueda a lo largo del año</span><span lang="en">Search interest across the year</span></div>
+        <div class="chart-note"><span lang="es">Ilustrativo · patrón de Google Trends para términos de retiro</span><span lang="en">Illustrative · Google Trends pattern for retirement terms</span></div>
+      </div>
+      <div class="season-wrap">
+        <svg class="season-svg" id="season-svg" viewBox="0 0 920 260" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="month-axis">
+          <span lang="es">Ene</span><span lang="en">Jan</span>
+          <span lang="es">Feb</span><span lang="en">Feb</span>
+          <span lang="es">Mar</span><span lang="en">Mar</span>
+          <span>Abr</span><span>May</span><span>Jun</span><span lang="es">Jul</span><span lang="en">Jul</span>
+          <span>Ago</span><span lang="es">Sep</span><span lang="en">Sep</span>
+          <span>Oct</span><span>Nov</span><span lang="es">Dic</span><span lang="en">Dec</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SORA'S WEDGE -->
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow reveal"><span lang="es">El cuello de botella</span><span lang="en">The bottleneck</span></div>
+      <h2 class="sec-title reveal" style="margin-bottom:18px"><span lang="es">El interés es enorme. El <em>camino</em> es confuso.</span><span lang="en">The interest is huge. The <em>path</em> is confusing.</span></h2>
+      <p class="sec-sub reveal" style="margin-bottom:28px"><span lang="es">Quien quiere comprar desde afuera se topa con sobreprecios para extranjeros, listings sin verificar, papeleo en otro idioma y ningún builder con precio fijo. Por eso la mayoría se queda mirando, no comprando.</span><span lang="en">Anyone buying from abroad runs into foreigner markups, unverified listings, paperwork in another language and no builder with a fixed price. So most people keep watching instead of buying.</span></p>
+      <div class="minirow reveal">
+        <div class="mini"><b><span class="cup" data-to="15000" data-suf="+" data-comma="1">0</span></b><span lang="es">residentes por la visa Friendly Nations de Panamá desde 2012</span><span lang="en">Friendly Nations visa residents in Panama since 2012</span></div>
+        <div class="mini coral"><b>#2</b><span lang="es">Panamá en el índice global de retiro 2026</span><span lang="en">Panama in the 2026 global retirement index</span></div>
+      </div>
+    </div>
+    <div class="callout reveal">
+      <div class="eyebrow"><span lang="es">El puente de Sora</span><span lang="en">Sora's bridge</span></div>
+      <h3><span lang="es">Compra verificado o construye llave en mano. Sin sorpresas.</span><span lang="en">Buy verified or build turnkey. No surprises.</span></h3>
+      <p><span lang="es">Sora revisa cada propiedad antes de publicarla y construye cuatro modelos de casa con precio fijo, de $155K a $815K. Un solo equipo, en español y en inglés, desde la búsqueda hasta las llaves.</span><span lang="en">Sora vets every property before it goes live and builds four fixed-price home models, from $155K to $815K. One team, in Spanish and English, from the search to the keys.</span></p>
+      <a class="btn" href="index.html#buy"><span lang="es">Ver casas</span><span lang="en">Browse homes</span> →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section class="section tight">
+  <div class="wrap sources reveal">
+    <h4><span lang="es">Fuentes y honestidad</span><span lang="en">Sources and honesty</span></h4>
+    <ul>
+      <li><span lang="es"><b>44% / 14%:</b> Harris Poll 2025 sobre adultos de EE.UU. y jubilación en el exterior.</span><span lang="en"><b>44% / 14%:</b> 2025 Harris Poll on US adults and retiring abroad.</span></li>
+      <li><span lang="es"><b>~682K:</b> beneficiarios del Seguro Social de EE.UU. en el exterior (SSA, vía análisis CIS).</span><span lang="en"><b>~682K:</b> US Social Security beneficiaries abroad (SSA, via CIS analysis).</span></li>
+      <li><span lang="es"><b>+23%:</b> migración a Latinoamérica y el Caribe 2020–2024 (UN DESA).</span><span lang="en"><b>+23%:</b> migration to Latin America and the Caribbean 2020–2024 (UN DESA).</span></li>
+      <li><span lang="es"><b>Ranking de retiro:</b> Índice Global de Retiro 2026 de International Living.</span><span lang="en"><b>Retirement ranking:</b> International Living 2026 Global Retirement Index.</span></li>
+      <li><span lang="es"><b>15,000+:</b> residentes por la visa Friendly Nations de Panamá desde 2012 (Migración de Panamá).</span><span lang="en"><b>15,000+:</b> Panama Friendly Nations visa residents since 2012 (Panama immigration).</span></li>
+      <li><span lang="es"><b>Costo de vida:</b> estimados ilustrativos estilo Numbeo, no cifras oficiales.</span><span lang="en"><b>Cost of living:</b> illustrative Numbeo-style estimates, not official figures.</span></li>
+    </ul>
+    <p class="honest"><span lang="es">Marcamos cada dato como confirmado o ilustrativo a propósito. Los rankings y las cifras de gobierno son reales y citables; el costo de vida y la curva estacional muestran la forma del patrón, no una medición exacta. Preferimos un número honesto a uno impresionante.</span><span lang="en">We label every figure as confirmed or illustrative on purpose. The rankings and government counts are real and citable; the cost of living and seasonal curve show the shape of the pattern, not an exact measurement. We would rather show an honest number than an impressive one.</span></p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-mark">SORA</div>
+  
+  <div class="footer-meta">
+    🇵🇦 Panamá · 🇲🇽 México · 🇨🇴 Colombia · 🇻🇪 Venezuela
+    <br>
+    <a href="index.html"><span lang="es">Inicio</span><span lang="en">Home</span></a> · <a href="index.html#buy"><span lang="es">Comprar</span><span lang="en">Buy</span></a> · <a href="index.html#build"><span lang="es">Construir</span><span lang="en">Build</span></a>
+  </div>
+</footer>
+
+<script>
+  // language toggle (shared key with the main site)
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-toggle button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+    try{ localStorage.setItem('sora-casas-lang', lang); }catch(e){}
+  }
+  (function(){
+    let saved = 'es';
+    try{ saved = localStorage.getItem('sora-casas-lang') || 'es'; }catch(e){}
+    setLang(saved);
+    document.querySelectorAll('.lang-toggle button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+  })();
+
+  // seasonality curve (Jan..Dec, relative interest)
+  (function(){
+    const vals = [96,82,64,52,44,39,41,46,57,72,86,100];
+    const W=920, H=260, pad=14;
+    const max=100, min=30;
+    const x = i => pad + i*( (W-2*pad)/(vals.length-1) );
+    const y = v => H-18 - ((v-min)/(max-min))*(H-44);
+    let d='';
+    vals.forEach((v,i)=>{ d += (i===0?'M':'L') + x(i).toFixed(1) + ' ' + y(v).toFixed(1) + ' '; });
+    const area = d + `L ${x(vals.length-1).toFixed(1)} ${H-18} L ${x(0).toFixed(1)} ${H-18} Z`;
+    const svg = document.getElementById('season-svg');
+    svg.innerHTML = `
+      <defs>
+        <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1d3a2c" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#1d3a2c" stop-opacity="0.0"/>
+        </linearGradient>
+      </defs>
+      <path d="${area}" fill="url(#sg)"/>
+      <path d="${d}" fill="none" stroke="#1d3a2c" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="${x(0).toFixed(1)}" cy="${y(vals[0]).toFixed(1)}" r="5" fill="#e07a5f"/>
+      <circle cx="${x(11).toFixed(1)}" cy="${y(vals[11]).toFixed(1)}" r="5" fill="#e07a5f"/>
+    `;
+  })();
+
+  // count-up + bar reveal on scroll
+  function animateCount(el){
+    const to = parseFloat(el.dataset.to);
+    const suf = el.dataset.suf || '';
+    const comma = el.dataset.comma === '1';
+    const dur = 1100; const t0 = performance.now();
+    function fmt(n){ return comma ? Math.round(n).toLocaleString('en-US') : Math.round(n); }
+    function step(now){
+      const p = Math.min(1,(now-t0)/dur);
+      const e = 1-Math.pow(1-p,3);
+      el.textContent = fmt(to*e) + suf;
+      if(p<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(!en.isIntersecting) return;
+      const t = en.target;
+      t.classList.add('in');
+      t.querySelectorAll && t.querySelectorAll('.cup').forEach(c=>{ if(!c.dataset.done){ c.dataset.done='1'; animateCount(c); } });
+      t.querySelectorAll && t.querySelectorAll('.bar-fill').forEach(b=>{ b.style.width = (b.dataset.w||'0') + '%'; });
+      io.unobserve(t);
+    });
+  },{threshold:0.2});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // also observe stat cards individually for the count-up
+  document.querySelectorAll('.stat-card').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

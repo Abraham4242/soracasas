@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model Preview · Sora Casas · Internal</title>
+<meta name="robots" content="noindex,nofollow">
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<style>
+  :root{--paper:#f7f0df;--ink:#14110c;--forest:#1d3a2c;--coral:#d8694a;--line:rgba(20,17,12,.12);--mono:"JetBrains Mono",ui-monospace,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:-apple-system,Inter,sans-serif;padding:18px}
+  h1{font-family:Georgia,serif;font-weight:500;font-size:22px;margin-bottom:3px}
+  .sub{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#807761;margin-bottom:16px}
+  .wrap{max-width:980px;margin:0 auto}
+  model-viewer{width:100%;height:62vh;min-height:380px;background:linear-gradient(180deg,#cfe3ea,#f3ecd9);border:1px solid var(--line);border-radius:16px}
+  .row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px;align-items:center}
+  .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#807761;width:84px}
+  button{font:inherit;cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px 13px;font-size:13px;transition:.15s}
+  button:hover{border-color:#999}
+  button.on{background:var(--forest);color:#fff;border-color:var(--forest)}
+  .sw{width:30px;height:30px;border-radius:8px;border:2px solid #fff;box-shadow:0 0 0 1px var(--line);padding:0}
+  .sw.on{box-shadow:0 0 0 2px var(--forest)}
+  .price{margin-top:14px;font-family:Georgia,serif;font-size:30px;color:var(--forest)}
+  .note{font-size:12px;color:#807761;margin-top:6px;max-width:60ch}
+  a.back{font-family:var(--mono);font-size:11px;color:var(--forest);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../3d-configurator-research.html">← Configurator research</a>
+  <h1>Model preview &amp; swap demo</h1>
+  <div class="sub">Stylized starter models · drag to orbit · tap AR on mobile</div>
+
+  <model-viewer id="mv" src="bahia.glb" camera-controls auto-rotate touch-action="pan-y"
+    shadow-intensity="1" exposure="1.0" ar ar-modes="webxr scene-viewer quick-look"
+    camera-orbit="45deg 72deg 28m" alt="Sora Casas model"></model-viewer>
+
+  <div class="row"><span class="lbl">Model</span>
+    <button class="m on" data-m="bahia">Casa Bahía</button>
+    <button class="m" data-m="montana">Casa Montaña</button>
+    <button class="m" data-m="volcan">Casa Volcán</button>
+    <button class="m" data-m="bocas">Casa Bocas</button>
+  </div>
+  <div class="row"><span class="lbl">Finish</span>
+    <button class="t" data-t="esencial">Esencial</button>
+    <button class="t on" data-t="sora">Sora</button>
+    <button class="t" data-t="firma">Firma</button>
+  </div>
+  <div class="row"><span class="lbl">Size</span>
+    <input type="range" id="size" min="140" max="320" step="10" value="200" style="flex:1;accent-color:var(--forest)">
+    <span id="sizeV" class="mono" style="font-family:var(--mono);font-size:13px">200 m²</span>
+  </div>
+
+  <div class="price" id="price">—</div>
+  <div class="note">Live demo on the real generated .glb files. Material finishes swap by name (MAT_WALL / MAT_FLOOR / MAT_DECK). Feature toggles (pool, solar) and photoreal textures come with the three.js integration + an artist pass, per the research doc. Price is the same engine as the main configurator.</div>
+</div>
+
+<script>
+const mv = document.getElementById('mv');
+const TIER = { // baseColorFactor per swappable material
+  esencial:{MAT_WALL:[0.93,0.91,0.86,1],MAT_WALL2:[0.88,0.85,0.79,1],MAT_FLOOR:[0.72,0.71,0.68,1],MAT_DECK:[0.58,0.46,0.32,1]},
+  sora:    {MAT_WALL:[0.90,0.86,0.76,1],MAT_WALL2:[0.82,0.78,0.70,1],MAT_FLOOR:[0.62,0.60,0.57,1],MAT_DECK:[0.50,0.36,0.22,1]},
+  firma:   {MAT_WALL:[0.80,0.74,0.62,1],MAT_WALL2:[0.70,0.64,0.52,1],MAT_FLOOR:[0.38,0.30,0.22,1],MAT_DECK:[0.34,0.24,0.15,1]}
+};
+const M2 = {esencial:1200, sora:1500, firma:1900};
+const REGION = {bahia:1.00, montana:1.00, volcan:0.95, bocas:1.15};
+let state = {model:'bahia', tier:'sora', size:200};
+
+function applyTier(){
+  if(!mv.model) return;
+  const pal = TIER[state.tier];
+  mv.model.materials.forEach(m=>{ if(pal[m.name]) m.pbrMetallicRoughness.setBaseColorFactor(pal[m.name]); });
+}
+function price(){
+  const constr = state.size * M2[state.tier] * REGION[state.model];
+  const total = constr * 1.12; // + soft costs
+  document.getElementById('price').textContent = '$'+Math.round(total).toLocaleString('en-US')+' '+
+    '· '+state.size+' m² · '+state.tier;
+}
+mv.addEventListener('load', applyTier);
+
+document.querySelectorAll('.m').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.m').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+  state.model=b.dataset.m; mv.src=b.dataset.m+'.glb'; price();
+});
+document.querySelectorAll('.t').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.t').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+  state.tier=b.dataset.t; applyTier(); price();
+});
+const sz=document.getElementById('size');
+sz.oninput=()=>{ state.size=+sz.value; document.getElementById('sizeV').textContent=sz.value+' m²'; price(); };
+price();
+</script>
+</body>
+</html>
