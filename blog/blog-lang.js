@@ -1,5 +1,5 @@
 (function(){
-  var lang = localStorage.getItem('sora-casas-lang') || 'es';
+  var lang = localStorage.getItem('sora-casas-lang') || 'en';
   document.documentElement.lang = lang;
   document.querySelectorAll('.lang-toggle button').forEach(function(b){
     b.classList.toggle('active', b.dataset.lang === lang);

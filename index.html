@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -1081,8 +1081,8 @@
       <a href="about.html" style="text-decoration:none;font-size:13px;color:var(--ink-2);padding:6px 11px;border-radius:7px;transition:background .15s" onmouseover="this.style.background='rgba(20,17,12,0.06)'" onmouseout="this.style.background='transparent'"><span lang="es">Nosotros</span><span lang="en">About</span></a>
       <a href="blog/" style="text-decoration:none;font-size:13px;color:var(--ink-2);padding:6px 11px;border-radius:7px;transition:background .15s" onmouseover="this.style.background='rgba(20,17,12,0.06)'" onmouseout="this.style.background='transparent'"><span lang="es">Blog</span><span lang="en">Blog</span></a>
       <div class="lang-toggle">
-        <button data-lang="es" class="active">ES</button>
-        <button data-lang="en">EN</button>
+        <button data-lang="es">ES</button>
+        <button data-lang="en" class="active">EN</button>
       </div>
       <a href="sorainternalresources.html" title="Acceso equipo Sora" aria-label="Acceso equipo Sora" style="text-decoration:none;font-size:15px;opacity:.42;transition:opacity .15s;line-height:1" onmouseover="this.style.opacity=.9" onmouseout="this.style.opacity=.42">🔒</a>
       <button class="menu-btn" onclick="document.getElementById('topnav').classList.toggle('open')">☰</button>
@@ -2380,7 +2380,7 @@ let state = {
   view: 'ext',
   filterCountry: 'all',
   filterType: 'all',
-  lang: localStorage.getItem('sora-casas-lang') || 'es'
+  lang: localStorage.getItem('sora-casas-lang') || 'en'
 };
 
 /* ============ INIT ============ */
