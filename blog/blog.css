@@ -1,4 +1,10 @@
 /* SORA Casas · Journal — clean editorial reading style */
+/* language toggle */
+html[lang="en"] [lang="es"]{display:none !important}
+html[lang="es"] [lang="en"]{display:none !important}
+.lang-toggle{display:flex;border:1px solid var(--line-2);border-radius:7px;overflow:hidden}
+.lang-toggle button{background:none;border:0;padding:5px 10px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--ink-faint);cursor:pointer;transition:background .12s,color .12s}
+.lang-toggle button.active{background:var(--forest);color:var(--paper)}
 :root{
   --paper:#f7f0df; --paper-2:#fcf6e6; --paper-3:#ede4ca;
   --ink:#14110c; --ink-2:#2a251d; --ink-3:#4a4337; --ink-faint:#807761;
