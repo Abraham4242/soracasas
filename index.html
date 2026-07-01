@@ -313,7 +313,7 @@
   .comm-model-card{background:var(--paper-2);border:.5px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .18s,box-shadow .18s}
   .comm-model-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(29,58,44,.12)}
   .comm-model-card.flagship{border-color:rgba(179,150,86,.5);background:linear-gradient(180deg,#fdf7e6 0%,var(--paper-2) 100%)}
-  .comm-model-silhouette{background:var(--paper-3);padding:20px;display:flex;align-items:center;justify-content:center;min-height:100px;position:relative}
+  .comm-model-silhouette{background-size:cover;background-position:center;aspect-ratio:16/10;position:relative}
   .comm-model-body{padding:16px 18px 20px}
   .comm-model-name{font-family:var(--display);font-size:20px;font-weight:400;color:var(--forest-deep);margin-bottom:4px}
   .comm-model-name em{font-style:italic;color:var(--forest)}
@@ -1275,19 +1275,19 @@
     <p class="comm-models-sub"><span lang="es">Cuatro modelos. Precio fijo. 9 meses de entrega. Se pueden modificar.</span><span lang="en">Four models. Fixed price. 9-month delivery. Customizable.</span></p>
     <div class="comm-models-grid">
       <div class="comm-model-card" onclick="setMode('build');document.getElementById('mode-build').scrollIntoView({behavior:'smooth'})">
-        <div class="comm-model-silhouette"><svg viewBox="0 0 200 100" width="160" height="80"><polygon points="100,10 160,48 40,48" fill="#1d3a2c" opacity="0.15"/><rect x="55" y="48" width="90" height="45" fill="#1d3a2c" opacity="0.12"/><rect x="80" y="63" width="22" height="30" fill="#1d3a2c" opacity="0.18"/><rect x="120" y="56" width="18" height="14" fill="#c88030" opacity="0.25"/></svg></div>
+        <div class="comm-model-silhouette" style="background-image:url('https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=900&q=80')"></div>
         <div class="comm-model-body"><div class="comm-model-name">Casa <em>Refugio</em></div><div class="comm-model-tag"><span lang="es">Cabaña de montaña · Boquete · 80 m²</span><span lang="en">Mountain cabin · Boquete · 80 sqm</span></div><div class="comm-model-specs">1–2 hab · 1 baño · deck 18 m²</div><div class="comm-model-price">$155,000 <span>desde</span></div></div>
       </div>
       <div class="comm-model-card" onclick="setMode('build');document.getElementById('mode-build').scrollIntoView({behavior:'smooth'})">
-        <div class="comm-model-silhouette"><svg viewBox="0 0 200 100" width="160" height="80"><polygon points="100,8 168,46 32,46" fill="#1d3a2c" opacity="0.15"/><rect x="38" y="46" width="124" height="48" fill="#1d3a2c" opacity="0.10"/><rect x="72" y="60" width="22" height="34" fill="#1d3a2c" opacity="0.18"/><rect x="108" y="55" width="26" height="16" fill="#c88030" opacity="0.25"/></svg></div>
+        <div class="comm-model-silhouette" style="background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=80')"></div>
         <div class="comm-model-body"><div class="comm-model-name">Casa <em>Arboleda</em></div><div class="comm-model-tag"><span lang="es">Entre los cafetales · Boquete · 180 m²</span><span lang="en">Among the coffee farms · Boquete · 180 sqm</span></div><div class="comm-model-specs">3 hab · 2.5 baños · veranda 45 m²</div><div class="comm-model-price">$385,000 <span>desde</span></div></div>
       </div>
       <div class="comm-model-card" onclick="setMode('build');document.getElementById('mode-build').scrollIntoView({behavior:'smooth'})">
-        <div class="comm-model-silhouette"><svg viewBox="0 0 200 100" width="160" height="80"><polygon points="100,5 172,50 28,50" fill="#1d3a2c" opacity="0.18"/><rect x="35" y="50" width="130" height="44" fill="#1d3a2c" opacity="0.10"/><rect x="80" y="62" width="24" height="32" fill="#1d3a2c" opacity="0.18"/><rect x="118" y="56" width="30" height="16" fill="#c88030" opacity="0.22"/></svg></div>
+        <div class="comm-model-silhouette" style="background-image:url('https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=900&q=80')"></div>
         <div class="comm-model-body"><div class="comm-model-name">Casa <em>Montaña</em></div><div class="comm-model-tag"><span lang="es">Retiro de altura · Boquete · 220 m²</span><span lang="en">Highland retreat · Boquete · 220 sqm</span></div><div class="comm-model-specs">3 hab · 2.5 baños · chimenea · veranda</div><div class="comm-model-price">$485,000 <span>desde</span></div></div>
       </div>
       <div class="comm-model-card flagship" onclick="setMode('build');document.getElementById('mode-build').scrollIntoView({behavior:'smooth'})">
-        <div class="comm-model-silhouette" style="background:linear-gradient(180deg,#f5e8c0 0%,var(--paper-2) 100%)"><div class="flagship-badge">Flagship</div><svg viewBox="0 0 200 100" width="160" height="80"><polygon points="100,4 178,48 22,48" fill="#b39656" opacity="0.3"/><rect x="28" y="48" width="144" height="46" fill="#1d3a2c" opacity="0.09"/><rect x="82" y="62" width="24" height="32" fill="#1d3a2c" opacity="0.18"/><rect x="116" y="54" width="28" height="18" fill="#b39656" opacity="0.35"/></svg></div>
+        <div class="comm-model-silhouette" style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80')"><div class="flagship-badge">Flagship</div></div>
         <div class="comm-model-body"><div class="comm-model-name">Casa <em>Cumbre</em></div><div class="comm-model-tag"><span lang="es">La firma de Sora · Boquete · 320 m²</span><span lang="en">Sora flagship · Boquete · 320 sqm</span></div><div class="comm-model-specs">4 hab · 3.5 baños · piscina · casita</div><div class="comm-model-price">$815,000 <span>desde</span></div></div>
       </div>
     </div>
