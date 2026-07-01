@@ -277,6 +277,69 @@
     box-shadow:0 4px 14px rgba(29,58,44,0.18);
   }
 
+  /* ============ COMMUNITY (BRISAS) ============ */
+  .comm-hero{text-align:center;padding:40px 0 32px;max-width:760px;margin:0 auto}
+  .comm-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--forest);margin-bottom:14px}
+  .comm-name{font-family:var(--display);font-weight:400;font-size:clamp(42px,6vw,68px);line-height:1.02;color:var(--forest-deep);margin-bottom:6px}
+  .comm-name em{color:var(--forest);font-style:italic}
+  .comm-tagline{font-family:var(--serif);font-size:18px;line-height:1.55;color:var(--ink-3);max-width:580px;margin:0 auto 24px;font-style:italic}
+  .comm-avail-wrap{display:inline-flex;align-items:center;gap:18px;background:var(--forest-deep);color:var(--paper);border-radius:14px;padding:14px 24px;margin-bottom:10px}
+  .comm-avail-num{font-family:var(--display);font-size:36px;line-height:1;color:var(--mango)}
+  .comm-avail-meta{text-align:left}
+  .comm-avail-label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,240,223,.8)}
+  .comm-avail-sub{font-family:var(--sans);font-size:12px;color:rgba(247,240,223,.5);margin-top:2px}
+  .comm-avail-bar-wrap{width:100%;max-width:400px;margin:10px auto 0;height:4px;background:rgba(29,58,44,.15);border-radius:2px;overflow:hidden}
+  .comm-avail-bar-fill{height:4px;background:var(--coral);border-radius:2px;transition:width .6s}
+  .comm-story-band{background:var(--forest-deep);color:var(--paper);border-radius:20px;padding:36px 44px;margin:36px 0;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  @media(max-width:720px){.comm-story-band{grid-template-columns:1fr;padding:28px 22px;gap:20px}}
+  .comm-story-band h3{font-family:var(--display);font-weight:400;font-size:clamp(26px,3.5vw,36px);line-height:1.1;margin-bottom:14px;color:#fdfbf4}
+  .comm-story-band h3 em{color:var(--mango)}
+  .comm-story-band p{font-family:var(--serif);font-size:16.5px;line-height:1.65;color:rgba(247,240,223,.82);margin-bottom:12px}
+  .comm-story-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+  .comm-stat{background:rgba(247,240,223,.06);border-radius:12px;padding:16px 18px}
+  .comm-stat-val{font-family:var(--display);font-size:28px;color:var(--mango);line-height:1}
+  .comm-stat-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(247,240,223,.55);margin-top:4px}
+  .comm-map-section{margin:40px 0}
+  .comm-map-section h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,3vw,32px);color:var(--forest-deep);margin-bottom:20px}
+  .plat-frame{border:.5px solid var(--line);border-radius:14px;overflow:hidden;background:#f5f0e2}
+  .plat-map{width:100%;height:auto;display:block}
+  .plat-legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:14px;padding:0 4px}
+  .plat-leg-item{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-3)}
+  .plat-leg-swatch{width:14px;height:14px;border:1px solid;border-radius:3px;flex:0 0 auto}
+  .comm-models-section{margin:48px 0}
+  .comm-models-section h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,3vw,32px);color:var(--forest-deep);margin-bottom:8px}
+  .comm-models-sub{font-family:var(--serif);font-style:italic;color:var(--ink-3);font-size:17px;margin-bottom:28px}
+  .comm-models-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .comm-model-card{background:var(--paper-2);border:.5px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .18s,box-shadow .18s}
+  .comm-model-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(29,58,44,.12)}
+  .comm-model-card.flagship{border-color:rgba(179,150,86,.5);background:linear-gradient(180deg,#fdf7e6 0%,var(--paper-2) 100%)}
+  .comm-model-silhouette{background:var(--paper-3);padding:20px;display:flex;align-items:center;justify-content:center;min-height:100px;position:relative}
+  .comm-model-body{padding:16px 18px 20px}
+  .comm-model-name{font-family:var(--display);font-size:20px;font-weight:400;color:var(--forest-deep);margin-bottom:4px}
+  .comm-model-name em{font-style:italic;color:var(--forest)}
+  .comm-model-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px}
+  .comm-model-specs{font-size:13.5px;color:var(--ink-3);margin-bottom:12px}
+  .comm-model-price{font-family:var(--display);font-size:22px;color:var(--forest-deep)}
+  .comm-model-price span{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-left:4px;vertical-align:middle}
+  .flagship-badge{position:absolute;top:10px;right:10px;background:var(--gold-deep);color:#fff;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:4px 9px;border-radius:20px}
+  .comm-includes-band{background:var(--paper-2);border:.5px solid var(--line);border-radius:18px;padding:36px 40px;margin:40px 0}
+  .comm-includes-band h3{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.8vw,28px);color:var(--forest-deep);margin-bottom:24px}
+  .comm-includes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .comm-include-item{display:flex;gap:14px;align-items:flex-start}
+  .comm-include-icon{font-size:22px;flex:0 0 auto;margin-top:2px}
+  .comm-include-text{font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+  .comm-include-text strong{display:block;font-weight:600;color:var(--ink);margin-bottom:2px}
+  .comm-cta-band{background:var(--forest-deep);border-radius:20px;padding:44px 48px;margin:40px 0;text-align:center;color:var(--paper)}
+  .comm-cta-band h2{font-family:var(--display);font-weight:400;font-size:clamp(26px,3.5vw,40px);line-height:1.1;margin-bottom:12px}
+  .comm-cta-band h2 em{color:var(--mango);font-style:italic}
+  .comm-cta-band p{font-family:var(--serif);font-size:17px;color:rgba(247,240,223,.8);max-width:560px;margin:0 auto 28px;line-height:1.6}
+  .comm-cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+  .comm-btn-primary{background:var(--coral);color:#fff;border:none;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:13px 24px;border-radius:10px;cursor:pointer;transition:opacity .15s}
+  .comm-btn-primary:hover{opacity:.88}
+  .comm-btn-ghost{color:var(--paper);border:1px solid rgba(247,240,223,.35);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:13px 24px;border-radius:10px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .15s}
+  .comm-btn-ghost:hover{background:rgba(247,240,223,.08)}
+  .comm-delivery-note{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:rgba(247,240,223,.4);text-transform:uppercase}
+
   /* ============ MARKETPLACE (BUY) ============ */
   .market-filters{
     display:flex;gap:10px;flex-wrap:wrap;
@@ -1010,7 +1073,8 @@
       </div>
     </div>
     <nav class="topnav" id="topnav">
-      <button data-mode="buy" class="active"><span lang="es">Comprar</span><span lang="en">Buy</span></button>
+      <button data-mode="brisas" class="active"><span lang="es">Brisas</span><span lang="en">Brisas</span></button>
+      <button data-mode="buy"><span lang="es">Comprar</span><span lang="en">Buy</span></button>
       <button data-mode="build"><span lang="es">Construir</span><span lang="en">Build</span></button>
       <button data-mode="sell"><span lang="es">Vender</span><span lang="en">Sell</span></button>
     </nav>
@@ -1041,8 +1105,8 @@
     <button class="btn btn-primary" onclick="setMode('build')">
       <span lang="es">Diseñar mi casa</span><span lang="en">Design my home</span> →
     </button>
-    <button class="btn btn-ghost" onclick="setMode('buy')">
-      <span lang="es">Ver propiedades</span><span lang="en">Browse properties</span>
+    <button class="btn btn-ghost" onclick="setMode('brisas')">
+      <span lang="es">Ver comunidad Brisas</span><span lang="en">See Brisas community</span>
     </button>
   </div>
 </section>
@@ -1050,14 +1114,213 @@
 <!-- ============ MODE LINE ============ -->
 <div style="max-width:1240px;margin:0 auto;padding:0 22px">
   <div class="modeline">
-    <button data-mode="buy" class="active"><span lang="es">Comprar</span><span lang="en">Buy</span></button>
+    <button data-mode="brisas" class="active"><span lang="es">Brisas</span><span lang="en">Brisas</span></button>
+    <button data-mode="buy"><span lang="es">Comprar</span><span lang="en">Buy</span></button>
     <button data-mode="build"><span lang="es">Construir</span><span lang="en">Build</span></button>
     <button data-mode="sell"><span lang="es">Vender</span><span lang="en">Sell</span></button>
   </div>
 </div>
 
+<!-- ============ BRISAS COMMUNITY ============ -->
+<section class="section mode-section active" id="mode-brisas">
+
+  <div class="comm-hero">
+    <div class="comm-eyebrow"><span lang="es">Primera comunidad Sora · Pedasí, Los Santos, Panamá</span><span lang="en">First Sora community · Pedasí, Los Santos, Panama</span></div>
+    <h1 class="comm-name"><em>Brisas</em></h1>
+    <p class="comm-tagline">
+      <span lang="es">18 lotes privados en el Pacífico panameño. Todos titulados. Tu casa, construida por Sora, entregada en 2027.</span>
+      <span lang="en">18 private lots on Panama's Pacific coast. All titled. Your home, built by Sora, delivered in 2027.</span>
+    </p>
+    <div class="comm-avail-wrap">
+      <div class="comm-avail-num">7</div>
+      <div class="comm-avail-meta">
+        <div class="comm-avail-label"><span lang="es">lotes disponibles</span><span lang="en">lots remaining</span></div>
+        <div class="comm-avail-sub"><span lang="es">de 18 en total · 11 reservados o vendidos</span><span lang="en">of 18 total · 11 reserved or sold</span></div>
+      </div>
+    </div>
+    <div class="comm-avail-bar-wrap"><div class="comm-avail-bar-fill" style="width:39%"></div></div>
+  </div>
+
+  <div class="comm-story-band">
+    <div>
+      <h3><span lang="es">No comprás una propiedad. <em>Entrás a una comunidad.</em></span><span lang="en">You're not buying a property. <em>You're joining a community.</em></span></h3>
+      <p><span lang="es">Brisas es el primer desarrollo propio de Sora: 18 lotes titulados a 4 km de las playas de Pedasí, con calles internas pavimentadas, agua potable y electricidad en el lindero. Nosotros construimos la infraestructura. Tú eliges el lote y el modelo de casa. Entrega garantizada en 9 meses.</span><span lang="en">Brisas is Sora's first owned development: 18 titled lots 4km from Pedasí's beaches, with paved internal roads, potable water and electricity at every lot line. We build the infrastructure. You choose your lot and home model. 9-month guaranteed delivery.</span></p>
+      <p><span lang="es">Cada lote es independiente, con título inscrito en el Registro Público. No hay cuotas de mantenimiento obligatorias ni restricciones de uso.</span><span lang="en">Every lot is independent, with title registered in Panama's Public Registry. No mandatory HOA fees, no usage restrictions.</span></p>
+    </div>
+    <div class="comm-story-stats">
+      <div class="comm-stat"><div class="comm-stat-val">850–3,200</div><div class="comm-stat-lbl"><span lang="es">m² por lote</span><span lang="en">m² per lot</span></div></div>
+      <div class="comm-stat"><div class="comm-stat-val">4 km</div><div class="comm-stat-lbl"><span lang="es">hasta la playa</span><span lang="en">to the beach</span></div></div>
+      <div class="comm-stat"><div class="comm-stat-val">Q1 2027</div><div class="comm-stat-lbl"><span lang="es">entrega estimada</span><span lang="en">estimated delivery</span></div></div>
+      <div class="comm-stat"><div class="comm-stat-val">100%</div><div class="comm-stat-lbl"><span lang="es">lotes titulados</span><span lang="en">titled lots</span></div></div>
+    </div>
+  </div>
+
+  <div class="comm-map-section">
+    <h3><span lang="es">El terreno · Plano catastral</span><span lang="en">The land · Site plan</span></h3>
+    <div class="plat-frame">
+      <svg viewBox="0 0 800 575" xmlns="http://www.w3.org/2000/svg" class="plat-map" role="img" aria-label="Plano de lotes Brisas de Pedasí">
+        <rect width="800" height="575" fill="#f5f0e2"/>
+        <rect x="0" y="0" width="800" height="26" fill="#2a2010" opacity="0.05"/>
+        <text x="400" y="17" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" fill="#2a2010" letter-spacing="1.8" font-weight="600">PLANO CATASTRAL · FINCA BRISAS · PEDASÍ, LOS SANTOS · PANAMÁ</text>
+        <polygon points="60,38 740,38 756,210 742,530 82,528 58,320" fill="#f0ebd5" stroke="#2a2010" stroke-width="2.5" stroke-linejoin="miter"/>
+        <ellipse cx="700" cy="82" rx="35" ry="22" fill="#c8d8b8" stroke="#4a6a3a" stroke-width="1" opacity="0.7"/>
+        <text x="700" y="86" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#3a5a2a" letter-spacing="0.5">ÁREA VERDE</text>
+        <rect x="60" y="170" width="696" height="22" fill="#e0d6bc" stroke="none"/>
+        <line x1="60" y1="170" x2="756" y2="170" stroke="#2a2010" stroke-width="1.3"/>
+        <line x1="60" y1="192" x2="756" y2="192" stroke="#2a2010" stroke-width="1.3"/>
+        <line x1="60" y1="181" x2="756" y2="181" stroke="#998855" stroke-width="0.8" stroke-dasharray="9,7"/>
+        <text x="400" y="167" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#776644" letter-spacing="1.4">CALLE INTERNA A</text>
+        <rect x="60" y="356" width="682" height="22" fill="#e0d6bc" stroke="none"/>
+        <line x1="60" y1="356" x2="742" y2="356" stroke="#2a2010" stroke-width="1.3"/>
+        <line x1="60" y1="378" x2="742" y2="378" stroke="#2a2010" stroke-width="1.3"/>
+        <line x1="60" y1="367" x2="742" y2="367" stroke="#998855" stroke-width="0.8" stroke-dasharray="9,7"/>
+        <text x="380" y="353" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#776644" letter-spacing="1.4">CALLE INTERNA B</text>
+        <path d="M 60,524 C 160,506 250,532 360,516 C 460,500 560,526 660,514 C 700,508 730,518 742,524" fill="none" stroke="#5599bb" stroke-width="2.8" stroke-linecap="round"/>
+        <path d="M 60,528 C 160,512 250,537 360,521 C 460,505 560,531 660,519 C 700,513 730,522 742,528" fill="none" stroke="#5599bb" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/>
+        <text x="290" y="544" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#3377aa" letter-spacing="0.5" font-style="italic">Quebrada Pedasí</text>
+        <rect x="62" y="40" width="128" height="128" fill="#b8d4c0" stroke="#1d3a2c" stroke-width="1.3"/>
+        <text x="126" y="99" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#1d3a2c" font-weight="700">L-01</text>
+        <text x="126" y="113" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#2a5440">1,280 m²</text>
+        <text x="126" y="124" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#3a6a4a" letter-spacing="0.5">VENDIDO</text>
+        <rect x="192" y="40" width="130" height="128" fill="#b8d4c0" stroke="#1d3a2c" stroke-width="1.3"/>
+        <text x="257" y="99" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#1d3a2c" font-weight="700">L-02</text>
+        <text x="257" y="113" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#2a5440">1,300 m²</text>
+        <text x="257" y="124" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#3a6a4a" letter-spacing="0.5">VENDIDO</text>
+        <rect x="324" y="40" width="130" height="128" fill="#f7f3e8" stroke="#2a2010" stroke-width="1.3"/>
+        <circle cx="432" cy="62" r="5.5" fill="#c88030"/>
+        <text x="389" y="99" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#14110c" font-weight="700">L-03</text>
+        <text x="389" y="113" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#4a4337">1,300 m²</text>
+        <text x="389" y="124" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#c88030" letter-spacing="0.5" font-weight="600">DISPONIBLE</text>
+        <rect x="456" y="40" width="128" height="128" fill="#f0e4c0" stroke="#8a5a10" stroke-width="1.3"/>
+        <text x="520" y="99" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#3a2a0a" font-weight="700">L-04</text>
+        <text x="520" y="113" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#5a3a10">1,280 m²</text>
+        <text x="520" y="124" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#8a5a10" letter-spacing="0.5">RESERVADO</text>
+        <polygon points="586,40 740,40 756,170 586,170" fill="#f0e4c0" stroke="#8a5a10" stroke-width="1.3"/>
+        <text x="666" y="99" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#3a2a0a" font-weight="700">L-05</text>
+        <text x="666" y="113" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#5a3a10">2,310 m²</text>
+        <text x="666" y="124" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#8a5a10" letter-spacing="0.5">RESERVADO</text>
+        <rect x="62" y="194" width="110" height="160" fill="#b8d4c0" stroke="#1d3a2c" stroke-width="1.3"/>
+        <text x="117" y="275" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#1d3a2c" font-weight="700">L-06</text>
+        <text x="117" y="290" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#2a5440">1,760 m²</text>
+        <rect x="174" y="194" width="110" height="160" fill="#f7f3e8" stroke="#2a2010" stroke-width="1.3"/>
+        <circle cx="262" cy="216" r="5.5" fill="#c88030"/>
+        <text x="229" y="275" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#14110c" font-weight="700">L-07</text>
+        <text x="229" y="290" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#4a4337">1,760 m²</text>
+        <text x="229" y="303" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#c88030" font-weight="600">DISPONIBLE</text>
+        <rect x="286" y="194" width="108" height="160" fill="#f0e4c0" stroke="#8a5a10" stroke-width="1.3"/>
+        <text x="340" y="275" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#3a2a0a" font-weight="700">L-08</text>
+        <text x="340" y="290" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#5a3a10">1,728 m²</text>
+        <rect x="396" y="194" width="108" height="160" fill="#f7f3e8" stroke="#2a2010" stroke-width="1.3"/>
+        <circle cx="482" cy="216" r="5.5" fill="#c88030"/>
+        <text x="450" y="275" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#14110c" font-weight="700">L-09</text>
+        <text x="450" y="290" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#4a4337">1,728 m²</text>
+        <text x="450" y="303" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#c88030" font-weight="600">DISPONIBLE</text>
+        <rect x="506" y="194" width="108" height="160" fill="#f0e4c0" stroke="#8a5a10" stroke-width="1.3"/>
+        <text x="560" y="275" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#3a2a0a" font-weight="700">L-10</text>
+        <text x="560" y="290" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#5a3a10">1,728 m²</text>
+        <polygon points="616,194 742,194 756,356 616,356" fill="#b8d4c0" stroke="#1d3a2c" stroke-width="1.3"/>
+        <text x="685" y="275" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#1d3a2c" font-weight="700">L-11</text>
+        <text x="685" y="290" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#2a5440">2,560 m²</text>
+        <rect x="62" y="380" width="112" height="144" fill="#b8d4c0" stroke="#1d3a2c" stroke-width="1.3"/>
+        <text x="118" y="451" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#1d3a2c" font-weight="700">L-12</text>
+        <text x="118" y="466" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#2a5440">1,453 m²</text>
+        <rect x="176" y="380" width="114" height="144" fill="#f7f3e8" stroke="#2a2010" stroke-width="1.3"/>
+        <circle cx="268" cy="402" r="5.5" fill="#c88030"/>
+        <text x="233" y="451" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#14110c" font-weight="700">L-13</text>
+        <text x="233" y="466" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#4a4337">1,482 m²</text>
+        <text x="233" y="479" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#c88030" font-weight="600">DISPONIBLE</text>
+        <rect x="292" y="380" width="114" height="144" fill="#f0e4c0" stroke="#8a5a10" stroke-width="1.3"/>
+        <text x="349" y="451" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#3a2a0a" font-weight="700">L-14</text>
+        <text x="349" y="466" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#5a3a10">1,482 m²</text>
+        <rect x="408" y="380" width="114" height="144" fill="#f7f3e8" stroke="#2a2010" stroke-width="1.3"/>
+        <circle cx="500" cy="402" r="5.5" fill="#c88030"/>
+        <text x="465" y="451" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#14110c" font-weight="700">L-15</text>
+        <text x="465" y="466" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#4a4337">1,482 m²</text>
+        <text x="465" y="479" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#c88030" font-weight="600">DISPONIBLE</text>
+        <rect x="524" y="380" width="110" height="144" fill="#b8d4c0" stroke="#1d3a2c" stroke-width="1.3"/>
+        <text x="579" y="451" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#1d3a2c" font-weight="700">L-16</text>
+        <text x="579" y="466" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#2a5440">1,430 m²</text>
+        <polygon points="636,380 742,380 742,524 636,524" fill="#f7f3e8" stroke="#2a2010" stroke-width="1.3"/>
+        <circle cx="716" cy="402" r="5.5" fill="#c88030"/>
+        <text x="689" y="451" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9.5" fill="#14110c" font-weight="700">L-17</text>
+        <text x="689" y="466" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#4a4337">1,404 m²</text>
+        <text x="689" y="479" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="#c88030" font-weight="600">DISPONIBLE</text>
+        <g transform="translate(755,75)">
+          <circle cx="0" cy="0" r="20" fill="rgba(247,243,232,0.92)" stroke="#2a2010" stroke-width="1.2"/>
+          <polygon points="0,-15 5,8 0,4 -5,8" fill="#2a2010"/>
+          <polygon points="0,15 5,-8 0,-4 -5,-8" fill="#c8c0a8"/>
+          <text x="0" y="-22" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" fill="#2a2010" font-weight="700">N</text>
+        </g>
+        <g transform="translate(72,550)">
+          <rect x="0" y="-5" width="50" height="7" fill="#2a2010"/>
+          <rect x="50" y="-5" width="50" height="7" fill="none" stroke="#2a2010" stroke-width="1"/>
+          <line x1="0" y1="6" x2="0" y2="10" stroke="#2a2010" stroke-width="1"/>
+          <line x1="50" y1="6" x2="50" y2="10" stroke="#2a2010" stroke-width="1"/>
+          <line x1="100" y1="6" x2="100" y2="10" stroke="#2a2010" stroke-width="1"/>
+          <text x="0" y="20" font-family="'JetBrains Mono',monospace" font-size="7.5" fill="#2a2010">0</text>
+          <text x="38" y="20" font-family="'JetBrains Mono',monospace" font-size="7.5" fill="#2a2010">25 m</text>
+          <text x="86" y="20" font-family="'JetBrains Mono',monospace" font-size="7.5" fill="#2a2010">50 m</text>
+        </g>
+        <rect x="590" y="545" width="165" height="22" fill="rgba(247,243,232,0.9)" stroke="rgba(42,32,16,0.2)" stroke-width="0.8" rx="4"/>
+        <text x="597" y="558" font-family="'JetBrains Mono',monospace" font-size="7.5" fill="#2a2010">Total: 18 lotes · 7 disponibles · 11 reservados/vendidos</text>
+      </svg>
+    </div>
+    <div class="plat-legend">
+      <div class="plat-leg-item"><div class="plat-leg-swatch" style="background:#f7f3e8;border-color:#2a2010"></div><span lang="es">Disponible</span><span lang="en">Available</span></div>
+      <div class="plat-leg-item"><div class="plat-leg-swatch" style="background:#f0e4c0;border-color:#8a5a10"></div><span lang="es">Reservado</span><span lang="en">Reserved</span></div>
+      <div class="plat-leg-item"><div class="plat-leg-swatch" style="background:#b8d4c0;border-color:#1d3a2c"></div><span lang="es">Vendido</span><span lang="en">Sold</span></div>
+    </div>
+  </div>
+
+  <div class="comm-models-section">
+    <h3><span lang="es">Elige tu casa</span><span lang="en">Choose your home</span></h3>
+    <p class="comm-models-sub"><span lang="es">Cuatro modelos. Precio fijo. 9 meses de entrega. Se pueden modificar.</span><span lang="en">Four models. Fixed price. 9-month delivery. Customizable.</span></p>
+    <div class="comm-models-grid">
+      <div class="comm-model-card" onclick="setMode('build');document.getElementById('mode-build').scrollIntoView({behavior:'smooth'})">
+        <div class="comm-model-silhouette"><svg viewBox="0 0 200 100" width="160" height="80"><polygon points="100,10 160,48 40,48" fill="#1d3a2c" opacity="0.15"/><rect x="55" y="48" width="90" height="45" fill="#1d3a2c" opacity="0.12"/><rect x="80" y="63" width="22" height="30" fill="#1d3a2c" opacity="0.18"/><rect x="120" y="56" width="18" height="14" fill="#c88030" opacity="0.25"/></svg></div>
+        <div class="comm-model-body"><div class="comm-model-name">Casa <em>Refugio</em></div><div class="comm-model-tag"><span lang="es">Retiro · Bocas o costa · 80 m²</span><span lang="en">Retreat · Bocas or coast · 80 sqm</span></div><div class="comm-model-specs">1–2 hab · 1 baño · deck 18 m²</div><div class="comm-model-price">$155,000 <span>desde</span></div></div>
+      </div>
+      <div class="comm-model-card" onclick="setMode('build');document.getElementById('mode-build').scrollIntoView({behavior:'smooth'})">
+        <div class="comm-model-silhouette"><svg viewBox="0 0 200 100" width="160" height="80"><polygon points="100,8 168,46 32,46" fill="#1d3a2c" opacity="0.15"/><rect x="38" y="46" width="124" height="48" fill="#1d3a2c" opacity="0.10"/><rect x="72" y="60" width="22" height="34" fill="#1d3a2c" opacity="0.18"/><rect x="108" y="55" width="26" height="16" fill="#c88030" opacity="0.25"/></svg></div>
+        <div class="comm-model-body"><div class="comm-model-name">Casa <em>Bahía</em></div><div class="comm-model-tag"><span lang="es">Casa de playa · Pedasí · 180 m²</span><span lang="en">Beach home · Pedasí · 180 sqm</span></div><div class="comm-model-specs">3 hab · 2.5 baños · veranda 45 m²</div><div class="comm-model-price">$385,000 <span>desde</span></div></div>
+      </div>
+      <div class="comm-model-card" onclick="setMode('build');document.getElementById('mode-build').scrollIntoView({behavior:'smooth'})">
+        <div class="comm-model-silhouette"><svg viewBox="0 0 200 100" width="160" height="80"><polygon points="100,5 172,50 28,50" fill="#1d3a2c" opacity="0.18"/><rect x="35" y="50" width="130" height="44" fill="#1d3a2c" opacity="0.10"/><rect x="80" y="62" width="24" height="32" fill="#1d3a2c" opacity="0.18"/><rect x="118" y="56" width="30" height="16" fill="#c88030" opacity="0.22"/></svg></div>
+        <div class="comm-model-body"><div class="comm-model-name">Casa <em>Montaña</em></div><div class="comm-model-tag"><span lang="es">Retiro de altura · Boquete · 220 m²</span><span lang="en">Highland retreat · Boquete · 220 sqm</span></div><div class="comm-model-specs">3 hab · 2.5 baños · chimenea · veranda</div><div class="comm-model-price">$485,000 <span>desde</span></div></div>
+      </div>
+      <div class="comm-model-card flagship" onclick="setMode('build');document.getElementById('mode-build').scrollIntoView({behavior:'smooth'})">
+        <div class="comm-model-silhouette" style="background:linear-gradient(180deg,#f5e8c0 0%,var(--paper-2) 100%)"><div class="flagship-badge">Flagship</div><svg viewBox="0 0 200 100" width="160" height="80"><polygon points="100,4 178,48 22,48" fill="#b39656" opacity="0.3"/><rect x="28" y="48" width="144" height="46" fill="#1d3a2c" opacity="0.09"/><rect x="82" y="62" width="24" height="32" fill="#1d3a2c" opacity="0.18"/><rect x="116" y="54" width="28" height="18" fill="#b39656" opacity="0.35"/></svg></div>
+        <div class="comm-model-body"><div class="comm-model-name">Casa <em>Punta</em></div><div class="comm-model-tag"><span lang="es">La firma de Sora · Pedasí · 320 m²</span><span lang="en">Sora flagship · Pedasí · 320 sqm</span></div><div class="comm-model-specs">4 hab · 3.5 baños · piscina · casita</div><div class="comm-model-price">$815,000 <span>desde</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="comm-includes-band">
+    <h3><span lang="es">Todo lote incluye</span><span lang="en">Every lot includes</span></h3>
+    <div class="comm-includes-grid">
+      <div class="comm-include-item"><div class="comm-include-icon">📄</div><div class="comm-include-text"><strong><span lang="es">Título inscrito</span><span lang="en">Registered title</span></strong><span lang="es">Finca en el Registro Público. No derecho posesorio.</span><span lang="en">Registered in Panama's Public Registry. No rights of possession.</span></div></div>
+      <div class="comm-include-item"><div class="comm-include-icon">🛣️</div><div class="comm-include-text"><strong><span lang="es">Calle pavimentada</span><span lang="en">Paved road access</span></strong><span lang="es">Calle interna pavimentada hasta el lindero de cada lote.</span><span lang="en">Paved internal road to every lot line.</span></div></div>
+      <div class="comm-include-item"><div class="comm-include-icon">💧</div><div class="comm-include-text"><strong><span lang="es">Agua potable</span><span lang="en">Potable water</span></strong><span lang="es">Conexión de acueducto disponible en el lindero.</span><span lang="en">Municipal water connection available at lot line.</span></div></div>
+      <div class="comm-include-item"><div class="comm-include-icon">⚡</div><div class="comm-include-text"><strong><span lang="es">Electricidad</span><span lang="en">Electricity</span></strong><span lang="es">Tendido eléctrico y punto de conexión incluido.</span><span lang="en">Grid connection point included at lot line.</span></div></div>
+      <div class="comm-include-item"><div class="comm-include-icon">🌿</div><div class="comm-include-text"><strong><span lang="es">Área verde compartida</span><span lang="en">Shared green area</span></strong><span lang="es">Zona de árboles nativos y sendero dentro del desarrollo.</span><span lang="en">Native tree zone and walking path within the development.</span></div></div>
+      <div class="comm-include-item"><div class="comm-include-icon">🏗️</div><div class="comm-include-text"><strong><span lang="es">Permisos incluidos</span><span lang="en">Permits included</span></strong><span lang="es">Sora gestiona todos los permisos de construcción.</span><span lang="en">Sora handles all construction permits.</span></div></div>
+    </div>
+  </div>
+
+  <div class="comm-cta-band">
+    <h2><span lang="es">Reserva tu lote antes de que <em>se agoten.</em></span><span lang="en">Reserve your lot before they're <em>gone.</em></span></h2>
+    <p><span lang="es">Una llamada de 20 minutos. Sin presión. Te explicamos el proceso de reserva, los pasos de la compra y cómo funciona el contrato de construcción.</span><span lang="en">A 20-minute call. No pressure. We walk you through the reservation process, purchase steps and how the build contract works.</span></p>
+    <div class="comm-cta-btns">
+      <button class="comm-btn-primary" onclick="openWhatsApp('community-brisas')"><span lang="es">WhatsApp — ver lotes disponibles</span><span lang="en">WhatsApp — view available lots</span></button>
+      <a href="discovery.html" class="comm-btn-ghost"><span lang="es">Discovery Weekend →</span><span lang="en">Discovery Weekend →</span></a>
+    </div>
+    <div class="comm-delivery-note"><span lang="es">Entrega estimada Q1 2027 · Construcción inicio Q1 2026 · Reserva con $5,000 · Total por cuotas</span><span lang="en">Estimated delivery Q1 2027 · Construction starts Q1 2026 · Reserve with $5,000 · Pay in milestones</span></div>
+  </div>
+
+</section>
+
 <!-- ============ BUY MODE ============ -->
-<section class="section mode-section active" id="mode-buy">
+<section class="section mode-section" id="mode-buy">
   <div class="section-head">
     <h2 class="section-title"><span lang="es">Casas a la <em>venta</em></span><span lang="en">Homes for <em>sale</em></span></h2>
   </div>
