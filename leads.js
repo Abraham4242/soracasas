@@ -8,13 +8,16 @@ window.SORA_CONFIG = {
   leadEndpoint:'https://formsubmit.co/ajax/abe.e.eid@gmail.com',  // FormSubmit (no signup). First submit emails a one-time activation link to this inbox; click it to turn delivery on. TODO this week: move to hola@soracasas.com (+ consider Formspree).
   bookingUrl:  '',             // discovery-call booking, e.g. 'https://cal.com/sora/discovery'
   ga4:         'G-YPHDCVJNBL', // GA4 Measurement ID (soracasas.com)
+  googleAds:   'AW-18257387128', // Google Ads (conversion tracking + remarketing)
   metaPixel:   '',             // '1234567890123456'
   clarity:     ''              // 'abcdefghij'
 };
 
 (function(C){
-  if (C.ga4){ var s=document.createElement('script'); s.async=1; s.src='https://www.googletagmanager.com/gtag/js?id='+C.ga4; document.head.appendChild(s);
-    window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments)}; gtag('js',new Date()); gtag('config',C.ga4); }
+  if (C.ga4 || C.googleAds){ var tag=C.ga4||C.googleAds; var s=document.createElement('script'); s.async=1; s.src='https://www.googletagmanager.com/gtag/js?id='+tag; document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments)}; gtag('js',new Date());
+    if (C.ga4) gtag('config',C.ga4);
+    if (C.googleAds) gtag('config',C.googleAds); }
   if (C.metaPixel){ !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init',C.metaPixel); fbq('track','PageView'); }
   if (C.clarity){ (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,'clarity','script',C.clarity); }
 })(window.SORA_CONFIG);
