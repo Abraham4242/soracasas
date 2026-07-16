@@ -114,21 +114,6 @@
   pre.sql{background:var(--forest-deep);color:#cfe0d2;font-family:var(--mono);font-size:11px;line-height:1.55;padding:14px;border-radius:var(--r8);overflow-x:auto;white-space:pre;margin-top:6px}
   .primary{background:var(--accent);color:#fff;font-weight:600;font-size:12.5px;padding:11px 18px;border-radius:var(--r8)}.primary:hover{background:var(--accent-2)}.ghost{background:none;border:1px solid var(--border-2);border-radius:var(--r8);padding:11px 16px;font-size:12.5px;color:var(--fg-2)}
   .soonwrap{max-width:560px;margin:40px auto;text-align:center}.soonic{width:54px;height:54px;border-radius:var(--r12);background:var(--surface);border:1px solid var(--border);display:grid;place-items:center;margin:0 auto 16px;color:var(--forest)}.soonwrap h2{font-family:var(--serif);font-weight:500;font-size:23px}.soonwrap p{color:var(--muted);font-size:13px;margin-top:8px}.openbtn{display:inline-flex;align-items:center;gap:7px;margin-top:18px;background:var(--forest);color:#f1ece0;font-size:12.5px;font-weight:600;padding:11px 18px;border-radius:var(--r8)}
-  /* MATERIALES */
-  .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}@media(max-width:1040px){.mgrid{grid-template-columns:1fr 1fr}}@media(max-width:680px){.mgrid{grid-template-columns:1fr}}
-  .mcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r10);padding:14px;transition:.13s}.mcard:hover{border-color:var(--border-3)}
-  .mcard .mh{display:flex;align-items:flex-start;gap:10px}.mcard .ic{width:36px;height:36px;border-radius:var(--r8);background:var(--surface-3);display:grid;place-items:center;flex:0 0 auto;color:var(--forest)}.mcard .ic svg{width:18px;height:18px}
-  .mcard .sw{width:36px;height:36px;border-radius:var(--r8);flex:0 0 auto;border:1px solid var(--border-2)}
-  .mcard .nm{font-size:13px;font-weight:600}.mcard .cat2{font-family:var(--mono);font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--muted)}
-  .mcard .ds{font-size:12px;color:var(--muted);line-height:1.5;margin:8px 0}
-  .pvrow{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0}
-  .pv{font-family:var(--mono);font-size:9.5px;letter-spacing:.2px;padding:2px 7px;border-radius:99px;white-space:nowrap}
-  .pv.hi{background:var(--good-soft);color:var(--good)}.pv.mid{background:var(--warn-soft);color:var(--warn)}.pv.lo{background:var(--surface-3);color:var(--muted)}.pv.gl{background:var(--info-soft);color:var(--info)}
-  .qhist{margin-top:10px;border-top:1px solid var(--border);padding-top:10px;display:none}.qhist.open{display:block}
-  .qrow{display:flex;justify-content:space-between;gap:8px;font-size:11.5px;padding:5px 0;border-bottom:1px dotted var(--border-2)}.qrow:last-child{border-bottom:none}
-  .qrow .p{font-family:var(--mono);color:var(--forest);font-weight:600}.qrow .s{color:var(--muted)}
-  .mtoggle{font-size:11.5px;color:var(--forest);font-weight:600;cursor:pointer;margin-top:6px;display:inline-block}
-  .qaddbtn{font-size:11.5px;font-weight:600;color:var(--accent-2);margin-top:8px;display:inline-flex;align-items:center;gap:5px;cursor:pointer}
   /* MODAL */
   .modal{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(20,17,12,.22)}.modal.open{display:flex}.mbox{width:100%;max-width:420px;background:var(--surface);border:1px solid var(--border-2);border-radius:var(--r12);box-shadow:0 12px 40px rgba(20,17,12,.16);overflow:hidden}.mboxh{display:flex;align-items:center;padding:15px 18px;border-bottom:1px solid var(--border)}.mboxh h3{font-size:14px;font-weight:600}.mboxh .x{margin-left:auto;color:var(--muted)}.mbody{padding:16px 18px;display:flex;flex-direction:column;gap:11px}.seg{display:flex;gap:6px;flex-wrap:wrap}.seg button{font-size:11.5px;padding:7px 11px;border:1px solid var(--border-2);border-radius:var(--r8);color:var(--fg-2)}.seg button.on{background:var(--forest);color:#f1ece0;border-color:var(--forest)}.mfoot{display:flex;gap:8px;padding:14px 18px;border-top:1px solid var(--border)}.mfoot .primary{flex:1}
   .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--forest-deep);color:#f1ece0;font-size:12.5px;padding:11px 18px;border-radius:99px;z-index:120;opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1}
@@ -187,13 +172,6 @@
       </div>
       <!-- AJUSTES -->
       <div class="view maxw" id="view-ajustes"><div class="greet" style="font-size:21px;margin-bottom:14px">Ajustes</div><div id="ajustesBody"></div></div>
-      <!-- MATERIALES -->
-      <div class="view maxw" id="view-materiales">
-        <div class="vhead"><div class="greet">Enciclopedia de Materiales</div><div class="sub" id="matSub"></div></div>
-        <div class="toolbar"><div class="tabs" id="matKindTabs"></div></div>
-        <div class="toolbar"><div class="tabs" id="matSubTabs"></div></div>
-        <div class="mgrid" id="matGrid"></div>
-      </div>
       <!-- SOON -->
       <div class="view" id="view-soon"><div class="soonwrap" id="soonInner"></div></div>
     </div>
@@ -206,7 +184,6 @@
 <div class="toast" id="toast"></div>
 
 <script src="leads.js"></script>
-<script src="materials-encyclopedia-data.js"></script>
 <script>
 /* ===== ICONS ===== */
 const I={home:'<path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1Z"/>',users:'<circle cx="9" cy="8" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6"/><path d="M17 14.2A5.5 5.5 0 0 1 20.5 19"/>',target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/>',calendar:'<rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/>',chart:'<path d="M4 20V10M9.5 20V5M15 20v-7M20.5 20V8"/>',cube:'<path d="M12 2.6 21 7.5v9L12 21.4 3 16.5v-9Z"/><path d="M3 7.5 12 12l9-4.5M12 12v9.4"/>',funnel:'<path d="M3 4.5h18l-7 8v6l-4 2v-8Z"/>',map:'<path d="M9 3 3 5.5v16L9 19l6 2.5 6-2.5v-16L15 5.5 9 3Zm0 0v16m6-13.5v16"/>',hammer:'<path d="M14 6l4 4M11.5 8.5 4 16v4h4l7.5-7.5M13 7l4-4 4 4-4 4Z"/>',list:'<path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/>',doc:'<path d="M6 2.5h8l5 5V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1Z"/><path d="M14 2.5v5h5M9 13h6M9 17h6"/>',passport:'<rect x="5" y="2.5" width="14" height="19" rx="2"/><circle cx="12" cy="9.5" r="3"/><path d="M9 16.5h6"/>',community:'<path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M5 21a7 7 0 0 1 14 0"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/>',globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/>',handshake:'<path d="m12 11 2-2 4 3.5M3 8l4-2 5 5-2 2-3-2.5M21 8l-4-2-3 2M3 8v6l4 3M21 8v6l-4 3"/>',phone:'<path d="M6 3.5h3l1.5 4-2 1.5a11 11 0 0 0 5 5l1.5-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5.5a2 2 0 0 1 2-2Z"/>',mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/>',wa:'<path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z"/><path d="M8.5 8.5c0 4 3 7 7 7 .8 0 1.2-1 .8-1.6l-1.5-1-1.2 1c-1.3-.6-2.4-1.7-3-3l1-1.2-1-1.5c-.6-.4-1.6 0-1.6.8Z" fill="currentColor" stroke="none"/>',search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',plus:'<path d="M12 5v14M5 12h14"/>',bell:'<path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 19a2 2 0 0 0 4 0"/>',chl:'<path d="M15 5l-7 7 7 7"/>',chr:'<path d="M9 5l7 7-7 7"/>',logout:'<path d="M9 21H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4M16 16l4-4-4-4M20 12H9"/>',x:'<path d="M6 6l12 12M18 6 6 18"/>',box:'<path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5Z"/><path d="M3 7.5 12 12l9-4.5"/>',ext:'<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M5 5l2 2M17 17l2 2M2 12h3M19 12h3M5 19l2-2M17 7l2-2"/>',link:'<path d="M9 14a4 4 0 0 1 0-5.5l2-2a4 4 0 0 1 6 6l-1 1M15 10a4 4 0 0 1 0 5.5l-2 2a4 4 0 0 1-6-6l1-1"/>'};
@@ -229,41 +206,12 @@ const DB={
   async save(id,payload){lsSet(KEYMAP[id],payload);if(sb){try{await sb.from('sora_state').upsert({id,payload,updated_at:new Date().toISOString()});}catch(e){console.warn('Supabase save falló:',e.message);}}}
 };
 
-/* ===== MATERIAL QUOTES · separate from DB on purpose =====
-   material_quotes is a real, growing, multi-row table (one row per confirmed
-   supplier quote), not a single JSON blob — routing it through DB.save()
-   would mean re-uploading the entire quote history on every add. This mirrors
-   DB's exact connect/fallback shape (same sb/MODE globals) but reads/writes
-   material_quotes directly. */
-const QUOTES=new Map(); // slug -> array of quote rows, newest first
-async function loadAllQuotes(){
-  if(sb){
-    try{
-      const{data,error}=await sb.from('material_quotes').select('*').order('quote_date',{ascending:false});
-      if(error)throw error;
-      QUOTES.clear();(data||[]).forEach(q=>{if(!QUOTES.has(q.material_slug))QUOTES.set(q.material_slug,[]);QUOTES.get(q.material_slug).push(q)});
-      return;
-    }catch(e){console.warn('Quotes load falló, modo local:',e.message);}
-  }
-  const local=lsGet('sora.quotes',{});QUOTES.clear();Object.entries(local).forEach(([k,v])=>QUOTES.set(k,v));
-}
-async function addQuote(slug,q){
-  q={material_slug:slug,quote_date:q.quote_date||ymd(new Date()),...q};
-  if(sb){
-    try{const{error}=await sb.from('material_quotes').insert(q);if(error)throw error;}
-    catch(e){console.warn('Quote insert falló, guardando local:',e.message);const local=lsGet('sora.quotes',{});(local[slug]=local[slug]||[]).unshift(q);lsSet('sora.quotes',local);}
-  }else{
-    const local=lsGet('sora.quotes',{});(local[slug]=local[slug]||[]).unshift(q);lsSet('sora.quotes',local);
-  }
-  if(!QUOTES.has(slug))QUOTES.set(slug,[]);QUOTES.get(slug).unshift(q);
-}
-
 /* ===== STATIC DATA ===== */
 const TOOLS=[
  {grp:'Ventas & Clientes',items:[{ic:'users',nm:'CRM · Leads',ds:'Lista de leads de nuevo a contrato. Lee lo que capturan los embudos.',st:'vivo',go:'crm'},{ic:'target',nm:'Prospectos',ds:'Socios y canales verificados para outbound (tours, medios, brokers, asociaciones).',st:'vivo',go:'prospectos'},{ic:'calendar',nm:'Calendario',ds:'Citas, visitas, Discovery Weekends y entregas.',st:'vivo',go:'calendario'},{ic:'phone',nm:'Discovery Weekend',ds:'Solicitudes del fin de semana de descubrimiento.',st:'vivo',ext:'discovery.html'}]},
  {grp:'Marketing & Crecimiento',items:[{ic:'chart',nm:'Centro de Marketing',ds:'Hub de marketing: tráfico, fuentes, métricas.',st:'vivo',ext:'marketing.html'},{ic:'doc',nm:'Guía de Pauta',ds:'Cómo funciona la pauta para este negocio + anuncios listos.',st:'vivo',ext:'marketing-paid-ads.html'},{ic:'globe',nm:'Backlinks',ds:'Link building white-hat, ejecutable esta semana.',st:'vivo',ext:'marketing-backlinks.html'},{ic:'target',nm:'Inteligencia Competitiva',ds:'Brokers de Panamá: listings, equipos, SEO, funnels y nivel de amenaza. Se actualiza cada trimestre.',st:'vivo',ext:'competitive-intel.html'},{ic:'community',nm:'YouTube · Creadores',ds:'Roster de creadores Panamá + pitches de referido.',st:'vivo',ext:'marketing-youtube.html'},{ic:'cube',nm:'Configurador 3D',ds:'Diseña la casa en 3D con precio en vivo.',st:'vivo',ext:'disena-3d.html'},{ic:'funnel',nm:'Embudos',ds:'QIV, Guía de costos y Discovery.',st:'vivo',go:'embudos'},{ic:'globe',nm:'Base de Canales',ds:'FB, subreddits, YouTube, newsletters, podcasts.',st:'ref',ext:'mercados.html'}]},
  {grp:'Producto & Tierras',items:[{ic:'map',nm:'Banco de Tierras',ds:'Lotes, dueños, opciones, expiraciones.',st:'vivo',ext:'sora-casas-land.html'},{ic:'list',nm:'Listados / Inventario',ds:'Inventario curado + feed MLS ACOBIR.',st:'soon'}]},
- {grp:'Construcción · Playbook',items:[{ic:'list',nm:'Build Playbook',ds:'Resumen y puerta de entrada a todo el playbook de construcción.',st:'vivo',ext:'build-playbook.html'},{ic:'doc',nm:'Guía del Novato',ds:'La guía narrativa de principio a fin para un completo principiante, con visuales. Empieza aquí.',st:'vivo',ext:'build-guide.html'},{ic:'hammer',nm:'Proceso & Cronograma',ds:'Cada etapa del build, con tiempos, descripciones y % de costo.',st:'vivo',ext:'build-process.html'},{ic:'box',nm:'Materiales & Acabados',ds:'Materiales por nivel (Esencial/Sora/Firma), sourcing y qué resaltar.',st:'vivo',ext:'build-materials.html'},{ic:'box',nm:'Enciclopedia de Materiales',ds:'Sistemas estructurales y acabados del mundo, con prevalencia por país, más cotizaciones reales que confirmamos con proveedores.',st:'vivo',go:'materiales'},{ic:'chart',nm:'Costos & Presupuesto',ds:'Cómo se arma el precio llave en mano: $/m² por nivel y región, costos blandos, ejemplos.',st:'vivo',ext:'build-costs.html'},{ic:'doc',nm:'Arquitectura & Permisos',ds:'Diseño, idóneos, SPIA, MIVIOT, estudio de suelos, ocupación.',st:'vivo',ext:'build-architecture.html'},{ic:'handshake',nm:'Contratista & Equipo',ds:'Cómo sourcing y vetear al GC y su equipo, contrato, pagos por hito, banderas rojas.',st:'vivo',ext:'build-team.html'},{ic:'cube',nm:'Configurador 3D · Research',ds:'Pipeline glb, materiales y UX del configurador.',st:'vivo',ext:'3d-configurator-research.html'},{ic:'hammer',nm:'Construcciones (tracker)',ds:'Builds activos, % avance, pagos por hito.',st:'soon'},{ic:'box',nm:'Modelos & BOMs',ds:'Casa Bahía + Montaña, 3 niveles.',st:'soon'}]},
+ {grp:'Construcción · Playbook',items:[{ic:'list',nm:'Build Playbook',ds:'Resumen y puerta de entrada a todo el playbook de construcción.',st:'vivo',ext:'build-playbook.html'},{ic:'doc',nm:'Guía del Novato',ds:'La guía narrativa de principio a fin para un completo principiante, con visuales. Empieza aquí.',st:'vivo',ext:'build-guide.html'},{ic:'hammer',nm:'Proceso & Cronograma',ds:'Cada etapa del build, con tiempos, descripciones y % de costo.',st:'vivo',ext:'build-process.html'},{ic:'box',nm:'Materiales & Acabados',ds:'Materiales por nivel (Esencial/Sora/Firma), sourcing y qué resaltar.',st:'vivo',ext:'build-materials.html'},{ic:'box',nm:'Enciclopedia de Materiales',ds:'Sistemas estructurales y acabados del mundo, con prevalencia por país, más cotizaciones reales que confirmamos con proveedores.',st:'vivo',ext:'materiales.html'},{ic:'chart',nm:'Costos & Presupuesto',ds:'Cómo se arma el precio llave en mano: $/m² por nivel y región, costos blandos, ejemplos.',st:'vivo',ext:'build-costs.html'},{ic:'doc',nm:'Arquitectura & Permisos',ds:'Diseño, idóneos, SPIA, MIVIOT, estudio de suelos, ocupación.',st:'vivo',ext:'build-architecture.html'},{ic:'handshake',nm:'Contratista & Equipo',ds:'Cómo sourcing y vetear al GC y su equipo, contrato, pagos por hito, banderas rojas.',st:'vivo',ext:'build-team.html'},{ic:'cube',nm:'Configurador 3D · Research',ds:'Pipeline glb, materiales y UX del configurador.',st:'vivo',ext:'3d-configurator-research.html'},{ic:'hammer',nm:'Construcciones (tracker)',ds:'Builds activos, % avance, pagos por hito.',st:'soon'},{ic:'box',nm:'Modelos & BOMs',ds:'Casa Bahía + Montaña, 3 niveles.',st:'soon'}]},
  {grp:'Suministro & Inventario',items:[{ic:'list',nm:'Adquisición de Listings',ds:'Cómo se consiguen listings en Panamá (ACOBIR, MLS, IDX, FSBO, ROP) + playbook de 90 días.',st:'vivo',ext:'supply-listings.html'}]},
  {grp:'Legal & Cierre',items:[{ic:'doc',nm:'Contratos & Docs',ds:'Opción de terreno, contrato precio fijo, LOI.',st:'soon'},{ic:'passport',nm:'Visas FNV / QIV',ds:'Trámites migratorios en paralelo a la obra.',st:'soon'},{ic:'handshake',nm:'Escrow & Pagos',ds:'Plica del abogado y pagos por hito.',st:'soon'}]},
  {grp:'Investigación',items:[{ic:'globe',nm:'Mercados',ds:'Datos por mercado: Pedasí, Boquete, Volcán, Bocas.',st:'vivo',ext:'mercados.html'},{ic:'handshake',nm:'Socios / Brokers',ds:'ACOBIR, co-broke, KW, incumbentes.',st:'vivo',ext:'socios.html'},{ic:'gear',nm:'Ajustes',ds:'Backend compartido (Supabase), datos y respaldo.',st:'vivo',go:'ajustes'}]},
@@ -273,7 +221,7 @@ const NAV=[
  {g:'Ventas',items:[{ic:'users',nm:'CRM · Leads',go:'crm'},{ic:'target',nm:'Prospectos',go:'prospectos'},{ic:'calendar',nm:'Calendario',go:'calendario'},{ic:'phone',nm:'Discovery',ext:'discovery.html'}]},
  {g:'Marketing',items:[{ic:'chart',nm:'Centro de Marketing',ext:'marketing.html'},{ic:'doc',nm:'Guía de Pauta',ext:'marketing-paid-ads.html'},{ic:'globe',nm:'Backlinks',ext:'marketing-backlinks.html'},{ic:'target',nm:'Inteligencia Competitiva',ext:'competitive-intel.html'},{ic:'community',nm:'YouTube · Creadores',ext:'marketing-youtube.html'},{ic:'cube',nm:'Configurador 3D',ext:'disena-3d.html'},{ic:'funnel',nm:'Embudos',go:'embudos'}]},
  {g:'Producto',items:[{ic:'map',nm:'Banco de Tierras',ext:'sora-casas-land.html'},{ic:'list',nm:'Listados',soon:1}]},
- {g:'Construcción',items:[{ic:'list',nm:'Build Playbook',ext:'build-playbook.html'},{ic:'doc',nm:'Guía del Novato',ext:'build-guide.html'},{ic:'hammer',nm:'Proceso & Cronograma',ext:'build-process.html'},{ic:'box',nm:'Materiales & Acabados',ext:'build-materials.html'},{ic:'box',nm:'Enciclopedia de Materiales',go:'materiales'},{ic:'chart',nm:'Costos & Presupuesto',ext:'build-costs.html'},{ic:'doc',nm:'Arquitectura & Permisos',ext:'build-architecture.html'},{ic:'handshake',nm:'Contratista & Equipo',ext:'build-team.html'},{ic:'cube',nm:'Configurador 3D · Research',ext:'3d-configurator-research.html'},{ic:'hammer',nm:'Construcciones',soon:1},{ic:'box',nm:'Modelos & BOMs',soon:1}]},
+ {g:'Construcción',items:[{ic:'list',nm:'Build Playbook',ext:'build-playbook.html'},{ic:'doc',nm:'Guía del Novato',ext:'build-guide.html'},{ic:'hammer',nm:'Proceso & Cronograma',ext:'build-process.html'},{ic:'box',nm:'Materiales & Acabados',ext:'build-materials.html'},{ic:'box',nm:'Enciclopedia de Materiales',ext:'materiales.html'},{ic:'chart',nm:'Costos & Presupuesto',ext:'build-costs.html'},{ic:'doc',nm:'Arquitectura & Permisos',ext:'build-architecture.html'},{ic:'handshake',nm:'Contratista & Equipo',ext:'build-team.html'},{ic:'cube',nm:'Configurador 3D · Research',ext:'3d-configurator-research.html'},{ic:'hammer',nm:'Construcciones',soon:1},{ic:'box',nm:'Modelos & BOMs',soon:1}]},
  {g:'Suministro',items:[{ic:'list',nm:'Adquisición de Listings',ext:'supply-listings.html'}]},
  {g:'Legal',items:[{ic:'doc',nm:'Documentos',soon:1},{ic:'passport',nm:'Visas FNV/QIV',soon:1}]},
  {g:'Más',items:[{ic:'community',nm:'Comunidad',soon:1},{ic:'globe',nm:'Mercados',ext:'mercados.html'},{ic:'handshake',nm:'Socios',ext:'socios.html'},{ic:'gear',nm:'Ajustes',go:'ajustes'}]},
@@ -343,18 +291,8 @@ const PROSPECT_SEED=[
 ];
 const PSTATUS=[{id:'por_contactar',nm:'Por contactar'},{id:'contactado',nm:'Contactado'},{id:'en_conversacion',nm:'En conversación'},{id:'socio',nm:'Socio'},{id:'descartado',nm:'Descartado'}];
 
-/* ===== MATERIALS ENCYCLOPEDIA =====
-   Data lives in materials-encyclopedia-data.js (window.SORA_MATERIALS),
-   loaded via <script> tag below — sourced from real government census
-   tables (Panama 2023, Peru 2017) plus named industry benchmarks. See
-   that file's header comment for the full sourcing/gaps note. */
-const MCATS=['Estructura','Acabados'];
-const MSUBCATS={Estructura:['Muros','Marco'],Acabados:['Techo','Piso','Envolvente','Ventanas/Puertas']};
-
-
 /* ===== STATE ===== */
 let LEADS=[],PROSPECTS=[],EVENTS=[],CRMO={},MANUAL=[];
-let lang='es';
 const money=n=>n?'$'+Math.round(n).toLocaleString('en-US'):'—';
 const SRC={paid_meta:'Meta',paid_google:'Google',seo:'SEO',newsletter_IL:'Int. Living',referral_homeowner:'Referido',partner_prt:'PRT',sora_travel:'Sora Travel',conference:'Conferencia',configurador:'Configurador',configurador_3d:'Config. 3D',configurador_3d_whatsapp:'Config. WA'};
 const srcLabel=s=>SRC[s]||s;
@@ -471,46 +409,6 @@ function calMove(n){calRef.setMonth(calRef.getMonth()+n);renderCal()}
 function calToday(){calRef=new Date();calRef.setDate(1);renderCal()}
 function dayClick(key){openQuick('event',{date:key})}
 
-/* ===== MATERIALES ===== */
-let matKind='todos',matSub='todas';
-function matKindTab(k){matKind=k;matSub='todas';renderMateriales()}
-function matSubTab(s){matSub=s;renderMateriales()}
-function toggleQhist(slug){const el=$('#qh-'+slug);if(el)el.classList.toggle('open')}
-function pvClass(pct){return pct>=40?'hi':pct>=10?'mid':'lo'}
-function renderMateriales(){
-  const all=window.SORA_MATERIALS||[];
-  const totalQuotes=Array.from(QUOTES.values()).reduce((s,a)=>s+a.length,0);
-  $('#matSub').textContent=all.length+' materiales · '+totalQuotes+' cotizaciones registradas';
-  $('#matKindTabs').innerHTML=['todos',...MCATS].map(k=>{
-    const label=k==='todos'?'Todos':k;const n=k==='todos'?all.length:all.filter(m=>m.category===k).length;
-    return `<button class="tab ${matKind===k?'on':''}" onclick="matKindTab('${k}')">${label} <span class="n">${n}</span></button>`;
-  }).join('');
-  const subcats=(matKind!=='todos'&&MSUBCATS[matKind])?MSUBCATS[matKind]:[];
-  $('#matSubTabs').innerHTML=subcats.length?['todas',...subcats].map(s=>{
-    const label=s==='todas'?'Todas':s;const n=s==='todas'?all.filter(m=>m.category===matKind).length:all.filter(m=>m.category===matKind&&m.subcategory===s).length;
-    return `<button class="tab ${matSub===s?'on':''}" onclick="matSubTab('${s}')">${label} <span class="n">${n}</span></button>`;
-  }).join(''):'';
-  let list=all.filter(m=>matKind==='todos'||m.category===matKind);
-  if(matSub!=='todas')list=list.filter(m=>m.subcategory===matSub);
-  const q=($('#search').value||'').toLowerCase();if(q&&$('#view-materiales').classList.contains('show'))list=list.filter(m=>((m.name&&(m.name.es+m.name.en))||'').toLowerCase().includes(q));
-  $('#matGrid').innerHTML=list.length?list.map(m=>{
-    const swatch=m.swatches&&m.swatches[0]?`<div class="sw" style="background:${m.swatches[0]}"></div>`:`<div class="ic">${ic('box')}</div>`;
-    const pvBadges=(m.prevalence||[]).filter(p=>p.pct!=null).map(p=>`<span class="pv ${pvClass(p.pct)}" title="${(p.source||'')+' '+(p.year||'')}">${p.country} ${p.pct}%</span>`).join('');
-    const glBadge=(m.globalPct&&m.globalPct.value!=null)?`<span class="pv gl" title="${(m.globalPct.source||'')+' '+(m.globalPct.year||'')}">Global ${m.globalPct.value}%</span>`:'';
-    const noData=(!pvBadges&&!glBadge)?`<span class="pv lo" title="Sin cifra de prevalencia confiable encontrada aún">Sin dato de prevalencia</span>`:'';
-    const hasQuotes=m.soraMarkets&&m.soraMarkets.length;
-    const rows=QUOTES.get(m.slug)||[];
-    const nm=(lang==='es'?m.name.es:m.name.en),ds=(lang==='es'?m.desc.es:m.desc.en);
-    const qBody=hasQuotes?`<div class="qhist" id="qh-${m.slug}">${rows.length?rows.map(qq=>`<div class="qrow"><span class="s">${qq.quote_date} · ${qq.supplier||'—'}${qq.region?' · '+qq.region:''}</span><span class="p">$${(+qq.price).toLocaleString('en-US')}/${qq.unit}</span></div>`).join(''):'<div class="qrow"><span class="s">Sin cotizaciones aún</span></div>'}</div>
-      <div class="mtoggle" onclick="toggleQhist('${m.slug}')">${rows.length} cotización${rows.length===1?'':'es'} ▾</div>
-      <div class="qaddbtn" onclick='openQuick("quote",{slug:"${m.slug}",name:${JSON.stringify(nm)}})'>${ic('plus')} Agregar cotización</div>`:'';
-    return `<div class="mcard"><div class="mh">${swatch}<div><div class="nm">${nm}</div><div class="cat2">${m.subcategory}</div></div></div>
-      <div class="ds">${ds}</div>
-      <div class="pvrow">${pvBadges}${glBadge}</div>
-      ${qBody}</div>`;
-  }).join(''):'<div class="emptybig">Sin materiales en esta categoría</div>';
-}
-
 /* ===== AJUSTES ===== */
 function renderAjustes(){
   const sql=`-- Pega esto en Supabase → SQL Editor → Run\ncreate table if not exists sora_state (\n  id text primary key,\n  payload jsonb,\n  updated_at timestamptz default now()\n);\nalter table sora_state enable row level security;\n-- Interno: permitir lectura/escritura con la anon key\n-- (para producción, usa Supabase Auth y restringe por usuario)\ncreate policy "equipo_sora" on sora_state\n  for all using (true) with check (true);`;
@@ -531,14 +429,12 @@ function clearSupa(){localStorage.removeItem('sora.supa');toast('Desconectado');
 function exportData(){const blob={prospects:PROSPECTS,events:EVENTS,crm:CRMO,manual:MANUAL,exported:new Date().toISOString()};const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(blob,null,2)],{type:'application/json'}));a.download='sora-operaciones-respaldo.json';a.click()}
 
 /* ===== ROUTING ===== */
-const TITLES={inicio:'Inicio',crm:'CRM · Leads',prospectos:'Prospectos',calendario:'Calendario',ajustes:'Ajustes',materiales:'Enciclopedia de Materiales'};
-let matBooted=false;
+const TITLES={inicio:'Inicio',crm:'CRM · Leads',prospectos:'Prospectos',calendario:'Calendario',ajustes:'Ajustes'};
 function route(go){
   if(go==='embudos'){showSoon('Embudos',{links:[['QIV countdown','qiv.html'],['Guía de costos','guia.html'],['Discovery Weekend','discovery.html']]});return;}
   $$('.view').forEach(v=>v.classList.remove('show'));const v=$('#view-'+go);if(v)v.classList.add('show');
   $('#ttitle').textContent=TITLES[go]||go;$$('.navitem').forEach(n=>n.classList.toggle('active',n.dataset.go===go));
   if(go==='crm')renderCrm();if(go==='prospectos')renderProspectos();if(go==='calendario')renderCal();if(go==='inicio')renderInicio();if(go==='ajustes')renderAjustes();
-  if(go==='materiales'){renderMateriales();if(!matBooted){matBooted=true;loadAllQuotes().then(renderMateriales);}}
 }
 function showSoon(name,opts){opts=opts||{};$$('.view').forEach(v=>v.classList.remove('show'));$('#view-soon').classList.add('show');$('#ttitle').textContent=name;$$('.navitem').forEach(n=>n.classList.remove('active'));
   $('#soonInner').innerHTML=`<div class="soonic">${ic('hammer')}</div><h2>${name}</h2><p>${opts.links?'Abre uno de los embudos de captura activos:':'Esta herramienta está en el plan del equipo. La columna vertebral (CRM, prospectos, calendario, banco de tierras, configurador) ya está viva.'}</p>${opts.links?'<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:18px">'+opts.links.map(([l,u])=>`<button class="openbtn" style="background:var(--surface);color:var(--fg);border:1px solid var(--border-2)" onclick="window.open('${u}','_blank')">${ic('ext')} ${l}</button>`).join('')+'</div>':'<button class="openbtn" onclick="route(\'inicio\')">'+ic('home')+' Volver al inicio</button>'}`;
@@ -552,25 +448,16 @@ function openQuick(type,prefill){quickType=type||(/* default by current view */ 
 function closeModal(){$('#modal').classList.remove('open')}
 function segPick(b){b.parentNode.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on')}
 function renderModal(){
-  const T=quickType;const title={lead:'Nuevo lead',event:'Nuevo evento',prospect:'Nuevo prospecto',quote:'Nueva cotización'}[T];
+  const T=quickType;const title={lead:'Nuevo lead',event:'Nuevo evento',prospect:'Nuevo prospecto'}[T];
   let body='';
   if(T==='lead')body=`<div><label class="lbl">Nombre</label><input class="inp" id="qName" placeholder="Nombre del cliente"></div><div style="display:flex;gap:10px"><div style="flex:1"><label class="lbl">Mercado</label><input class="inp" id="qMarket" placeholder="Pedasí…"></div><div style="flex:1"><label class="lbl">Precio est.</label><input class="inp mono" id="qPrice" placeholder="380000"></div></div><div><label class="lbl">Fuente</label><div class="seg" id="qSeg">${['SEO','Meta','Google','Referido','Conferencia','Configurador'].map((s,i)=>`<button class="${i===0?'on':''}" onclick="segPick(this)">${s}</button>`).join('')}</div></div>`;
   else if(T==='event')body=`<div><label class="lbl">Título</label><input class="inp" id="qTitle" value="${(quickPrefill.title||'').replace(/"/g,'&quot;')}" placeholder="Visita lote · cliente"></div><div style="display:flex;gap:10px"><div style="flex:1"><label class="lbl">Fecha</label><input class="inp mono" id="qDate" value="${quickPrefill.date||ymd(new Date())}"></div><div style="flex:1"><label class="lbl">Hora</label><input class="inp mono" id="qTime" placeholder="15:00"></div></div><div><label class="lbl">Tipo</label><div class="seg" id="qSeg">${[['visita','Visita'],['llamada','Llamada'],['discovery','Discovery'],['entrega','Entrega'],['interno','Interno']].map(([v,l],i)=>`<button data-v="${v}" class="${(quickPrefill.type?quickPrefill.type===v:i===0)?'on':''}" onclick="segPick(this)">${l}</button>`).join('')}</div></div>`;
-  else if(T==='quote')body=`<div><label class="lbl">Material</label><div class="v" style="font-size:13.5px;font-weight:600;padding:9px 0">${(quickPrefill.name||'').replace(/</g,'&lt;')}</div></div><div style="display:flex;gap:10px"><div style="flex:1"><label class="lbl">Precio (USD)</label><input class="inp mono" id="qPrice2" placeholder="12.50"></div><div style="flex:1"><label class="lbl">Unidad</label><input class="inp" id="qUnit" placeholder="m2, saco, unidad…"></div></div><div><label class="lbl">Proveedor</label><input class="inp" id="qSupplier" placeholder="Nombre del proveedor"></div><div style="display:flex;gap:10px"><div style="flex:1"><label class="lbl">Región / mercado</label><input class="inp" id="qRegion" placeholder="Boquete…"></div><div style="flex:1"><label class="lbl">Cotizado por</label><div class="seg" id="qSeg">${['Abraham','Yendri'].map((s,i)=>`<button class="${i===0?'on':''}" onclick="segPick(this)">${s}</button>`).join('')}</div></div></div><div><label class="lbl">Confirmado por (contacto del proveedor)</label><input class="inp" id="qConfirmedBy" placeholder="Nombre de quien confirmó"></div><div><label class="lbl">Notas</label><input class="inp" id="qNotes" placeholder="Opcional"></div>`;
   else body=`<div><label class="lbl">Empresa</label><input class="inp" id="qComp" placeholder="Nombre de la empresa"></div><div style="display:flex;gap:10px"><div style="flex:1"><label class="lbl">Email</label><input class="inp" id="qEmail" placeholder="contacto@…"></div><div style="flex:1"><label class="lbl">Teléfono</label><input class="inp mono" id="qPhone" placeholder="+507…"></div></div><div><label class="lbl">Categoría</label><div class="seg" id="qSeg">${PCATS.map((c,i)=>`<button data-v="${c}" class="${i===0?'on':''}" onclick="segPick(this)">${c.split(' ')[0]}</button>`).join('')}</div></div><div><label class="lbl">Por qué</label><input class="inp" id="qWhy" placeholder="Relevancia / razón"></div>`;
   $('#modal').innerHTML=`<div class="mbox"><div class="mboxh"><h3>${title}</h3><button class="x iconbtn" onclick="closeModal()">${ic('x')}</button></div><div class="mbody">${body}</div><div class="mfoot"><button class="primary" onclick="saveQuick()">Crear</button><button class="ghost" onclick="closeModal()">Cancelar</button></div></div>`;
 }
 function saveQuick(){
   if(quickType==='lead'){const name=$('#qName').value.trim()||'Lead sin nombre',seg=$('#qSeg').querySelector('.on').textContent;const lead={id:'man'+Date.now(),name,source:seg.toLowerCase(),market:$('#qMarket').value.trim()||'—',price:+($('#qPrice').value.replace(/\D/g,''))||0,persona:'',stage:'nuevo',ts:new Date().toISOString(),config:'',notes:''};MANUAL.unshift(lead);LEADS.unshift(lead);DB.save('manual',MANUAL);closeModal();renderCrm();renderInicio();toast('Lead creado')}
   else if(quickType==='event'){const seg=$('#qSeg').querySelector('.on');EVENTS.push({id:'m'+Date.now(),date:$('#qDate').value||ymd(new Date()),time:$('#qTime').value||'',title:$('#qTitle').value.trim()||'Evento',type:seg?seg.dataset.v:'interno'});DB.save('events',EVENTS);closeModal();renderCal();renderInicio();toast('Evento creado')}
-  else if(quickType==='quote'){
-    const slug=quickPrefill.slug;if(!slug){toast('Falta el material');return}
-    const price=parseFloat(($('#qPrice2').value||'').replace(/[^0-9.]/g,''));const unit=$('#qUnit').value.trim();
-    if(!price||!unit){toast('Faltan precio o unidad');return}
-    const seg=$('#qSeg').querySelector('.on');
-    const q={price,unit,supplier:$('#qSupplier').value.trim(),region:$('#qRegion').value.trim(),country:'PA',quoted_by:seg?seg.textContent:'Abraham',confirmed_by:$('#qConfirmedBy').value.trim(),notes:$('#qNotes').value.trim()};
-    addQuote(slug,q).then(()=>{closeModal();renderMateriales();toast('Cotización agregada')});
-  }
   else{const seg=$('#qSeg').querySelector('.on');PROSPECTS.unshift({id:'pm'+Date.now(),company:$('#qComp').value.trim()||'Prospecto',person:'',cat:seg?seg.dataset.v:PCATS[0],web:'',email:$('#qEmail').value.trim(),phone:$('#qPhone').value.trim(),wa:'',loc:'',prio:'media',conf:'manual',why:$('#qWhy').value.trim(),src:'Agregado manualmente',status:'por_contactar',notes:''});DB.save('prospects',PROSPECTS);closeModal();renderProspectos();renderNav();toast('Prospecto agregado')}
 }
 
@@ -578,7 +465,7 @@ function saveQuick(){
 const TEAM_PASS='sora2026';
 function doLogin(){const v=$('#pass').value.trim();if(v===TEAM_PASS){sessionStorage.setItem('sora.team','1');boot();}else{$('#lerr').textContent='Código incorrecto. Intenta de nuevo.';$('#pass').value='';}}
 function logout(){sessionStorage.removeItem('sora.team');location.reload()}
-function onSearch(q){const sv=$$('.view.show')[0];if(sv&&sv.id==='view-crm')renderCrm();else if(sv&&sv.id==='view-prospectos')renderProspectos();else if(sv&&sv.id==='view-materiales')renderMateriales();else{if(!$('#view-inicio').classList.contains('show'))route('inicio');$$('#directory .tile').forEach(t=>{t.style.display=t.textContent.toLowerCase().includes(q.toLowerCase())?'':'none'})}}
+function onSearch(q){const sv=$$('.view.show')[0];if(sv&&sv.id==='view-crm')renderCrm();else if(sv&&sv.id==='view-prospectos')renderProspectos();else{if(!$('#view-inicio').classList.contains('show'))route('inicio');$$('#directory .tile').forEach(t=>{t.style.display=t.textContent.toLowerCase().includes(q.toLowerCase())?'':'none'})}}
 async function boot(){
   $('#login').classList.add('hide');$('#app').classList.add('show');
   connectSupa();
@@ -652,17 +539,13 @@ const EQUIPO_DICT={
  "Esta herramienta está en el plan del equipo. La columna vertebral (CRM, prospectos, calendario, banco de tierras, configurador) ya está viva.":"This tool is on the team roadmap. The backbone (CRM, prospects, calendar, land bank, configurator) is already live.",
  "Abre uno de los embudos de captura activos:":"Open one of the active capture funnels:","Volver al inicio":"Back to home","Guía de costos":"Cost guide",
  "Buscar…":"Search…","Código de acceso":"Access code","Agrega una nota…":"Add a note…","Última conversación, siguiente paso…":"Last conversation, next step…","Nombre del cliente":"Client name","Nombre de la empresa":"Company name","Relevancia / razón":"Relevance / reason","Visita lote · cliente":"Site visit · client","Salir":"Log out","Notificaciones":"Notifications","Buscar":"Search",
- "Enciclopedia de Materiales":"Materials Encyclopedia","Sistemas estructurales y acabados del mundo, con prevalencia por país, más cotizaciones reales que confirmamos con proveedores.":"Structural systems and finishes from around the world, with prevalence by country, plus real quotes we confirm with suppliers.",
- "Nueva cotización":"New quote","Material":"Material","Precio (USD)":"Price (USD)","Unidad":"Unit","Proveedor":"Supplier","Región / mercado":"Region / market","Cotizado por":"Quoted by","Confirmado por (contacto del proveedor)":"Confirmed by (supplier contact)","Notas":"Notes","Agregar cotización":"Add quote",
- "Cotización agregada":"Quote added","Falta el material":"Missing material","Faltan precio o unidad":"Missing price or unit","Sin cotizaciones aún":"No quotes yet","Sin materiales en esta categoría":"No materials in this category",
- "Todos":"All","Todas":"All","Estructura":"Structure","Acabados":"Finishes","Muros":"Walls","Marco":"Frame","Techo":"Roof","Piso":"Floor","Envolvente":"Envelope"
+ "Enciclopedia de Materiales":"Materials Encyclopedia","Sistemas estructurales y acabados del mundo, con prevalencia por país, más cotizaciones reales que confirmamos con proveedores.":"Structural systems and finishes from around the world, with prevalence by country, plus real quotes we confirm with suppliers."
 };
 const EQUIPO_FRAGS=[
  [" en pipeline"," in pipeline"],[" prospectos · "," prospects · "],[" activos · contactos verificados"," active · verified contacts"],
  [" eventos"," events"],[" por contactar"," to contact"],[" vs ayer"," vs yesterday"],["sin citas","no appointments"],[" más"," more"],
  ["verif. alta","verified high"],["verif. media","verified medium"],["verif. manual","verified manual"],["hace ",""],
  ["enero","January"],["febrero","February"],["marzo","March"],["abril","April"],["mayo","May"],["junio","June"],["julio","July"],["agosto","August"],["septiembre","September"],["octubre","October"],["noviembre","November"],["diciembre","December"],
- [" materiales · "," materials · "],["cotizaciones registradas","quotes logged"],[" cotizaciones"," quotes"],[" cotización"," quote"]
 ];
 SoraI18N.init(EQUIPO_DICT,EQUIPO_FRAGS);
 SoraI18N.mountToggle('#langSlot');
