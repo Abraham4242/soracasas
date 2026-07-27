@@ -1,0 +1,5 @@
+# Internal build scripts, keyword research, and strategy docs — never deploy to the public site
+caribbean-relocation-guide/_*
+**/__pycache__/
+**/_credits.json
+CONTENT-STANDARD.md
