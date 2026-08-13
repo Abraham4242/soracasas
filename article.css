@@ -428,3 +428,10 @@ footer.colophon{
 footer.colophon strong{color:var(--ink-soft);font-weight:600}
 footer.colophon a{color:var(--ink-faint);border:none}
 footer.colophon a:hover{color:var(--coral-deep)}
+
+/* Horizontally scrollable table wrapper. Previously only defined in some
+   pages' inline <style> blocks, so pages without one (e.g. the Spanish
+   guides) overflowed on mobile despite using the class. */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:32px 0}
+.tbl-wrap table{margin:0}
+.credit{display:block;margin-top:6px;font-size:12.5px;opacity:.72}
