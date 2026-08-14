@@ -435,3 +435,16 @@ footer.colophon a:hover{color:var(--coral-deep)}
 .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:32px 0}
 .tbl-wrap table{margin:0}
 .credit{display:block;margin-top:6px;font-size:12.5px;opacity:.72}
+
+/* Sticky on-page table of contents. Lives in the left gutter beside the
+   760px reading column and hides below 1200px where there is no gutter.
+   Previously duplicated inline on a handful of pages; global now. */
+.toc{position:fixed;top:110px;left:max(20px,calc((100vw - 760px)/2 - 220px));width:190px;
+  font-family:var(--sans);z-index:20;max-height:78vh;overflow:auto}
+.toc .lab{font-family:var(--mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--ink-faint);margin-bottom:12px}
+.toc a{display:block;color:var(--ink-faint);border:none;font-size:12.5px;line-height:1.35;
+  padding:5px 0 5px 13px;border-left:2px solid var(--line);text-decoration:none;transition:all .15s}
+.toc a:hover{color:var(--ink)}
+.toc a.active{color:var(--coral-deep);border-left-color:var(--coral-deep);font-weight:600}
+@media (max-width:1200px){.toc{display:none}}
