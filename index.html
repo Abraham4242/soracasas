@@ -224,6 +224,33 @@
     border-radius:99px;background:var(--paper-2);
   }
   .hero-cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+
+  /* ── hero video: a living texture behind the type, not a photo backdrop ──
+     The brand is cream paper with dark ink, so the footage sits under a heavy
+     paper-tinted scrim. It should read as movement you half-notice, never as a
+     video the copy is fighting. */
+  .hero{isolation:isolate}
+  /* .hero is max-width:1100px, so the layer has to break out to full bleed or
+     the footage reads as a panel with hard vertical edges. */
+  .hero-bg{
+    position:absolute;top:-1px;bottom:-1px;z-index:0;overflow:hidden;pointer-events:none;
+    left:50%;transform:translateX(-50%);width:100vw;max-width:100vw;
+  }
+  .hero-bg video,.hero-bg img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    opacity:.40;filter:saturate(.88);
+  }
+  /* paper wash: solid at the edges, thinnest in the corners where no type sits */
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 78% 68% at 50% 46%, rgba(247,240,223,.93) 0%, rgba(247,240,223,.80) 55%, rgba(247,240,223,.62) 100%),
+      linear-gradient(180deg, var(--paper) 0%, rgba(247,240,223,.35) 22%, rgba(247,240,223,.35) 78%, var(--paper) 100%);
+  }
+  .hero>*:not(.hero-bg){position:relative;z-index:1}
+  @media (max-width:760px){ .hero-bg video,.hero-bg img{opacity:.26} }
+  @media (prefers-reduced-motion:reduce){ .hero-bg video{display:none} }
+
   .btn{
     font-family:var(--mono);font-size:11px;
     letter-spacing:1.8px;text-transform:uppercase;
@@ -1095,6 +1122,11 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <img src="assets/video/boquete-hero-poster.jpg" alt="">
+    <video id="heroVid" muted loop playsinline preload="none"
+           poster="assets/video/boquete-hero-poster.jpg"></video>
+  </div>
   <h1>
     <span lang="es">Tu casa en el <em>trópico</em>.</span>
     <span lang="en">Your home in the <em>tropics</em>.</span>
@@ -3199,5 +3231,21 @@ function updateSceneView(){
 init();
 </script>
 
+
+<script>
+/* Hero video is opt-in by capability: skip the download entirely on small
+   screens, on save-data connections, and when reduced motion is requested. */
+(function(){
+  var v = document.getElementById('heroVid');
+  if (!v) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var conn = navigator.connection || {};
+  var thin = conn.saveData === true || /^([23]g|slow-2g)$/.test(conn.effectiveType || '');
+  if (reduce || thin || window.innerWidth < 760) return;   // poster stays, nothing loads
+  v.src = 'assets/video/boquete-hero.mp4';
+  v.load();
+  v.play().catch(function(){ /* autoplay blocked: poster is already showing */ });
+})();
+</script>
 </body>
 </html>

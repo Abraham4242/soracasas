@@ -8,3 +8,7 @@ alternative-building-methods/_*
 roofing-materials-guide/_*
 building-comparisons/_*
 relocation-guide/_*
+
+# Video working files: 4K source cuts and generated clips stay local.
+# Root-anchored, or it would also swallow assets/video/ which IS deployed.
+/video/
