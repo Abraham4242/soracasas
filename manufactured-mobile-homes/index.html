@@ -22,6 +22,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../article.css">
 <style>
+.tldr{box-sizing:border-box;max-width:100%;background:#faf6ec;border:1px solid #e6ddc8;
+  border-left:3px solid #c9b896;padding:20px 22px;margin:30px 0 34px;border-radius:3px}
+.tldr-h{font-family:var(--mono),monospace;font-size:10px;letter-spacing:1.8px;
+  text-transform:uppercase;color:#8a7d5f;margin-bottom:12px}
+.tldr ul{margin:0;padding-left:19px;max-width:100%}
+.tldr li{margin-bottom:9px;line-height:1.55;font-size:15.5px;overflow-wrap:anywhere}
+.tldr li:last-child{margin-bottom:0}
+article figure.viz{margin:34px 0;max-width:100%;overflow-x:auto;border:none;border-radius:0}
+article figure.viz svg{width:100%;max-width:100%;height:auto;display:block}
+article figure.viz figcaption{font-size:12px;color:#8a8378;margin-top:10px;padding:0}
+@media (prefers-color-scheme:dark){.tldr{background:#221f1a;border-color:#3a352c;border-left-color:#8a7d5f}}
+</style>
+
+<style>
 .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:32px 0}
 .tbl-wrap table{margin:0}
 /* Comparison table breaks out wider than the 760px reading column on desktop
@@ -141,7 +155,7 @@ article table.cmp td:first-child{white-space:nowrap}
 
 <article>
 
-  <div class="art-eyebrow">Building Methods Guide · Updated July 2026</div>
+  <div class="art-eyebrow">Building Methods Guide · Updated September 2026</div>
 
   <h1>Manufactured &amp; <em>Mobile Homes</em></h1>
 
@@ -152,20 +166,49 @@ article table.cmp td:first-child{white-space:nowrap}
     <span class="sep">·</span>
     <span>6 min read</span>
     <span class="sep">·</span>
-    <span>Updated July 2026</span>
+    <span>Updated September 2026</span>
   </div>
 
   <figure class=""><img src="../images/building-methods/manufactured-mobile-homes.jpg" alt="A modern single-story home that could be a manufactured home" loading="lazy"><figcaption>A modern manufactured home is often indistinguishable from a site-built one</figcaption></figure>
+<div class="tldr">
+<div class="tldr-h">Key takeaways</div>
+<ul>
+<li>A new manufactured home averaged <strong>$115,557</strong> in the US in 2025. Single-section $95,074, multi-section $156,170. Home only, no land.</li>
+<li>Per square foot that is roughly <strong>$87 against $166 site-built</strong>. About half. That gap is the entire appeal.</li>
+<li><strong>The sticker is not the price.</strong> Add $30,000 to $50,000 for delivery, foundation, hookups and site work. On raw land, site work alone can reach $60,000.</li>
+<li>In Panama or Costa Rica the math collapses. No regional factory supply chain, so you would import a house, and then fight transport and hurricane tie-downs.</li>
+</ul>
+</div>
 <p class="lede">Manufactured homes, the modern term for "mobile homes," are built <strong>entirely in a factory</strong> on a permanent steel chassis, then transported whole to the site as a single-wide, double-wide, or triple-wide. Built to a single national standard, the HUD code in the US, they are the <strong>cheapest housing per square foot</strong> in the developed world. Forget the old trailer stereotype. A modern manufactured home is often <strong>indistinguishable from a site-built house</strong>.</p>
 <h2 id="how-they-re-built-and-how-they-differ-from-modular">How they're built, and how they differ from modular</h2>
 <p>The whole home is assembled on an indoor line, framing, wiring, plumbing, cabinets, finishes, then towed to the lot on its own chassis and set, often on piers with skirting. This is the key difference from <a href='../prefab-modular-homes/'>modular homes</a>: modular sections are built to <em>local</em> building codes and craned onto a permanent foundation, whereas manufactured homes are built to the single national code and keep their transport chassis. Both are factory-built; the code, the chassis, and how permanent they are set them apart.</p>
-<h2 id="cost-roughly">Cost, roughly</h2>
-<p>This is the <strong>$</strong> of homes: manufactured homes commonly run <strong>$400–900/m² ($40–85/sq ft)</strong> for the home itself, a fraction of site-built, though land, transport, foundation/piers, and utility hookups add to the delivered cost. The factory efficiency is real and hard to beat on price. <em>(Approximate; size and finish drive it.)</em></p>
+<h2 id="cost-roughly">What it actually costs, sticker versus delivered</h2>
+<p>The headline number is genuinely good. The US Census Bureau put the average new manufactured home at <strong>$115,557</strong> in 2025. Single-section $95,074, multi-section $156,170. The Manufactured Housing Institute puts it at about <strong>$87 per square foot against $166 for site-built</strong>. Building indoors on a line, to one national code, cuts labor and waste in a way a site crew cannot match.</p>
+<p>Then you buy one and find out the sticker was the opening bid.</p>
+<p>Delivery runs $1,000 to $5,000 for a single-wide, up to $10,000 for a multi-section. Setup and leveling adds $2,000 to $8,000. Skirting is $500 in vinyl or $8,000 in block. A permanent foundation adds $5,000 to $15,000. Utility connections run $2,500 to $25,000 depending how far the nearest line sits. On genuinely raw land, site work alone lands between $20,000 and $60,000.</p>
+<p>Put together, a $120,000 home usually needs another $30,000 to $50,000 before you can sleep in it. Installed, budget <strong>$60 to $140 per square foot</strong> all in.</p>
+<figure class="viz">
+<svg viewBox="0 0 620 210" role="img" aria-label="Bar chart comparing the advertised price of a double-wide manufactured home with the real installed cost after delivery, foundation, hookups and site work">
+<text x="0" y="14" font-family="monospace" font-size="10" letter-spacing="1.3" fill="#8a8378">WHAT YOU SEE VS WHAT YOU PAY &#183; DOUBLE-WIDE ON YOUR OWN LAND</text>
+<text x="0" y="50" font-family="sans-serif" font-size="12" fill="#5a544b">Advertised</text>
+<rect x="0" y="58" width="270" height="28" fill="#c9b896"/>
+<text x="280" y="77" font-family="monospace" font-size="13" fill="#1d3a2c">$120,000</text>
+<text x="0" y="122" font-family="sans-serif" font-size="12" fill="#5a544b">Actually installed</text>
+<rect x="0" y="130" width="270" height="28" fill="#c9b896"/>
+<rect x="270" y="130" width="112" height="28" fill="#e07a5f"/>
+<text x="392" y="149" font-family="monospace" font-size="13" fill="#1d3a2c">$150,000&#8211;170,000</text>
+<rect x="0" y="174" width="12" height="9" fill="#e07a5f"/>
+<text x="19" y="183" font-family="sans-serif" font-size="11" fill="#5a544b">delivery, foundation, hookups, site work</text>
+<text x="0" y="202" font-family="sans-serif" font-size="10.5" fill="#8a8378">Raw land with no utilities nearby pushes the orange bar considerably further right.</text>
+</svg>
+<figcaption>Sources: US Census Manufactured Housing Survey; Manufactured Housing Institute; 2026 installed-cost surveys.</figcaption>
+</figure>
+<p>One more thing catches people. If the home sits on leased land, or on your land without a HUD-compliant permanent foundation, it is <strong>personal property, not real estate</strong>. You finance it with a chattel loan, which means a higher rate and a shorter term than a mortgage, and it can depreciate like a vehicle. Put it on a proper permanent foundation and it becomes real property, eligible for FHA Title II or VA financing. That one decision changes the whole ownership story.</p>
 <h2 id="the-balance-sheet">The balance sheet</h2>
 <div class="tbl-wrap"><table class="cmp"><thead><tr><th>Factor</th><th>Rating</th><th>Notes</th></tr></thead><tbody><tr><td>Cost</td><td>🟢</td><td>Cheapest housing per square foot</td></tr><tr><td>Build speed</td><td>🟢</td><td>Built in a factory in weeks</td></tr><tr><td>Quality control</td><td>🟢</td><td>Indoor line, consistent</td></tr><tr><td>Transport</td><td>🔴</td><td>Must be trucked whole, hard on remote/mountain lots</td></tr><tr><td>Heat/climate fit</td><td>🟡</td><td>Depends on spec; many need better insulation for the tropics</td></tr><tr><td>Hurricane/wind</td><td>🟡</td><td>Needs proper anchoring/tie-downs, the critical detail</td></tr><tr><td>Resale/appreciation</td><td>🔴</td><td>Can depreciate, unlike site-built on owned land</td></tr><tr><td>Permitting/finance</td><td>🔴</td><td>Uncommon in Latin America; financing/import friction</td></tr></tbody></table></div>
 <h2 id="how-hard-is-it-to-get-one-built">How hard is it to get one built?</h2>
 <p>In North America, buildability is a non-issue. You order it and it's delivered. In <strong>Panama or Costa Rica the picture flips</strong>. The factory-built manufactured-home industry that makes them cheap barely exists regionally, so you'd be <strong>importing</strong> a home, which is expensive and defeats the low price, or relying on the far more common <strong>local concrete build</strong>. Two things really limit it here. <strong>Transport</strong>, since trucking a whole house up a mountain road to a highland lot is often impractical, and <strong>anchoring</strong>, since manufactured homes must be tied down properly to survive hurricane wind, the classic failure mode. Where a manufactured home shines is flat, accessible land in a market with a supply chain for them. In most of tropical Latin America, a small local concrete build or a <a href='../prefab-modular-homes/'>modular</a> system usually makes more sense.</p>
-<div class="cta-card"><div class="eb">SORA Casas · Build in the Tropics</div><h3>Thinking about building in Panama or Costa Rica?</h3><p>SORA is a fixed-price design-build platform for foreign buyers. We build in reinforced concrete by default, and we can talk you through when an alternative method actually makes sense for the tropics. Play with cost live in the 3D configurator.</p><a class="cta-btn" href="../cost-to-build-house-panama/">See real 2026 build costs →</a></div>
+<div class="cta-card"><div class="eb">SORA Casas · Build in the Tropics</div><h3>Thinking about building in Panama or Costa Rica?</h3><p>If you priced a manufactured home, got excited, then read the transport section and deflated, that is the normal reaction. SORA builds in reinforced concrete at a fixed price, and we will tell you honestly when another method beats us on your particular lot. Play with cost live in the 3D configurator.</p><a class="cta-btn" href="../cost-to-build-house-panama/">See real 2026 build costs →</a></div>
 
 <h2 id="faq">Frequently <em>asked questions</em></h2>
 <div class="faq">
@@ -180,7 +223,7 @@ article table.cmp td:first-child{white-space:nowrap}
 
   <footer class="colophon">
     <strong>SORA Casas</strong> · MMXXVI<br>
-    Caribbean Building Methods Guide · Updated July 2026<br>
+    Caribbean Building Methods Guide · Updated September 2026<br>
     <a href="/">← SORA Casas</a> · <a href="/guides/">All guides</a> · <a href="../alternative-building-methods/">Building methods index</a>
   </footer>
 
