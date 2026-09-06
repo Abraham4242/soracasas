@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Earthship Homes in 2026: Cost, How They Work, Buildability · SORA</title>
-<meta name="description" content="Earthship homes in 2026: how these off-grid, tire-and-earth passive homes work, cost, green/yellow/red trade-offs, buildability, and whether the desert-designed concept adapts to the tropics.">
+<meta name="description" content="What an earthship really costs in 2026, the resale gap nobody mentions, the operating-cost payback maths, and what actually happened when earthships were built in Belize and Nicaragua.">
 <meta name="keywords" content="earthship, earthship home, earthship cost, off grid house, tire house sustainable">
 <link rel="canonical" href="https://soracasas.com/earthship-homes/">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -34,6 +34,23 @@ article table.cmp th,article table.cmp td{padding:9px 11px;line-height:1.4}
 article table.cmp th{white-space:nowrap}
 article table.cmp td:first-child{white-space:nowrap}
 @media (max-width:700px){.tbl-wrap table{font-size:12px}}
+</style>
+<style>
+.tldr{background:linear-gradient(180deg,#fcf6e6 0%,#f5eeda 100%);
+  border:1px solid var(--line);border-left:3px solid var(--forest);
+  border-radius:12px;padding:22px 26px;margin:32px 0}
+.tldr .lab{font-family:var(--mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--forest);margin-bottom:12px}
+.tldr ul{font-family:var(--sans);font-size:15px;line-height:1.6;margin:0;padding-left:19px}
+.tldr li{margin-bottom:8px}
+.tldr li:last-child{margin-bottom:0}
+.viz{margin:36px 0;border:1px solid var(--line);border-radius:12px;
+  background:var(--paper-2);padding:24px 22px 18px}
+.viz .vt{font-family:var(--sans);font-weight:600;font-size:15.5px;color:var(--ink);margin-bottom:2px}
+.viz .vs{font-family:var(--sans);font-size:13px;color:var(--ink-faint);margin-bottom:16px}
+.viz .vscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.viz svg{display:block;width:100%;min-width:340px;height:auto}
+.viz .vn{font-family:var(--sans);font-size:12.5px;color:var(--ink-faint);margin:14px 0 0;line-height:1.5}
 </style>
 <style>
 .toc{position:fixed;top:110px;left:max(20px,calc((100vw - 760px)/2 - 220px));width:190px;
@@ -92,7 +109,7 @@ article table.cmp td:first-child{white-space:nowrap}
         "name": "SORA Casas"
       },
       "datePublished": "2026-07-26",
-      "dateModified": "2026-07-26",
+      "dateModified": "2026-09-06",
       "image": "https://soracasas.com/og-image.svg"
     },
     {
@@ -137,11 +154,11 @@ article table.cmp td:first-child{white-space:nowrap}
   </div>
 </header>
 
-<nav class="toc" aria-label="On this page"><div class="lab">On this page</div><a href="#how-the-system-works" data-toc="how-the-system-works">How the system works</a><a href="#the-cost" data-toc="the-cost">The cost</a><a href="#weighed-up" data-toc="weighed-up">Weighed up</a><a href="#can-you-actually-build-it" data-toc="can-you-actually-build-it">Can you actually build it?</a><a href="#faq" data-toc="faq">FAQ</a></nav>
+<nav class="toc" aria-label="On this page"><div class="lab">On this page</div><a href="#how-the-system-works" data-toc="how-the-system-works">How the system works</a><a href="#the-cost" data-toc="the-cost">What one actually costs</a><a href="#resale" data-toc="resale">The resale problem</a><a href="#weighed-up" data-toc="weighed-up">Weighed up</a><a href="#tropical-earthships" data-toc="tropical-earthships">Tropical earthships, for real</a><a href="#can-you-actually-build-it" data-toc="can-you-actually-build-it">Can you actually build it?</a><a href="#faq" data-toc="faq">FAQ</a></nav>
 
 <article>
 
-  <div class="art-eyebrow">Building Methods Guide · Updated July 2026</div>
+  <div class="art-eyebrow">Building Methods Guide · Updated September 2026</div>
 
   <h1>Earthship Homes</h1>
 
@@ -150,37 +167,135 @@ article table.cmp td:first-child{white-space:nowrap}
   <div class="art-meta">
     <span class="by">By <strong>SORA Real Estate Editorial</strong></span>
     <span class="sep">·</span>
-    <span>7 min read</span>
+    <span>10 min read</span>
     <span class="sep">·</span>
-    <span>Updated July 2026</span>
+    <span>Updated September 2026</span>
   </div>
 
   <figure class=""><img src="../images/building-methods/earthship-homes.jpg" alt="A round earthen off-grid home" loading="lazy"><figcaption>Earthships, radical self-sufficiency built from earth, tires, and passive-solar design</figcaption></figure>
-<p class="lede">An earthship isn't just a building method, it's a <strong>whole self-sufficiency system</strong>. Walls of old tires rammed full of earth form a thermal-mass battery, a south-facing glass greenhouse heats the home and grows food, solar panels make power, and rainwater is caught, stored, and cycled through the plants. Developed by architect Michael Reynolds, it's the most ambitious off-grid concept in natural building, and the most labor-intensive.</p>
+<div class="tldr">
+  <div class="lab">The short version</div>
+  <ul>
+    <li>Not a wall system, a whole closed-loop dwelling: rammed-tire thermal mass, a solar greenhouse, catchment water, greywater planters and off-grid power.</li>
+    <li>Professionally built in 2026 runs <strong>$300&ndash;$450 per sq ft</strong>. Earthship Biotecture&#x27;s own turnkey figure is <strong>$180&ndash;$220</strong>. Determined owner-builders reach <strong>$120&ndash;$200</strong>.</li>
+    <li>Utilities can drop to <strong>under $300 a year</strong>. Against $150,000 of off-grid systems, payback is 20 to 25 years.</li>
+    <li>Earthships resell around <strong>$191 per sq ft</strong>, which on a typical model is a loss of roughly <strong>$58,000</strong> against build cost.</li>
+    <li>Tropical ones exist &mdash; Belize and Nicaragua both have them &mdash; and what the builders had to change is the most useful part of this page.</li>
+  </ul>
+</div>
+
+<p class="lede">An earthship is not a building method, it is a complete self-sufficiency system that happens to have walls. Old tires rammed with earth form a thermal battery, a sloped glass front heats the house and grows food, panels make power, and rain is caught, stored and cycled through the planters. Michael Reynolds&#x27; concept is the most ambitious idea in natural building, the most labour-punishing, and the one with the widest gap between the brochure and the bank statement.</p>
+
 <h2 id="how-the-system-works">How the system works</h2>
-<p>The back and side walls are earth-rammed tires (free waste material, enormous thermal mass), often bermed into a hillside; interior walls use bottles and cans set in cob. A sloped glass front captures winter sun. Systems for solar power, rainwater catchment, greywater planting beds, and blackwater treatment make the home <strong>function independent of the grid</strong>. It's designed as a closed-loop dwelling, not just a shell.</p>
-<h2 id="the-cost">The cost</h2>
-<p>Confusingly variable. The tire walls use free material but demand <strong>brutal amounts of labor</strong> (each tire is pounded full of earth by hand); the systems (solar, water, glass) add real cost. DIY earthships can be built relatively cheaply in sweat; turnkey earthships from the original builders are <strong>not</strong> cheap once systems and finishes are counted. <em>(Highly variable; DIY vs turnkey swings it wildly.)</em></p>
+
+<p>The back and side walls are tires rammed full of earth, usually bermed into a hillside. The material is free, the mass is enormous, and the labour is the price you pay for both. Interior walls use bottles and cans set in cob.</p>
+
+<p>The front is a sloped glass face angled to catch low winter sun, with a greenhouse strip inside it. Behind that sit the systems that make the whole thing a machine rather than a house: photovoltaics, rainwater catchment and cisterns, greywater routed through planting beds, and blackwater treatment outside.</p>
+
+<p>Nothing here is optional decoration. Remove the systems and you have an expensive earth-bermed house. The systems are the point, and they are also most of the budget.</p>
+
+<h2 id="the-cost">What one actually costs</h2>
+
+<p>Published figures disagree wildly, and the reason is that they describe different deals.</p>
+
+<p>Independent 2026 estimates put professionally built earthships at <strong>$300 to $450 per square foot</strong>, which lands a 1,500 to 2,000 sq ft home somewhere between <strong>$450,000 and $900,000</strong>. Earthship Biotecture quotes lower for its own turnkey work: Reynolds has put it at <strong>$180 to $220 per square foot</strong>, with a standard Taos build near $225.</p>
+
+<p>Owner-builders doing the labour themselves and scavenging materials get to <strong>$120 to $200 per square foot</strong>, roughly $180,000 to $400,000 for a 2,000 sq ft home. Tires are free from tire shops, the earth is under your feet, and bottles and cans cost nothing. What you spend instead is months of your life.</p>
+
+<p>Real listings in the Greater World community outside Taos &mdash; the world&#x27;s largest off-grid legal subdivision, 630 acres platted for 130 homes with about 60 built &mdash; give honest market anchors. A 1,600 sq ft REFUGE model on three acres was listed at <strong>$550,000</strong>, about $344 per sq ft. A 2,600 sq ft home on three acres listed at $800,000, with roughly $200,000 of repairs flagged as needed.</p>
+
+<p>The operating side is where earthships genuinely deliver. A well-documented Taos earthship reports annual utility costs <strong>under $200 to $300</strong>, against $2,000 to $3,000 for a comparable conventional home. Do the arithmetic honestly, though: spend $150,000 extra on off-grid systems to save $2,000 to $2,500 a year and payback runs <strong>20 to 25 years</strong>.</p>
+
+<h2 id="resale">The resale problem</h2>
+
+<p>This is the number that almost never appears in earthship writing, and it deserves its own section.</p>
+
+<p>Earthships resell at an average of about <strong>$191 per square foot</strong>. That is well below what most of them cost to build. Run it on a 1,700 sq ft Global Model and the gap is stark.</p>
+
+<div class="viz">
+  <div class="vt">Build it, then sell it: a 1,700 sq ft Global Model</div>
+  <div class="vs">What goes in, what comes back out.</div>
+  <div class="vscroll">
+  <svg viewBox="0 0 680 306" role="img" aria-label="Waterfall chart. A 1,700 square foot Global Model earthship costs about 382,500 dollars to build, loses about 57,800 dollars, and resells for about 324,700 dollars, an average of 191 dollars per square foot.">
+    <g stroke="#b0a78e" stroke-width="1" opacity="0.4">
+      <line x1="88" y1="240" x2="610" y2="240"/>
+      <line x1="88" y1="145" x2="610" y2="145"/>
+      <line x1="88" y1="50"  x2="610" y2="50"/>
+    </g>
+    <g font-family="Inter,sans-serif" font-size="11" fill="#807761" text-anchor="end">
+      <text x="82" y="244">$0</text><text x="82" y="149">$200k</text><text x="82" y="54">$400k</text>
+    </g>
+
+    <rect x="90" y="58" width="130" height="182" fill="#1d3a2c"/>
+    <text x="155" y="50" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#1d3a2c">$382,500</text>
+
+    <rect x="275" y="58" width="130" height="28" fill="#b85439"/>
+    <text x="340" y="50" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#b85439">&#8722;$57,800</text>
+
+    <rect x="460" y="86" width="130" height="154" fill="#b39656"/>
+    <text x="525" y="78" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#b39656">$324,700</text>
+
+    <path d="M220 58 H275 M405 86 H460" stroke="#14110c" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+    <line x1="88" y1="240" x2="610" y2="240" stroke="#807761" stroke-width="1.5"/>
+
+    <g text-anchor="middle" font-family="Inter,sans-serif">
+      <text x="155" y="262" font-size="13.5" font-weight="600" fill="#14110c">Cost to build</text>
+      <text x="155" y="279" font-size="11.5" fill="#807761">professional build</text>
+      <text x="340" y="262" font-size="13.5" font-weight="600" fill="#14110c">Lost on resale</text>
+      <text x="340" y="279" font-size="11.5" fill="#807761">about $34 per sq ft</text>
+      <text x="525" y="262" font-size="13.5" font-weight="600" fill="#14110c">What it sells for</text>
+      <text x="525" y="279" font-size="11.5" fill="#807761">$191 per sq ft average</text>
+    </g>
+    <text x="8" y="300" font-family="Inter,sans-serif" font-size="11" fill="#807761">Figures from published earthship resale analysis. Owner-built homes with low cash cost can still come out ahead.</text>
+  </svg>
+  </div>
+  <p class="vn">The honest reading: an earthship is a fantastic house to live in and a poor asset to sell. If you build one with your own hands, the sweat is the investment and this chart barely matters. If you write cheques for it, expect the market to value it as an unusual house rather than as a machine.</p>
+</div>
+
 <h2 id="weighed-up">Weighed up</h2>
-<div class="tbl-wrap"><table class="cmp"><thead><tr><th>Factor</th><th>Rating</th><th>Notes</th></tr></thead><tbody><tr><td>Cost</td><td>🟡</td><td>Free tire material; systems + labor add up</td></tr><tr><td>Self-sufficiency</td><td>🟢</td><td>Off-grid power, water, food, unmatched</td></tr><tr><td>Sustainability</td><td>🟢</td><td>Reused materials, closed loops</td></tr><tr><td>Build speed</td><td>🔴</td><td>Pounding tires is punishingly slow</td></tr><tr><td>Heat/climate fit</td><td>🟡</td><td>Designed for high-desert swings, not humid tropics</td></tr><tr><td>Aesthetics</td><td>🟡</td><td>Distinctive/organic, not for everyone</td></tr><tr><td>Seismic/wind</td><td>🟢</td><td>Massive bermed earth walls are stable</td></tr><tr><td>Permitting/finance</td><td>🔴</td><td>Unconventional, real code and mortgage battles</td></tr></tbody></table></div>
+
+<div class="tbl-wrap"><table class="cmp"><thead><tr><th>Factor</th><th>Rating</th><th>Notes</th></tr></thead><tbody><tr><td>Owner-built cost</td><td>&#128993;</td><td>$120&ndash;$200/sq ft, paid mostly in months of your life</td></tr><tr><td>Professional cost</td><td>&#128308;</td><td>$300&ndash;$450/sq ft once systems and finishes are counted</td></tr><tr><td>Running cost</td><td>&#128994;</td><td>Utilities under $300 a year in a documented Taos home</td></tr><tr><td>Payback on systems</td><td>&#128993;</td><td>Roughly 20&ndash;25 years at typical savings</td></tr><tr><td>Resale</td><td>&#128308;</td><td>Averages $191/sq ft, often below build cost</td></tr><tr><td>Self-sufficiency</td><td>&#128994;</td><td>Power, water, waste and some food. Genuinely unmatched</td></tr><tr><td>Sustainability</td><td>&#128994;</td><td>Reused materials and closed loops throughout</td></tr><tr><td>Build speed</td><td>&#128308;</td><td>Hand-ramming tires is as slow as construction gets</td></tr><tr><td>Desert fit</td><td>&#128994;</td><td>Exactly what it was designed for</td></tr><tr><td>Humid tropical fit</td><td>&#128993;</td><td>Works, but needs genuine redesign, not a copy</td></tr><tr><td>Permitting &amp; finance</td><td>&#128308;</td><td>Real code battles, and mortgages are hard to place</td></tr></tbody></table></div>
+
+<h2 id="tropical-earthships">Tropical earthships, for real</h2>
+
+<p>The usual line is that earthships are a high-desert idea. True, but two have been built in this region, and what their builders had to change is more instructive than any theory.</p>
+
+<p><strong>Belize.</strong> The country&#x27;s only earthship sits beside the Lubaantun Maya site in Toledo District, built as a retrofit on the foundation of an old barn. Reynolds&#x27; team came down to demonstrate orientation for cooling, heating and catchment, ran a roughly four-week build with ten apprentices, and trained a Maya crew from the nearby village of San Pedro Colombia who did most of the work. The base is stacked tires stuffed with styrofoam and crushed cans. The team then took the tire and bottle-brick methods to a rainwater catchment system for the village school.</p>
+
+<p><strong>Nicaragua.</strong> Casa Llanta &mdash; tire house &mdash; went up in 2009 near San Juan del Sur, built by a group of expat Californians. The logic there is worth borrowing: water access is limited, energy is very expensive, and long blackouts are routine. The home is built into the earth for temperature stability, with a large catchment system banking wet-season rain for the dry months. The builders worked alongside Nicaraguans to pass the techniques on.</p>
+
+<p><strong>What actually breaks.</strong> A builder in Cayo, Belize abandoned the classic cooling tubes entirely because the drill could not get through quartz veins in the hillside. They went to aircrete instead, and reported that a four-inch aircrete roof slab kept corrugated metal roofing below 80&deg;F even after a day over 100&deg;F. Others cite cooling tubes as a maintenance and vermin problem in the tropics, which is a fair concern for a buried duct in a warm, wet place.</p>
+
+<p>The single most transferable adaptation: <strong>separate the living space from the greenhouse</strong>. In a desert you want the glasshouse thermally coupled to the rooms. In the tropics that same coupling cooks you, and a buffer between the two lets you keep the food and the water harvesting without importing the heat.</p>
+
 <h2 id="can-you-actually-build-it">Can you actually build it?</h2>
-<p>Earthships are <strong>buildable by determined owner-builders</strong> (there's a whole community and training program), but they are <strong>labor-brutal</strong>, hand-ramming hundreds of tires is the definition of sweat equity, and the integrated systems (solar, catchment, greywater) require real technical competence. The bigger issue is fit: the design was optimized for the <strong>high-desert</strong> (huge day-night temperature swings the thermal mass smooths out). In the <strong>humid tropics</strong>, the thermal-mass advantage shrinks, the greenhouse can overheat, and moisture management gets harder, so a tropical earthship needs serious redesign (ventilation, shading, moisture control) rather than a copy-paste. And permitting/financing an unconventional tire home is often the hardest part of all.</p>
-<div class="cta-card"><div class="eb">SORA Casas · Build in the Tropics</div><h3>Thinking about building in Panama or Costa Rica?</h3><p>SORA is a fixed-price design-build platform for foreign buyers. We build in reinforced concrete by default, and we can talk you through when an alternative method actually makes sense for the tropics. Play with cost live in the 3D configurator.</p><a class="cta-btn" href="../cost-to-build-house-panama/">See real 2026 build costs →</a></div>
+
+<p>Yes, if you are the right kind of stubborn. There is a real community and a training programme, and owner-builders finish these all the time.</p>
+
+<p>Be clear about what you are signing up for. Hand-ramming hundreds of tires is the definition of sweat equity, and the integrated systems &mdash; solar, catchment, greywater, blackwater &mdash; require genuine technical competence, not enthusiasm. You are becoming the utility company for your own house.</p>
+
+<p>The design fit matters too. Earthships were optimised for high desert, where huge day-night swings give thermal mass something to smooth out. In the humid tropics the swing is small, so the mass advantage shrinks, the greenhouse wants to overheat, and moisture management gets harder. A tropical earthship is a redesign, not a copy-paste, and the Belize and Nicaragua projects above are the evidence for both halves of that sentence.</p>
+
+<p>And then the paperwork, which is usually the hardest part of all. Permitting a tire home, insuring it, and financing it are three separate fights in most jurisdictions, and in Panama or Costa Rica you would be the first case your bank has seen. If the appeal is off-grid independence rather than the tire walls specifically, you can get most of the way there &mdash; solar, catchment, greywater &mdash; on a <a href="../icf-construction/">conventionally built house</a> that appraises normally. Compare it against the <a href="../alternative-building-methods/">other methods</a> before you commit to the hardest one.</p>
+
+<div class="cta-card"><div class="eb">SORA Casas &middot; Build in the Tropics</div><h3>Want off-grid independence without the tire walls?</h3><p>Solar, rainwater catchment and greywater systems all bolt onto a conventionally built tropical home &mdash; one your bank will lend against and your insurer will cover. We can price the independence you actually want.</p><a class="cta-btn" href="../cost-to-build-house-panama/">See real 2026 build costs &rarr;</a></div>
 
 <h2 id="faq">Frequently <em>asked questions</em></h2>
 <div class="faq">
-<details open><summary>How much does an earthship cost to build?</summary><p>It varies enormously. The tire walls use free material but require immense manual labor, and the off-grid systems (solar, water catchment, greywater) add significant cost. Owner-built earthships can be relatively cheap in materials; professionally built, fully-systemed earthships are not cheap.</p></details>
-<details><summary>Do earthships work in tropical climates?</summary><p>Not without redesign. Earthships were engineered for high-desert climates with big day-night temperature swings that their thermal mass evens out. In the humid tropics that advantage shrinks, the solar greenhouse can overheat, and moisture control is harder, so the concept needs real adaptation, not a direct copy.</p></details>
-<details><summary>Are earthships hard to permit?</summary><p>Often, yes. Because they're unconventional (tire walls, integrated off-grid systems, non-standard design), earthships frequently run into building-code and mortgage/insurance hurdles, which can be the most difficult part of the whole project.</p></details>
+<details open><summary>How much does an earthship cost to build?</summary><p>Professionally built in 2026, roughly $300 to $450 per square foot, which puts a 1,500 to 2,000 sq ft home between $450,000 and $900,000. Earthship Biotecture quotes $180 to $220 for its own turnkey work. Determined owner-builders reach $120 to $200 per square foot by supplying the labour themselves.</p></details>
+<details><summary>Do earthships save money in the long run?</summary><p>On running costs, dramatically. A documented Taos earthship reports annual utility bills under $200 to $300 against $2,000 to $3,000 for a conventional home. But if the off-grid systems added $150,000 to the build, payback on that spend runs 20 to 25 years, so treat it as buying independence rather than buying savings.</p></details>
+<details><summary>What do earthships sell for?</summary><p>An average of about $191 per square foot, which is frequently below what they cost to build. On a 1,700 sq ft Global Model, that is roughly $382,500 to build against $324,700 on resale, a gap near $58,000. If you built it with your own hands the maths looks very different, but a cheque-written earthship is a poor asset.</p></details>
+<details><summary>Have earthships been built in the tropics?</summary><p>Yes. Belize has one beside the Lubaantun Maya site in Toledo District, a retrofit built with a local Maya crew trained by Reynolds&rsquo; team. Nicaragua has Casa Llanta near San Juan del Sur, built in 2009, where limited water and expensive, unreliable power made the case. Both required real adaptation rather than a straight copy of the desert model.</p></details>
+<details><summary>What has to change for a tropical earthship?</summary><p>Chiefly, separate the living space from the greenhouse so its heat does not flow into your rooms. Cooling tubes are also unreliable here: one Belize builder abandoned them when the drill could not penetrate quartz veins, and buried ducts invite vermin in warm wet ground. Expect to solve shading, cross-ventilation and moisture properly, since the small day-night swing gives thermal mass much less to work with.</p></details>
 </div>
 
-<div class="surface forest" style="margin-top:56px"><h4>Sources &amp; verification</h4><p style="font-family:var(--sans);font-size:14.5px">Figures in this guide were checked against primary and authoritative sources on <strong>27 July 2026</strong>. Immigration, tax, and cost figures change — always confirm the current rules with the official body or a licensed professional before acting.</p><ul style="font-family:var(--sans);font-size:14px;margin-bottom:0"><li><a href="https://naturalbuildingblog.com/the-resilience-of-earthbag-superadobe-construction/" target="_blank" rel="noopener">Natural Building Blog</a> — earthen/off-grid resilience</li><li><a href="https://www.buildwithrise.com/stories/earthbag-architecture" target="_blank" rel="noopener">Build With Rise</a> — natural building</li></ul></div>
+<div class="surface forest" style="margin-top:56px"><h4>Sources &amp; verification</h4><p style="font-family:var(--sans);font-size:14.5px">Figures in this guide were checked against primary and authoritative sources on <strong>6 September 2026</strong>. Immigration, tax, and cost figures change — always confirm the current rules with the official body or a licensed professional before acting.</p><ul style="font-family:var(--sans);font-size:14px;margin-bottom:0"><li><a href="https://earthship.com/buy/" target="_blank" rel="noopener">Earthship Biotecture</a> &mdash; models, turnkey pricing and homes for sale</li><li><a href="https://exploretinyhouse.com/earthship-cost-to-build/" target="_blank" rel="noopener">Explore Tiny House</a> &mdash; 2026 earthship cost and resale analysis</li><li><a href="https://www.belizehub.com/building-belizes-first-earthship-alongside-the-mayan-ruins/" target="_blank" rel="noopener">Belize Hub</a> &mdash; building Belize&rsquo;s first earthship at Lubaantun</li><li><a href="https://permies.com/t/144842/Passive-cooling-Belize" target="_blank" rel="noopener">Permies</a> &mdash; builders on passive cooling and abandoned cooling tubes in Belize</li></ul></div>
 
 <div class="related"><h4>Continue Reading</h4><div class="related-grid"><a href="../alternative-building-methods/"><small>Method guide</small>Alternative Building Methods</a><a href="../rammed-earth-homes/"><small>Earth walls</small>Rammed Earth Homes</a><a href="../earthbag-superadobe-homes/"><small>Earthbag family</small>Earthbag &amp; Superadobe</a></div></div>
 
   <footer class="colophon">
     <strong>SORA Casas</strong> · MMXXVI<br>
-    Caribbean Building Methods Guide · Updated July 2026<br>
+    Caribbean Building Methods Guide · Updated September 2026<br>
     <a href="/">← SORA Casas</a> · <a href="/guides/">All guides</a> · <a href="../alternative-building-methods/">Building methods index</a>
   </footer>
 

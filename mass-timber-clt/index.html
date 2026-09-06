@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mass Timber &amp; CLT: Cost, Pros &amp; Tropical Fit · SORA</title>
-<meta name="description" content="Mass timber and cross-laminated timber (CLT) in 2026: how engineered timber panels work, cost, green/yellow/red trade-offs, carbon benefits, and the moisture, termite, and availability realities for the tropics.">
+<title>Mass Timber &amp; CLT Cost and Tropical Fit 2026 · SORA</title>
+<meta name="description" content="What mass timber and CLT really cost in 2026, why South America now presses its own panels in Uruguay and Brazil, and the moisture and termite maths that decide whether it belongs in a tropical house.">
 <meta name="keywords" content="mass timber, cross laminated timber, CLT, mass timber construction, CLT house, engineered timber">
 <link rel="canonical" href="https://soracasas.com/mass-timber-clt/">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -34,6 +34,24 @@ article table.cmp th,article table.cmp td{padding:9px 11px;line-height:1.4}
 article table.cmp th{white-space:nowrap}
 article table.cmp td:first-child{white-space:nowrap}
 @media (max-width:700px){.tbl-wrap table{font-size:12px}}
+</style>
+<style>
+.tldr{background:linear-gradient(180deg,#fcf6e6 0%,#f5eeda 100%);
+  border:1px solid var(--line);border-left:3px solid var(--forest);
+  border-radius:12px;padding:22px 26px;margin:32px 0}
+.tldr .lab{font-family:var(--mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--forest);margin-bottom:12px}
+.tldr ul{font-family:var(--sans);font-size:15px;line-height:1.6;margin:0;padding-left:19px}
+.tldr li{margin-bottom:8px}
+.tldr li:last-child{margin-bottom:0}
+.viz{margin:36px 0;border:1px solid var(--line);border-radius:12px;
+  background:var(--paper-2);padding:24px 22px 18px}
+.viz .vt{font-family:var(--sans);font-weight:600;font-size:15.5px;color:var(--ink);margin-bottom:2px}
+.viz .vs{font-family:var(--sans);font-size:13px;color:var(--ink-faint);margin-bottom:16px}
+.viz .vscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.viz svg{display:block;width:100%;min-width:340px;height:auto}
+.viz .vn{font-family:var(--sans);font-size:12.5px;color:var(--ink-faint);
+  margin:12px 0 0;line-height:1.5}
 </style>
 <style>
 .toc{position:fixed;top:110px;left:max(20px,calc((100vw - 760px)/2 - 220px));width:190px;
@@ -92,7 +110,7 @@ article table.cmp td:first-child{white-space:nowrap}
         "name": "SORA Casas"
       },
       "datePublished": "2026-07-26",
-      "dateModified": "2026-07-26",
+      "dateModified": "2026-09-06",
       "image": "https://soracasas.com/og-image.svg"
     },
     {
@@ -108,10 +126,10 @@ article table.cmp td:first-child{white-space:nowrap}
         },
         {
           "@type": "Question",
-          "name": "Is mass timber good for tropical homes?",
+          "name": "Can you actually get CLT in Latin America?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Not yet, for most. Mass timber's carbon and speed benefits are real, but a wood structure in a hot, humid, termite-heavy climate needs serious moisture and pest protection, and there's essentially no CLT supply chain in Central America, so it must be imported at a premium. For sustainable structural wood in the tropics today, bamboo/guadua is often more practical."
+            "text": "Yes, from South America. Arboreal in Tacuarembo, Uruguay has run a large CLT and glulam line since 2022, producing around 50,000 cubic metres a year and shipping as far as the Dominican Republic. Brazil and Chile also produce, and Argentina's first plant is being installed at Corrientes. There is no Central American mill, so a panel landing in Panama or Costa Rica is still an import."
           }
         },
         {
@@ -137,50 +155,140 @@ article table.cmp td:first-child{white-space:nowrap}
   </div>
 </header>
 
-<nav class="toc" aria-label="On this page"><div class="lab">On this page</div><a href="#how-it-s-assembled" data-toc="how-it-s-assembled">How it&#x27;s assembled</a><a href="#what-a-build-costs" data-toc="what-a-build-costs">What a build costs</a><a href="#the-scorecard" data-toc="the-scorecard">The scorecard</a><a href="#can-you-build-with-it-here" data-toc="can-you-build-with-it-here">Can you build with it here?</a><a href="#faq" data-toc="faq">FAQ</a></nav>
+<nav class="toc" aria-label="On this page"><div class="lab">On this page</div><a href="#how-it-s-assembled" data-toc="how-it-s-assembled">How it&#x27;s assembled</a><a href="#what-a-build-costs" data-toc="what-a-build-costs">What mass timber costs</a><a href="#the-lightness-dividend" data-toc="the-lightness-dividend">The lightness dividend</a><a href="#the-scorecard" data-toc="the-scorecard">Timber, rated line by line</a><a href="#can-you-build-with-it-here" data-toc="can-you-build-with-it-here">Can you build with it here?</a><a href="#water-and-termites" data-toc="water-and-termites">Water and termites</a><a href="#faq" data-toc="faq">FAQ</a></nav>
 
 <article>
 
-  <div class="art-eyebrow">Building Methods Guide · Updated July 2026</div>
+  <div class="art-eyebrow">Building Methods Guide · Updated September 2026</div>
 
   <h1>Mass Timber &amp; <em>CLT</em></h1>
 
-  <p class="art-dek">Engineered wood panels strong enough to replace concrete and steel. Cross-laminated timber is building mid-rises and storing carbon. Beautiful and low-carbon, but for tropical homes it's still early and moisture-sensitive.</p>
+  <p class="art-dek">Engineered wood panels strong enough to replace concrete floors and steel beams. South America now presses its own, and Uruguayan panels have already shipped to the Caribbean. The climate is still the hard part.</p>
 
   <div class="art-meta">
     <span class="by">By <strong>SORA Real Estate Editorial</strong></span>
     <span class="sep">·</span>
-    <span>6 min read</span>
+    <span>9 min read</span>
     <span class="sep">·</span>
-    <span>Updated July 2026</span>
+    <span>Updated September 2026</span>
   </div>
 
   <figure class=""><img src="../images/building-methods/mass-timber-clt.jpg" alt="Exposed cross-laminated timber panels in a building under construction" loading="lazy"><figcaption>Cross-laminated timber, engineered wood panels strong enough to replace concrete and steel</figcaption></figure>
-<p class="lede">Mass timber is wood reinvented as a heavy structural material. <strong>Cross-laminated timber (CLT)</strong>, the headline product, glues layers of lumber in alternating directions into massive panels strong enough to replace concrete floors and steel beams. It's building apartment blocks and offices up to a dozen storeys, it <strong>stores carbon</strong> instead of emitting it, and the exposed wood is stunning. For homes in the tropics, though, it's still an early, premium, and moisture-sensitive option.</p>
-<h2 id="how-it-s-assembled">How it's assembled</h2>
-<p>Layers (lamellae) of dimensional lumber are stacked at 90° to each other and bonded under pressure into large, rigid panels, floors, walls, and roofs, that are cut to a digital file in the factory and bolted together on site like flat-pack furniture at building scale. The cross-lamination gives strength and dimensional stability in both directions, which is what lets timber behave like a structural slab. Related products include glulam (beams/columns) and DLT/NLT.</p>
-<h2 id="what-a-build-costs">What a build costs</h2>
-<p>Mass timber is currently a <strong>premium ($$$)</strong> structural system, the panels and engineering cost more than concrete or light framing today, justified on speed of erection, lighter foundations, carbon, and the beauty of exposed wood. Costs are falling as capacity grows, but there's essentially <strong>no CLT supply chain in Central America yet</strong>, so for a regional home it's an import. <em>(Approximate and project-specific.)</em></p>
-<h2 id="the-scorecard">The scorecard</h2>
-<div class="tbl-wrap"><table class="cmp"><thead><tr><th>Factor</th><th>Rating</th><th>Notes</th></tr></thead><tbody><tr><td>Cost</td><td>🔴</td><td>Premium today; imported into the region</td></tr><tr><td>Sustainability</td><td>🟢</td><td>Stores carbon; renewable if well-sourced</td></tr><tr><td>Build speed</td><td>🟢</td><td>Panels bolt together fast, dry site</td></tr><tr><td>Aesthetics</td><td>🟢</td><td>Warm exposed wood, architectural</td></tr><tr><td>Strength</td><td>🟢</td><td>Replaces concrete floors and steel beams</td></tr><tr><td>Moisture/termite</td><td>🔴</td><td>Wood in a hot, humid, termite-heavy climate needs serious protection</td></tr><tr><td>Fire</td><td>🟢</td><td>Chars predictably; engineered for fire rating</td></tr><tr><td>Availability in region</td><td>🔴</td><td>Essentially no CLT supply chain in Central America yet</td></tr></tbody></table></div>
+<div class="tldr">
+  <div class="lab">The short version</div>
+  <ul>
+    <li>Mass timber is lumber glued into slabs. <strong>CLT</strong> panels are cross-layered at 90&deg;, which is what lets wood act like a concrete floor.</li>
+    <li>Budget a <strong>3 to 10% structural premium</strong> over cast-in-place concrete if your team has built with it before. First-timers routinely land at <strong>20 to 26%</strong>.</li>
+    <li>The panels weigh up to <strong>80% less</strong> than the concrete they replace. That shrinks your foundation, and on soft coastal ground it can pay for the premium by itself.</li>
+    <li>The &ldquo;no supply in Latin America&rdquo; line is out of date. <strong>Uruguay has been pressing 50,000 m&sup3; a year since 2022</strong> and has shipped as far as the Dominican Republic.</li>
+    <li>For a house in Panama or Costa Rica it is still a stretch. Not because of the wood, but because of what humidity and termites do to it.</li>
+  </ul>
+</div>
+
+<p class="lede">Mass timber is wood promoted to a heavyweight. <strong>Cross-laminated timber</strong> stacks lumber in alternating directions and presses it into slabs stiff enough to replace a concrete floor. It is holding up apartment blocks a dozen storeys tall, it stores carbon rather than emitting it, and left exposed it looks like nothing else. What follows is what it costs, what it saves, and the two tropical realities that decide whether any of that matters to you.</p>
+
+<h2 id="how-it-s-assembled">How it&#x27;s assembled</h2>
+
+<p>Boards, called lamellae, get stacked at 90&deg; to each other and bonded under pressure into one panel. Cross the grain like that and the wood stops caring which direction the load comes from. That is the whole trick.</p>
+
+<p>Panels are cut to your drawing file at the mill, down to the door openings and the holes for the plumbing. They arrive on a truck numbered, and a small crew bolts them together like very heavy flat-pack furniture. Glulam handles the beams and columns. DLT and NLT do the same job with nails or dowels instead of glue, for anyone allergic to adhesives.</p>
+
+<p>The site stays dry. There is no formwork, no curing, no waiting on the weather. That is where the schedule savings come from.</p>
+
+<h2 id="what-a-build-costs">What mass timber costs</h2>
+
+<p>The honest answer is that it depends almost entirely on whether your contractor has done it before.</p>
+
+<p>At the material counter, mass timber runs roughly <strong>$50 to $70 per square foot</strong> of structural package against $40 to $55 for steel and concrete. By weight the gap looks brutal: CLT lands near <strong>$1,200 a tonne</strong>, structural steel near $600, cement near $130.</p>
+
+<p>Whole buildings tell a gentler story. A US Forest Service study of a twelve-storey Portland building put the timber version <strong>26% higher</strong> on front-end cost. A separate three-city study found a Minneapolis mass timber design at <strong>$491 per square foot against $475</strong> for cast-in-place concrete, a premium of 3.4%. Same material, wildly different answers.</p>
+
+<p>The difference is experience. A general contractor who has never handled panels pads the material budget and over-estimates the labour, and the estimate becomes self-fulfilling. Ask any bidder how many mass timber projects they have finished. If the answer is zero, price the learning curve into your own contingency, not theirs.</p>
+
+<h2 id="the-lightness-dividend">The lightness dividend</h2>
+
+<p>Here is the part that gets buried under the carbon story, and it is the part that matters most on a tropical lot.</p>
+
+<p>A mass timber structure can weigh <strong>up to 80% less</strong> than the concrete and steel equivalent. Everything downstream gets cheaper. Foundations and excavation typically come down <strong>15 to 20%</strong>. Delivery truckloads drop by around <strong>90%</strong>, which is not a rounding error when your site is at the end of eleven kilometres of dirt road in Pedas&iacute;. Erection runs <strong>25 to 30% faster</strong>, with fewer trades on site. And exposed timber is already a finished ceiling, so the drywall and the drop ceiling never get bought at all.</p>
+
+<div class="viz">
+  <div class="vt">Mass timber, priced against the same building in concrete</div>
+  <div class="vs">Bars to the right cost more. Bars to the left cost less.</div>
+  <div class="vscroll">
+  <svg viewBox="-56 0 712 322" role="img" aria-label="Compared with an equivalent concrete build, mass timber structural materials cost about 25 percent more, while foundations and excavation fall about 18 percent, time on site falls about 28 percent, and truck deliveries fall about 90 percent.">
+    <line x1="320" y1="28" x2="320" y2="292" stroke="#b0a78e" stroke-width="1"/>
+    <text x="326" y="20" font-family="Inter,sans-serif" font-size="11" fill="#807761">same as concrete</text>
+
+    <text x="-52" y="52" font-family="Inter,sans-serif" font-size="13.5" font-weight="600" fill="#14110c">Structural materials</text>
+    <rect x="320" y="60" width="80" height="22" rx="3" fill="#e07a5f"/>
+    <text x="408" y="76" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#b85439">+25%</text>
+
+    <text x="-52" y="118" font-family="Inter,sans-serif" font-size="13.5" font-weight="600" fill="#14110c">Foundations &amp; excavation</text>
+    <rect x="262" y="126" width="58" height="22" rx="3" fill="#2a5440"/>
+    <text x="254" y="142" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1d3a2c">&#8722;18%</text>
+
+    <text x="-52" y="184" font-family="Inter,sans-serif" font-size="13.5" font-weight="600" fill="#14110c">Time on site</text>
+    <rect x="230" y="192" width="90" height="22" rx="3" fill="#2a5440"/>
+    <text x="222" y="208" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1d3a2c">&#8722;28%</text>
+
+    <text x="-52" y="250" font-family="Inter,sans-serif" font-size="13.5" font-weight="600" fill="#14110c">Truck deliveries to site</text>
+    <rect x="32" y="258" width="288" height="22" rx="3" fill="#2a5440"/>
+    <text x="24" y="274" text-anchor="end" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#1d3a2c">&#8722;90%</text>
+
+    <text x="-52" y="312" font-family="Inter,sans-serif" font-size="11" fill="#807761">Typical reported ranges, mid-rise projects. Your numbers will move with the contractor.</text>
+  </svg>
+  </div>
+  <p class="vn">Read it as one trade: you pay more for the structure and get it back on the ground, in the schedule and in the logistics. Whether the trade nets out depends on how remote your site is and how deep your soil is.</p>
+</div>
+
+<h2 id="the-scorecard">Timber, rated line by line</h2>
+
+<div class="tbl-wrap"><table class="cmp"><thead><tr><th>Factor</th><th>Rating</th><th>Notes</th></tr></thead><tbody><tr><td>Cost</td><td>&#128308;</td><td>3&ndash;10% premium with an experienced crew, 20&ndash;26% without one</td></tr><tr><td>Sustainability</td><td>&#128994;</td><td>Stores carbon in the building for the life of the building</td></tr><tr><td>Build speed</td><td>&#128994;</td><td>Bolts together dry, 25&ndash;30% faster erection</td></tr><tr><td>Aesthetics</td><td>&#128994;</td><td>The structure is the finish. No drywall, no drop ceiling</td></tr><tr><td>Strength</td><td>&#128994;</td><td>Replaces concrete floors and steel beams outright</td></tr><tr><td>Foundation load</td><td>&#128994;</td><td>Up to 80% lighter, which shrinks footings and excavation</td></tr><tr><td>Moisture</td><td>&#128308;</td><td>Panels must stay dry from the mill to the roof and forever after</td></tr><tr><td>Termites</td><td>&#128308;</td><td>The single hardest problem in a tropical build</td></tr><tr><td>Fire</td><td>&#128994;</td><td>Chars slowly and predictably; engineered to a rating</td></tr><tr><td>Regional supply</td><td>&#128993;</td><td>Real in South America now. Still an import to Central America</td></tr></tbody></table></div>
+
 <h2 id="can-you-build-with-it-here">Can you build with it here?</h2>
-<p>Where mass timber exists as an industry, buildability is excellent. Panels are precision-cut and assembled dry and fast by trained crews. In <strong>tropical Latin America the constraints are decisive</strong>. There's <strong>no regional CLT manufacturing</strong>, so every panel is a costly import, and the deeper issue is climate. A wood structure in a hot, wet, <strong>termite-heavy</strong> environment demands relentless moisture detailing and pest protection, exactly the conditions that punish timber. Mass timber is a genuinely important material for the future of low-carbon <em>mid-rise and commercial</em> building, but where a truly sustainable structural wood makes sense in the tropics today, regionally-grown <a href='../bamboo-guadua-construction/'>bamboo/guadua</a> is often the more practical, native answer. Watch CLT closely; it's not yet the pragmatic pick for a tropical home.</p>
-<div class="cta-card"><div class="eb">SORA Casas · Build in the Tropics</div><h3>Thinking about building in Panama or Costa Rica?</h3><p>SORA is a fixed-price design-build platform for foreign buyers. We build in reinforced concrete by default, and we can talk you through when an alternative method actually makes sense for the tropics. Play with cost live in the 3D configurator.</p><a class="cta-btn" href="../cost-to-build-house-panama/">See real 2026 build costs →</a></div>
+
+<p>Most guides still say there is no CLT in Latin America. That stopped being true a while ago.</p>
+
+<p><strong>Uruguay</strong> is the anchor. Arboreal has been pressing panels at Tacuaremb&oacute; since 2022 on what it calls South America&#x27;s largest CLT and glulam line, turning out around <strong>50,000 m&sup3; a year</strong> and shipping from Brazil to the Dominican Republic. The IFC and the ILX Fund put <strong>$40 million</strong> into the site. Panels crossing to a Caribbean island is not a thought experiment any more.</p>
+
+<p><strong>Brazil</strong> has built the biggest thing in the region. Urbem supplied nearly 700 m&sup3; of CLT and over 600 m&sup3; of glulam for a shopping centre in Atibaia, finished in <strong>seven months with no structural concrete pour at all</strong>. Timber houses now go up in under ten days across four Brazilian states.</p>
+
+<p><strong>Chile</strong> has three producers running on plantation radiata pine, though combined capacity has been modest at roughly 6,000 m&sup3; a year. Researchers at the Universidad de Santiago have been shake-table testing panels for high-rise use, which is the right question to ask in a country that moves that much.</p>
+
+<p><strong>Argentina</strong> joins this month. Cambium Build&#x27;s first plant at Gobernador Virasoro in Corrientes is a <strong>$20 million-plus</strong> project, and the last container of Slovenian press equipment was on its way to Buenos Aires as of this September.</p>
+
+<p>So the supply chain exists. It just does not exist <em>here</em>. Between Tacuaremb&oacute; and a lot in Boquete sit several thousand kilometres and a customs process, and there is no Central American mill closing that gap. For now every panel arrives as freight, at freight prices.</p>
+
+<h2 id="water-and-termites">Water and termites</h2>
+
+<p>Cost you can negotiate. Climate you cannot.</p>
+
+<p>Mass timber is designed to live dry. Panels are protected in transit, dried out before close-in, and detailed so water never sits on end grain. That discipline is achievable in Oregon. It is a different sport in a place where the air is at 85% humidity for months and the rain arrives sideways every afternoon.</p>
+
+<p>Then there are the termites. Central America has subterranean species that will find untreated cellulose with a persistence that has to be seen to be believed. Protecting a mass timber structure here means treated lamellae, physical and chemical barriers at every ground contact, generous roof overhangs, and an inspection habit you keep for the life of the house. All of that is possible. It is also cost, and it eats the premium argument alive.</p>
+
+<p>Fire, oddly, is the fear you can drop. Mass timber chars on the outside in a slow, measurable way, and the char layer insulates the structural core underneath. It is tested and rated, which is exactly why codes now let it go up eighteen storeys. It behaves nothing like stick framing in a fire.</p>
+
+<p>Our read for a tropical house today: mass timber is a genuinely important material for low-carbon <em>mid-rise and commercial</em> work, and the region is building the industry to serve it. For a single-family home in Panama or Costa Rica, structural wood that already belongs to this climate makes more sense &mdash; which is why we point people at <a href="../bamboo-guadua-construction/">bamboo and guadua</a> first, and at <a href="../icf-construction/">ICF</a> or reinforced concrete for the parts that have to shrug off a storm. Keep watching CLT. Just don&#x27;t be the first person on your beach to try it.</p>
+
+<div class="cta-card"><div class="eb">SORA Casas &middot; Build in the Tropics</div><h3>Curious what timber would actually add to your budget?</h3><p>We build in reinforced concrete by default, and we will tell you honestly when an alternative method earns its premium and when it does not. Our 2026 cost guide has real line-item numbers from builds in Pedas&iacute;, Boquete and Bocas del Toro.</p><a class="cta-btn" href="../cost-to-build-house-panama/">See real 2026 build costs &rarr;</a></div>
 
 <h2 id="faq">Frequently <em>asked questions</em></h2>
 <div class="faq">
-<details open><summary>What is CLT (cross-laminated timber)?</summary><p>CLT is an engineered wood panel made by gluing layers of lumber in alternating directions under pressure, creating large, rigid panels strong enough to serve as structural floors, walls, and roofs, effectively letting timber replace concrete slabs and steel beams in multi-storey buildings.</p></details>
-<details><summary>Is mass timber good for tropical homes?</summary><p>Not yet, for most. Mass timber's carbon and speed benefits are real, but a wood structure in a hot, humid, termite-heavy climate needs serious moisture and pest protection, and there's essentially no CLT supply chain in Central America, so it must be imported at a premium. For sustainable structural wood in the tropics today, bamboo/guadua is often more practical.</p></details>
-<details><summary>Is mass timber a fire risk?</summary><p>Less than people assume. Mass timber chars on the outside in a slow, predictable way that protects the structural core, and it's engineered and tested to meet fire ratings, which is why it's approved for tall buildings. It behaves very differently from light wood framing in a fire.</p></details>
+<details open><summary>What is CLT, in plain terms?</summary><p>A slab made of lumber. Boards are stacked in layers running at 90&deg; to each other and glued under pressure into one rigid panel. Crossing the grain that way makes it strong in both directions, which is what lets a wood panel do the job of a concrete floor or a load-bearing wall.</p></details>
+<details><summary>How much more does mass timber cost than concrete?</summary><p>Between 3 and 26% on the structure, and the spread is mostly about experience. Well-executed projects with crews who have done it before land near 3 to 10%. A US Forest Service study of a twelve-storey building put a first-of-its-kind timber design 26% above its concrete alternative. Some of that gap comes back through lighter foundations and a shorter schedule.</p></details>
+<details><summary>Can you actually get CLT in Latin America?</summary><p>Yes, from South America. Arboreal in Tacuaremb&oacute;, Uruguay has run a large CLT and glulam line since 2022 and ships as far as the Dominican Republic. Brazil and Chile both produce, and Argentina&#x27;s first plant is being installed at Corrientes now. What does not exist is a Central American mill, so a panel landing in Panama or Costa Rica is still an import.</p></details>
+<details><summary>Is mass timber good for a tropical house?</summary><p>Rarely, today. The carbon and speed benefits are real, but heat, constant humidity and subterranean termites all attack a wood structure at once, and defending against them costs money that cancels the advantage. Regionally grown bamboo or guadua is usually the more practical structural wood in this climate.</p></details>
+<details><summary>Is mass timber a fire risk?</summary><p>Less than people assume. It chars from the outside in at a slow, predictable rate, and that char layer shields the structural core. It is engineered and tested to a fire rating, which is why building codes now permit it up to eighteen storeys. Light wood framing behaves very differently.</p></details>
 </div>
 
-<div class="surface forest" style="margin-top:56px"><h4>Sources &amp; verification</h4><p style="font-family:var(--sans);font-size:14.5px">Figures in this guide were checked against primary and authoritative sources on <strong>27 July 2026</strong>. Immigration, tax, and cost figures change — always confirm the current rules with the official body or a licensed professional before acting.</p><ul style="font-family:var(--sans);font-size:14px;margin-bottom:0"><li><a href="https://www.woodworks.org/" target="_blank" rel="noopener">WoodWorks</a> — mass timber &amp; CLT construction</li><li><a href="https://cleantech.com/3d-printed-homes-a-sustainable-construction-method-on-the-rise/" target="_blank" rel="noopener">CleanTech Group</a> — low-carbon construction materials</li></ul></div>
+<div class="surface forest" style="margin-top:56px"><h4>Sources &amp; verification</h4><p style="font-family:var(--sans);font-size:14.5px">Figures in this guide were checked against primary and authoritative sources on <strong>6 September 2026</strong>. Immigration, tax, and cost figures change — always confirm the current rules with the official body or a licensed professional before acting.</p><ul style="font-family:var(--sans);font-size:14px;margin-bottom:0"><li><a href="https://www.woodworks.org/" target="_blank" rel="noopener">WoodWorks</a> &mdash; mass timber and CLT construction guidance</li><li><a href="https://research.fs.usda.gov/treesearch/62676" target="_blank" rel="noopener">USDA Forest Service Research</a> &mdash; construction and life-cycle cost, 12-storey mass timber vs concrete</li><li><a href="https://woodcentral.com.au/argentina-first-clt-plant/" target="_blank" rel="noopener">Wood Central</a> &mdash; Argentina&rsquo;s first CLT plant; Arboreal, Uruguay; Urbem, Brazil</li><li><a href="https://www.critchfield-construction.com/mass-timber-vs-steel-and-concrete-real-project-costs" target="_blank" rel="noopener">Critchfield Construction</a> &mdash; mass timber vs steel and concrete project costs</li></ul></div>
 
 <div class="related"><h4>Continue Reading</h4><div class="related-grid"><a href="../alternative-building-methods/"><small>Method guide</small>Alternative Building Methods</a><a href="../bamboo-guadua-construction/"><small>Natural cousin</small>Bamboo &amp; Guadua</a><a href="../cost-to-build-house-panama/"><small>Build costs</small>Cost to Build a House in Panama</a></div></div>
 
   <footer class="colophon">
     <strong>SORA Casas</strong> · MMXXVI<br>
-    Caribbean Building Methods Guide · Updated July 2026<br>
+    Caribbean Building Methods Guide · Updated September 2026<br>
     <a href="/">← SORA Casas</a> · <a href="/guides/">All guides</a> · <a href="../alternative-building-methods/">Building methods index</a>
   </footer>
 
