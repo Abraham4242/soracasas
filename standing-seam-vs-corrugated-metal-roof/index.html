@@ -47,6 +47,23 @@ article table.cmp td:first-child{white-space:nowrap}
 @media (max-width:1200px){.toc{display:none}}
 </style>
 
+<style>
+/* Inline charts. No libraries, no fetches, scales with the column. */
+.viz{margin:34px 0;padding:26px 26px 20px;background:var(--paper-2);
+  border:1px solid var(--line);border-radius:12px}
+.viz .viz-t{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--ink-faint);margin-bottom:18px}
+.viz svg{display:block;width:100%;height:auto;overflow:visible}
+.viz figcaption{font-family:var(--sans);font-size:13px;color:var(--ink-faint);
+  line-height:1.55;margin-top:16px}
+.viz text{font-family:"Inter",sans-serif}
+.viz .vlab{font-size:12.5px;fill:var(--ink-2)}
+.viz .vnum{font-size:12.5px;font-weight:600;font-family:"JetBrains Mono",monospace}
+.viz .vax{font-size:10.5px;fill:var(--ink-ghost);font-family:"JetBrains Mono",monospace;letter-spacing:.5px}
+.viz .vin{font-size:11px;font-weight:600;fill:#f7f0df}
+@media (max-width:700px){.viz{padding:18px 14px 14px}.viz .vlab,.viz .vnum{font-size:11px}}
+</style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -92,7 +109,7 @@ article table.cmp td:first-child{white-space:nowrap}
         "name": "SORA Casas"
       },
       "datePublished": "2026-07-26",
-      "dateModified": "2026-07-26",
+      "dateModified": "2026-09-13",
       "image": "https://soracasas.com/og-image.svg"
     },
     {
@@ -121,6 +138,30 @@ article table.cmp td:first-child{white-space:nowrap}
             "@type": "Answer",
             "text": "They can over time. Each screw seals against a rubber washer that eventually dries and shrinks, so exposed-fastener roofs may need re-sealing or re-screwing after some years. Standing seam avoids the issue by hiding fasteners entirely."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "How long do the rubber washers on a corrugated roof last?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plan on a reset around year 20. Suppliers claim 15 to 20 years for UV-stabilized EPDM, contractors budget about the same, and field reports range from 20 to over 30 years. EPDM handles UV and heat better than neoprene, which matters in the tropics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a Class 90 wind rating mean the roof is hurricane-proof?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. UL 580 is a pass or fail test on one specific assembly at one clip spacing, and it does not simulate real storm conditions. Exposed-fastener panels carry the same rating as standing seam. Installation quality and zone-specific fastening matter far more."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Galvalume or aluminum near the ocean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aluminum, if you are close. Galvalume warranties commonly stop applying within 1,500 feet of saltwater and some within a mile or two. Aluminum forms a passive oxide layer and usually keeps full coverage. Ask the manufacturer for the exact distance in writing."
+          }
         }
       ]
     }
@@ -137,11 +178,11 @@ article table.cmp td:first-child{white-space:nowrap}
   </div>
 </header>
 
-<nav class="toc" aria-label="On this page"><div class="lab">On this page</div><a href="#the-comparison" data-toc="the-comparison">The comparison</a><a href="#the-core-difference" data-toc="the-core-difference">The core difference</a><a href="#which-fits-your-project" data-toc="which-fits-your-project">Which fits your project</a><a href="#the-tropical-reality" data-toc="the-tropical-reality">The tropical reality</a><a href="#faq" data-toc="faq">FAQ</a></nav>
+<nav class="toc" aria-label="On this page"><div class="lab">On this page</div><a href="#the-comparison" data-toc="the-comparison">The comparison</a><a href="#the-core-difference" data-toc="the-core-difference">The core difference</a><a href="#wind" data-toc="wind">What wind ratings mean</a><a href="#washers" data-toc="washers">How long washers last</a><a href="#salt" data-toc="salt">How close is the salt?</a><a href="#which-fits-your-project" data-toc="which-fits-your-project">Which fits your project</a><a href="#faq" data-toc="faq">FAQ</a></nav>
 
 <article>
 
-  <div class="art-eyebrow">Building Comparisons · Updated July 2026</div>
+  <div class="art-eyebrow">Building Comparisons · Updated September 2026</div>
 
   <h1>Standing Seam <em>vs</em> Corrugated Metal Roof</h1>
 
@@ -150,22 +191,121 @@ article table.cmp td:first-child{white-space:nowrap}
   <div class="art-meta">
     <span class="by">By <strong>SORA Real Estate Editorial</strong></span>
     <span class="sep">·</span>
-    <span>6 min read</span>
+    <span>9 min read</span>
     <span class="sep">·</span>
-    <span>Updated July 2026</span>
+    <span>Updated September 2026</span>
   </div>
 
   <figure class=""><img src="../images/comparisons/standing-seam-vs-corrugated-metal-roof.jpg" alt="A standing seam metal roof beside a corrugated metal roof" loading="lazy"><figcaption>Standing seam on the left, corrugated on the right: the fastener detail is the whole story.</figcaption></figure>
 <p class="lede">Both are metal, but they aren't equals. <a href='../metal-roofing/'>Standing seam</a> hides its fasteners inside raised, interlocking seams, so nothing penetrates the weather surface. <a href='../tin-roof/'>Corrugated</a>, and other exposed-fastener panels, screw straight through the face and rely on rubber washers that age. That one difference drives cost, lifespan, and how well each keeps water and wind out.</p>
-<div class="surface forest"><h4>The upshot</h4>Standing seam is the premium choice: leak- and wind-resistant, longest-lived, best for a permanent home. Corrugated is much cheaper and faster, genuinely good when insulated and coated well, and the smart budget metal roof. Just expect to re-seal exposed screws over time.</div>
+<div class="surface forest"><h4>Key takeaways</h4>
+<ul style="margin:0">
+<li><strong>Every exposed screw is a hole in your roof</strong> plugged by a rubber washer. Standing seam has none, and that single fact drives everything else.</li>
+<li><strong>Concealed-fastener systems typically handle 20 to 40 mph more uplift</strong> than exposed-fastener panels in high-wind areas.</li>
+<li><strong>A "Class 90" sticker is not a spec.</strong> It is a pass on one tested assembly at one clip spacing, and plenty of exposed-fastener panels carry it too.</li>
+<li><strong>Plan a washer reset at around year 20</strong> on an exposed-fastener roof. Not a surprise, a maintenance line item.</li>
+<li><strong>Distance to salt water decides your metal.</strong> Galvalume warranties commonly stop at 1,500 feet from saltwater. Aluminum usually keeps full coverage.</li>
+</ul></div>
+
 <h2 id="the-comparison">The comparison</h2>
 <div class="tbl-wrap wide"><table class="cmp"><thead><tr><th>Factor</th><th>Standing seam</th><th>Corrugated (exposed fastener)</th></tr></thead><tbody><tr><td>Fasteners</td><td>🟢 Hidden in the seams</td><td>🔴 Exposed screws with washers</td></tr><tr><td>Cost</td><td>🟡 Higher, ~$80–160/m²</td><td>🟢 Cheapest metal, ~$25–60/m²</td></tr><tr><td>Lifespan</td><td>🟢 40–70 years</td><td>🟡 15–40 years</td></tr><tr><td>Leak resistance</td><td>🟢 No holes in weather surface</td><td>🟡 Washers age; screws back out</td></tr><tr><td>Wind / hurricane</td><td>🟢 Best in class</td><td>🟡 Good with correct fastening</td></tr><tr><td>Install</td><td>🟡 Specialist crew</td><td>🟢 Simple, fast, common</td></tr><tr><td>Look</td><td>🟢 Sleek, modern</td><td>🟡 Utilitarian</td></tr></tbody></table></div>
+
 <h2 id="the-core-difference">The core difference</h2>
-<p>Every exposed fastener is a small hole in your roof sealed by a rubber washer, and washers dry, shrink, and let go over decades, which is why exposed-fastener roofs eventually need re-screwing or re-sealing. Standing seam has no such holes, so it lasts longer and leaks less, at a higher price and needing a skilled installer. Corrugated wins decisively on upfront cost and simplicity.</p>
+<p>Standing seam hides its clips inside raised, interlocking seams, so nothing penetrates the weather surface. Corrugated and other exposed-fastener panels screw straight through the face, and each screw depends on a rubber washer to stay watertight.</p>
+
+<figure><img src="../images/comparisons/standing-seam-detail.jpg" alt="Close view of a standing seam metal roof showing raised interlocking seams running down the slope" loading="lazy"><figcaption>Look for what is missing: no screw heads anywhere on the surface. The clips are inside those raised ribs, which is why there is nothing on this roof for a rubber washer to fail at.</figcaption></figure>
+
+<p>That is genuinely the whole story. Cost, lifespan, leak behavior, wind performance and install difficulty all fall out of it. Standing seam costs more and needs a crew that has done it before. Corrugated is cheap, fast, available everywhere, and asks you to maintain a few hundred small rubber seals for the life of the building.</p>
+
+<h2 id="wind">What a wind rating actually tells you</h2>
+
+<p>You will see "UL 580 Class 90" on both kinds of panel, and it sounds decisive. Here's what it means and, more usefully, what it doesn't.</p>
+
+<div class="tbl-wrap"><table><thead><tr><th>UL 580 class</th><th>Uplift pressure</th><th>Roughly equivalent to</th></tr></thead><tbody>
+<tr><td>Class 30</td><td>30 psf</td><td>~73 mph</td></tr>
+<tr><td>Class 60</td><td>60 psf</td><td>~103 mph</td></tr>
+<tr><td>Class 90</td><td>90 psf</td><td>~126 mph</td></tr>
+</tbody></table></div>
+
+<p>To earn Class 90 an assembly has to take 48.5 psf of positive pressure together with 56.5 psf of negative, a 105 psf swing, on a 10-by-10-foot sample, held static for five minutes and then oscillated for an hour.</p>
+
+<div class="surface"><h4>The part the brochure leaves out</h4><p style="font-family:var(--sans);font-size:14.5px">UL 580 is <strong>pass or fail</strong>. It does not tell you how strong the assembly is, only that it survived over one specific substrate at one specific clip spacing. It does not simulate real storm conditions. ASTM E1592, which uses fluctuating loads, is the closer analogue to an actual hurricane, and UL 1897 continues where 580 stops.</p><p style="font-family:var(--sans);font-size:14.5px;margin-bottom:0">Which is why a common exposed-fastener R-panel and a snap-lock standing seam system can both wear the same Class 90 badge. <strong>The rating describes the tested assembly, not the category.</strong></p></div>
+
+<p>Two things matter more than the badge. First, <strong>roof zones</strong>: field, perimeter and corner see very different pressures, and a correctly designed roof uses a tighter fastening pattern at the edges and corners. Second, and this is the one that actually kills roofs, <strong>failures in high wind are usually installation, not material</strong> — wrong fastener spacing, wrong fastener type, not enough penetration depth, or simply not following the tested assembly.</p>
+
+<h2 id="washers">How long do the rubber washers really last?</h2>
+
+<p>This is the question that decides whether a corrugated roof is a bargain or a deferred bill, and the answers you'll find range from 15 years to 50. Here is the honest spread:</p>
+
+<ul>
+<li><strong>Suppliers</strong> claim 15 to 20 years of maintained elasticity in direct sun for UV-stabilized EPDM.</li>
+<li><strong>Roofing contractors</strong> tend to plan on roughly a 20-year cycle to reset the washers.</li>
+<li><strong>Field reports contradict each other</strong>, which is the most honest thing anyone can say about it. One owner replaced failing fasteners on a 20-year-old roof. Another has 32-year-old neoprene washers with no leaks.</li>
+</ul>
+
+<p>Two specifics worth acting on. <strong>EPDM beats neoprene</strong> for UV and ozone resistance, and in one test showed no signs of aging after 20 years of full exposure under equatorial sun, which is about as relevant a test condition as we could ask for. And there's a second failure mode nobody warns you about: <strong>screws backing out</strong>. Metal panels expand and contract every single day, and that daily movement works fasteners loose independently of whether the rubber is still good.</p>
+
+<div class="surface"><h4>Ask your installer one question</h4><p style="font-family:var(--sans);font-size:14.5px;margin-bottom:0">"Are you using a clutch-set screw gun?" The washer should end up <strong>visibly compressed but not bulging past the metal backing plate</strong>. Over-driven crushes the rubber and opens a gap; under-driven never seals. Screws must go in perpendicular, because an angled screw compresses one side and leaves a channel on the other. A drill driver in a hurry is how a new roof leaks in year three.</p></div>
+
+<h2 id="salt">How close are you to salt water?</h2>
+
+<p>If the answer is "close," this section matters more than everything above it.</p>
+
+<p>Airborne salt mist is the real enemy. Settled on metal it behaves as an electrolyte and accelerates corrosion. Galvalume protects itself with a zinc layer that sacrifices itself at cut edges, which works beautifully until the zinc is used up, and salt uses it up fast. Aluminum doesn't play that game: it forms a passive oxide layer and simply resists salt air.</p>
+
+<p>Manufacturers know this exactly, and they write it into the warranty.</p>
+
+<figure class="viz">
+  <div class="viz-t">Where each metal is actually covered</div>
+  <svg viewBox="0 0 700 260" role="img" aria-label="Distance scale from the surf inland showing Galvalume warranty typically excluded within 1,500 feet and reduced within two miles, while aluminum retains full coverage throughout">
+    <!-- water -->
+    <rect x="0" y="44" width="56" height="142" fill="#2e8a96" opacity=".20"/>
+    <text x="28" y="206" class="vax" text-anchor="middle">SURF</text>
+
+    <!-- galvalume band -->
+    <text x="60" y="34" class="vlab" style="font-weight:600">Galvalume steel</text>
+    <rect x="60"  y="44" width="68"  height="34" fill="#b85439"/>
+    <rect x="128" y="44" width="412" height="34" fill="#d4b87a"/>
+    <rect x="540" y="44" width="120" height="34" fill="#1d3a2c"/>
+    <text x="94" y="65" class="vin" text-anchor="middle">✕</text>
+    <text x="334" y="65" class="vin" text-anchor="middle" style="fill:#4a4337">reduced coverage · coating degrades faster</text>
+    <text x="600" y="65" class="vin" text-anchor="middle">excellent</text>
+
+    <!-- aluminum band -->
+    <text x="60" y="118" class="vlab" style="font-weight:600">Aluminum</text>
+    <rect x="60" y="128" width="600" height="34" fill="#1d3a2c"/>
+    <text x="360" y="149" class="vin" text-anchor="middle">full coverage, regardless of how close the water is</text>
+
+    <!-- scale -->
+    <line x1="60" y1="186" x2="660" y2="186" stroke="rgba(20,17,12,0.25)"/>
+    <g stroke="rgba(20,17,12,0.35)" stroke-width="1.5">
+      <line x1="60" y1="182" x2="60" y2="192"/><line x1="128" y1="182" x2="128" y2="192"/>
+      <line x1="300" y1="182" x2="300" y2="192"/><line x1="540" y1="182" x2="540" y2="192"/>
+    </g>
+    <g class="vax" text-anchor="middle">
+      <text x="60" y="206">0</text><text x="128" y="206">1,500 FT</text>
+      <text x="300" y="206">1 MILE</text><text x="540" y="206">2 MILES</text>
+    </g>
+    <line x1="128" y1="40" x2="128" y2="182" stroke="#b85439" stroke-width="1.2" stroke-dasharray="3 3"/>
+    <text x="134" y="236" class="vlab" style="fill:#b85439">Most Galvalume warranties stop here. Some stop at a mile. A few at two.</text>
+  </svg>
+  <figcaption>Warranty exclusion distances vary by manufacturer and product, and some measure from the nearest saltwater of any kind, including bays, inlets and tidal rivers, not just open ocean. One published comparison shows Galvalume coverage dropping from 25 years to 5 within a mile of saltwater while premium aluminum keeps its full 30.</figcaption>
+</figure>
+
+<p>The trade is real in both directions: Galvalume typically costs <strong>15 to 25 percent less</strong> than equivalent aluminum, has been made since 1972, and underpins most 50-year warranty programs. Substrate warranties generally run 25 to 40 years for Galvalume and 40+ for aluminum.</p>
+
+<div class="surface"><h4>The question to ask, in writing</h4><p style="font-family:var(--sans);font-size:14.5px;margin-bottom:0">Ask the <em>manufacturer's rep</em>, not just your contractor: <strong>"What is the exact distance from saltwater that affects my warranty?"</strong> Give them the property address. "Near the coast" is not an answer. You need to know whether the line is 1,500 feet, one mile or three, and you need the Proximity to the Ocean clause in both the substrate and the paint warranty.</p></div>
+
+<p>And remember the rest of the assembly. Fasteners and clips need to be stainless or coated grades that won't corrode against aluminum, and the <strong>edge metal is the most salt-exposed piece on the whole roof</strong>, so it should match the panel metallurgy rather than whatever was in the truck.</p>
+
 <h2 id="which-fits-your-project">Which fits your project</h2>
-<ul><li>Go standing seam for a permanent home, coastal exposure, or a sleek look, and specify aluminum near salt.</li><li>Go corrugated on a budget or a fast build, with quality coating and insulation, and plan for periodic fastener maintenance.</li></ul>
+<ul><li><strong>Go standing seam</strong> for a permanent home, coastal exposure, or a sleek look. It removes the washer problem entirely, which is the single best thing you can do for a roof you plan to keep.</li><li><strong>Go corrugated</strong> on a budget or a fast build, with a quality coating, real insulation, EPDM washers and a clutch-set gun. Then diary the fastener check.</li><li><strong>Near salt, specify aluminum</strong> and get the warranty distance in writing before you order anything.</li></ul>
+
 <h2 id="the-tropical-reality">The tropical reality</h2>
-<p>Both work here; the choice is budget and horizon. On the coast, standing seam in aluminum is the safest long-term bet against salt and storms. Inland and on a budget, a well-installed corrugated roof with a quality coating and insulation is genuinely good and affordable. Either way, insulate, because bare metal over open purlins is hot and loud.</p>
+<p>Both work here. The choice is budget and time horizon. On the coast, standing seam in aluminum is the safest long-term bet against salt and storms, and it is the one roof we rarely see anyone regret. Inland and on a budget, a well-installed corrugated roof with a good coating is genuinely fine and a fraction of the price.</p>
+
+<p>Either way: <strong>insulate</strong>. Bare metal over open purlins is hot, and in a Panamanian downpour it is loud enough to end a conversation. See the <a href="../roofing-materials-guide/">roofing materials guide</a> for the full material set, <a href="../flat-roof-vs-pitched-roof/">flat vs pitched</a> for the slope question, and the <a href="../cost-to-build-house-panama/">2026 Panama build cost guide</a> for what any of it does to a budget.</p>
+
 <div class="cta-card"><div class="eb">SORA Casas</div><h3>Building in Panama or Costa Rica?</h3><p>SORA builds fixed-price homes for foreign buyers in Panama and Costa Rica. We match the method and material to your site, budget, and how long you plan to keep the house, and tell you straight when the cheaper option is the smarter one.</p><a class="cta-btn" href="../cost-to-build-house-panama/">See 2026 build costs →</a></div>
 
 <h2 id="faq">Frequently <em>asked questions</em></h2>
@@ -173,15 +313,18 @@ article table.cmp td:first-child{white-space:nowrap}
 <details open><summary>Is standing seam or corrugated metal roofing better?</summary><p>Standing seam is better for a permanent home. Its hidden fasteners make it more leak- and wind-resistant and it lasts 40 to 70 years. Corrugated (exposed-fastener) metal is much cheaper and faster and is a solid budget choice, but its exposed screws need periodic maintenance and it typically lasts less long.</p></details>
 <details><summary>Why is standing seam more expensive?</summary><p>It uses more material, precise roll-forming, and a skilled crew to hide the fasteners inside interlocking seams. That labor and engineering buys a longer-lived, more weather-tight roof with no exposed screws to age or leak.</p></details>
 <details><summary>Do exposed-fastener metal roofs leak?</summary><p>They can over time. Each screw seals against a rubber washer that eventually dries and shrinks, so exposed-fastener roofs may need re-sealing or re-screwing after some years. Standing seam avoids the issue by hiding fasteners entirely.</p></details>
+<details><summary>How long do the rubber washers on a corrugated roof last?</summary><p>Plan on a reset around year 20. Suppliers claim 15 to 20 years for UV-stabilized EPDM, contractors budget about the same, and field reports range from 20 to over 30 years. EPDM handles UV and heat better than neoprene, which matters in the tropics.</p></details>
+<details><summary>Does a Class 90 wind rating mean the roof is hurricane-proof?</summary><p>No. UL 580 is a pass or fail test on one specific assembly at one clip spacing, and it does not simulate real storm conditions. Exposed-fastener panels carry the same rating as standing seam. Installation quality and zone-specific fastening matter far more.</p></details>
+<details><summary>Galvalume or aluminum near the ocean?</summary><p>Aluminum, if you are close. Galvalume warranties commonly stop applying within 1,500 feet of saltwater and some within a mile or two. Aluminum forms a passive oxide layer and usually keeps full coverage. Ask the manufacturer for the exact distance in writing.</p></details>
 </div>
 
-<div class="surface forest" style="margin-top:56px"><h4>Sources &amp; verification</h4><p style="font-family:var(--sans);font-size:14.5px">Figures in this guide were checked against primary and authoritative sources on <strong>27 July 2026</strong>. Immigration, tax, and cost figures change — always confirm the current rules with the official body or a licensed professional before acting.</p><ul style="font-family:var(--sans);font-size:14px;margin-bottom:0"><li><a href="https://www.bobvila.com/articles/standing-seam-metal-roof/" target="_blank" rel="noopener">Bob Vila</a> — standing seam metal roof</li><li><a href="https://www.metalroofing.com/" target="_blank" rel="noopener">Metal Roofing Alliance</a> — metal roofing systems</li></ul></div>
+<div class="surface forest" style="margin-top:56px"><h4>Sources &amp; verification</h4><p style="font-family:var(--sans);font-size:14.5px">Figures in this guide were checked against primary and authoritative sources on <strong>13 September 2026</strong>. Warranty terms, codes and costs vary by manufacturer and change over time — always confirm current figures in writing before ordering.</p><ul style="font-family:var(--sans);font-size:14px;margin-bottom:0"><li><a href="https://www.mbci.com/blog/understanding-wind-uplift-testing-standing-seam-roof-systems/" target="_blank" rel="noopener">MBCI</a> — wind uplift testing for standing seam systems</li><li><a href="https://continuingeducation.bnpmedia.com/architect/courses/atas-international/testing-and-specifying-metal-roofs-in-high-wind-areas/3/" target="_blank" rel="noopener">BNP Media CE Center</a> — testing and specifying metal roofs in high-wind areas</li><li><a href="https://blog.mcelroymetal.com/metal-roofing-and-siding/metal-roofing-in-coastal-areas" target="_blank" rel="noopener">McElroy Metal</a> — metal roofing in coastal areas</li><li><a href="https://www.midfloridametalroofingsupply.com/epdm-vs-neoprene-screw-washers-for-florida-metal-roofs" target="_blank" rel="noopener">Mid Florida Metal Roofing Supply</a> — EPDM vs neoprene washers</li><li><a href="https://gulfcoastmetalroofguide.com/coastal-performance/warranties/" target="_blank" rel="noopener">Gulf Coast Metal Roof Guide</a> — coastal warranty proximity clauses</li></ul></div>
 
 <div class="related"><h4>Continue Reading</h4><div class="related-grid"><a href="../roofing-materials-guide/"><small>Full guide</small>Roofing Materials</a></div></div>
 
   <footer class="colophon">
     <strong>SORA Casas</strong> · MMXXVI<br>
-    Caribbean Building Comparisons · Updated July 2026<br>
+    Caribbean Building Comparisons · Updated September 2026<br>
     <a href="/">← SORA Casas</a> · <a href="/guides/">All guides</a> · <a href="../caribbean-relocation-guide/">Caribbean guide index</a>
   </footer>
 

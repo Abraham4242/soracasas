@@ -47,6 +47,22 @@ article table.cmp td:first-child{white-space:nowrap}
 @media (max-width:1200px){.toc{display:none}}
 </style>
 
+<style>
+/* Inline charts. No libraries, no fetches, scales with the column. */
+.viz{margin:34px 0;padding:26px 26px 20px;background:var(--paper-2);
+  border:1px solid var(--line);border-radius:12px}
+.viz .viz-t{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--ink-faint);margin-bottom:18px}
+.viz svg{display:block;width:100%;height:auto;overflow:visible}
+.viz figcaption{font-family:var(--sans);font-size:13px;color:var(--ink-faint);
+  line-height:1.55;margin-top:16px}
+.viz text{font-family:"Inter",sans-serif}
+.viz .vlab{font-size:12.5px;fill:var(--ink-2)}
+.viz .vnum{font-size:12.5px;font-weight:600;font-family:"JetBrains Mono",monospace}
+.viz .vax{font-size:10.5px;fill:var(--ink-ghost);font-family:"JetBrains Mono",monospace;letter-spacing:.5px}
+@media (max-width:700px){.viz{padding:18px 14px 14px}.viz .vlab,.viz .vnum{font-size:11px}}
+</style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -92,7 +108,7 @@ article table.cmp td:first-child{white-space:nowrap}
         "name": "SORA Casas"
       },
       "datePublished": "2026-07-26",
-      "dateModified": "2026-07-26",
+      "dateModified": "2026-09-13",
       "image": "https://soracasas.com/og-image.svg"
     },
     {
@@ -121,6 +137,30 @@ article table.cmp td:first-child{white-space:nowrap}
             "@type": "Answer",
             "text": "Modular homes generally appreciate like site-built houses, because they follow local codes on permanent foundations. Manufactured homes can depreciate, especially if not on owned land with a permanent foundation, which is a key financial difference."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Do manufactured homes always lose value?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. They depreciate when titled as personal property in a rented community. On land you own, with the home permanently affixed, FHFA data from 2000 to 2024 shows appreciation of 211.8 percent against 212.6 percent for site-built. The classification drives the outcome, not the factory."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a chattel loan and why does it cost more?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It finances the home but not the land, so the lender's collateral is weaker. Expect roughly two percentage points more than a mortgage and a shorter term. The Federal Reserve puts the average at 8.69 percent against 6.81 percent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check a manufactured home's wind zone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Find the HUD Compliance Certificate, a permanent data plate usually inside the primary bedroom closet at eye level or in a kitchen cabinet. A Zone I home cannot legally be placed in a Zone II or III area."
+          }
         }
       ]
     }
@@ -137,11 +177,11 @@ article table.cmp td:first-child{white-space:nowrap}
   </div>
 </header>
 
-<nav class="toc" aria-label="On this page"><div class="lab">On this page</div><a href="#the-full-breakdown" data-toc="the-full-breakdown">The full breakdown</a><a href="#the-heart-of-it" data-toc="the-heart-of-it">The heart of it</a><a href="#picking-between-them" data-toc="picking-between-them">Picking between them</a><a href="#where-the-tropics-tip-it" data-toc="where-the-tropics-tip-it">Where the tropics tip it</a><a href="#faq" data-toc="faq">FAQ</a></nav>
+<nav class="toc" aria-label="On this page"><div class="lab">On this page</div><a href="#the-full-breakdown" data-toc="the-full-breakdown">The full breakdown</a><a href="#classification" data-toc="classification">What actually decides it</a><a href="#the-data" data-toc="the-data">The data that complicates it</a><a href="#financing" data-toc="financing">What the rate gap costs</a><a href="#wind" data-toc="wind">Wind zones</a><a href="#cost" data-toc="cost">What each costs</a><a href="#picking-between-them" data-toc="picking-between-them">Picking between them</a><a href="#faq" data-toc="faq">FAQ</a></nav>
 
 <article>
 
-  <div class="art-eyebrow">Building Comparisons · Updated July 2026</div>
+  <div class="art-eyebrow">Building Comparisons · Updated September 2026</div>
 
   <h1>Modular <em>vs</em> Manufactured Homes</h1>
 
@@ -150,22 +190,132 @@ article table.cmp td:first-child{white-space:nowrap}
   <div class="art-meta">
     <span class="by">By <strong>SORA Real Estate Editorial</strong></span>
     <span class="sep">·</span>
-    <span>6 min read</span>
+    <span>9 min read</span>
     <span class="sep">·</span>
-    <span>Updated July 2026</span>
+    <span>Updated September 2026</span>
   </div>
 
   <figure class=""><img src="../images/comparisons/modular-vs-manufactured-homes.jpg" alt="A modular home beside a manufactured home" loading="lazy"><figcaption>Modular on the left, manufactured on the right: both factory-built, but treated very differently.</figcaption></figure>
 <p class="lede">They sound like the same thing, and both are built indoors on a factory line, but <a href='../prefab-modular-homes/'>modular</a> and <a href='../manufactured-mobile-homes/'>manufactured</a> homes are legally and financially quite different animals. The distinction comes down to three things: the building code they follow, the foundation they sit on, and how their value holds over time.</p>
-<div class="surface forest"><h4>The call</h4>Modular is built to the same local building codes as a site-built house and set on a permanent foundation, so it's treated like normal real estate and holds value. Manufactured is built to a single national code on a permanent chassis, cheaper, but it can depreciate and is harder to finance like a house.</div>
+<div class="surface forest"><h4>Key takeaways</h4>
+<ul style="margin:0">
+<li><strong>Both are built in a factory. That is not the difference.</strong> The difference is the code, the chassis, and how the law files the paperwork.</li>
+<li><strong>Modular follows local building code</strong> and sits on a permanent foundation, so it is real estate, full stop.</li>
+<li><strong>Manufactured follows one national HUD code</strong> and keeps a steel chassis, which usually makes it personal property.</li>
+<li><strong>That one word, "personal", costs about two percentage points on the loan</strong> and can flip a home from appreciating to depreciating.</li>
+<li><strong>But the depreciation story is not a law of physics.</strong> On owned land, manufactured homes have tracked site-built appreciation almost exactly since 2000.</li>
+</ul></div>
+
 <h2 id="the-full-breakdown">The full breakdown</h2>
 <div class="tbl-wrap wide"><table class="cmp"><thead><tr><th>Factor</th><th>Modular</th><th>Manufactured</th></tr></thead><tbody><tr><td>Building code</td><td>🟢 Local codes (like site-built)</td><td>🟡 Single national (HUD) code</td></tr><tr><td>Chassis</td><td>🟢 None; set on foundation</td><td>🔴 Permanent steel chassis</td></tr><tr><td>Foundation</td><td>🟢 Permanent foundation</td><td>🟡 Often piers + skirting</td></tr><tr><td>Cost</td><td>🟡 Higher</td><td>🟢 Cheapest per sq ft</td></tr><tr><td>Resale / value</td><td>🟢 Appreciates like a house</td><td>🔴 Can depreciate</td></tr><tr><td>Financing</td><td>🟢 Standard mortgage</td><td>🔴 Often harder / different loan</td></tr><tr><td>Looks like site-built</td><td>🟢 Yes</td><td>🟢 Modern ones, yes</td></tr></tbody></table></div>
-<h2 id="the-heart-of-it">The heart of it</h2>
-<p>Both are factory-built, so people lump them together, but a modular home is essentially a site-built house that happened to be assembled indoors: same codes, permanent foundation, treated as normal real estate, and it appreciates. A manufactured home keeps its transport chassis, follows the federal HUD code rather than local codes, is the cheapest housing per square foot, but can depreciate and is often financed differently, sometimes more like a vehicle than a house.</p>
+
+<figure><img src="../images/comparisons/modular-vs-manufactured-factory-line.jpg" alt="Dimensional lumber moving along a conveyor line inside a timber factory" loading="lazy"><figcaption>Modular and manufactured homes both start here, indoors, on a line, out of the weather. That shared origin is why people confuse them, and it is the least important thing about them.</figcaption></figure>
+
+<h2 id="classification">The one word that actually decides it</h2>
+
+<p>Here is the part nobody explains clearly, and it matters more than any spec sheet. What drives the money is not how the house was built. It's how it gets <strong>classified</strong>.</p>
+
+<ul>
+<li><strong>Real property</strong> means the home is legally part of the land. Conventional 30-year mortgages. Values track the local housing market, historically somewhere around 2 to 4 percent a year.</li>
+<li><strong>Personal property</strong> means the home is a titled object sitting on land, more like a very large appliance. Chattel loans only. Values commonly slide 3 to 5 percent a year, the way a vehicle does.</li>
+</ul>
+
+<p>Modular homes land in the first bucket almost automatically. Manufactured homes land in the second one unless you own the land and permanently affix the house. Same factory, same steel, wildly different ten-year outcome.</p>
+
+<figure class="viz">
+  <div class="viz-t">The same house, two classifications, ten years</div>
+  <svg viewBox="0 0 700 300" role="img" aria-label="Line chart comparing a manufactured home depreciating from 120,000 dollars to 79,600 over ten years against one on owned land rising from 138,000 to 170,600">
+    <g stroke="rgba(20,17,12,0.08)" stroke-width="1">
+      <line x1="70" y1="40" x2="660" y2="40"/><line x1="70" y1="90" x2="660" y2="90"/>
+      <line x1="70" y1="140" x2="660" y2="140"/><line x1="70" y1="190" x2="660" y2="190"/>
+      <line x1="70" y1="240" x2="660" y2="240"/>
+    </g>
+    <g class="vax" text-anchor="end">
+      <text x="62" y="44">$180k</text><text x="62" y="94">$152k</text>
+      <text x="62" y="144">$125k</text><text x="62" y="194">$97k</text><text x="62" y="244">$70k</text>
+    </g>
+    <g class="vax" text-anchor="middle">
+      <text x="70" y="262">year 0</text><text x="365" y="262">year 5</text><text x="660" y="262">year 10</text>
+    </g>
+
+    <polyline fill="none" stroke="#1d3a2c" stroke-width="3" stroke-linejoin="round"
+      points="70,116 129,111 188,106 247,100 306,94 365,89 424,83 483,77 542,70 601,64 660,57"/>
+    <polyline fill="none" stroke="#b85439" stroke-width="3" stroke-linejoin="round"
+      points="70,149 129,158 188,166 247,174 306,182 365,189 424,196 483,203 542,210 601,216 660,223"/>
+
+    <circle cx="70" cy="116" r="4.5" fill="#1d3a2c"/><circle cx="660" cy="57" r="5.5" fill="#1d3a2c"/>
+    <circle cx="70" cy="149" r="4.5" fill="#b85439"/><circle cx="660" cy="223" r="5.5" fill="#b85439"/>
+
+    <text x="84" y="110" class="vnum" fill="#1d3a2c">$138k</text>
+    <text x="84" y="166" class="vnum" fill="#b85439">$120k</text>
+    <text x="652" y="44" class="vnum" fill="#1d3a2c" text-anchor="end">$170.6k</text>
+    <text x="652" y="242" class="vnum" fill="#b85439" text-anchor="end">$79.6k</text>
+
+    <text x="230" y="78" class="vlab" style="font-weight:600;fill:#1d3a2c">On owned land, permanently affixed &nbsp;·&nbsp; +24%</text>
+    <text x="230" y="213" class="vlab" style="font-weight:600;fill:#b85439">Titled as personal property &nbsp;·&nbsp; −34%</text>
+
+    <line x1="678" y1="57" x2="678" y2="223" stroke="#4a4337" stroke-width="1.5"/>
+    <line x1="672" y1="57" x2="684" y2="57" stroke="#4a4337" stroke-width="1.5"/>
+    <line x1="672" y1="223" x2="684" y2="223" stroke="#4a4337" stroke-width="1.5"/>
+    <text x="692" y="136" class="vnum" fill="#4a4337" transform="rotate(-90 692 136)" text-anchor="middle">$73,000 apart</text>
+  </svg>
+  <figcaption>A worked example, not a forecast: a $120,000 home depreciating 4% a year in a rented community, against the same home on $18,000 of owned land with the house appreciating 2% and the land 3%. Your local market will differ. The <em>shape</em> of the gap will not.</figcaption>
+</figure>
+
+<h2 id="the-data">The data that complicates the story</h2>
+
+<p>And now the part that should stop you from writing manufactured homes off entirely, because we nearly did.</p>
+
+<p>Federal Housing Finance Agency data covering 2000 to 2024 puts appreciation of manufactured homes <strong>on owned land</strong> at 211.8 percent, against 212.6 percent for site-built homes. That is not "close." That is a rounding error. Since 2014, manufactured homes have frequently outpaced traditional ones.</p>
+
+<div class="surface"><h4>So which is it?</h4><p style="font-family:var(--sans);font-size:14.5px;margin-bottom:0">Both, and they are not in conflict. Manufactured homes depreciate when they are titled as personal property in a rented park. They appreciate roughly like houses when they sit on land you own. The building didn't change. The ownership structure did. If someone tells you "mobile homes always lose value," they are describing a financing arrangement and calling it a material.</p></div>
+
+<h2 id="financing">What the financing gap actually costs</h2>
+
+<p>Around 42 percent of manufactured home loans are chattel loans, according to the CFPB. Chattel means the lender has a lien on the house but not the land, so their collateral is weaker and they price accordingly.</p>
+
+<div class="tbl-wrap"><table><thead><tr><th></th><th>Modular / real property</th><th>Manufactured / chattel</th></tr></thead><tbody>
+<tr><td>Typical 2026 rate</td><td>6 to 7%</td><td>7.5 to 10%+</td></tr>
+<tr><td>Federal Reserve average</td><td>6.81%</td><td>8.69%</td></tr>
+<tr><td>Term</td><td>30 years</td><td>15 to 23 years</td></tr>
+<tr><td>Median borrower credit score</td><td>739 site-built · 691 MH mortgage</td><td>676</td></tr>
+<tr><td>If repossessed</td><td>Formal foreclosure process</td><td>Personal property rules. Faster, fewer protections.</td></tr>
+</tbody></table></div>
+
+<p>Run it on a real number. Borrow $75,000 at 9 percent over 20 years and you pay about <strong>$675 a month</strong>. The same $75,000 at 7 percent over 30 years is about <strong>$499</strong>. The cheaper house has the more expensive loan, and the gap compounds for two decades.</p>
+
+<p>There is an exit. Retitling as real property unlocks proper mortgages, but it requires owning the land, being willing to encumber it, and permanently affixing the home. Plenty of chattel borrowers can't meet all three, which is exactly why they were on a chattel loan to begin with.</p>
+
+<h2 id="wind">Wind zones, if you're anywhere near a hurricane</h2>
+
+<p>This one is short, specific, and genuinely load-bearing. Manufactured homes are built to a HUD wind zone, and the zone is printed on a data plate.</p>
+
+<div class="tbl-wrap"><table><thead><tr><th>Zone</th><th>Designed for</th><th>Where</th></tr></thead><tbody>
+<tr><td>Zone I</td><td>Up to 70 mph</td><td>Most inland areas</td></tr>
+<tr><td>Zone II</td><td>Up to 100 mph, 39 lb/sq ft</td><td>Most of Florida, much of the Gulf and Atlantic coast</td></tr>
+<tr><td>Zone III</td><td>Up to 110 mph, strictest anchoring</td><td>South Florida, the Keys, parts of Louisiana</td></tr>
+</tbody></table></div>
+
+<p>The rules run one direction only: a Zone III home can be placed in a Zone I area, but a Zone I home <strong>cannot legally be placed</strong> in Zone II or III. These standards date to July 1994, written in the aftermath of Hurricane Andrew, which added stronger roof attachment, better wall-to-floor connections and tighter anchoring.</p>
+
+<p><strong>Practical tip:</strong> the HUD Compliance Certificate is a permanent label, usually inside the primary bedroom closet at eye level or in a kitchen cabinet. Before you buy anything in a coastal market, go read it. Homes with Zone I ratings still turn up for sale in hurricane country.</p>
+
+<h2 id="cost">What each one costs in 2026</h2>
+
+<p>Modular runs roughly <strong>$80 to $175 per square foot installed</strong>, with custom work pushing to $250. Manufactured starts far lower, around <strong>$30 per square foot</strong> for the unit. On a 2,000 square foot modular you're looking at something like $160,000 to $320,000, land excluded.</p>
+
+<div class="surface"><h4>The number that ruins budgets</h4><p style="font-family:var(--sans);font-size:14.5px;margin-bottom:0">That advertised "$50 to $100 a square foot" base module price represents at best <strong>50 to 65 percent</strong> of what you'll actually spend. It excludes land, clearing and grading, the permanent foundation, utility connections, the crane, finish work beyond base spec, the driveway, the GC fee and permits. A useful planning split is <strong>60/40</strong>: sixty percent factory, forty percent everything that happens on your dirt.</p></div>
+
+<p>Against site-built, NAHB research for 2026 puts comparable modular 10 to 20 percent cheaper. Worth having in hand when you compare against our <a href="../cost-to-build-house-panama/">2026 Panama build cost guide</a>.</p>
+
 <h2 id="picking-between-them">Picking between them</h2>
-<ul><li>Go modular for long-term value: it appreciates like a conventional house, finances with a standard mortgage, and sits on a permanent foundation.</li><li>Go manufactured for the lowest upfront cost, understanding it may depreciate, especially off owned land.</li><li>Neither is 'bad'; they optimize for different things, value versus price.</li></ul>
+<ul><li><strong>Go modular</strong> for long-term value. It appreciates like a conventional house, finances with a standard mortgage, and sits on a permanent foundation from day one.</li><li><strong>Go manufactured</strong> for the lowest entry price, and then do the one thing that changes everything: put it on land you own and affix it permanently.</li><li><strong>Neither is the bad one.</strong> They optimize for different things. One buys value, the other buys access.</li></ul>
+
 <h2 id="where-the-tropics-tip-it">Where the tropics tip it</h2>
-<p>Both are uncommon in Panama and Costa Rica, where the local industry builds in concrete, so either would likely be an import, which erodes manufactured's price advantage in particular. Of the two, modular translates better to a tropical market: it's a permanent, foundation-set, financeable home that can be specified in durable materials. For most regional builds, a local concrete build stays the practical path.</p>
+<p>Both are uncommon in Panama and Costa Rica, where the industry builds in concrete and knows how to do it well. Either would likely arrive as an import, plus shipping, plus a crew learning a system on your house. That erases the manufactured price advantage almost entirely, which was the only argument it had.</p>
+
+<p>Of the two, modular translates better: permanent, foundation-set, financeable, and specifiable in materials that survive humidity and termites. But be honest about the comparison. A well-built local concrete house, on local labor, with local parts availability, remains the practical path for most regional builds. Our <a href="../alternative-building-methods/">alternative building methods guide</a> puts all of it side by side.</p>
+
 <div class="cta-card"><div class="eb">SORA Casas</div><h3>Want a straight recommendation?</h3><p>SORA builds fixed-price homes for foreign buyers in Panama and Costa Rica. We match the method and material to your site, budget, and how long you plan to keep the house, and tell you straight when the cheaper option is the smarter one.</p><a class="cta-btn" href="../cost-to-build-house-panama/">See 2026 build costs →</a></div>
 
 <h2 id="faq">Frequently <em>asked questions</em></h2>
@@ -173,15 +323,19 @@ article table.cmp td:first-child{white-space:nowrap}
 <details open><summary>What&#x27;s the difference between a modular and a manufactured home?</summary><p>Both are factory-built, but a modular home follows the same local codes as a site-built house and sits on a permanent foundation, while a manufactured home follows a single national code on a permanent steel chassis. Modular is generally treated like conventional real estate; manufactured is cheaper but can depreciate.</p></details>
 <details><summary>Is a modular home better than a manufactured home?</summary><p>For long-term value, usually yes. Modular homes appreciate like conventional houses, finance with standard mortgages, and sit on permanent foundations. Manufactured homes win on lowest upfront cost. The better choice depends on whether you're optimizing for value or price.</p></details>
 <details><summary>Do modular and manufactured homes hold their value?</summary><p>Modular homes generally appreciate like site-built houses, because they follow local codes on permanent foundations. Manufactured homes can depreciate, especially if not on owned land with a permanent foundation, which is a key financial difference.</p></details>
+
+<details><summary>Do manufactured homes always lose value?</summary><p>No. They depreciate when titled as personal property in a rented community. On land you own, with the home permanently affixed, FHFA data from 2000 to 2024 shows appreciation of 211.8 percent against 212.6 percent for site-built. The classification drives the outcome, not the factory.</p></details>
+<details><summary>What is a chattel loan and why does it cost more?</summary><p>It finances the home but not the land, so the lender's collateral is weaker. Expect roughly two percentage points more than a mortgage and a shorter term. The Federal Reserve puts the average at 8.69 percent against 6.81 percent.</p></details>
+<details><summary>How do I check a manufactured home's wind zone?</summary><p>Find the HUD Compliance Certificate, a permanent data plate usually inside the primary bedroom closet at eye level or in a kitchen cabinet. A Zone I home cannot legally be placed in a Zone II or III area.</p></details>
 </div>
 
-<div class="surface forest" style="margin-top:56px"><h4>Sources &amp; verification</h4><p style="font-family:var(--sans);font-size:14.5px">Figures in this guide were checked against primary and authoritative sources on <strong>27 July 2026</strong>. Immigration, tax, and cost figures change — always confirm the current rules with the official body or a licensed professional before acting.</p><ul style="font-family:var(--sans);font-size:14px;margin-bottom:0"><li><a href="https://www.bobvila.com/articles/manufactured-vs-modular-homes/" target="_blank" rel="noopener">Bob Vila</a> — modular vs manufactured homes</li><li><a href="https://www.mnpropertygroup.com/blog/new-home-construction-trends/" target="_blank" rel="noopener">MN Property Group</a> — factory-built housing</li></ul></div>
+<div class="surface forest" style="margin-top:56px"><h4>Sources &amp; verification</h4><p style="font-family:var(--sans);font-size:14.5px">Figures in this guide were checked against primary and authoritative sources on <strong>13 September 2026</strong>. Codes, rates and costs change — always confirm current figures with the relevant authority or a licensed professional before acting.</p><ul style="font-family:var(--sans);font-size:14px;margin-bottom:0"><li><a href="https://www.hud.gov/sites/dfiles/OCHCO/documents/IB-I-2-98.pdf" target="_blank" rel="noopener">US Dept. of Housing and Urban Development</a> — Manufactured Home Construction and Safety Standards (PDF)</li><li><a href="https://www.census.gov/programs-surveys/mhs/about/faq.html" target="_blank" rel="noopener">US Census Bureau</a> — Manufactured Housing Survey</li><li><a href="https://www.urban.org/urban-wire/its-difficult-manufactured-home-borrowers-reap-benefits-historically-low-interest-rates" target="_blank" rel="noopener">Urban Institute</a> — chattel lending and manufactured home borrowers</li><li><a href="https://blog.cavcohomes.com/do-manufactured-mobile-homes-appreciate-in-value/" target="_blank" rel="noopener">FHFA data summary</a> — manufactured vs site-built appreciation, 2000–2024</li><li><a href="https://homeguide.com/costs/modular-home-prices" target="_blank" rel="noopener">HomeGuide</a> — 2026 modular home cost data</li></ul></div>
 
 <div class="related"><h4>Continue Reading</h4><div class="related-grid"><a href="../alternative-building-methods/"><small>Full guide</small>Alternative Building Methods</a></div></div>
 
   <footer class="colophon">
     <strong>SORA Casas</strong> · MMXXVI<br>
-    Caribbean Building Comparisons · Updated July 2026<br>
+    Caribbean Building Comparisons · Updated September 2026<br>
     <a href="/">← SORA Casas</a> · <a href="/guides/">All guides</a> · <a href="../caribbean-relocation-guide/">Caribbean guide index</a>
   </footer>
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ICF vs SIP: Cost, Pros &amp; Cons for the Tropics · SORA</title>
-<meta name="description" content="ICF vs SIP in 2026: insulated concrete forms against structural insulated panels on cost, strength, insulation, moisture, and termites, and why ICF usually wins for a tropical climate.">
+<meta name="description" content="ICF vs SIP in 2026: real R-values, what actually failed in the famous Juneau SIP roofs, ICC 500 impact testing, and why ICF usually wins in the tropics.">
 <meta name="keywords" content="icf vs sip, sip vs icf, icf vs sip cost, insulated concrete forms vs structural insulated panels">
 <link rel="canonical" href="https://soracasas.com/icf-vs-sip/">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -45,6 +45,23 @@ article table.cmp td:first-child{white-space:nowrap}
 .toc a:hover{color:var(--ink)}
 .toc a.active{color:var(--coral-deep);border-left-color:var(--coral-deep);font-weight:600}
 @media (max-width:1200px){.toc{display:none}}
+</style>
+
+<style>
+/* Inline diagrams. No libraries, no fetches, scales with the column. */
+.viz{margin:34px 0;padding:26px 26px 20px;background:var(--paper-2);
+  border:1px solid var(--line);border-radius:12px}
+.viz .viz-t{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--ink-faint);margin-bottom:18px}
+.viz svg{display:block;width:100%;height:auto;overflow:visible}
+.viz figcaption{font-family:var(--sans);font-size:13px;color:var(--ink-faint);
+  line-height:1.55;margin-top:16px}
+.viz text{font-family:"Inter",sans-serif}
+.viz .vlab{font-size:12.5px;fill:var(--ink-2)}
+.viz .vnum{font-size:12.5px;font-weight:600;font-family:"JetBrains Mono",monospace}
+.viz .vax{font-size:10.5px;fill:var(--ink-ghost);font-family:"JetBrains Mono",monospace;letter-spacing:.5px}
+.viz .vin{font-size:11px;font-weight:600;fill:#f7f0df}
+@media (max-width:700px){.viz{padding:18px 14px 14px}.viz .vlab,.viz .vnum{font-size:11px}}
 </style>
 
 <script type="application/ld+json">
@@ -92,7 +109,7 @@ article table.cmp td:first-child{white-space:nowrap}
         "name": "SORA Casas"
       },
       "datePublished": "2026-07-26",
-      "dateModified": "2026-07-26",
+      "dateModified": "2026-09-13",
       "image": "https://soracasas.com/og-image.svg"
     },
     {
@@ -121,6 +138,30 @@ article table.cmp td:first-child{white-space:nowrap}
             "@type": "Answer",
             "text": "Both perform well when properly built, but ICF's monolithic reinforced-concrete wall is among the strongest residential wall systems available, giving it the edge in extreme wind and seismic events."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Do SIPs really rot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They can, but the well-known Alaskan failures were traced to unsealed panel joints letting warm indoor air leak into the seams, not to a flaw in the panels. Panels sealed properly on the same buildings were undamaged. It is a workmanship risk, and it hides inside the wall."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is ICF really hurricane-proof?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An ICF wall assembly has passed the ICC 500 missile impact test, which fires a 9 lb 2x4 at half the design wind speed. That is a life-safety standard. It means people inside survive, not that the house escapes damage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which has the higher R-value, ICF or SIP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On walls they are close: roughly R-23 for ICF and R-25 for a standard 6.5 inch SIP. SIPs pull clearly ahead only on thick roof panels. Beware quotes that compare a SIP roof number to an ICF wall number."
+          }
         }
       ]
     }
@@ -137,11 +178,11 @@ article table.cmp td:first-child{white-space:nowrap}
   </div>
 </header>
 
-<nav class="toc" aria-label="On this page"><div class="lab">On this page</div><a href="#how-they-stack-up" data-toc="how-they-stack-up">How they stack up</a><a href="#what-sets-them-apart" data-toc="what-sets-them-apart">What sets them apart</a><a href="#which-to-pick" data-toc="which-to-pick">Which to pick</a><a href="#in-panama-and-costa-rica" data-toc="in-panama-and-costa-rica">In Panama and Costa Rica</a><a href="#faq" data-toc="faq">FAQ</a></nav>
+<nav class="toc" aria-label="On this page"><div class="lab">On this page</div><a href="#how-they-stack-up" data-toc="how-they-stack-up">How they stack up</a><a href="#inside-the-wall" data-toc="inside-the-wall">Inside the wall</a><a href="#r-value" data-toc="r-value">The R-value question</a><a href="#juneau" data-toc="juneau">What went wrong in Juneau</a><a href="#storm" data-toc="storm">What storm testing proves</a><a href="#cost" data-toc="cost">What each costs</a><a href="#which-to-pick" data-toc="which-to-pick">Which to pick</a><a href="#faq" data-toc="faq">FAQ</a></nav>
 
 <article>
 
-  <div class="art-eyebrow">Building Comparisons · Updated July 2026</div>
+  <div class="art-eyebrow">Building Comparisons · Updated September 2026</div>
 
   <h1>ICF <em>vs</em> SIP</h1>
 
@@ -150,22 +191,139 @@ article table.cmp td:first-child{white-space:nowrap}
   <div class="art-meta">
     <span class="by">By <strong>SORA Real Estate Editorial</strong></span>
     <span class="sep">·</span>
-    <span>6 min read</span>
+    <span>9 min read</span>
     <span class="sep">·</span>
-    <span>Updated July 2026</span>
+    <span>Updated September 2026</span>
   </div>
 
   <figure class=""><img src="../images/comparisons/icf-vs-sip.jpg" alt="ICF concrete formwork beside a SIP panel wall" loading="lazy"><figcaption>ICF concrete on the left, SIP wood-core panels on the right: both efficient, very different in the humid tropics.</figcaption></figure>
 <p class="lede"><a href='../icf-construction/'>ICF</a>, insulated concrete forms, and <a href='../sip-homes/'>SIPs</a>, structural insulated panels, are the two darlings of high-performance building. Both give you a fast, airtight, super-insulated shell. The difference is what's inside the wall. ICF is reinforced concrete wrapped in foam. A SIP is a foam core between two wood (OSB) skins. In a hot, humid, termite-rich climate, that difference decides everything.</p>
-<div class="surface forest"><h4>The verdict</h4>For the tropics, ICF wins for most permanent homes. It delivers comparable insulation and comfort with a concrete core that ignores moisture, termites, fire, and hurricanes. SIPs are superb in dry or temperate climates and for speed, but their wood skins are exactly what tropical humidity and termites attack.</div>
+<div class="surface forest"><h4>Key takeaways</h4>
+<ul style="margin:0">
+<li><strong>On a normal wall they insulate about the same.</strong> ICF lands around R-23, a standard 6.5-inch SIP wall around R-25. Anyone selling you one over the other on R-value alone is selling.</li>
+<li><strong>The difference is what happens when water gets in.</strong> ICF's core is concrete and does not care. A SIP's strength lives in two sheets of wood.</li>
+<li><strong>The famous SIP failures were workmanship, not the material.</strong> Juneau's rotted roofs came down to unsealed panel joints. Properly sealed panels next door were fine.</li>
+<li><strong>ICF has passed the storm-shelter impact standard.</strong> That is a life-safety threshold, not a promise of a damage-free house.</li>
+<li><strong>Expect to pay a premium over wood frame</strong>, somewhere between a few percent and a lot, depending who you ask. Get local bids, not internet averages.</li>
+</ul></div>
+
 <h2 id="how-they-stack-up">How they stack up</h2>
 <div class="tbl-wrap wide"><table class="cmp"><thead><tr><th>Factor</th><th>ICF (concrete)</th><th>SIP (wood panels)</th></tr></thead><tbody><tr><td>Core material</td><td>Reinforced concrete</td><td>Foam between OSB (wood)</td></tr><tr><td>Cost</td><td>🟡 ~$120–190/sq ft</td><td>🟡 ~$120–200/sq ft</td></tr><tr><td>Insulation</td><td>🟢 Continuous foam + mass</td><td>🟢 Continuous foam core</td></tr><tr><td>Build speed</td><td>🟢 Forms stack fast</td><td>🟢 Panels crane in fast</td></tr><tr><td>Moisture / humidity</td><td>🟢 Concrete unaffected</td><td>🔴 OSB skin vulnerable if breached</td></tr><tr><td>Termites</td><td>🟢 Immune</td><td>🔴 Wood skin is a target</td></tr><tr><td>Hurricane / seismic</td><td>🟢 Monolithic concrete, excellent</td><td>🟢 Strong panels, good connections</td></tr><tr><td>Fire</td><td>🟢 Concrete core</td><td>🟡 Foam + wood needs detailing</td></tr><tr><td>Tropical fit</td><td>🟢 Excellent</td><td>🟡 Careful; moisture and termite risk</td></tr></tbody></table></div>
-<h2 id="what-sets-them-apart">What sets them apart</h2>
-<p>Both wrap a structure in continuous insulation, so their energy performance is comparable. The split is the structural material. ICF's concrete core gives it thermal mass and total immunity to the tropics' big three: water, termites, and fire. A SIP's strength lives in its OSB skins, which are wood. Breach one, or let humidity or termites reach it, and you have a hidden structural problem.</p>
+
+<h2 id="inside-the-wall">What's actually inside the wall</h2>
+
+<p>Forget the acronyms for a second and just look at a cross-section. Both systems are a sandwich. The question is what you put in the middle, and what you use for the bread.</p>
+
+<figure><img src="../images/comparisons/icf-vs-sip-wall-core.jpg" alt="Reinforcing steel cages standing on a poured foundation before concrete is placed" loading="lazy"><figcaption>This is what ends up in the middle of an ICF wall: a steel cage, then concrete poured around it, with the foam forms left permanently in place. A SIP has no equivalent. Its strength is the two sheets of wood on the outside.</figcaption></figure>
+
+<figure class="viz">
+  <div class="viz-t">Wall section, drawn to scale</div>
+  <svg viewBox="0 0 700 300" role="img" aria-label="Scaled cross-sections of an ICF wall and a SIP wall showing their layers and thicknesses">
+    <!-- ICF: 2.5in EPS + 6in concrete + 2.5in EPS = 11in. 1in = 24px -->
+    <text x="0" y="30" class="vlab" style="font-weight:600">ICF &nbsp;·&nbsp; 11 in total</text>
+    <g>
+      <rect x="0" y="46" width="60" height="76" fill="#2e8a96"/>
+      <rect x="60" y="46" width="144" height="76" fill="#4a4337"/>
+      <rect x="204" y="46" width="60" height="76" fill="#2e8a96"/>
+      <text x="30" y="90" class="vin" text-anchor="middle">EPS</text>
+      <text x="132" y="86" class="vin" text-anchor="middle">REINFORCED</text>
+      <text x="132" y="102" class="vin" text-anchor="middle">CONCRETE</text>
+      <text x="234" y="90" class="vin" text-anchor="middle">EPS</text>
+      <text x="30" y="140" class="vax" text-anchor="middle">2.5"</text>
+      <text x="132" y="140" class="vax" text-anchor="middle">6"</text>
+      <text x="234" y="140" class="vax" text-anchor="middle">2.5"</text>
+      <text x="292" y="80" class="vnum" fill="#1d3a2c">~R-23</text>
+      <text x="292" y="98" class="vax">effective</text>
+    </g>
+
+    <!-- SIP: 7/16 OSB + 5.5in EPS + 7/16 OSB = 6.4in -->
+    <text x="0" y="190" class="vlab" style="font-weight:600">SIP &nbsp;·&nbsp; 6.5 in total</text>
+    <g>
+      <rect x="0" y="206" width="11" height="76" fill="#b39656"/>
+      <rect x="11" y="206" width="132" height="76" fill="#2e8a96"/>
+      <rect x="143" y="206" width="11" height="76" fill="#b39656"/>
+      <text x="77" y="250" class="vin" text-anchor="middle">EPS FOAM CORE</text>
+      <text x="77" y="300" class="vax" text-anchor="middle">5.5" foam core</text>
+      <line x1="5.5" y1="290" x2="5.5" y2="296" stroke="#b39656" stroke-width="2"/>
+      <line x1="148.5" y1="290" x2="148.5" y2="296" stroke="#b39656" stroke-width="2"/>
+      <text x="182" y="290" class="vax" fill="#b39656">7/16" OSB skins, both faces</text>
+      <text x="182" y="240" class="vnum" fill="#1d3a2c">~R-25</text>
+      <text x="182" y="258" class="vax">effective</text>
+    </g>
+
+    <!-- annotation -->
+    <line x1="360" y1="40" x2="360" y2="290" stroke="rgba(20,17,12,0.12)"/>
+    <text x="384" y="70" class="vlab" style="font-weight:600">The whole argument</text>
+    <text x="384" y="98" class="vlab">In ICF, the structure is the concrete.</text>
+    <text x="384" y="118" class="vlab">Water, termites and fire do nothing to it.</text>
+    <text x="384" y="152" class="vlab">In a SIP, the structure is those two</text>
+    <text x="384" y="172" class="vlab">thin skins of wood on the outside.</text>
+    <text x="384" y="192" class="vlab">Compromise a skin and the panel</text>
+    <text x="384" y="212" class="vlab">is no longer doing its job.</text>
+    <text x="384" y="248" class="vlab" style="font-style:italic">Same insulation. Very different</text>
+    <text x="384" y="268" class="vlab" style="font-style:italic">consequences for a mistake.</text>
+  </svg>
+  <figcaption>Layer thicknesses drawn to scale. Typical ICF forms use two 2.5-inch EPS panels around a 6-inch concrete cavity; a standard SIP wall panel is a 5.5-inch foam core between two 7/16-inch OSB skins.</figcaption>
+</figure>
+
+<h2 id="r-value">The R-value question, honestly</h2>
+
+<p>This is where most comparisons go sideways, usually because someone quotes a SIP roof number against an ICF wall number.</p>
+
+<p>On walls, they're close. ICF typically comes in around <strong>R-22 to R-25 effective</strong>, and the insulation, not the concrete, is doing that work. A standard 6.5-inch EPS wall SIP lands around <strong>R-25 effective</strong>. SIPs are made from 4.5 up to 12.25 inches thick, spanning roughly R-15 to R-49, so the eye-catching "up to R-50" only applies to thick polyurethane roof panels, where a fat core is practical and an ICF wall isn't even in the conversation.</p>
+
+<p>Two asterisks worth knowing, and neither brochure will volunteer them:</p>
+
+<ul>
+<li><strong>Blown-foam cores lose R-value as they age.</strong> Part of the headline number comes from gas trapped in the cells, and that gas slowly diffuses out. A common engineering rule of thumb is not to count on more than R-5.5 per inch over the long run.</li>
+<li><strong>ICF's thermal mass is less useful than it sounds.</strong> The concrete is insulated from the inside of the house by the interior form face, so it can't soak up and release indoor heat the way exposed mass does. It's still a real benefit in a swingy climate. It's just not the free superpower it's often sold as.</li>
+</ul>
+
+<h2 id="juneau">What actually went wrong in Juneau</h2>
+
+<p>If you research SIPs for more than an hour, someone will bring up Alaska. It's worth understanding properly, because the real story is more useful than the scare version.</p>
+
+<p>Around twenty multifamily buildings in Juneau, all built before 1996, developed moisture damage in the <em>top</em> OSB skin of their SIP roof panels. The damage clustered at the panel seams near the ridge, which earned it a name: <strong>ridge rot</strong>.</p>
+
+<p>The mechanism wasn't vapor drifting through the panel. It was warm, humid indoor air leaking through gaps in the joints between panels, rising to the ridge, and condensing on the cold upper surfaces. Building Science Corporation's investigation put the blame on sealant: missing, discontinuous, applied on the cold side instead of the warm side, or applied correctly but failing to stick.</p>
+
+<div class="surface"><h4>The part that matters</h4><p style="font-family:var(--sans);font-size:14.5px;margin-bottom:0">Panels whose joints were sealed properly showed no damage. Other SIP roofs in the same town were fine. The investigators concluded the failures were <strong>workmanship, not the Juneau climate and not the panel</strong>. Manufacturers responded by recommending interior seam tape on top of caulk and foam, and the failure mode largely went away.</p></div>
+
+<p>So SIPs are not a defective product. They are a product with a narrow tolerance for sloppy installation, where the consequence of sloppiness is hidden inside a wall you can't inspect. In a place where you can supervise every joint, that's manageable. In a tropical build where humidity is relentless and skilled panel crews are scarce, it's a bet you may not want to take.</p>
+
+<p>And the failure isn't a cold-climate curiosity. Portland Community College's Newberg Center needed its SIP roof replaced four years after it was built.</p>
+
+<h2 id="storm">What the storm testing actually proves</h2>
+
+<p>ICF marketing leans hard on hurricane performance, and the underlying testing is real. It's also narrower than the ads imply.</p>
+
+<p>The standard is <strong>ICC 500</strong>, with <strong>FEMA P-361</strong> layered on top for buildings seeking federal grant money. Both require an assembly to survive a cannon-fired 2x4:</p>
+
+<div class="tbl-wrap"><table><thead><tr><th>Shelter type</th><th>Missile</th><th>Speed, vertical surfaces</th></tr></thead><tbody>
+<tr><td>Tornado</td><td>15 lb 2x4</td><td>80 to 100 mph</td></tr>
+<tr><td>Hurricane</td><td>9 lb 2x4</td><td>0.50 × design wind speed</td></tr>
+</tbody></table></div>
+
+<p>Hurricane-zone assemblies also have to survive thousands of pressure cycles, which simulates a storm pushing and pulling on the wall for hours rather than hitting it once. An ICF wall assembly passed the ICC 500 missile impact test in 2022, which gave engineers a tested rebar layout to specify instead of guessing from generic concrete data.</p>
+
+<p>Now the honest caveat, from the Texas Tech and NIST debris research: these standards were written for <strong>life safety</strong>. A wall can deform, and the test still counts as a pass, because the point is that the people inside survive. Passing is not a promise that your house comes through a Category 4 looking untouched.</p>
+
+<h2 id="cost">What each one costs</h2>
+
+<p>Here's where we'd love to give you a clean number, and where honesty requires us not to. Published ICF figures for 2026 range from roughly <strong>$140 to $230 per square foot</strong> of finished space, against maybe $100 to $200 for wood frame. The claimed premium over conventional framing runs from 3 to 5 percent (manufacturer sources) to 10 to 60 percent (contractor estimating sites). That is not a range. That is four different arguments wearing a trench coat.</p>
+
+<p>SIPs land in a broadly similar premium band. Which means, for most buyers, <strong>price is not the deciding variable</strong>. Climate is.</p>
+
+<p>For what a whole house actually runs down here, our <a href="../cost-to-build-house-panama/">2026 Panama build cost guide</a> uses local numbers rather than US averages, and our <a href="../alternative-building-methods/">alternative building methods guide</a> puts both systems next to block, rammed earth and the rest.</p>
+
 <h2 id="which-to-pick">Which to pick</h2>
-<ul><li>Go ICF for a permanent tropical home: storm and seismic strength, cool interiors, and no moisture or termite worry.</li><li>Go SIP in dry or temperate climates, or where speed and a lightweight shell matter most and moisture is well controlled.</li><li>Either way you get a tight, well-insulated home; the tropics just tilt the safety math hard toward ICF.</li></ul>
+<ul><li><strong>Go ICF</strong> for a permanent tropical home. Storm and seismic strength, cool interiors, and nothing in the wall that water, termites or fire can eat.</li><li><strong>Go SIP</strong> in a dry or temperate climate, or where speed and a light shell matter most and you can personally guarantee the joint sealing.</li><li><strong>Either way you get a tight, well-insulated house.</strong> The tropics just tilt the downside math hard toward concrete.</li></ul>
+
 <h2 id="in-panama-and-costa-rica">In Panama and Costa Rica</h2>
-<p>This is one of the clearest calls in the whole building guide. In Panama or Costa Rica, ICF gives you SIP-level comfort without SIP's tropical liabilities, and it's a natural upgrade from the region's concrete-block default. SIPs can be made to work with meticulous detailing and treated skins, but for most builds the humidity and termite math favors concrete.</p>
+<p>This is one of the clearest calls in the whole building guide. Here, ICF gives you SIP-level comfort without SIP's tropical liabilities, and it's a natural step up from the region's concrete-block default rather than a strange import nobody knows how to build.</p>
+
+<p>SIPs can absolutely be made to work with meticulous detailing and treated skins. The question is whether you want your house's structural integrity to depend on whether every seam got taped correctly on a humid Tuesday afternoon. For most builds, the math favors concrete, and it isn't close.</p>
+
 <div class="cta-card"><div class="eb">SORA Casas</div><h3>Building in Panama or Costa Rica?</h3><p>SORA builds fixed-price homes for foreign buyers in Panama and Costa Rica. We match the method and material to your site, budget, and how long you plan to keep the house, and tell you straight when the cheaper option is the smarter one.</p><a class="cta-btn" href="../cost-to-build-house-panama/">See 2026 build costs →</a></div>
 
 <h2 id="faq">Frequently <em>asked questions</em></h2>
@@ -173,15 +331,18 @@ article table.cmp td:first-child{white-space:nowrap}
 <details open><summary>Is ICF or SIP better for a humid tropical climate?</summary><p>ICF, for most homes. Its concrete core is immune to the moisture, termites, and fire that threaten a SIP's wood (OSB) skins, while delivering comparable insulation and comfort. SIPs can work with careful detailing, but ICF removes the biggest risks.</p></details>
 <details><summary>Do ICF and SIP cost about the same?</summary><p>Roughly, yes. Both are premium high-performance systems in a similar range, around $120 to $200 a square foot, above conventional block or stick framing. The choice usually comes down to climate and structural priorities rather than price.</p></details>
 <details><summary>Which is stronger in a hurricane, ICF or SIP?</summary><p>Both perform well when properly built, but ICF's monolithic reinforced-concrete wall is among the strongest residential wall systems available, giving it the edge in extreme wind and seismic events.</p></details>
+<details><summary>Do SIPs really rot?</summary><p>They can, but the well-known Alaskan failures were traced to unsealed panel joints letting warm indoor air leak into the seams, not to a flaw in the panels. Panels sealed properly on the same buildings were undamaged. It is a workmanship risk, and it hides inside the wall.</p></details>
+<details><summary>Is ICF really hurricane-proof?</summary><p>An ICF wall assembly has passed the ICC 500 missile impact test, which fires a 9 lb 2x4 at half the design wind speed. That is a life-safety standard. It means people inside survive, not that the house escapes damage.</p></details>
+<details><summary>Which has the higher R-value, ICF or SIP?</summary><p>On walls they are close: roughly R-23 for ICF and R-25 for a standard 6.5 inch SIP. SIPs pull clearly ahead only on thick roof panels. Beware quotes that compare a SIP roof number to an ICF wall number.</p></details>
 </div>
 
-<div class="surface forest" style="margin-top:56px"><h4>Sources &amp; verification</h4><p style="font-family:var(--sans);font-size:14.5px">Figures in this guide were checked against primary and authoritative sources on <strong>27 July 2026</strong>. Immigration, tax, and cost figures change — always confirm the current rules with the official body or a licensed professional before acting.</p><ul style="font-family:var(--sans);font-size:14px;margin-bottom:0"><li><a href="https://www.bobvila.com/articles/insulated-concrete-forms/" target="_blank" rel="noopener">Bob Vila</a> — insulated concrete forms</li><li><a href="https://www.infurnia.com/blog/10-alternative-materials-for-green-construction" target="_blank" rel="noopener">Infurnia</a> — green construction systems</li></ul></div>
+<div class="surface forest" style="margin-top:56px"><h4>Sources &amp; verification</h4><p style="font-family:var(--sans);font-size:14.5px">Figures in this guide were checked against primary and authoritative sources on <strong>13 September 2026</strong>. Construction costs and test standards change — always confirm current rates and code requirements with your contractor or a licensed engineer before acting.</p><ul style="font-family:var(--sans);font-size:14px;margin-bottom:0"><li><a href="https://www.sips.org/blog/sipa-report-on-the-juneau-alaska-roof-issue" target="_blank" rel="noopener">SIPA</a> — report on the Juneau, Alaska roof issue</li><li><a href="https://cchrc.org/wp-content/uploads/media/SIPs_Report.pdf" target="_blank" rel="noopener">Cold Climate Housing Research Center</a> — structural insulated panels in Alaska (PDF)</li><li><a href="https://www.huduser.gov/publications/pdf/icfbenefit.pdf" target="_blank" rel="noopener">US Dept. of Housing and Urban Development</a> — ICF benefits and disaster case studies (PDF)</li><li><a href="https://www.depts.ttu.edu/nwi/research/DebrisImpact/Reports/TTU_Final_NIST_Report_numbered.pdf" target="_blank" rel="noopener">Texas Tech / NIST</a> — debris impact resistance of building assemblies (PDF)</li><li><a href="https://www.intertek.com/building/storm-and-tornado-shelters/" target="_blank" rel="noopener">Intertek</a> — ICC 500 storm shelter testing</li></ul></div>
 
-<div class="related"><h4>Continue Reading</h4><div class="related-grid"><a href="../alternative-building-methods/"><small>Full guide</small>Alternative Building Methods</a></div></div>
+<div class="related"><h4>Continue Reading</h4><div class="related-grid"><a href="../alternative-building-methods/"><small>Full guide</small>Alternative Building Methods</a><a href="../icf-construction/"><small>Deep dive</small>ICF Construction</a><a href="../sip-homes/"><small>Deep dive</small>SIP Homes</a></div></div>
 
   <footer class="colophon">
     <strong>SORA Casas</strong> · MMXXVI<br>
-    Caribbean Building Comparisons · Updated July 2026<br>
+    Caribbean Building Comparisons · Updated September 2026<br>
     <a href="/">← SORA Casas</a> · <a href="/guides/">All guides</a> · <a href="../caribbean-relocation-guide/">Caribbean guide index</a>
   </footer>
 

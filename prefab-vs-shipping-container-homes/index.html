@@ -47,6 +47,22 @@ article table.cmp td:first-child{white-space:nowrap}
 @media (max-width:1200px){.toc{display:none}}
 </style>
 
+<style>
+/* Inline charts. No libraries, no fetches, scales with the column. */
+.viz{margin:34px 0;padding:26px 26px 20px;background:var(--paper-2);
+  border:1px solid var(--line);border-radius:12px}
+.viz .viz-t{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--ink-faint);margin-bottom:18px}
+.viz svg{display:block;width:100%;height:auto;overflow:visible}
+.viz figcaption{font-family:var(--sans);font-size:13px;color:var(--ink-faint);
+  line-height:1.55;margin-top:16px}
+.viz text{font-family:"Inter",sans-serif}
+.viz .vlab{font-size:12.5px;fill:var(--ink-2)}
+.viz .vnum{font-size:12.5px;font-weight:600;font-family:"JetBrains Mono",monospace}
+.viz .vax{font-size:10.5px;fill:var(--ink-ghost);font-family:"JetBrains Mono",monospace;letter-spacing:.5px}
+@media (max-width:700px){.viz{padding:18px 14px 14px}.viz .vlab,.viz .vnum{font-size:11px}}
+</style>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -92,7 +108,7 @@ article table.cmp td:first-child{white-space:nowrap}
         "name": "SORA Casas"
       },
       "datePublished": "2026-07-26",
-      "dateModified": "2026-07-26",
+      "dateModified": "2026-09-13",
       "image": "https://soracasas.com/og-image.svg"
     },
     {
@@ -121,6 +137,30 @@ article table.cmp td:first-child{white-space:nowrap}
             "@type": "Answer",
             "text": "It can be. Financing and permitting for container homes vary and are sometimes harder than for conventional or modular construction, which codes and banks understand well. Check local rules before committing."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Are container homes actually cheaper?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Somewhat, not dramatically. Published 2026 figures put container homes at roughly $150 to $350 per square foot against $200 to $400 for traditional. The container itself is only about 8 percent of the finished cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you build a container home near the beach?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only with a full coating system. Weathering steel needs wet and dry cycles to form its protective patina, and salt air keeps it permanently damp. The standard guidance is not to use unprotected weathering steel within 1 to 2 km of the coast."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are shipping container floors toxic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They are treated with pesticides for quarantine compliance, and the evidence on the risk is genuinely mixed. Read the data plate to see which chemical was used, then either replace the floor with untreated plywood or seal it with industrial epoxy. Covering it with a rug is not a solution."
+          }
         }
       ]
     }
@@ -137,11 +177,11 @@ article table.cmp td:first-child{white-space:nowrap}
   </div>
 </header>
 
-<nav class="toc" aria-label="On this page"><div class="lab">On this page</div><a href="#the-two-compared" data-toc="the-two-compared">The two, compared</a><a href="#the-real-distinction" data-toc="the-real-distinction">The real distinction</a><a href="#the-right-choice-for-your-build" data-toc="the-right-choice-for-your-build">The right choice for your build</a><a href="#what-the-tropics-change" data-toc="what-the-tropics-change">What the tropics change</a><a href="#faq" data-toc="faq">FAQ</a></nav>
+<nav class="toc" aria-label="On this page"><div class="lab">On this page</div><a href="#the-two-compared" data-toc="the-two-compared">The two, compared</a><a href="#where-money-goes" data-toc="where-money-goes">Where the money goes</a><a href="#heat" data-toc="heat">A steel box at R-0.33</a><a href="#rust" data-toc="rust">The coastal rust problem</a><a href="#floor" data-toc="floor">About that floor</a><a href="#the-right-choice-for-your-build" data-toc="the-right-choice-for-your-build">Which to choose</a><a href="#faq" data-toc="faq">FAQ</a></nav>
 
 <article>
 
-  <div class="art-eyebrow">Building Comparisons · Updated July 2026</div>
+  <div class="art-eyebrow">Building Comparisons · Updated September 2026</div>
 
   <h1>Prefab <em>vs</em> Shipping Container Homes</h1>
 
@@ -150,22 +190,120 @@ article table.cmp td:first-child{white-space:nowrap}
   <div class="art-meta">
     <span class="by">By <strong>SORA Real Estate Editorial</strong></span>
     <span class="sep">·</span>
-    <span>6 min read</span>
+    <span>9 min read</span>
     <span class="sep">·</span>
-    <span>Updated July 2026</span>
+    <span>Updated September 2026</span>
   </div>
 
   <figure class=""><img src="../images/comparisons/prefab-vs-shipping-container.jpg" alt="A modular prefab home beside a shipping container home" loading="lazy"><figcaption>Prefab and modular on the left, shipping container on the right: both fast, very different in comfort and cost.</figcaption></figure>
 <p class="lede">Both promise a faster, more controlled build than site construction, but they start from opposite places. A <a href='../prefab-modular-homes/'>prefab or modular home</a> is purpose-built in a factory to be a home. A <a href='../shipping-container-homes/'>container home</a> repurposes steel shipping boxes. The container looks cheaper, right up until you finish it for tropical living.</p>
-<div class="surface forest"><h4>In a sentence</h4>For a comfortable permanent home, prefab or modular is usually the smoother, better-value path, because it's designed to be a house. Container homes shine for small, modern, design-forward builds, but in tropical heat their steel shell demands serious insulation that eats the apparent savings.</div>
+<div class="surface forest"><h4>Key takeaways</h4>
+<ul style="margin:0">
+<li><strong>The container is about 8% of the finished cost.</strong> Everything after "I bought a box for $4,000" is the actual project.</li>
+<li><strong>A bare steel wall is R-0.33</strong>, and steel conducts heat roughly 500 times better than wood framing. In the sun, the inside can pass 120°F.</li>
+<li><strong>Unprotected weathering steel is contraindicated within 1 to 2 km of the coast.</strong> Salt keeps the surface permanently damp, which stops the protective patina forming at all.</li>
+<li><strong>The floor is treated with pesticides.</strong> Check the data plate, then replace it or epoxy-encapsulate it. A rug does nothing.</li>
+<li><strong>Prefab and modular arrive designed to be a house.</strong> That is not a small advantage, and it is why the finished costs land closer together than the headlines suggest.</li>
+</ul></div>
+
 <h2 id="the-two-compared">The two, compared</h2>
 <div class="tbl-wrap wide"><table class="cmp"><thead><tr><th>Factor</th><th>Prefab / modular</th><th>Shipping container</th></tr></thead><tbody><tr><td>Starting point</td><td>Purpose-built home modules</td><td>Repurposed steel boxes</td></tr><tr><td>Finished cost</td><td>🟡 ~$100–230/sq ft</td><td>🟡 ~$140–280/sq ft finished</td></tr><tr><td>'Cheap' reputation</td><td>🟡 Fair; saves time</td><td>🔴 Misleading; shell cheap, finish costly</td></tr><tr><td>Build speed</td><td>🟢 Fast, factory quality</td><td>🟢 Fast once designed and permitted</td></tr><tr><td>Heat / climate fit</td><td>🟡 Depends on spec</td><td>🔴 Metal box bakes without heavy insulation</td></tr><tr><td>Moisture / rust</td><td>🟢 If concrete or steel modules</td><td>🔴 Humidity and salt rust steel</td></tr><tr><td>Design flexibility</td><td>🟢 Wide; built to plan</td><td>🟡 Constrained by box dimensions</td></tr><tr><td>Permitting / finance</td><td>🟢 Well understood</td><td>🟡 Varies; can be harder to mortgage</td></tr></tbody></table></div>
+
+<h2 id="where-money-goes">Where the container money actually goes</h2>
+
+<p>The pitch is irresistible. Four thousand dollars for a forty-foot steel box that is already weatherproof, already structural, already a room. How hard can the rest be?</p>
+
+<p>Here's the rest.</p>
+
+<figure class="viz">
+  <div class="viz-t">Building up one 40-ft container home · 2026 US midpoints</div>
+  <svg viewBox="0 0 700 250" role="img" aria-label="Stacked bar showing the cost build-up of a container home, where the container itself is about eight percent of a roughly forty-nine thousand dollar total">
+    <g>
+      <rect x="50" y="60" width="48"  height="44" fill="#1d3a2c"/>
+      <rect x="98" y="60" width="108" height="44" fill="#2e8a96"/>
+      <rect x="206" y="60" width="72"  height="44" fill="#4a4337"/>
+      <rect x="278" y="60" width="150" height="44" fill="#b39656"/>
+      <rect x="428" y="60" width="33"  height="44" fill="#807761"/>
+      <rect x="461" y="60" width="180" height="44" fill="#b85439"/>
+    </g>
+    <!-- container callout -->
+    <line x1="74" y1="56" x2="74" y2="34" stroke="#1d3a2c" stroke-width="1.5"/>
+    <text x="74" y="28" class="vnum" fill="#1d3a2c" text-anchor="middle">the box: $4k</text>
+    <text x="74" y="12" class="vax" text-anchor="middle">8% OF THE TOTAL</text>
+
+    <g class="vlab">
+      <rect x="50" y="132" width="12" height="12" rx="3" fill="#2e8a96"/>
+      <text x="70" y="142">Structural mods and welding &nbsp;·&nbsp; $9k</text>
+      <rect x="380" y="132" width="12" height="12" rx="3" fill="#4a4337"/>
+      <text x="400" y="142">Spray foam insulation &nbsp;·&nbsp; $6k</text>
+      <rect x="50" y="160" width="12" height="12" rx="3" fill="#b39656"/>
+      <text x="70" y="170">Utility hookups &nbsp;·&nbsp; $12.5k</text>
+      <rect x="380" y="160" width="12" height="12" rx="3" fill="#807761"/>
+      <text x="400" y="170">Permits and inspections &nbsp;·&nbsp; $2.75k</text>
+      <rect x="50" y="188" width="12" height="12" rx="3" fill="#b85439"/>
+      <text x="70" y="198">Exterior finishes and landscaping &nbsp;·&nbsp; $15k</text>
+    </g>
+    <text x="641" y="38" class="vnum" fill="#14110c" text-anchor="end" style="font-size:15px">≈ $49,000 total</text>
+    <line x1="490" y1="46" x2="641" y2="46" stroke="rgba(20,17,12,0.25)"/>
+    <text x="50" y="230" class="vax">AND THIS IS BEFORE LAND, FOUNDATION, INTERIOR FINISHES, KITCHEN, BATHROOM OR FURNITURE.</text>
+  </svg>
+  <figcaption>Midpoints of published 2026 US ranges, stacked. Every segment is a real line item, not padding. Common estimating advice is to add another 20 to 40 percent on top of the unit cost for site-related expenses, which this chart hasn't done yet.</figcaption>
+</figure>
+
+<p>Why the welding is unavoidable: cutting window and door openings removes the corrugated skin that was doing the structural work, so heavy steel reinforcement has to be welded back in to restore load-bearing capacity. You are not "just cutting a hole." You are re-engineering a structure that arrived already engineered for something else.</p>
+
+<p>Net effect across published 2026 data: container homes land around <strong>$150 to $350 per square foot</strong>, against $200 to $400 for traditional. Cheaper, yes. Not the order-of-magnitude difference the reels imply.</p>
+
+<h2 id="heat">A steel box in the tropics starts at R-0.33</h2>
+
+<p>That is not a typo. The corrugated steel wall of a shipping container has a thermal resistance of about <strong>R-0.33</strong>. Hot-climate code typically wants R-13 walls and R-30 to R-49 ceilings. You are starting from approximately nothing.</p>
+
+<p>And it's worse than the number suggests, because steel conducts heat around <strong>500 times</strong> better than wood framing. Every steel rib is a thermal bridge, and the inner face of that steel is a near-perfect condensation surface in humid air. On a sunny day a bare container interior can pass 120°F.</p>
+
+<div class="surface"><h4>What actually works</h4><p style="font-family:var(--sans);font-size:14.5px">Closed-cell spray foam, applied directly to the steel, in that order. It runs about R-6 to R-7 per inch, so two to three inches gets walls into range, with more on the ceiling. Critically, at two inches and above it also qualifies as a vapor retarder, so it solves the condensation problem and the heat problem in one pass. Add a reflective roof coating and you have addressed the radiant load too.</p><p style="font-family:var(--sans);font-size:14.5px;margin-bottom:0">Budget roughly <strong>$3,000 to $9,000</strong> for a 40-footer, installed. It's the most expensive insulation option and, for a full-time home in a humid climate, the only one worth discussing.</p></div>
+
+<h2 id="rust">The coastal rust problem nobody puts in the brochure</h2>
+
+<p>Containers are built from COR-TEN weathering steel, and the sales line is that it's up to eight times more corrosion-resistant than ordinary carbon steel. True for a box crossing an ocean. Much less true for a house standing still.</p>
+
+<p>Weathering steel protects itself by forming a stable rust patina, and forming that patina <strong>requires the surface to wet and dry in cycles</strong>. Salt air breaks the cycle. Salt is hygroscopic, so it holds moisture against the metal continuously, and continuous wetness is exactly the condition under which the protective layer never forms.</p>
+
+<figure><img src="../images/comparisons/container-steel-corrosion.jpg" alt="Rust streaking down a corrugated steel panel around a metal frame and fixings" loading="lazy"><figcaption>The failure pattern to look for: rust tracking down from fixings and frames, where water sits instead of draining. On a container house this shows up first around cut openings and roof deformations.</figcaption></figure>
+
+<div class="surface"><h4>The rule of thumb worth writing down</h4><p style="font-family:var(--sans);font-size:14.5px;margin-bottom:0"><strong>Unprotected weathering steel should not be used within 1 to 2 km of the coast.</strong> One documented structure showed major corrosion damage after five years from poor preparation and maintenance in a high-salt environment. In pockets where water pools, COR-TEN corrodes at rates comparable to ordinary structural steel.</p></div>
+
+<p>So if you want a container house near the water, budget for a full paint system and treat the patina as decoration rather than protection. The good news: painted COR-TEN behaves well, and a scratch in the paint doesn't trigger the creeping under-film corrosion you get on ordinary steel. The other news: every dent and scratch from a dozen years at sea is already a breach, and watch the roof deformations and the areas around the door frames where water sits.</p>
+
+<p>Baseline expectation is 20 to 25 years without major maintenance. Assume less near salt water, and plan the maintenance rather than discovering it.</p>
+
+<h2 id="floor">About that floor</h2>
+
+<p>Container floors are usually 1-1/8 inch planks of dense tropical hardwood such as Keruing or Apitong, and they are almost always treated with strong pesticides to satisfy international quarantine rules.</p>
+
+<p>How dangerous this is depends on who you ask, and both camps have a point. Manufacturer-commissioned toxicology work argues the compounds are selectively toxic to insects, have very low vapor pressure, and don't meaningfully off-gas. Independent critics note that permitted treatments have historically included organochlorine insecticides, and that residues can transfer onto goods sitting on the floor.</p>
+
+<p>You don't have to resolve the debate. You have to resolve <em>your container</em>:</p>
+
+<ol>
+<li><strong>Read the data plate.</strong> It names the treatment chemical. Some, like Radaleum FHP-60, have essentially no vapor pressure and therefore essentially no fumes.</li>
+<li><strong>Replace it</strong> with new untreated marine-grade or CDX plywood. Cleanest answer, moderate cost.</li>
+<li><strong>Encapsulate it</strong> with industrial epoxy, or overlay marine plywood and tile on top.</li>
+<li><strong>Or buy a new "one-trip" container</strong> and specify untreated plywood, steel or bamboo flooring from the start.</li>
+</ol>
+
+<p>What does not work: putting a rug over it. A rug is not a vapor barrier.</p>
+
 <h2 id="the-real-distinction">The real distinction</h2>
-<p>The container's low headline price is the trap. The steel box is cheap, but insulating, cladding, cutting openings, reinforcing, plumbing, and cooling it brings the finished cost close to, sometimes above, a small conventional or modular build, especially where heavy insulation is non-negotiable. Modular starts as a finished home, so its cost is more honest and its comfort more predictable.</p>
+<p>The container's low headline price is the trap, and now you can see exactly where it springs. The box is cheap. Insulating it, cladding it, cutting and re-reinforcing it, plumbing it, cooling it and protecting it from salt brings the finished cost close to, and sometimes above, a small conventional or modular build. Modular starts life as a finished home, so its price is more honest and its comfort more predictable.</p>
+
 <h2 id="the-right-choice-for-your-build">The right choice for your build</h2>
-<ul><li>Go prefab or modular for a comfortable, conventional home built fast with predictable cost and easy financing.</li><li>Go container for a small, modern, design-forward build where the industrial look is the point, and budget for real insulation and corrosion protection.</li><li>Both beat slow site construction on speed; neither is automatically the cheapest once finished.</li></ul>
+<ul><li><strong>Go prefab or modular</strong> for a comfortable, conventional home built fast, with a predictable cost and financing that a normal bank recognizes.</li><li><strong>Go container</strong> for a small, modern, design-forward build where the industrial look is genuinely the point, and budget properly for insulation, corrosion protection and that floor.</li><li><strong>Both beat slow site construction on speed.</strong> Neither is automatically cheapest once finished.</li></ul>
+
 <h2 id="what-the-tropics-change">What the tropics change</h2>
-<p>The tropics are hard on containers. A bare steel box is an oven, and coastal humidity and salt corrode steel. Done right, with a ventilated over-roof, serious insulation, and corrosion protection, a container home works and looks striking. Modular, especially concrete or steel modular, handles heat, humidity, and termites more gracefully.</p>
+<p>Everything above gets harder here. The heat is relentless, the humidity never lets up, and if you're anywhere near the Pacific or the Caribbean, the salt is doing quiet work on your walls every single day. Done properly, with a ventilated over-roof, serious closed-cell foam, a real coating system and a replaced floor, a container home works beautifully and looks like nothing else on the street.</p>
+
+<p>Done on a budget, it becomes a hot, damp, rusting box that costs more to fix than it saved. Modular, especially concrete or steel modular, handles heat, humidity and termites far more gracefully. Our <a href="../alternative-building-methods/">alternative building methods guide</a> puts both against the region's concrete default, and the <a href="../cost-to-build-house-panama/">2026 Panama build cost guide</a> has the local numbers to compare against.</p>
+
 <div class="cta-card"><div class="eb">SORA Casas</div><h3>Not sure which fits your build?</h3><p>SORA builds fixed-price homes for foreign buyers in Panama and Costa Rica. We match the method and material to your site, budget, and how long you plan to keep the house, and tell you straight when the cheaper option is the smarter one.</p><a class="cta-btn" href="../cost-to-build-house-panama/">See 2026 build costs →</a></div>
 
 <h2 id="faq">Frequently <em>asked questions</em></h2>
@@ -173,15 +311,18 @@ article table.cmp td:first-child{white-space:nowrap}
 <details open><summary>Are shipping container homes cheaper than prefab homes?</summary><p>Usually not, once finished. A used container is cheap, but insulating, cladding, cutting, reinforcing, and fitting it out, plus the heavy insulation the tropics demand, brings the finished cost close to or above a small prefab or modular home, which starts life built as a house.</p></details>
 <details><summary>Which is better for a hot climate, prefab or container?</summary><p>Prefab or modular, generally. A container's steel shell absorbs heat aggressively and needs substantial insulation and ventilation to be livable in the tropics, whereas modular homes can be specified with proper insulation from the factory.</p></details>
 <details><summary>Is a container home hard to finance or permit?</summary><p>It can be. Financing and permitting for container homes vary and are sometimes harder than for conventional or modular construction, which codes and banks understand well. Check local rules before committing.</p></details>
+<details><summary>Are container homes actually cheaper?</summary><p>Somewhat, not dramatically. Published 2026 figures put container homes at roughly $150 to $350 per square foot against $200 to $400 for traditional. The container itself is only about 8 percent of the finished cost.</p></details>
+<details><summary>Can you build a container home near the beach?</summary><p>Only with a full coating system. Weathering steel needs wet and dry cycles to form its protective patina, and salt air keeps it permanently damp. The standard guidance is not to use unprotected weathering steel within 1 to 2 km of the coast.</p></details>
+<details><summary>Are shipping container floors toxic?</summary><p>They are treated with pesticides for quarantine compliance, and the evidence on the risk is genuinely mixed. Read the data plate to see which chemical was used, then either replace the floor with untreated plywood or seal it with industrial epoxy. Covering it with a rug is not a solution.</p></details>
 </div>
 
-<div class="surface forest" style="margin-top:56px"><h4>Sources &amp; verification</h4><p style="font-family:var(--sans);font-size:14.5px">Figures in this guide were checked against primary and authoritative sources on <strong>27 July 2026</strong>. Immigration, tax, and cost figures change — always confirm the current rules with the official body or a licensed professional before acting.</p><ul style="font-family:var(--sans);font-size:14px;margin-bottom:0"><li><a href="https://www.mnpropertygroup.com/blog/new-home-construction-trends/" target="_blank" rel="noopener">MN Property Group</a> — modular &amp; off-site construction</li><li><a href="https://www.infurnia.com/blog/10-alternative-materials-for-green-construction" target="_blank" rel="noopener">Infurnia</a> — alternative building materials</li></ul></div>
+<div class="surface forest" style="margin-top:56px"><h4>Sources &amp; verification</h4><p style="font-family:var(--sans);font-size:14.5px">Figures in this guide were checked against primary and authoritative sources on <strong>13 September 2026</strong>. Costs, codes and material guidance change — always confirm current figures with your contractor or a licensed professional before acting.</p><ul style="font-family:var(--sans);font-size:14px;margin-bottom:0"><li><a href="https://www.falconstructures.com/blog/how-to-insulate-shipping-containers" target="_blank" rel="noopener">Falcon Structures</a> — insulating shipping containers for heat and humidity</li><li><a href="https://hz-containers.com/en/news/what-is-corten-steel/" target="_blank" rel="noopener">HZ Containers</a> — COR-TEN weathering steel and where its patina fails</li><li><a href="https://www.discovercontainers.com/should-you-remove-the-plywood-floors-in-your-shipping-containers/" target="_blank" rel="noopener">Discover Containers</a> — container flooring and pesticide treatments</li><li><a href="https://www.falconstructures.com/blog/are-shipping-container-floors-toxic" target="_blank" rel="noopener">Falcon Structures</a> — the manufacturer-side toxicology view</li><li><a href="https://homeguide.com/costs/shipping-container-home-cost" target="_blank" rel="noopener">HomeGuide</a> — 2026 container home cost line items</li></ul></div>
 
 <div class="related"><h4>Continue Reading</h4><div class="related-grid"><a href="../alternative-building-methods/"><small>Full guide</small>Alternative Building Methods</a></div></div>
 
   <footer class="colophon">
     <strong>SORA Casas</strong> · MMXXVI<br>
-    Caribbean Building Comparisons · Updated July 2026<br>
+    Caribbean Building Comparisons · Updated September 2026<br>
     <a href="/">← SORA Casas</a> · <a href="/guides/">All guides</a> · <a href="../caribbean-relocation-guide/">Caribbean guide index</a>
   </footer>
 
